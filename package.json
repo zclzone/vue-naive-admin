@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint . --fix",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "eslint --fix --ext .js,.vue .",
     "build": "vite build && esno ./build/script",
     "build:test": "vite build --mode test && esno ./build/script",
     "build:staging": "vite build --mode staging && esno ./build/script",
