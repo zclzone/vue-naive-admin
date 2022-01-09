@@ -5,5 +5,5 @@ export const createLocalStorage = function (option = {}) {
 }
 
 export const createSessionStorage = function (option = {}) {
-  return createWebStorage({ prefixKey: option.prefixKey || '', storage: localStorage })
+  return createWebStorage({ prefixKey: option.prefixKey || '', storage: sessionStorage })
 }
