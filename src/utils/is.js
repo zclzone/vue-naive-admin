@@ -17,7 +17,7 @@ export function isNull(val) {
 }
 
 export function isObject(val) {
-  return !isNull(isNull) && is(val, 'Object')
+  return !isNull(val) && is(val, 'Object')
 }
 
 export function isArray(val) {
@@ -78,6 +78,17 @@ export function isEmpty(val) {
   }
 
   return false
+}
+
+/**
+ * * 类似sql的isnull函数
+ * * 第一个参数为null/undefined/''则返回第二个参数作为默认值，否则返回第一个参数
+ * @param {Number|Boolean|String} val
+ * @param {Number|Boolean|String} replaceVal
+ * @returns
+ */
+export function isNullReplace(val, replaceVal = '') {
+  return isNullOrUndef(val) || val === '' ? replaceVal : val
 }
 
 export function isUrl(path) {
