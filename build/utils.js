@@ -40,17 +40,19 @@ function getConfFiles() {
   const result = reg.exec(script)
   if (result) {
     const mode = result[1]
-    return ['.env', `.env.${mode}`]
+    return ['.env', '.env.local', `.env.${mode}`]
   }
-  return ['.env', '.env.production']
+  return ['.env', '.env.local', '.env.production']
 }
 
 export function getEnvConfig(match = 'VITE_APP_GLOB_', confFiles = getConfFiles()) {
   let envConfig = {}
   confFiles.forEach((item) => {
     try {
-      const env = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), item)))
-      envConfig = { ...envConfig, ...env }
+      if (fs.existsSync(path.resolve(process.cwd(), item))) {
+        const env = dotenv.parse(fs.readFileSync(path.resolve(process.cwd(), item)))
+        envConfig = { ...envConfig, ...env }
+      }
     } catch (e) {
       console.error(`Error in parsing ${item}`, e)
     }
