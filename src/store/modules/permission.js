@@ -1,13 +1,12 @@
 import { defineStore } from 'pinia'
 import { asyncRoutes, basicRoutes } from '@/router/routes'
-import { difference } from 'lodash-es'
 
 function hasPermission(route, role) {
   const routeRole = route.meta?.role ? route.meta.role : []
   if (!role.length || !routeRole.length) {
     return false
   }
-  return difference(routeRole, role).length < routeRole.length
+  return role.some((item) => routeRole.includes(item))
 }
 
 function filterAsyncRoutes(routes = [], role) {
