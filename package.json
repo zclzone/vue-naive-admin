@@ -41,6 +41,7 @@
     "unocss": "^0.16.3",
     "vite": "^2.7.6",
     "vite-plugin-html": "^2.1.1",
-    "vite-plugin-mock": "^2.9.6"
+    "vite-plugin-mock": "^2.9.6",
+    "vite-plugin-vue-setup-extend": "^0.3.0"
   }
 }

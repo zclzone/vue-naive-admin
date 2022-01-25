@@ -1,4 +1,4 @@
-<script setup>
+<script setup name="TestDialog">
 import { NButton } from 'naive-ui'
 const handleDelete = function () {
   $dialog.confirm({
