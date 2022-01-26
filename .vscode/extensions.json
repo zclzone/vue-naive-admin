@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "johnsoncodehk.volar",
+    "hollowtree.vue-snippets",
+    "esbenp.prettier-vscode",
+    "mikestead.dotenv",
+    "wayou.vscode-todo-highlight",
+    "wayou.vscode-todo-highlight",
+    "aaron-bond.better-comments"
+  ]
+}
