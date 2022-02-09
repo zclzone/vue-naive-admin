@@ -1,4 +1,4 @@
-import { defAxios, mockAxios } from '@/utils/http'
+import { defAxios } from '@/utils/http'
 
 export function getUsers(data = {}) {
   return defAxios({
