@@ -25,8 +25,6 @@ Vue Naive Admin，一个基于 Vue3.0、Vite、Naive UI 的后台管理模板，
 
 ## 文档
 
-_目前文档才刚开始写，由于加班较多，进度很少_
-
 [羽雀文档：Vue Naive Admin](https://www.yuque.com/qszone/vue-naive-admin)
 
 ## 构建步骤
