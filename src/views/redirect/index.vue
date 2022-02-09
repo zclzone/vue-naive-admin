@@ -19,3 +19,5 @@ replace({
   query,
 })
 </script>
+
+<template></template>
