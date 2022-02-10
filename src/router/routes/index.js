@@ -9,12 +9,6 @@ export const basicRoutes = [
     isHidden: true,
   },
   {
-    name: '401',
-    path: '/401',
-    component: () => import('@/views/error-page/401.vue'),
-    isHidden: true,
-  },
-  {
     name: 'REDIRECT',
     path: '/redirect',
     component: Layout,
@@ -27,7 +21,6 @@ export const basicRoutes = [
       },
     ],
   },
-
   {
     name: 'LOGIN',
     path: '/login',
