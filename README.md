@@ -41,7 +41,7 @@ git clone https://github.com/zclzone/vue-naive-admin.git
 cd vue-naive-admin
 
 # 安装依赖
-npm i
+pnpm i
 
 # 启动
 npm run dev
