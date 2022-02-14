@@ -23,6 +23,10 @@ Vue Naive Admin，一个基于 Vue3.0、Vite、Naive UI 的后台管理模板，
 - 🍌 二次封装全局 Dialog、Message、LoadingBar 组件
 - 🍋 二次封装 localStorage 和 sessionStorage，支持设置过期时间
 
+## 预览
+
+[template.qszone.com](https://template.qszone.com)
+
 ## 文档
 
 [羽雀文档：Vue Naive Admin](https://www.yuque.com/qszone/vue-naive-admin)
