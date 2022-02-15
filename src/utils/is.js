@@ -97,6 +97,14 @@ export function isUrl(path) {
   return reg.test(path)
 }
 
+/**
+ * @param {string} path
+ * @returns {Boolean}
+ */
+export function isExternal(path) {
+  return /^(https?:|mailto:|tel:)/.test(path)
+}
+
 export const isServer = typeof window === 'undefined'
 
 export const isClient = !isServer

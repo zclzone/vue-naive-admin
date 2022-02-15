@@ -86,6 +86,31 @@ export const basicRoutes = [
       },
     ],
   },
+
+  {
+    name: 'EXTERNAL-LINK',
+    path: '/external-link',
+    component: Layout,
+    meta: {
+      title: '外链',
+    },
+    children: [
+      {
+        name: 'LINK-GITHUB-SRC',
+        path: 'https://github.com/zclzone/vue-naive-admin',
+        meta: {
+          title: '源码 - github',
+        },
+      },
+      {
+        name: 'LINK-GITEE-SRC',
+        path: 'https://gitee.com/zclzone/vue-naive-admin',
+        meta: {
+          title: '源码 - gitee',
+        },
+      },
+    ],
+  },
 ]
 
 export const NOT_FOUND_ROUTE = {

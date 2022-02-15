@@ -4,6 +4,8 @@ import { useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
+import { isExternal } from '@/utils/is'
+
 const router = useRouter()
 const permissionStore = usePermissionStore()
 
@@ -14,10 +16,11 @@ const menuOptions = computed(() => {
   return generateOptions(routes, '')
 })
 
-function resolvePath(...pathes) {
+function resolvePath(basePath, path) {
+  if (isExternal(path)) return path
   return (
     '/' +
-    pathes
+    [basePath, path]
       .filter((path) => !!path && path !== '/')
       .map((path) => path.replace(/(^\/)|(\/$)/g, ''))
       .join('/')
@@ -49,7 +52,11 @@ function generateOptions(routes, basePath) {
 }
 
 function handleMenuSelect(key, item) {
-  router.push(item.path)
+  if (isExternal(item.path)) {
+    window.open(item.path)
+  } else {
+    router.push(item.path)
+  }
 
   // 通过path重定向
   // router.push({
