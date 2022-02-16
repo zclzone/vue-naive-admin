@@ -8,9 +8,8 @@ let loadingMessage = null
 class Message {
   /**
    * 规则：
-   * * 同一Message实例只显示一个loading message，如果需要显示多个可以创建多个Message实例
-   * * 新的message会替换正在显示的loading message
-   * * 默认已创建一个Message实例$message挂载到window，同时也将Message类挂载到了window
+   * * loading message只显示一个，新的message会替换正在显示的loading message
+   * * loading message不会自动清除，除非被替换成非loading message，非loading message默认2秒后自动清除
    */
 
   removeMessage(message, duration = 2000) {
@@ -23,20 +22,20 @@ class Message {
   }
 
   showMessage(type, content, option = {}) {
-    if (this.loadingMessage && this.loadingMessage.type === 'loading') {
+    if (loadingMessage && loadingMessage.type === 'loading') {
       // 如果存在则替换正在显示的loading message
-      this.loadingMessage.type = type
-      this.loadingMessage.content = content
+      loadingMessage.type = type
+      loadingMessage.content = content
 
       if (type !== 'loading') {
         // 非loading message需设置自动清除
-        this.removeMessage(this.loadingMessage, option.duration)
+        this.removeMessage(loadingMessage, option.duration)
       }
     } else {
       // 不存在正在显示的loading则新建一个message,如果新建的message是loading message则将message赋值存储下来
       let message = NMessage[type](content, option)
       if (type === 'loading') {
-        this.loadingMessage = message
+        loadingMessage = message
       }
     }
   }
