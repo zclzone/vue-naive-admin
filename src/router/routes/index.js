@@ -109,6 +109,13 @@ export const basicRoutes = [
           title: '源码 - gitee',
         },
       },
+      {
+        name: 'LINK-DOCS',
+        path: 'https://www.yuque.com/qszone/vue-naive-admin',
+        meta: {
+          title: '文档 - 语雀',
+        },
+      },
     ],
   },
 ]
