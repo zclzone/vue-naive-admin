@@ -2,11 +2,17 @@
 import { useUserStore } from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { NDropdown } from 'naive-ui'
+import { resetRouter } from '@/router'
+import { usePermissionStore } from '@/store/modules/permission'
 
 const userStore = useUserStore()
 const router = useRouter()
 
 const options = [
+  {
+    label: '切换角色',
+    key: 'switchRole',
+  },
   {
     label: '退出登录',
     key: 'logout',
@@ -15,10 +21,49 @@ const options = [
 
 function handleSelect(key) {
   if (key === 'logout') {
-    userStore.logout()
-    $message.success('已退出登录')
-    router.push({ path: '/login' })
+    logout()
+  } else if (key === 'switchRole') {
+    switchRole()
   }
+}
+
+function logout() {
+  userStore.logout()
+  $message.success('已退出登录')
+  router.push({ path: '/login' })
+}
+
+function switchRole() {
+  const permissionStore = usePermissionStore()
+
+  const users = [
+    {
+      id: 1,
+      name: '大脸怪(admin)',
+      avatar: 'https://gitee.com/zclzone/res/raw/master/qs-zone/blob/img/lADPDiQ3QDTwsz3NAarNAaw_428_426.jpg',
+      email: 'Ronnie@123.com',
+      role: ['admin'],
+    },
+    {
+      id: 2,
+      name: '大脸怪(editor)',
+      avatar: 'https://gitee.com/zclzone/res/raw/master/qs-zone/blob/img/lADPDiQ3QDTwsz3NAarNAaw_428_426.jpg',
+      email: 'Ronnie@123.com',
+      role: ['editor'],
+    },
+    {
+      id: 3,
+      name: '访客(guest)',
+      avatar: 'https://gitee.com/zclzone/res/raw/master/qs-zone/blob/img/lADPDiQ3QDTwsz3NAarNAaw_428_426.jpg',
+      role: [],
+    },
+  ]
+
+  const switchUser = users[+userStore.userId % users.length]
+  resetRouter()
+  userStore.setUserInfo(switchUser)
+  permissionStore.generateRoutes(switchUser.role)
+  $message.success(`${switchUser.name}`)
 }
 </script>
 

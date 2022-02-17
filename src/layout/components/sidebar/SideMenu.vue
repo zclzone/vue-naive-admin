@@ -1,7 +1,7 @@
 <script setup>
 import { NMenu } from 'naive-ui'
 import { useRouter } from 'vue-router'
-import { computed } from 'vue'
+import { computed, toRef } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
 import { isExternal } from '@/utils/is'
@@ -10,10 +10,9 @@ const router = useRouter()
 const permissionStore = usePermissionStore()
 
 const { currentRoute } = router
-const routes = permissionStore.routes
 
 const menuOptions = computed(() => {
-  return generateOptions(routes, '')
+  return generateOptions(permissionStore.routes, '')
 })
 
 function resolvePath(basePath, path) {
