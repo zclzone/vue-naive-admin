@@ -44,8 +44,8 @@ git clone https://github.com/zclzone/vue-naive-admin.git
 # 进入项目目录
 cd vue-naive-admin
 
-# 安装依赖
-pnpm i
+# 安装依赖(建议使用pnpm: https://pnpm.io/zh/installation)
+pnpm i # 或者 npm i
 
 # 启动
 npm run dev
