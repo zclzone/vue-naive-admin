@@ -4,6 +4,7 @@ import { useRouter } from 'vue-router'
 import { NDropdown } from 'naive-ui'
 import { resetRouter } from '@/router'
 import { usePermissionStore } from '@/store/modules/permission'
+import { NOT_FOUND_ROUTE } from '@/router/routes'
 
 const userStore = useUserStore()
 const router = useRouter()
@@ -62,7 +63,11 @@ function switchRole() {
   const switchUser = users[+userStore.userId % users.length]
   resetRouter()
   userStore.setUserInfo(switchUser)
-  permissionStore.generateRoutes(switchUser.role)
+  const accessRoutes = permissionStore.generateRoutes(switchUser.role)
+  accessRoutes.forEach((route) => {
+    !router.hasRoute(route.name) && router.addRoute(route)
+  })
+  router.addRoute(NOT_FOUND_ROUTE)
   $message.success(`${switchUser.name}`)
 }
 </script>
