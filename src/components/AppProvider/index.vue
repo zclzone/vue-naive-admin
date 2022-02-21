@@ -1,6 +1,4 @@
 <script setup>
-import { NConfigProvider, NGlobalStyle, NLoadingBarProvider, NMessageProvider, NDialogProvider } from 'naive-ui'
-
 import MessageContent from './MessageContent.vue'
 import DialogContent from './DialogContent.vue'
 import LoadingBar from './LoadingBar.vue'

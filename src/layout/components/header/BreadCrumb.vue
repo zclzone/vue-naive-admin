@@ -1,5 +1,4 @@
 <script setup>
-import { NBreadcrumb, NBreadcrumbItem } from 'naive-ui'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 const { currentRoute } = router

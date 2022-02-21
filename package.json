@@ -39,6 +39,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.38.1",
     "unocss": "^0.16.3",
+    "unplugin-vue-components": "^0.17.18",
     "vite": "^2.7.6",
     "vite-plugin-html": "^2.1.1",
     "vite-plugin-mock": "^2.9.6",

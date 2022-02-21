@@ -1,5 +1,4 @@
 <script setup>
-import { NGradientText, NIcon } from 'naive-ui'
 import { LastfmSquare } from '@vicons/fa'
 const title = import.meta.env.VITE_APP_TITLE
 </script>

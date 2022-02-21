@@ -1,7 +1,6 @@
 <script setup>
 import { useUserStore } from '@/store/modules/user'
 import { useRouter } from 'vue-router'
-import { NDropdown } from 'naive-ui'
 import { resetRouter } from '@/router'
 import { usePermissionStore } from '@/store/modules/permission'
 import { NOT_FOUND_ROUTE } from '@/router/routes'
