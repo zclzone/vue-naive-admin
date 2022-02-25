@@ -18,7 +18,7 @@ import AppMain from './components/AppMain.vue'
         </n-layout-header>
         <n-layout
           position="absolute"
-          content-style="padding: 0 35px 35px"
+          content-style="padding: 0 35px 35px;height: 100%;"
           style="top: 100px; background-color: #f5f6fb"
           :native-scrollbar="false"
         >
