@@ -1,7 +1,5 @@
 <script setup>
-import { NResult, NButton } from 'naive-ui'
 import { useRouter } from 'vue-router'
-
 const { replace } = useRouter()
 </script>
 
