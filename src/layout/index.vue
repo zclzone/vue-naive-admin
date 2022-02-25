@@ -1,6 +1,4 @@
 <script setup>
-import { NLayout, NLayoutHeader, NLayoutSider } from 'naive-ui'
-
 import AppHeader from './components/header/index.vue'
 import SideMenu from './components/sidebar/index.vue'
 import AppMain from './components/AppMain.vue'

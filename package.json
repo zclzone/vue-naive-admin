@@ -39,6 +39,7 @@
     "sass": "^1.38.1",
     "unocss": "^0.16.4",
     "vite": "^2.8.0",
+    "unplugin-vue-components": "^0.17.18",
     "vite-plugin-html": "^2.1.1",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-vue-setup-extend": "^0.3.0"

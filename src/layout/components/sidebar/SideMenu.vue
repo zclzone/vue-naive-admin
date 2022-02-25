@@ -1,7 +1,6 @@
 <script setup>
-import { NMenu } from 'naive-ui'
 import { useRouter } from 'vue-router'
-import { computed, toRef } from 'vue'
+import { computed } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
 import { isExternal } from '@/utils/is'

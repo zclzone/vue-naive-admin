@@ -1,6 +1,4 @@
 <script setup>
-import { NButton } from 'naive-ui'
-
 function handleLogin() {
   $message.loading('登陆中...')
   setTimeout(() => {
