@@ -1,12 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@unocss/preset-attributify': ^0.16.3
-  '@unocss/preset-icons': ^0.16.3
-  '@unocss/preset-uno': ^0.16.3
+  '@unocss/preset-attributify': ^0.16.4
+  '@unocss/preset-icons': ^0.16.4
+  '@unocss/preset-uno': ^0.16.4
   '@vicons/fa': ^0.11.0
-  '@vitejs/plugin-vue': ^1.6.0
-  '@vue/compiler-sfc': ^3.0.5
+  '@vitejs/plugin-vue': ^1.10.2
+  '@vue/compiler-sfc': ^3.2.30
   axios: ^0.21.4
   chalk: ^5.0.0
   dayjs: ^1.10.7
@@ -17,26 +17,24 @@ specifiers:
   eslint-plugin-vue: ^8.2.0
   esno: ^0.13.0
   fs-extra: ^10.0.0
-  js-cookie: ^3.0.1
   lodash-es: ^4.17.21
   mockjs: ^1.1.0
-  naive-ui: ^2.19.1
-  pinia: ^2.0.9
+  naive-ui: ^2.25.2
+  pinia: ^2.0.11
   prettier: ^2.5.1
   sass: ^1.38.1
-  unocss: ^0.16.3
-  vite: ^2.7.6
+  unocss: ^0.16.4
+  vite: ^2.8.0
   vite-plugin-html: ^2.1.1
   vite-plugin-mock: ^2.9.6
   vite-plugin-vue-setup-extend: ^0.3.0
-  vue: ^3.2.6
+  vue: ^3.2.30
   vue-router: ^4.0.12
 
 dependencies:
   '@vicons/fa': 0.11.0
   axios: 0.21.4
   dayjs: 1.10.7
-  js-cookie: 3.0.1
   lodash-es: 4.17.21
   mockjs: 1.1.0
   pinia: 2.0.11_vue@3.2.30
@@ -1545,11 +1543,6 @@ packages:
     resolution: {integrity: sha512-/+K89y6KJA2nISbWrlc/773XdpDgSQq/LdQ+ZZyw2jRxUNyquPtbsDCCCMRzzNORUgroUGc4nAXxJEnQvpViCA==}
     hasBin: true
     dev: true
-
-  /js-cookie/3.0.1:
-    resolution: {integrity: sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==}
-    engines: {node: '>=12'}
-    dev: false
 
   /js-yaml/4.1.0:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
