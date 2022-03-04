@@ -3,16 +3,11 @@ import AppProvider from '@/components/AppProvider/index.vue'
 </script>
 
 <template>
-  <router-view>
-    <template #default="{ Component, route }">
-      <app-provider>
-        <keep-alive v-if="route.meta && route.meta.keepAlive">
-          <component :is="Component" :key="route.fullPath" />
-        </keep-alive>
-        <component :is="Component" v-else :key="route.fullPath" />
-      </app-provider>
-    </template>
-  </router-view>
+  <app-provider>
+    <router-view v-slot="{ Component }">
+      <component :is="Component" />
+    </router-view>
+  </app-provider>
 </template>
 
 <style lang="scss">

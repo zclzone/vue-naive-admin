@@ -104,6 +104,15 @@ export const basicRoutes = [
           title: '测试Dialog',
         },
       },
+      {
+        name: 'TEST-KEEP-ALIVE',
+        path: 'keep-alive',
+        component: () => import('@/views/test-page/TestKeepAlive.vue'),
+        meta: {
+          title: '测试Keep-Alive',
+          keepAlive: true,
+        },
+      },
     ],
   },
 

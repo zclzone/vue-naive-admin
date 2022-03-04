@@ -1,0 +1,20 @@
+<!--使用keep-alive须设置name，注意请与对应的路由的name保持一致，方便统一处理-->
+<script setup name="TEST-KEEP-ALIVE">
+import { onMounted, onActivated, onDeactivated } from 'vue'
+
+onMounted(() => {
+  $message.success('触发onMounted')
+})
+
+onActivated(() => {
+  $message.success('触发onActivated')
+})
+
+onDeactivated(() => {
+  $message.success('触发onDeactivated')
+})
+</script>
+
+<template>
+  <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"> 注意查看提示语 </n-gradient-text>
+</template>

@@ -9,14 +9,13 @@ const appStore = useAppStore()
 
 <template>
   <n-config-provider :theme-overrides="appStore.themeOverrides">
-    <n-global-style />
     <n-loading-bar-provider>
       <loading-bar />
       <n-dialog-provider>
         <dialog-content />
         <n-message-provider>
           <message-content />
-          <slot name="default"></slot>
+          <slot></slot>
         </n-message-provider>
       </n-dialog-provider>
     </n-loading-bar-provider>
