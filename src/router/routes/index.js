@@ -1,5 +1,6 @@
 import Layout from '@/layout/index.vue'
 import Dashboard from '@/views/dashboard/index.vue'
+import { Dove, Github, HouseDamage, Link } from '@vicons/fa'
 
 export const basicRoutes = [
   {
@@ -38,6 +39,7 @@ export const basicRoutes = [
     redirect: '/dashboard',
     meta: {
       title: '首页',
+      icon: HouseDamage,
     },
     children: [
       {
@@ -52,32 +54,12 @@ export const basicRoutes = [
   },
 
   {
-    name: 'ERROR-PAGE',
-    path: '/error-page',
-    component: Layout,
-    redirect: '/error-page/404',
-    meta: {
-      title: '错误页',
-    },
-    children: [
-      {
-        name: 'ERROR-404',
-        path: '404',
-        component: () => import('@/views/error-page/404.vue'),
-        meta: {
-          title: '404',
-        },
-      },
-    ],
-  },
-
-  {
     name: 'TEST',
     path: '/test',
     component: Layout,
     redirect: '/test/unocss',
     meta: {
-      title: '测试',
+      title: '基础功能测试',
     },
     children: [
       {
@@ -117,11 +99,32 @@ export const basicRoutes = [
   },
 
   {
+    name: 'ERROR-PAGE',
+    path: '/error-page',
+    component: Layout,
+    redirect: '/error-page/404',
+    meta: {
+      title: '错误页',
+    },
+    children: [
+      {
+        name: 'ERROR-404',
+        path: '404',
+        component: () => import('@/views/error-page/404.vue'),
+        meta: {
+          title: '404',
+        },
+      },
+    ],
+  },
+
+  {
     name: 'EXTERNAL-LINK',
     path: '/external-link',
     component: Layout,
     meta: {
       title: '外部链接',
+      icon: Link,
     },
     children: [
       {
@@ -129,6 +132,7 @@ export const basicRoutes = [
         path: 'https://github.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - github',
+          icon: Github,
         },
       },
       {
@@ -143,6 +147,7 @@ export const basicRoutes = [
         path: 'https://www.yuque.com/qszone/vue-naive-admin',
         meta: {
           title: '文档 - 语雀',
+          icon: Dove,
         },
       },
     ],
