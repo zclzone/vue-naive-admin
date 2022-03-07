@@ -15,6 +15,7 @@
     "axios": "^0.21.4",
     "dayjs": "^1.10.7",
     "lodash-es": "^4.17.21",
+    "md-editor-v3": "^1.10.2",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.11",
     "vue": "^3.2.30",
@@ -38,8 +39,8 @@
     "prettier": "^2.5.1",
     "sass": "^1.38.1",
     "unocss": "^0.16.4",
-    "vite": "^2.8.0",
     "unplugin-vue-components": "^0.17.18",
+    "vite": "^2.8.0",
     "vite-plugin-html": "^2.1.1",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-vue-setup-extend": "^0.3.0"
