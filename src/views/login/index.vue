@@ -38,7 +38,9 @@ async function handleLogin() {
       setToken(res.data.token)
 
       if (query.redirect) {
-        router.push({ path: '/redirect', query })
+        const path = query.redirect
+        Reflect.deleteProperty(query, 'redirect')
+        router.push({ path, query })
       } else {
         router.push('/')
       }
