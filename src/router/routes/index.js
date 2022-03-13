@@ -1,6 +1,6 @@
 import Layout from '@/layout/index.vue'
-import Dashboard from '@/views/dashboard/index.vue'
-import { Dove, Github, HouseDamage, Link } from '@vicons/fa'
+import Home from '@/views/dashboard/index.vue'
+import { ChartBar, Dove, Github, HouseDamage, Link, TimesCircle } from '@vicons/fa'
 
 export const basicRoutes = [
   {
@@ -33,21 +33,22 @@ export const basicRoutes = [
   },
 
   {
-    name: 'HOME',
+    name: 'DASHBOARD',
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/home',
     meta: {
-      title: '首页',
-      icon: HouseDamage,
+      title: 'Dashboard',
+      icon: ChartBar,
     },
     children: [
       {
-        name: 'DASHBOARD',
-        path: 'dashboard',
-        component: Dashboard,
+        name: 'HOME',
+        path: 'home',
+        component: Home,
         meta: {
-          title: 'Dashboard',
+          title: '首页',
+          icon: HouseDamage,
         },
       },
     ],
@@ -105,6 +106,7 @@ export const basicRoutes = [
     redirect: '/error-page/404',
     meta: {
       title: '错误页',
+      icon: TimesCircle,
     },
     children: [
       {

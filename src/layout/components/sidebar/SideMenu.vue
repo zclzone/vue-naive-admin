@@ -27,7 +27,7 @@ function resolvePath(basePath, path) {
   )
 }
 
-function renderIcon(icon, props = { size: 8 }) {
+function renderIcon(icon, props = { size: 12 }) {
   return () => h(NIcon, { ...props }, { default: () => h(icon) })
 }
 
@@ -59,7 +59,7 @@ function generateOptions(routes, basePath) {
         curOption.icon = renderIcon(route.meta?.icon || ListAlt, { size: 16 })
         curOption.children = generateOptions(route.children, resolvePath(basePath, route.path))
       } else {
-        curOption.icon = renderIcon(route.meta?.icon || CircleRegular)
+        curOption.icon = (route.meta?.icon && renderIcon(route.meta?.icon)) || renderIcon(CircleRegular, { size: 8 })
       }
       options.push(curOption)
     }
