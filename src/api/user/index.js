@@ -1,7 +1,7 @@
-import { defAxios } from '@/utils/http'
+import { defAxios as request } from '@/utils/http'
 
 export function getUsers(data = {}) {
-  return defAxios({
+  return request({
     url: '/users',
     method: 'get',
     data,
@@ -10,12 +10,12 @@ export function getUsers(data = {}) {
 
 export function getUser(id) {
   if (id) {
-    return defAxios({
+    return request({
       url: `/user/${id}`,
       method: 'get',
     })
   }
-  return defAxios({
+  return request({
     url: '/user',
     method: 'get',
   })
@@ -23,14 +23,14 @@ export function getUser(id) {
 
 export function saveUser(data = {}, id) {
   if (id) {
-    return defAxios({
+    return request({
       url: '/user',
       method: 'put',
       data,
     })
   }
 
-  return defAxios({
+  return request({
     url: `/user/${id}`,
     method: 'put',
     data,

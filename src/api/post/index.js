@@ -1,7 +1,7 @@
-import { defAxios } from '@/utils/http'
+import { defAxios as request } from '@/utils/http'
 
 export function getPosts(data = {}) {
-  return defAxios({
+  return request({
     url: '/posts',
     method: 'get',
     data,
@@ -9,7 +9,7 @@ export function getPosts(data = {}) {
 }
 
 export function getPostById({ id }) {
-  return defAxios({
+  return request({
     url: `/post/${id}`,
     method: 'get',
   })
@@ -17,14 +17,14 @@ export function getPostById({ id }) {
 
 export function savePost(id, data = {}) {
   if (id) {
-    return defAxios({
+    return request({
       url: `/post/${id}`,
       method: 'put',
       data,
     })
   }
 
-  return defAxios({
+  return request({
     url: '/post',
     method: 'post',
     data,
@@ -32,7 +32,7 @@ export function savePost(id, data = {}) {
 }
 
 export function deletePost(id) {
-  return defAxios({
+  return request({
     url: `/post/${id}`,
     method: 'delete',
   })
