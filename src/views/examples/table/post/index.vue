@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div p24>
     <div class="action-btns">
       <n-button size="small" type="primary" @click="handleCreate">新建文章</n-button>
     </div>
@@ -11,7 +11,7 @@
       :columns="columns"
       :pagination="pagination"
       :row-key="(row) => row.id"
-      max-height="calc(100vh - 260px)"
+      max-height="calc(100vh - 250px)"
       @update:checked-row-keys="handleCheck"
     />
   </div>

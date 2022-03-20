@@ -13,5 +13,7 @@ const handleDelete = function () {
 </script>
 
 <template>
-  <n-button @click="handleDelete">删除</n-button>
+  <div p24>
+    <n-button type="error" @click="handleDelete">删除</n-button>
+  </div>
 </template>

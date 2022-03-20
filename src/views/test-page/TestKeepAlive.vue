@@ -16,5 +16,7 @@ onDeactivated(() => {
 </script>
 
 <template>
-  <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"> 注意查看提示语 </n-gradient-text>
+  <div p24>
+    <n-gradient-text gradient="linear-gradient(90deg, red 0%, green 50%, blue 100%)"> 注意查看提示语 </n-gradient-text>
+  </div>
 </template>

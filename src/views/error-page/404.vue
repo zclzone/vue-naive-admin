@@ -10,7 +10,7 @@ const { replace } = useRouter()
         <img src="@/assets/imgs/404/404.png" width="500" />
       </template>
       <template #footer>
-        <n-button @click="replace('/')">返回首页</n-button>
+        <n-button color="#002d6f" @click="replace('/')">返回首页</n-button>
       </template>
     </n-result>
   </div>
@@ -19,6 +19,7 @@ const { replace } = useRouter()
 <style lang="scss" scoped>
 .page-404 {
   height: 100%;
+  min-height: calc(100vh - 60px);
   display: flex;
   align-items: center;
   justify-content: center;

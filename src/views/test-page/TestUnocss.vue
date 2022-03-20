@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="content-box">
+  <div p24>
+    <div p20 bg="#fff">
       <p text-12>测试12px</p>
       <p text-13>测试13px</p>
       <p text-14>测试14px</p>
@@ -13,11 +13,3 @@
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.content-box {
-  background-color: #fff;
-  border-radius: 15px;
-  padding: 20px;
-}
-</style>
