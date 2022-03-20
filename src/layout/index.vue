@@ -11,13 +11,13 @@ import AppMain from './components/AppMain.vue'
         <side-menu />
       </n-layout-sider>
       <n-layout>
-        <n-layout-header style="height: 100px; background-color: #f5f6fb">
+        <n-layout-header>
           <app-header />
         </n-layout-header>
         <n-layout
           position="absolute"
-          content-style="padding: 0 35px 35px;height: 100%;"
-          style="top: 100px; background-color: #f5f6fb"
+          content-style="height: 100%;"
+          style="top: 60px; background-color: #f5f6fb"
           :native-scrollbar="false"
         >
           <app-main />
@@ -26,3 +26,12 @@ import AppMain from './components/AppMain.vue'
     </n-layout>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.n-layout-header {
+  height: 60px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+</style>

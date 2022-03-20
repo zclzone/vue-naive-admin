@@ -12,7 +12,7 @@ import HeaderAction from './HeaderAction.vue'
 
 <style lang="scss" scoped>
 .header {
-  padding: 0 35px;
+  padding: 0 24px;
   height: 100%;
   display: flex;
   justify-content: space-between;
