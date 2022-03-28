@@ -18,7 +18,8 @@ export function resetRouter() {
   })
 }
 
-export function setupRouter(app) {
+export async function setupRouter(app) {
   app.use(router)
   setupRouterGuard(router)
+  await router.isReady()
 }
