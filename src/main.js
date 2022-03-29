@@ -13,7 +13,7 @@ async function setupApp() {
 
   await setupRouter(app)
 
-  app.mount('#app', true)
+  app.mount('#app')
 }
 
 setupApp()
