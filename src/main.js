@@ -6,12 +6,12 @@ import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
 import App from './App.vue'
 
-async function setupApp() {
+function setupApp() {
   const app = createApp(App)
 
   setupStore(app)
 
-  await setupRouter(app)
+  setupRouter(app)
 
   app.mount('#app')
 }
