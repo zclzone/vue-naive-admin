@@ -7,7 +7,7 @@ export function configMockPlugin(isBuild) {
     localEnabled: !isBuild,
     prodEnabled: isBuild,
     injectCode: `
-      import { setupProdMockServer } from '../mock/_createProdServer';
+      import { setupProdMockServer } from '../mock/_create-prod-server';
       setupProdMockServer();
     `,
   })

@@ -1,4 +1,4 @@
-import { createWebStorage } from './webStorage'
+import { createWebStorage } from './web-storage'
 
 export const createLocalStorage = function (option = {}) {
   return createWebStorage({ prefixKey: option.prefixKey || '', storage: localStorage })

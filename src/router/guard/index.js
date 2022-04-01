@@ -1,6 +1,6 @@
-import { createPageLoadingGuard } from './pageLoadingGuard'
-import { createPageTitleGuard } from './pageTitleGuard'
-import { createPermissionGuard } from './permissionGuard'
+import { createPageLoadingGuard } from './page-loading-guard'
+import { createPageTitleGuard } from './page-title-guard'
+import { createPermissionGuard } from './permission-guard'
 
 export function setupRouterGuard(router) {
   createPageLoadingGuard(router)

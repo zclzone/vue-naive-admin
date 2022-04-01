@@ -7,7 +7,7 @@ const { replace } = useRouter()
   <div class="page-404">
     <n-result status="404" description="抱歉，您访问的页面不存在。">
       <template #icon>
-        <img src="@/assets/imgs/404/404.png" width="500" />
+        <img src="@/assets/images/404.png" width="500" />
       </template>
       <template #footer>
         <n-button color="#002d6f" @click="replace('/')">返回首页</n-button>
