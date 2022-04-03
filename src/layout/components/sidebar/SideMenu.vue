@@ -1,3 +1,15 @@
+<template>
+  <n-menu
+    class="side-menu"
+    accordion
+    :indent="12"
+    :root-indent="12"
+    :options="menuOptions"
+    :value="(currentRoute.meta && currentRoute.meta.activeMenu) || currentRoute.name"
+    @update:value="handleMenuSelect"
+  />
+</template>
+
 <script setup>
 import { useRouter } from 'vue-router'
 import { computed, h } from 'vue'
@@ -81,18 +93,6 @@ function handleMenuSelect(key, item) {
   // })
 }
 </script>
-
-<template>
-  <n-menu
-    class="side-menu"
-    accordion
-    :indent="12"
-    :root-indent="12"
-    :options="menuOptions"
-    :value="(currentRoute.meta && currentRoute.meta.activeMenu) || currentRoute.name"
-    @update:value="handleMenuSelect"
-  />
-</template>
 
 <style lang="scss">
 .n-menu {

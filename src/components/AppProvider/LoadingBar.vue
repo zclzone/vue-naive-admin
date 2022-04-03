@@ -1,3 +1,5 @@
+<template></template>
+
 <script setup>
 import { useLoadingBar } from 'naive-ui'
 window['$loadingBar'] = useLoadingBar()
@@ -6,5 +8,3 @@ Object.defineProperty(window, '$loadingBar', {
   writable: false,
 })
 </script>
-
-<template></template>

@@ -1,3 +1,11 @@
+<template>
+  <n-breadcrumb>
+    <n-breadcrumb-item v-for="item in currentRoute.matched" :key="item.path" @click="handleBreadClick(item.path)">
+      {{ item.meta.title }}
+    </n-breadcrumb-item>
+  </n-breadcrumb>
+</template>
+
 <script setup>
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -8,11 +16,3 @@ function handleBreadClick(path) {
   router.push(path)
 }
 </script>
-
-<template>
-  <n-breadcrumb>
-    <n-breadcrumb-item v-for="item in currentRoute.matched" :key="item.path" @click="handleBreadClick(item.path)">
-      {{ item.meta.title }}
-    </n-breadcrumb-item>
-  </n-breadcrumb>
-</template>

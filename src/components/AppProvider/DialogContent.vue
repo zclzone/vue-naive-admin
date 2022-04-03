@@ -1,3 +1,5 @@
+<template></template>
+
 <script setup>
 import { isNullOrUndef } from '@/utils/is'
 import { useDialog } from 'naive-ui'
@@ -48,5 +50,3 @@ Object.defineProperty(window, '$dialog', {
   writable: false,
 })
 </script>
-
-<template></template>

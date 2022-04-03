@@ -1,14 +1,14 @@
-<script setup>
-import AppProvider from '@/components/AppProvider/index.vue'
-</script>
-
 <template>
-  <app-provider>
+  <AppProvider>
     <router-view v-slot="{ Component }">
       <component :is="Component" />
     </router-view>
-  </app-provider>
+  </AppProvider>
 </template>
+
+<script setup>
+import AppProvider from '@/components/AppProvider/index.vue'
+</script>
 
 <style lang="scss">
 #app {

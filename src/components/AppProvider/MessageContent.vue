@@ -1,3 +1,5 @@
+<template></template>
+
 <script setup>
 import { useMessage } from 'naive-ui'
 
@@ -68,5 +70,3 @@ Object.defineProperty(window, '$message', {
   writable: false,
 })
 </script>
-
-<template></template>

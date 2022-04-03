@@ -1,14 +1,14 @@
+<template>
+  <header class="header">
+    <BreadCrumb />
+    <HeaderAction />
+  </header>
+</template>
+
 <script setup>
 import BreadCrumb from './BreadCrumb.vue'
 import HeaderAction from './HeaderAction.vue'
 </script>
-
-<template>
-  <header class="header">
-    <bread-crumb />
-    <header-action />
-  </header>
-</template>
 
 <style lang="scss" scoped>
 .header {

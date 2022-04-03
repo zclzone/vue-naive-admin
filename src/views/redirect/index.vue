@@ -1,3 +1,5 @@
+<template></template>
+
 <script setup>
 import { useRouter } from 'vue-router'
 
@@ -19,5 +21,3 @@ replace({
   query,
 })
 </script>
-
-<template></template>

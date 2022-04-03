@@ -1,3 +1,12 @@
+<template>
+  <n-dropdown :options="options" @select="handleSelect">
+    <div class="avatar">
+      <img :src="userStore.avatar" />
+      <span>{{ userStore.name }}</span>
+    </div>
+  </n-dropdown>
+</template>
+
 <script setup>
 import { useUserStore } from '@/store/modules/user'
 import { useRouter } from 'vue-router'
@@ -70,15 +79,6 @@ function switchRole() {
   $message.success(`${switchUser.name}`)
 }
 </script>
-
-<template>
-  <n-dropdown :options="options" @select="handleSelect">
-    <div class="avatar">
-      <img :src="userStore.avatar" />
-      <span>{{ userStore.name }}</span>
-    </div>
-  </n-dropdown>
-</template>
 
 <style lang="scss" scoped>
 .avatar {

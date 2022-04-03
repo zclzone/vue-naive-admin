@@ -8,14 +8,14 @@ import AppMain from './components/AppMain.vue'
   <div class="layout">
     <n-layout has-sider position="absolute">
       <n-layout-sider :width="200" :collapsed-width="0" :native-scrollbar="false">
-        <side-menu />
+        <SideMenu />
       </n-layout-sider>
       <n-layout>
         <n-layout-header>
-          <app-header />
+          <AppHeader />
         </n-layout-header>
         <n-layout position="absolute" style="top: 60px; background-color: #f5f6fb" :native-scrollbar="false">
-          <app-main />
+          <AppMain />
         </n-layout>
       </n-layout>
     </n-layout>

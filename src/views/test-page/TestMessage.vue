@@ -1,3 +1,9 @@
+<template>
+  <div p24>
+    <n-button type="primary" @click="handleLogin">点击登陆</n-button>
+  </div>
+</template>
+
 <script setup>
 function handleLogin() {
   $message.loading('登陆中...')
@@ -10,9 +16,3 @@ function handleLogin() {
   }, 2000)
 }
 </script>
-
-<template>
-  <div p24>
-    <n-button type="primary" @click="handleLogin">点击登陆</n-button>
-  </div>
-</template>
