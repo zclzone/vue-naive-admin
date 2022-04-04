@@ -98,18 +98,15 @@ function handleMenuSelect(key, item) {
 .n-menu {
   margin-top: 10px;
   padding-left: 10px;
-  .n-menu-item {
-    margin-top: 0;
-    position: relative;
+  .n-menu-item-content {
     &::before {
       left: 0;
       right: 0;
       border-radius: 0;
       background-color: unset !important;
     }
-
     &:hover,
-    &.n-menu-item--selected {
+    &.n-menu-item-content--selected {
       border-radius: 0 !important;
 
       &::before {
