@@ -1,6 +1,40 @@
 <template>
   <div class="login-page">
-    <div class="form-wrapper">
+    <div class="wrapper">
+      <div class="left">
+        <img src="@/assets/images/login_banner.png" height="380" alt="login_banner" />
+      </div>
+
+      <div class="form-wrapper">
+        <h5 class="brand">
+          <img src="@/assets/images/logo.svg" width="45" mr-15 alt="logo" />
+          {{ title }}
+        </h5>
+        <div class="form-item" mt-35>
+          <input
+            v-model="loginInfo.name"
+            autofocus
+            type="text"
+            class="input"
+            placeholder="username"
+            @keydown.enter="handleLogin"
+          />
+        </div>
+        <div class="form-item" mt-35>
+          <input
+            v-model="loginInfo.password"
+            type="password"
+            class="input"
+            placeholder="password"
+            @keydown.enter="handleLogin"
+          />
+        </div>
+        <div class="form-item" mt-35>
+          <button class="submit-btn" @click="handleLogin">登录</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="form-wrapper">
       <h2 class="title">{{ title }}</h2>
       <div class="form-item" mt-20>
         <input
@@ -24,7 +58,7 @@
       <div class="form-item" mt-20>
         <button class="submit-btn" @click="handleLogin">登录</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -84,119 +118,74 @@ async function handleLogin() {
 </script>
 
 <style lang="scss" scoped>
-@property --perA {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 75%;
-}
-
-@property --perB {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 99%;
-}
-
-@property --perC {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 15%;
-}
-
-@property --perD {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 16%;
-}
-
-@property --perE {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 86%;
-}
-
-@property --angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 0deg;
-}
 .login-page {
   height: 100%;
-  background-color: #e1e8ee;
+  background-image: url(@/assets/images/login_bg.jpg);
+  background-size: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: radial-gradient(
-      circle at var(--perE) 7%,
-      rgba(40, 40, 40, 0.04) 0%,
-      rgba(40, 40, 40, 0.04) 50%,
-      rgba(200, 200, 200, 0.04) 50%,
-      rgba(200, 200, 200, 0.04) 100%
-    ),
-    radial-gradient(
-      circle at var(--perC) var(--perD),
-      rgba(99, 99, 99, 0.04) 0%,
-      rgba(99, 99, 99, 0.04) 50%,
-      rgba(45, 45, 45, 0.04) 50%,
-      rgba(45, 45, 45, 0.04) 100%
-    ),
-    radial-gradient(
-      circle at var(--perA) var(--perB),
-      rgba(243, 243, 243, 0.04) 0%,
-      rgba(243, 243, 243, 0.04) 50%,
-      rgba(37, 37, 37, 0.04) 50%,
-      rgba(37, 37, 37, 0.04) 100%
-    ),
-    linear-gradient(var(--angle), #22deed, #8759d7);
-  animation: move 30s infinite alternate linear;
+}
 
-  @keyframes move {
-    100% {
-      --perA: 85%;
-      --perB: 49%;
-      --perC: 45%;
-      --perD: 39%;
-      --perE: 70%;
-      --angle: 360deg;
-    }
+.wrapper {
+  width: 100%;
+  max-width: 1020px;
+  box-shadow: 1.5px 3.99px 27px 0px rgb(0 0 0 / 10%);
+  background-color: rgba(255, 255, 255, 0.3);
+
+  display: flex;
+  .left {
+    padding: 40px;
+    border-right: 1px solid #cccccc5e;
   }
 }
 
 .form-wrapper {
-  text-align: center;
-  padding: 40px 50px;
-  border-radius: 15px;
-  background-color: rgba(#fff, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  .brand {
+    width: 100%;
+    padding: 15px;
+    color: #6a6a6a;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
 
-  .title {
-    font-size: 22px;
-    color: #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
   .form-item {
-    width: 240px;
+    width: 100%;
+    max-width: 360px;
+    height: 50px;
     input {
       width: 100%;
-      height: 40px;
-      padding: 0 15px;
+      height: 100%;
+      padding: 0 20px;
+      border: 1px solid #6a6a6a;
       border-radius: 5px;
-
-      font-size: 14px;
-      color: #333;
-      transition: 0.3s;
+      color: $primaryColor;
+      font-size: 16px;
+      transition: 0.5s;
       &:focus {
-        box-shadow: 0 0 5px #8759d7;
+        border-color: $primaryColor;
+        box-shadow: 0 0 5px $primaryColor;
       }
     }
     button {
       width: 100%;
-      height: 40px;
+      height: 100%;
 
       color: #fff;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: bold;
       border: none;
       border-radius: 5px;
-      background-color: #6683d2;
+      background-color: $primaryColor;
 
       cursor: pointer;
       transition: all 0.3s;
