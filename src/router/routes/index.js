@@ -1,6 +1,6 @@
 import Layout from '@/layout/index.vue'
 import Home from '@/views/dashboard/index.vue'
-import { ChartBar, Dove, Github, HouseDamage, Link, TimesCircle } from '@vicons/fa'
+import { ChartBar, Dove, Github, HouseDamage, LastfmSquare, Link, TimesCircle } from '@vicons/fa'
 
 export const basicRoutes = [
   {
@@ -142,14 +142,15 @@ export const basicRoutes = [
         path: 'https://gitee.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - gitee',
+          icon: LastfmSquare,
         },
       },
       {
         name: 'LINK-DOCS',
-        path: 'https://www.yuque.com/qszone/vue-naive-admin',
+        path: 'https://zclzone.github.io/vue-naive-admin-docs',
         meta: {
-          title: '文档 - 语雀',
-          icon: Dove,
+          title: '文档 - vuepress',
+          icon: LastfmSquare,
         },
       },
     ],
