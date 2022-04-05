@@ -5,7 +5,7 @@
         <img src="@/assets/images/404.png" width="500" />
       </template>
       <template #footer>
-        <n-button color="#002d6f" @click="replace('/')">返回首页</n-button>
+        <n-button strong secondary type="primary" @click="replace('/')">返回首页</n-button>
       </template>
     </n-result>
   </div>
