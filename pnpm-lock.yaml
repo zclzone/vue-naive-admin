@@ -1,10 +1,11 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@iconify-json/mdi': ^1.1.9
+  '@iconify-json/simple-icons': ^1.1.7
   '@unocss/preset-attributify': ^0.16.4
   '@unocss/preset-icons': ^0.16.4
   '@unocss/preset-uno': ^0.16.4
-  '@vicons/fa': ^0.11.0
   '@vitejs/plugin-vue': ^1.10.2
   '@vue/compiler-sfc': ^3.2.31
   axios: ^0.21.4
@@ -25,6 +26,7 @@ specifiers:
   prettier: ^2.6.1
   sass: ^1.49.10
   unocss: ^0.16.4
+  unplugin-icons: ^0.14.1
   unplugin-vue-components: ^0.17.21
   vite: ^2.9.1
   vite-plugin-html: ^2.1.2
@@ -34,7 +36,6 @@ specifiers:
   vue-router: ^4.0.14
 
 dependencies:
-  '@vicons/fa': 0.11.0
   axios: 0.21.4
   dayjs: 1.11.0
   lodash-es: 4.17.21
@@ -45,6 +46,8 @@ dependencies:
   vue-router: 4.0.14_vue@3.2.31
 
 devDependencies:
+  '@iconify-json/mdi': 1.1.9
+  '@iconify-json/simple-icons': 1.1.7
   '@unocss/preset-attributify': 0.16.4
   '@unocss/preset-icons': 0.16.4
   '@unocss/preset-uno': 0.16.4
@@ -62,6 +65,7 @@ devDependencies:
   prettier: 2.6.1
   sass: 1.49.10
   unocss: 0.16.4
+  unplugin-icons: 0.14.1_8d0fc691400edae0d0bd7a997b66fb5e
   unplugin-vue-components: 0.17.21_vite@2.9.1+vue@3.2.31
   vite: 2.9.1_sass@1.49.10
   vite-plugin-html: 2.1.2_vite@2.9.1
@@ -148,6 +152,18 @@ packages:
 
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+    dev: true
+
+  /@iconify-json/mdi/1.1.9:
+    resolution: {integrity: sha512-iZY3d7nLmEhSxLU5YBHIxVVPySqNjj6zYcf448TXGBPp2PyToITCOuLEaub0rQ9jBAPOlupQsuPX9ylBfgIJ1w==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify-json/simple-icons/1.1.7:
+    resolution: {integrity: sha512-VsDh1AlVTJ2GYBBRD8oUmhFrMj00pzmz8oGRrTAdu5sWYOyrJ9f0sFnr+89ABjAnzXqS8z2lmA0SxFG3HGQzvQ==}
+    dependencies:
+      '@iconify/types': 1.1.0
     dev: true
 
   /@iconify/types/1.1.0:
@@ -353,10 +369,6 @@ packages:
       '@unocss/inspector': 0.16.4
       '@unocss/scope': 0.16.4
     dev: true
-
-  /@vicons/fa/0.11.0:
-    resolution: {integrity: sha512-Mlv4sxlghqAPu+RM+6w0/GIcsQFK/fx1syw1HkABS6MJRLwHOqbmImCYZQam7OMAYhZBs82YpY5cp2NFSgwkOA==}
-    dev: false
 
   /@vitejs/plugin-vue/1.10.2_vite@2.9.1:
     resolution: {integrity: sha512-/QJ0Z9qfhAFtKRY+r57ziY4BSbGUTGsPRMpB/Ron3QPwBZM4OZAZHdTa4a8PafCwU5DTatXG8TMDoP8z+oDqJw==}
@@ -2134,6 +2146,39 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
+  /unplugin-icons/0.14.1_8d0fc691400edae0d0bd7a997b66fb5e:
+    resolution: {integrity: sha512-drZFbMctvT3ZJPfdCgBv5+LKO8hGbZApRCoBRAUhQFRJQVNGUhGThrOKs+CvWq3XDBPptGNBmst8WyObbr4xiQ==}
+    peerDependencies:
+      '@svgr/core': '>=5.5.0'
+      '@vue/compiler-sfc': ^3.0.2
+      vue-template-compiler: ^2.6.12
+      vue-template-es2015-compiler: ^1.9.0
+    peerDependenciesMeta:
+      '@svgr/core':
+        optional: true
+      '@vue/compiler-sfc':
+        optional: true
+      vue-template-compiler:
+        optional: true
+      vue-template-es2015-compiler:
+        optional: true
+    dependencies:
+      '@antfu/install-pkg': 0.1.0
+      '@antfu/utils': 0.5.0
+      '@iconify/utils': 1.0.32
+      '@vue/compiler-sfc': 3.2.31
+      debug: 4.3.4
+      kolorist: 1.5.1
+      local-pkg: 0.4.1
+      unplugin: 0.5.2_vite@2.9.1
+    transitivePeerDependencies:
+      - esbuild
+      - rollup
+      - supports-color
+      - vite
+      - webpack
+    dev: true
+
   /unplugin-vue-components/0.17.21_vite@2.9.1+vue@3.2.31:
     resolution: {integrity: sha512-jkXksUF6zkNbzHQbw1DdrsQyVoMZGESRZDIGd9x7nUP+65nHdpBCY/JmlxSjKbuTrOwfMsk6FQFa0RpRueOCKg==}
     engines: {node: '>=14'}
@@ -2184,6 +2229,29 @@ packages:
         optional: true
     dependencies:
       vite: 2.9.1_sass@1.49.10
+      webpack-virtual-modules: 0.4.3
+    dev: true
+
+  /unplugin/0.5.2_vite@2.9.1:
+    resolution: {integrity: sha512-3SPYtus/56cxyD4jfjrnqCvb6jPxvdqJNaRXnEaG2BhNEMaoygu/39AG+LwKmiIUzj4XHyitcfZ7scGlWfEigA==}
+    peerDependencies:
+      esbuild: '>=0.13'
+      rollup: ^2.50.0
+      vite: ^2.3.0
+      webpack: 4 || 5
+    peerDependenciesMeta:
+      esbuild:
+        optional: true
+      rollup:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      chokidar: 3.5.3
+      vite: 2.9.1_sass@1.49.10
+      webpack-sources: 3.2.3
       webpack-virtual-modules: 0.4.3
     dev: true
 
@@ -2361,6 +2429,11 @@ packages:
       vdirs: 0.1.7_vue@3.2.31
       vooks: 0.2.12_vue@3.2.31
       vue: 3.2.31
+    dev: true
+
+  /webpack-sources/3.2.3:
+    resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
+    engines: {node: '>=10.13.0'}
     dev: true
 
   /webpack-virtual-modules/0.4.3:

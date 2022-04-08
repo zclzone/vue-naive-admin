@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <n-icon size="36" color="#316c72">
-      <LastfmSquare />
+      <IconLogo />
     </n-icon>
     <router-link to="/">
       <n-gradient-text type="primary">{{ title }}</n-gradient-text>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { LastfmSquare } from '@vicons/fa'
+import { IconLogo } from '@/components/AppIcons'
 const title = import.meta.env.VITE_APP_TITLE
 </script>
 

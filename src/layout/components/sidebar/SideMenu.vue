@@ -16,7 +16,7 @@ import { computed, h } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
 import { NIcon } from 'naive-ui'
-import { ListAlt, CircleRegular } from '@vicons/fa'
+import { IconCircle, IconMenu } from '@/components/AppIcons'
 
 import { isExternal } from '@/utils/is'
 
@@ -68,10 +68,10 @@ function generateOptions(routes, basePath) {
         path: resolvePath(basePath, route.path),
       }
       if (route.children && route.children.length) {
-        curOption.icon = renderIcon(route.meta?.icon || ListAlt, { size: 16 })
+        curOption.icon = renderIcon(route.meta?.icon || IconMenu, { size: 16 })
         curOption.children = generateOptions(route.children, resolvePath(basePath, route.path))
       } else {
-        curOption.icon = (route.meta?.icon && renderIcon(route.meta?.icon)) || renderIcon(CircleRegular, { size: 8 })
+        curOption.icon = (route.meta?.icon && renderIcon(route.meta?.icon)) || renderIcon(IconCircle, { size: 8 })
       }
       options.push(curOption)
     }

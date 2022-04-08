@@ -1,6 +1,7 @@
 import Layout from '@/layout/index.vue'
 import Home from '@/views/dashboard/index.vue'
-import { ChartBar, Dove, Github, HouseDamage, LastfmSquare, Link, TimesCircle } from '@vicons/fa'
+
+import { IconAlert, IconChart, IconGitee, IconGithub, IconHome, IconLink, IconVue } from '@/components/AppIcons'
 
 export const basicRoutes = [
   {
@@ -39,7 +40,7 @@ export const basicRoutes = [
     redirect: '/home',
     meta: {
       title: 'Dashboard',
-      icon: ChartBar,
+      icon: IconChart,
     },
     children: [
       {
@@ -48,7 +49,7 @@ export const basicRoutes = [
         component: Home,
         meta: {
           title: '首页',
-          icon: HouseDamage,
+          icon: IconHome,
         },
       },
     ],
@@ -106,7 +107,7 @@ export const basicRoutes = [
     redirect: '/error-page/404',
     meta: {
       title: '错误页',
-      icon: TimesCircle,
+      icon: IconAlert,
     },
     children: [
       {
@@ -126,7 +127,7 @@ export const basicRoutes = [
     component: Layout,
     meta: {
       title: '外部链接',
-      icon: Link,
+      icon: IconLink,
     },
     children: [
       {
@@ -134,7 +135,7 @@ export const basicRoutes = [
         path: 'https://github.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - github',
-          icon: Github,
+          icon: IconGithub,
         },
       },
       {
@@ -142,7 +143,7 @@ export const basicRoutes = [
         path: 'https://gitee.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - gitee',
-          icon: LastfmSquare,
+          icon: IconGitee,
         },
       },
       {
@@ -150,7 +151,7 @@ export const basicRoutes = [
         path: 'https://zclzone.github.io/vue-naive-admin-docs',
         meta: {
           title: '文档 - vuepress',
-          icon: LastfmSquare,
+          icon: IconVue,
         },
       },
     ],
