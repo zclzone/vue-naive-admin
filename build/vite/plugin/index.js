@@ -1,10 +1,23 @@
 import vue from '@vitejs/plugin-vue'
 
+/**
+ * * 扩展setup插件，支持在script标签中使用name属性
+ * usage: <script setup name="MyComp"></script>
+ */
+import VueSetupExtend from 'vite-plugin-vue-setup-extend'
+
+/**
+ * * 组件库按需引入插件
+ * usage: 直接使用组件,无需在任何地方导入组件
+ */
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
-import VueSetupExtend from 'vite-plugin-vue-setup-extend'
-
+/**
+ * * unplugin-icons插件，自动引入iconify图标
+ * usage: https://github.com/antfu/unplugin-icons
+ * 图标库: https://icones.js.org/
+ */
 import Icons from 'unplugin-icons/vite'
 
 import { unocss } from './unocss'
