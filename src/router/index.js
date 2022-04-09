@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import { setupRouterGuard } from './guard'
 import { basicRoutes } from './routes'
 
+const isHash = !!import.meta.env.VITE_APP_USE_HASH
 export const router = createRouter({
-  history: createWebHistory('/'),
+  history: isHash ? createWebHashHistory('/') : createWebHistory('/'),
   routes: basicRoutes,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

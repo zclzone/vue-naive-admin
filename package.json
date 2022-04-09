@@ -7,7 +7,7 @@
     "lint:fix": "eslint --fix --ext .js,.vue .",
     "build": "vite build && esno ./build/script",
     "build:test": "vite build --mode test && esno ./build/script",
-    "build:staging": "vite build --mode staging && esno ./build/script",
+    "build:github": "vite build --mode github && esno ./build/script",
     "preview": "vite preview"
   },
   "dependencies": {
