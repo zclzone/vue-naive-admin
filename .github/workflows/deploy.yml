@@ -1,0 +1,34 @@
+name: deploy
+on: [push]
+      branches:
+      - main
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: use Node.js 16
+      uses: actions/setup-node@v2.1.2
+      with:
+        node-version: '16.x'
+
+    - name: Delete gh-pages branch
+      run: |
+        git push origin --delete gh-pages
+
+    - name: Build
+      run: |
+        pnpm install
+        pnpm run build
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{secrets.ACTIONS_DEPLOY_KEY}}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./dist
+      with:
+        forceOrphan: true
