@@ -20,10 +20,6 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: Delete gh-pages branch
-        run: |
-          git push origin --delete gh-pages
-
       - name: Build
         run: |
           pnpm install
