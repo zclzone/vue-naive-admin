@@ -22,28 +22,14 @@ jobs:
         with:
           version: 6.32.2
 
-      - name: Set SSH Environment
-        env:
-          DOCS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTIONS_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com > ~/.ssh/known_hosts
-          chmod 700 ~/.ssh && chmod 600 ~/.ssh/*
-          git config --local user.email "zclzone@outlook.com"
-          git config --local user.name "zclzone"
-
       - name: Build
         run: |
           pnpm install
           pnpm run build:github
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v2.5.0
+        uses: peaceiris/actions-gh-pages@v3
         env:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./dist
-        with:
-          forceOrphan: true
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          user_name: zclzone
+          user_email: zclzone@outlook.com
