@@ -12,18 +12,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: pnpm/action-setup@v2.2.1
-        with:
-          version: 6.32.2
       - name: use Node.js 16
         uses: actions/setup-node@v2.1.2
         with:
           node-version: '16.x'
 
+      - name: use pnpm 6.32.2
+        uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.2
+
+      - name: Delete gh-pages branch
+        run: |
+          git push origin --delete gh-pages
+
       - name: Build
         run: |
           pnpm install
-          pnpm run build
+          pnpm run build:github
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v2.5.0
