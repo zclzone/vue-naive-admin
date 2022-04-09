@@ -22,10 +22,6 @@ jobs:
         with:
           version: 6.32.2
 
-      - name: Delete gh-pages branch
-        run: |
-          git push origin --delete gh-pages
-
       - name: Build
         run: |
           pnpm install
