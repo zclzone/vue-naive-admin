@@ -12,6 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - uses: pnpm/action-setup@v2.2.1
+        with:
+          version: 6.32.2
       - name: use Node.js 16
         uses: actions/setup-node@v2.1.2
         with:
