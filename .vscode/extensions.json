@@ -1,11 +1,13 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
     "johnsoncodehk.volar",
     "hollowtree.vue-snippets",
     "esbenp.prettier-vscode",
     "mikestead.dotenv",
     "wayou.vscode-todo-highlight",
-    "aaron-bond.better-comments"
+    "aaron-bond.better-comments",
+    "antfu.iconify"
   ]
 }
