@@ -34,31 +34,6 @@
         </div>
       </div>
     </div>
-    <!-- <div class="form-wrapper">
-      <h2 class="title">{{ title }}</h2>
-      <div class="form-item" mt-20>
-        <input
-          v-model="loginInfo.name"
-          autofocus
-          type="text"
-          class="input"
-          placeholder="username"
-          @keydown.enter="handleLogin"
-        />
-      </div>
-      <div class="form-item" mt-20>
-        <input
-          v-model="loginInfo.password"
-          type="password"
-          class="input"
-          placeholder="password"
-          @keydown.enter="handleLogin"
-        />
-      </div>
-      <div class="form-item" mt-20>
-        <button class="submit-btn" @click="handleLogin">登录</button>
-      </div>
-    </div> -->
   </div>
 </template>
 
