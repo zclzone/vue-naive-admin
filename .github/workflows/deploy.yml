@@ -30,6 +30,8 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
+          publish_dir: ./dist
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          user_name: zclzone
-          user_email: zclzone@outlook.com
+          user_name: ${{ secrets.USER_NAME }}
+          user_email: ${{ secrets.USER_EMAIL }}
+          commit_message: deploy gh-pages
