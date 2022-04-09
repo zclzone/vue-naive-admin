@@ -29,7 +29,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
+        with:
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           user_name: zclzone
           user_email: zclzone@outlook.com
