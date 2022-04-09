@@ -34,4 +34,5 @@ jobs:
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           user_name: ${{ secrets.USER_NAME }}
           user_email: ${{ secrets.USER_EMAIL }}
+          force_orphan: true
           commit_message: deploy gh-pages
