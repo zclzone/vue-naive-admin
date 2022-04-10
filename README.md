@@ -1,4 +1,16 @@
-## VUE NAIVE ADMIN
+<p align="center">
+  <a href="https://github.com/zclzone/vue-naive-admin">
+    <img alt="Vue Naive Admin Logo" width="200" src="https://assets.qszone.com/images/logo_qs.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/zclzone/vue-naive-admin/actions"><img allt="checks" src="https://badgen.net/github/checks/zclzone/vue-naive-admin"/></a>
+  <a href="https://github.com/zclzone/vue-naive-admin"><img allt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin"/></a>
+  <a href="https://github.com/zclzone/vue-naive-admin"><img allt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin"/></a>
+  <a href="https://github.com/zclzone/vue-naive-admin/releases"><img allt="releases" src="https://badgen.net/github/releases/zclzone/vue-naive-admin"/></a>
+  <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/zclzone/vue-naive-admin"/></a>
+</p>
+
 
 ### 简介
 
@@ -19,20 +31,24 @@
 - 🍇 集成 unocss，antfu 大神开源的原子化 css 解决方案，非常轻量，目前我是自己写 scss 样式搭配着 unocss 使用的
 - 🍍 集成 Pinia，Vuex 的替代方案，轻量、简单、易用（尤大已表示不会有Vuex5，或者说pinia就是Vuex5）
 - 📦 集成 Vite 自动导入插件unplugin-vue-components，解放双手，开发效率直接起飞
+- 🤹 集成 unplugin-icons插件，优雅使用iconify图标
 - 🍏 二次封装 Axios，支持多 axios 实例，支持线上环境免重新打包修改 baseURL
 - 🍌 二次封装全局 Dialog、Message、LoadingBar 组件
 - 🍋 二次封装 localStorage 和 sessionStorage，支持设置过期时间
 
-## 预览
+### 预览
 
 [template.qszone.com](https://template.qszone.com)
 
-## 文档
+[github pages](https://zclzone.github.io/vue-naive-admin)
+
+### 文档
 
 [Vue Naive Admin Docs](https://zclzone.github.io/vue-naive-admin-docs)
+
 [羽雀文档：Vue Naive Admin](https://www.yuque.com/qszone/vue-naive-admin)
 
-## 构建步骤
+### 构建
 
 ```shell
 # 推荐配置git autocrlf 为 false（本项目规范使用lf换行符，此配置是为防止git自动将源文件转换为crlf）
@@ -52,7 +68,7 @@ pnpm i # 或者 npm i
 npm run dev
 ```
 
-## 发布
+### 发布
 
 ```shell
 # 构建测试环境
@@ -65,7 +81,7 @@ npm run build:github
 npm run build
 ```
 
-## 其他指令
+### 其他指令
 
 ```shell
 # eslint代码格式检查
@@ -78,7 +94,9 @@ npm run lint:fix
 npm run preview
 ```
 
-## Git 提交规范
+### 规范
+
+#### git commit 规范
 
 - `feat` 增加新功能
 - `fix` 修复问题/BUG
@@ -94,3 +112,4 @@ npm run preview
 - `types` 类型定义文件更改
 - `wip` 开发中
 - `mod` 不确定分类的修改
+
