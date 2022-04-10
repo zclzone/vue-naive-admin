@@ -1,0 +1,14 @@
+{
+  "tags": {
+    "visible": true,
+    "height": 50
+  },
+  "header": {
+    "height": 60
+  },
+  "naiveThemeOverrides": {
+    "common": {
+      "primaryColor": "#316c72"
+    }
+  }
+}

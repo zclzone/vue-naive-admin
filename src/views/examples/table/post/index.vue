@@ -11,7 +11,6 @@
       :columns="columns"
       :pagination="pagination"
       :row-key="(row) => row.id"
-      max-height="calc(100vh - 250px)"
       @update:checked-row-keys="handleCheck"
     />
   </div>

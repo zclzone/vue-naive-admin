@@ -1,5 +1,5 @@
 <template>
-  <div class="tags-wrapper" :style="{ height: useTheme.tag.height + 'px' }">
+  <div class="tags-wrapper" :style="{ height: useTheme.tags.height + 'px' }">
     <n-space>
       <n-tag
         v-for="tag in useTag.tags"
@@ -59,7 +59,7 @@ const handleClose = (path) => {
 .tags-wrapper {
   display: flex;
   align-items: center;
-  background-color: #f5f6fb;
+  background-color: #fff;
   padding: 0 10px;
   position: sticky;
   top: 0;

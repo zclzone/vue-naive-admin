@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div pb-20>
     <div class="header">
       <input v-model="post.title" type="text" placeholder="输入文章标题..." class="title" />
       <n-button type="primary" style="width: 80px" :loading="btnLoading" @click="handleSavePost">保存</n-button>
     </div>
-    <MdEditor v-model="post.content" style="height: calc(100vh - 140px)" />
+    <MdEditor v-model="post.content" style="height: calc(100vh - 200px)" />
   </div>
 </template>
 

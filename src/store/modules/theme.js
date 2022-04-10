@@ -1,17 +1,13 @@
 import { defineStore } from 'pinia'
-
+import { themeSettings } from '@/settings'
 export const useThemeStore = defineStore('theme', {
   state() {
-    return {
-      tag: {
-        visible: true,
-        height: 50,
-      },
-    }
+    return themeSettings
   },
+  getters: {},
   actions: {
     setTabVisible(visible) {
-      this.tag.visible = visible
+      this.tags.visible = visible
     },
   },
 })

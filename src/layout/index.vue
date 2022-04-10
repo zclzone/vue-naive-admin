@@ -1,16 +1,21 @@
 <template>
   <div class="layout">
     <n-layout has-sider position="absolute">
-      <n-layout-sider :width="200" :collapsed-width="0" :native-scrollbar="false">
+      <n-layout-sider bordered :width="200" :collapsed-width="0" :native-scrollbar="false">
         <SideBar />
       </n-layout-sider>
       <n-layout>
-        <n-layout-header>
+        <n-layout-header :style="{ height: useTheme.header.height + 'px' }" style="border-left: none">
           <AppHeader />
         </n-layout-header>
 
-        <n-layout position="absolute" style="top: 60px; background-color: #f5f6fb" :native-scrollbar="false">
-          <AppTags v-if="useTheme.tag.visible" />
+        <n-layout
+          position="absolute"
+          style="background-color: #f5f6fb"
+          :style="{ top: useTheme.header.height + 'px' }"
+          :native-scrollbar="false"
+        >
+          <AppTags v-if="useTheme.tags.visible" />
           <AppMain />
         </n-layout>
       </n-layout>

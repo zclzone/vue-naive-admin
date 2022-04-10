@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme-overrides="appStore.themeOverrides">
+  <n-config-provider :theme-overrides="useTheme.naiveThemeOverrides">
     <n-loading-bar-provider>
       <LoadingBar />
       <n-dialog-provider>
@@ -17,7 +17,7 @@
 import MessageContent from './MessageContent.vue'
 import DialogContent from './DialogContent.vue'
 import LoadingBar from './LoadingBar.vue'
+import { useThemeStore } from '@/store/modules/theme'
 
-import { useAppStore } from '@/store/modules/app'
-const appStore = useAppStore()
+const useTheme = useThemeStore()
 </script>
