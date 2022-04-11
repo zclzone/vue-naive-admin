@@ -1,6 +1,6 @@
 import { router } from '@/router'
 import { getToken, removeToken } from '@/utils/token'
-import { isWithoutToken } from './help'
+import { isWithoutToken } from './helpers'
 
 export function setupInterceptor(service) {
   service.interceptors.request.use(

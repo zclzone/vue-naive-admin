@@ -2,10 +2,10 @@
   <div class="tags-wrapper" :style="{ height: useTheme.tags.height + 'px' }">
     <n-space>
       <n-tag
-        v-for="tag in useTag.tags"
+        v-for="tag in useTags.tags"
         :key="tag.path"
-        :type="useTag.activeTag === tag.path ? 'primary' : 'default'"
-        :closable="useTag.tags.length > 1"
+        :type="useTags.activeTag === tag.path ? 'primary' : 'default'"
+        :closable="useTags.tags.length > 1"
         @click="handleTagClick(tag.path)"
         @close.stop="handleClose(tag.path)"
       >
@@ -18,12 +18,12 @@
 <script setup name="Tags">
 import { watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { useTagStore } from '@/store/modules/tag'
+import { useTagsStore } from '@/store/modules/tags'
 import { useThemeStore } from '@/store/modules/theme'
 
 const route = useRoute()
 const router = useRouter()
-const useTag = useTagStore()
+const useTags = useTagsStore()
 const useTheme = useThemeStore()
 
 watch(
@@ -31,27 +31,27 @@ watch(
   () => {
     const { name, path } = route
     const title = route.meta?.title
-    useTag.addTag({ name, path, title })
-    useTag.setActiveTag(path)
+    useTags.addTag({ name, path, title })
+    useTags.setActiveTag(path)
   },
   { immediate: true }
 )
 
 const handleTagClick = (path) => {
-  useTag.setActiveTag(path)
+  useTags.setActiveTag(path)
   router.push(path)
 }
 
 const handleClose = (path) => {
-  if (path === useTag.activeTag) {
-    const activeIndex = useTag.tags.findIndex((item) => item.path === path)
+  if (path === useTags.activeTag) {
+    const activeIndex = useTags.tags.findIndex((item) => item.path === path)
     if (activeIndex > 0) {
-      router.push(useTag.tags[activeIndex - 1].path)
+      router.push(useTags.tags[activeIndex - 1].path)
     } else {
-      router.push(useTag.tags[activeIndex + 1].path)
+      router.push(useTags.tags[activeIndex + 1].path)
     }
   }
-  useTag.removeTag(path)
+  useTags.removeTag(path)
 }
 </script>
 
