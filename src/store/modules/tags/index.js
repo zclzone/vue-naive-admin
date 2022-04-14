@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { tagsSS, activeTag, tags } from './helpers'
+import { tagsSS, activeTag, tags, WITHOUT_TAG_PATHS } from './helpers'
 
 export const useTagsStore = defineStore('tag', {
   state() {
@@ -14,7 +14,7 @@ export const useTagsStore = defineStore('tag', {
       tagsSS.set('activeTag', path)
     },
     addTag(tag = {}) {
-      if (this.tags.some((item) => item.path === tag.path)) return
+      if (WITHOUT_TAG_PATHS.includes(tag.path) || this.tags.some((item) => item.path === tag.path)) return
       this.tags.push(tag)
       tagsSS.set('tags', this.tags)
     },
