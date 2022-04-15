@@ -112,4 +112,5 @@ npm run preview
 - `types` 类型定义文件更改
 - `wip` 开发中
 - `mod` 不确定分类的修改
+- `release` 发布
 
