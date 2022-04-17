@@ -21,7 +21,7 @@ export function setupInterceptor(service) {
          * * jwt token
          * ! 认证方案: Bearer
          */
-        config.headers.Authorization = 'Bearer ' + token
+        if (!config.headers.Authorization) config.headers.Authorization = 'Bearer ' + token
 
         return config
       }
