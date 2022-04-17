@@ -34,7 +34,7 @@ export const basicRoutes = [
   },
 
   {
-    name: 'DASHBOARD',
+    name: 'Dashboard',
     path: '/',
     component: Layout,
     redirect: '/home',
@@ -44,7 +44,7 @@ export const basicRoutes = [
     },
     children: [
       {
-        name: 'HOME',
+        name: 'Home',
         path: 'home',
         component: Home,
         meta: {
@@ -56,7 +56,7 @@ export const basicRoutes = [
   },
 
   {
-    name: 'TEST',
+    name: 'Test',
     path: '/test',
     component: Layout,
     redirect: '/test/unocss',
@@ -65,7 +65,7 @@ export const basicRoutes = [
     },
     children: [
       {
-        name: 'UNOCSS',
+        name: 'Unocss',
         path: 'unocss',
         component: () => import('@/views/test-page/TestUnocss.vue'),
         meta: {
@@ -73,7 +73,7 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'MESSAGE',
+        name: 'Message',
         path: 'message',
         component: () => import('@/views/test-page/TestMessage.vue'),
         meta: {
@@ -81,7 +81,7 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'DIALOG',
+        name: 'Dialog',
         path: 'dialog',
         component: () => import('@/views/test-page/TestDialog.vue'),
         meta: {
@@ -89,7 +89,7 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'TEST-KEEP-ALIVE',
+        name: 'TestKeepAlive',
         path: 'keep-alive',
         component: () => import('@/views/test-page/TestKeepAlive.vue'),
         meta: {
@@ -101,7 +101,7 @@ export const basicRoutes = [
   },
 
   {
-    name: 'ERROR-PAGE',
+    name: 'ErrorPage',
     path: '/error-page',
     component: Layout,
     redirect: '/error-page/404',
@@ -122,7 +122,7 @@ export const basicRoutes = [
   },
 
   {
-    name: 'EXTERNAL-LINK',
+    name: 'ExternalLink',
     path: '/external-link',
     component: Layout,
     meta: {
@@ -131,7 +131,7 @@ export const basicRoutes = [
     },
     children: [
       {
-        name: 'LINK-GITHUB-SRC',
+        name: 'LinkGithubSrc',
         path: 'https://github.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - github',
@@ -139,7 +139,7 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'LINK-GITEE-SRC',
+        name: 'LinkGiteeSrc',
         path: 'https://gitee.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - gitee',
@@ -147,7 +147,7 @@ export const basicRoutes = [
         },
       },
       {
-        name: 'LINK-DOCS',
+        name: 'LinkDocs',
         path: 'https://zclzone.github.io/vue-naive-admin-docs',
         meta: {
           title: '文档 - vuepress',
@@ -159,7 +159,7 @@ export const basicRoutes = [
 ]
 
 export const NOT_FOUND_ROUTE = {
-  name: 'NOT_FOUND',
+  name: 'NotFound',
   path: '/:pathMatch(.*)*',
   redirect: '/404',
   isHidden: true,

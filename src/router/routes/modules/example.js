@@ -2,7 +2,7 @@ import Layout from '@/layout/index.vue'
 
 export default [
   {
-    name: 'EXAMPLE',
+    name: 'Example',
     path: '/example',
     component: Layout,
     redirect: '/example/table',
@@ -12,7 +12,7 @@ export default [
     },
     children: [
       {
-        name: 'EXAMPLE-TABLE',
+        name: 'Table',
         path: 'table',
         component: () => import('@/views/examples/table/index.vue'),
         redirect: '/example/table/post',
@@ -22,7 +22,7 @@ export default [
         },
         children: [
           {
-            name: 'POST-LIST',
+            name: 'PostList',
             path: 'post',
             component: () => import('@/views/examples/table/post/index.vue'),
             meta: {
@@ -31,7 +31,7 @@ export default [
             },
           },
           {
-            name: 'POST-CREATE',
+            name: 'PostCreate',
             path: 'post-create',
             component: () => import('@/views/examples/table/post/post-create.vue'),
             meta: {

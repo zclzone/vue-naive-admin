@@ -5,7 +5,7 @@
 </template>
 
 <!--使用keep-alive须设置name，注意请与对应的路由的name保持一致，方便统一处理-->
-<script setup name="TEST-KEEP-ALIVE">
+<script setup name="TestKeepAlive">
 import { onMounted, onActivated, onDeactivated } from 'vue'
 
 onMounted(() => {
