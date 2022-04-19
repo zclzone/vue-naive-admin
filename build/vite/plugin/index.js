@@ -20,6 +20,9 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
  */
 import Icons from 'unplugin-icons/vite'
 
+// rollup打包分析插件
+import visualizer from 'rollup-plugin-visualizer'
+
 import { unocss } from './unocss'
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
@@ -37,6 +40,16 @@ export function createVitePlugins(viteEnv, isBuild) {
   ]
 
   viteEnv?.VITE_APP_USE_MOCK && plugins.push(configMockPlugin(isBuild))
+
+  if (isBuild) {
+    plugins.push(
+      visualizer({
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      })
+    )
+  }
 
   return plugins
 }
