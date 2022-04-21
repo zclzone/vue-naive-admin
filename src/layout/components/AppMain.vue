@@ -1,11 +1,9 @@
 <template>
   <router-view v-slot="{ Component, route }">
     <transition name="fade-slide" mode="out-in" appear>
-      <div v-if="appStore.reloadFlag" :key="route.path">
-        <keep-alive :include="keepAliveRouteNames">
-          <component :is="Component" />
-        </keep-alive>
-      </div>
+      <keep-alive :include="keepAliveRouteNames">
+        <component :is="Component" v-if="appStore.reloadFlag" :key="route.path" />
+      </keep-alive>
     </transition>
   </router-view>
 </template>
