@@ -19,9 +19,11 @@ import { NIcon } from 'naive-ui'
 import { IconCircle, IconMenu } from '@/components/AppIcons'
 
 import { isExternal } from '@/utils/is'
+import { useAppStore } from '@/store/modules/app'
 
 const router = useRouter()
 const permissionStore = usePermissionStore()
+const appStore = useAppStore()
 const { currentRoute } = router
 
 const menuOptions = computed(() => {
@@ -83,14 +85,12 @@ function handleMenuSelect(key, item) {
   if (isExternal(item.path)) {
     window.open(item.path)
   } else {
-    router.push(item.path)
+    if (item.path === currentRoute.value.path && !currentRoute.value.meta?.keepAlive) {
+      appStore.reloadPage()
+    } else {
+      router.push(item.path)
+    }
   }
-
-  // 通过path重定向
-  // router.push({
-  //   path: '/redirect',
-  //   query: { redirect: item.path },
-  // })
 }
 </script>
 

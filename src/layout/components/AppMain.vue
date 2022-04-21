@@ -1,7 +1,7 @@
 <template>
   <router-view v-slot="{ Component, route }">
     <transition name="fade-slide" mode="out-in" appear>
-      <div :key="route.path">
+      <div v-if="appStore.reloadFlag" :key="route.path">
         <keep-alive :include="keepAliveRouteNames">
           <component :is="Component" />
         </keep-alive>
@@ -13,6 +13,9 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useAppStore } from '@/store/modules/app'
+
+const appStore = useAppStore()
 const router = useRouter()
 const allRoutes = router.getRoutes()
 const keepAliveRouteNames = computed(() => {
