@@ -5,15 +5,6 @@
 </template>
 
 <script setup>
-import { useAppStore } from '@/store/modules/app'
-import { onMounted } from 'vue'
-
-const appStore = useAppStore()
-
-onMounted(() => {
-  $message.success('onMounted')
-})
-
 function handleLogin() {
   $message.loading('登陆中...')
   setTimeout(() => {
