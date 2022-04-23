@@ -2,56 +2,77 @@
   <div class="tags-wrapper" :style="{ height: useTheme.tags.height + 'px' }">
     <n-space>
       <n-tag
-        v-for="tag in useTags.tags"
+        v-for="tag in tagsStore.tags"
         :key="tag.path"
-        :type="useTags.activeTag === tag.path ? 'primary' : 'default'"
-        :closable="useTags.tags.length > 1"
+        :type="tagsStore.activeTag === tag.path ? 'primary' : 'default'"
+        :closable="tagsStore.tags.length > 1"
         @click="handleTagClick(tag.path)"
-        @close.stop="handleClose(tag.path)"
+        @close.stop="tagsStore.removeTag(tag.path)"
+        @contextmenu.prevent="handleContextMenu($event, tag)"
       >
         {{ tag.title }}
       </n-tag>
     </n-space>
   </div>
+  <ContextMenu
+    v-model:show="contextMenuOption.show"
+    :current-path="contextMenuOption.currentPath"
+    :x="contextMenuOption.x"
+    :y="contextMenuOption.y"
+  />
 </template>
 
 <script setup name="Tags">
-import { watch } from 'vue'
+import ContextMenu from './ContextMenu.vue'
+import { nextTick, reactive, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useTagsStore } from '@/store/modules/tags'
 import { useThemeStore } from '@/store/modules/theme'
 
 const route = useRoute()
 const router = useRouter()
-const useTags = useTagsStore()
+const tagsStore = useTagsStore()
 const useTheme = useThemeStore()
+
+const contextMenuOption = reactive({
+  show: false,
+  x: 0,
+  y: 0,
+  currentPath: '',
+})
 
 watch(
   () => route.path,
   () => {
     const { name, path } = route
     const title = route.meta?.title
-    useTags.addTag({ name, path, title })
-    useTags.setActiveTag(path)
+    tagsStore.addTag({ name, path, title })
   },
   { immediate: true }
 )
 
 const handleTagClick = (path) => {
-  useTags.setActiveTag(path)
+  tagsStore.setActiveTag(path)
   router.push(path)
 }
 
-const handleClose = (path) => {
-  if (path === useTags.activeTag) {
-    const activeIndex = useTags.tags.findIndex((item) => item.path === path)
-    if (activeIndex > 0) {
-      router.push(useTags.tags[activeIndex - 1].path)
-    } else {
-      router.push(useTags.tags[activeIndex + 1].path)
-    }
-  }
-  useTags.removeTag(path)
+function showContextMenu() {
+  contextMenuOption.show = true
+}
+function hideContextMenu() {
+  contextMenuOption.show = false
+}
+function setContextMenu(x, y, currentPath) {
+  Object.assign(contextMenuOption, { x, y, currentPath })
+}
+
+// 右击菜单
+async function handleContextMenu(e, tagItem) {
+  const { clientX, clientY } = e
+  hideContextMenu()
+  setContextMenu(clientX, clientY, tagItem.path)
+  await nextTick()
+  showContextMenu()
 }
 </script>
 

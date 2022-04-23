@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { tagsSS, activeTag, tags, WITHOUT_TAG_PATHS } from './helpers'
+import { router } from '@/router'
 
 export const useTagsStore = defineStore('tag', {
   state() {
@@ -13,14 +14,47 @@ export const useTagsStore = defineStore('tag', {
       this.activeTag = path
       tagsSS.set('activeTag', path)
     },
+    setTags(tags) {
+      this.tags = tags
+      tagsSS.set('tags', tags)
+    },
     addTag(tag = {}) {
+      this.setActiveTag(tag.path)
       if (WITHOUT_TAG_PATHS.includes(tag.path) || this.tags.some((item) => item.path === tag.path)) return
-      this.tags.push(tag)
-      tagsSS.set('tags', this.tags)
+      this.setTags([...this.tags, tag])
     },
     removeTag(path) {
-      this.tags = this.tags.filter((tag) => tag.path !== path)
-      tagsSS.set('tags', this.tags)
+      if (path === this.activeTag) {
+        const activeIndex = this.tags.findIndex((item) => item.path === path)
+        if (activeIndex > 0) {
+          router.push(this.tags[activeIndex - 1].path)
+        } else {
+          router.push(this.tags[activeIndex + 1].path)
+        }
+      }
+      this.setTags(this.tags.filter((tag) => tag.path !== path))
+    },
+    removeOther(curPath = this.activeTag) {
+      this.setTags(this.tags.filter((tag) => tag.path === curPath))
+      if (curPath !== this.activeTag) {
+        router.push(this.tags[this.tags.length - 1].path)
+      }
+    },
+    removeLeft(curPath) {
+      const curIndex = this.tags.findIndex((item) => item.path === curPath)
+      const filterTags = this.tags.filter((item, index) => index >= curIndex)
+      this.setTags(filterTags)
+      if (!filterTags.find((item) => item.path === this.activeTag)) {
+        router.push(filterTags[filterTags.length - 1].path)
+      }
+    },
+    removeRight(curPath) {
+      const curIndex = this.tags.findIndex((item) => item.path === curPath)
+      const filterTags = this.tags.filter((item, index) => index <= curIndex)
+      this.setTags(filterTags)
+      if (!filterTags.find((item) => item.path === this.activeTag)) {
+        router.push(filterTags[filterTags.length - 1].path)
+      }
     },
   },
 })
