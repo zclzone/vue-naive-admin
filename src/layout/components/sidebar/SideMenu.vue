@@ -12,14 +12,14 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { computed, h } from 'vue'
+import { computed } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
-import { NIcon } from 'naive-ui'
 import { IconCircle, IconMenu } from '@/components/AppIcons'
 
 import { isExternal } from '@/utils/is'
 import { useAppStore } from '@/store/modules/app'
+import { renderIcon } from '@/utils/icon'
 
 const router = useRouter()
 const permissionStore = usePermissionStore()
@@ -39,10 +39,6 @@ function resolvePath(basePath, path) {
       .map((path) => path.replace(/(^\/)|(\/$)/g, ''))
       .join('/')
   )
-}
-
-function renderIcon(icon, props = { size: 12 }) {
-  return () => h(NIcon, { ...props }, { default: () => h(icon) })
 }
 
 function isSingleRoute(route) {
