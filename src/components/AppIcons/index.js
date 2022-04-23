@@ -13,5 +13,6 @@ export { default as IconClose } from '~icons/mdi/close'
 export { default as IconExpand } from '~icons/mdi/arrow-expand-horizontal'
 export { default as IconExpandLeft } from '~icons/mdi/arrow-expand-left'
 export { default as IconExpandRight } from '~icons/mdi/arrow-expand-right'
+export { default as IconMenuTable } from '~icons/mdi/table'
 
 export { default as IconLogo } from './IconLogo.vue'

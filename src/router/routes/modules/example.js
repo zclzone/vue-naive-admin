@@ -1,4 +1,6 @@
+import { IconMenuTable } from '@/components/AppIcons'
 import Layout from '@/layout/index.vue'
+import { markRaw } from 'vue'
 
 export default [
   {
@@ -19,6 +21,7 @@ export default [
         meta: {
           title: '表格',
           role: ['admin'],
+          icon: markRaw(IconMenuTable),
         },
         children: [
           {

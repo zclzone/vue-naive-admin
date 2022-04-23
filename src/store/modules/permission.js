@@ -38,6 +38,9 @@ export const usePermissionStore = defineStore('permission', {
     routes() {
       return basicRoutes.concat(this.accessRoutes)
     },
+    menus() {
+      return this.routes.filter((route) => route.name && !route.isHidden)
+    },
   },
   actions: {
     generateRoutes(role = []) {

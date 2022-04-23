@@ -15,7 +15,7 @@ import { useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
-import { IconCircle, IconMenu } from '@/components/AppIcons'
+import { IconCircle } from '@/components/AppIcons'
 
 import { isExternal } from '@/utils/is'
 import { useAppStore } from '@/store/modules/app'
@@ -27,7 +27,7 @@ const appStore = useAppStore()
 const { currentRoute } = router
 
 const menuOptions = computed(() => {
-  return generateOptions(permissionStore.routes, '')
+  return permissionStore.menus.map((item) => getMenuItem(item))
 })
 
 function resolvePath(basePath, path) {
@@ -41,40 +41,37 @@ function resolvePath(basePath, path) {
   )
 }
 
-function isSingleRoute(route) {
-  let isSingle = true
-  let curRoute = route
-  while (curRoute.children && curRoute.children.length) {
-    if (curRoute.children.length > 1) {
-      isSingle = false
-      break
-    }
-    if (curRoute.children.length === 1) {
-      curRoute = curRoute.children[0]
-    }
+function getMenuItem(route, basePath = '') {
+  let menuItem = {
+    label: (route.meta && route.meta.title) || route.name,
+    key: route.name,
+    path: resolvePath(basePath, route.path),
+    icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon(IconCircle, { size: 8 }),
   }
-  return isSingle
-}
 
-function generateOptions(routes, basePath) {
-  let options = []
-  routes.forEach((route) => {
-    if (route.name && !route.isHidden) {
-      let curOption = {
-        label: (route.meta && route.meta.title) || route.name,
-        key: route.name,
-        path: resolvePath(basePath, route.path),
-      }
-      if (route.children && route.children.length) {
-        curOption.icon = renderIcon(route.meta?.icon || IconMenu, { size: 16 })
-        curOption.children = generateOptions(route.children, resolvePath(basePath, route.path))
-      } else {
-        curOption.icon = (route.meta?.icon && renderIcon(route.meta?.icon)) || renderIcon(IconCircle, { size: 8 })
-      }
-      options.push(curOption)
+  if (!route.children || !route.children.length) {
+    return menuItem
+  }
+
+  if (route.children && route.children.length === 1) {
+    // 单个子路由处理
+    const singleRoute = route.children[0]
+    menuItem = {
+      label: singleRoute.meta?.title || singleRoute.name,
+      key: singleRoute.name,
+      path: resolvePath(menuItem.path, singleRoute.path),
+      icon: singleRoute.meta?.icon
+        ? renderIcon(singleRoute.meta?.icon, { size: 16 })
+        : renderIcon(IconCircle, { size: 8 }),
     }
-  })
-  return options
+    if (singleRoute.children && singleRoute.children.length) {
+      menuItem.children = singleRoute.children.map((item) => getMenuItem(item, menuItem.path))
+    }
+  } else {
+    menuItem.children = route.children.map((item) => getMenuItem(item, menuItem.path))
+  }
+
+  return menuItem
 }
 
 function handleMenuSelect(key, item) {
