@@ -49,13 +49,13 @@ function getMenuItem(route, basePath = '') {
     icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon(IconCircle, { size: 8 }),
   }
 
-  if (!route.children || !route.children.length) {
-    return menuItem
-  }
+  const visibleChildren = route.children ? route.children.filter((item) => item.name && !item.isHidden) : []
 
-  if (route.children && route.children.length === 1) {
+  if (!visibleChildren.length) return menuItem
+
+  if (visibleChildren.length === 1) {
     // 单个子路由处理
-    const singleRoute = route.children[0]
+    const singleRoute = visibleChildren[0]
     menuItem = {
       label: singleRoute.meta?.title || singleRoute.name,
       key: singleRoute.name,
@@ -64,11 +64,15 @@ function getMenuItem(route, basePath = '') {
         ? renderIcon(singleRoute.meta?.icon, { size: 16 })
         : renderIcon(IconCircle, { size: 8 }),
     }
-    if (singleRoute.children && singleRoute.children.length) {
-      menuItem.children = singleRoute.children.map((item) => getMenuItem(item, menuItem.path))
+    const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []
+
+    if (visibleItems.length === 1) {
+      menuItem = getMenuItem(visibleItems[0], menuItem.path)
+    } else {
+      menuItem.children = visibleItems.map((item) => getMenuItem(item, menuItem.path))
     }
   } else {
-    menuItem.children = route.children.map((item) => getMenuItem(item, menuItem.path))
+    menuItem.children = visibleChildren.map((item) => getMenuItem(item, menuItem.path))
   }
 
   return menuItem
