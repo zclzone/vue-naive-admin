@@ -68,7 +68,7 @@ function getMenuItem(route, basePath = '') {
 
     if (visibleItems.length === 1) {
       menuItem = getMenuItem(visibleItems[0], menuItem.path)
-    } else {
+    } else if (visibleItems.length > 1) {
       menuItem.children = visibleItems.map((item) => getMenuItem(item, menuItem.path))
     }
   } else {
