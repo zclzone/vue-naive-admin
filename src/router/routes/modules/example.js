@@ -36,7 +36,7 @@ export default [
           {
             name: 'PostCreate',
             path: 'post-create',
-            component: () => import('@/views/examples/table/post/post-create.vue'),
+            component: () => import('@/views/examples/table/post/PostCreate.vue'),
             meta: {
               title: '创建文章',
               role: ['admin'],
