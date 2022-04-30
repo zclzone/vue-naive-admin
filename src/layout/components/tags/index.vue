@@ -1,6 +1,11 @@
 <template>
-  <div class="tags-wrapper" :style="{ height: useTheme.tags.height + 'px' }">
-    <n-space>
+  <div ref="tagsWrapper" class="tags-wrapper" @mousewheel.prevent="handleMouseWheel">
+    <div
+      ref="tagsContent"
+      class="tags-content"
+      :style="{ height: useTheme.tags.height + 'px', transform: `translateX(${translateX}px)` }"
+      :wrap="false"
+    >
       <n-tag
         v-for="tag in tagsStore.tags"
         :key="tag.path"
@@ -12,8 +17,9 @@
       >
         {{ tag.title }}
       </n-tag>
-    </n-space>
+    </div>
   </div>
+
   <ContextMenu
     v-model:show="contextMenuOption.show"
     :current-path="contextMenuOption.currentPath"
@@ -24,7 +30,7 @@
 
 <script setup name="Tags">
 import ContextMenu from './ContextMenu.vue'
-import { nextTick, reactive, watch } from 'vue'
+import { nextTick, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useTagsStore } from '@/store/modules/tags'
 import { useThemeStore } from '@/store/modules/theme'
@@ -40,6 +46,7 @@ const contextMenuOption = reactive({
   y: 0,
   currentPath: '',
 })
+let translateX = ref(0)
 
 watch(
   () => route.path,
@@ -74,19 +81,58 @@ async function handleContextMenu(e, tagItem) {
   await nextTick()
   showContextMenu()
 }
+
+const tagsContent = ref()
+const tagsWrapper = ref()
+
+function handleMouseWheel(e) {
+  let { wheelDelta } = e
+  const tagsWrapperWidth = tagsWrapper.value.offsetWidth
+  const tagsContentWidth = tagsContent.value.offsetWidth
+  /**
+   * @wheelDelta >0： 向左滑动  <0: 向右滑动
+   */
+  // 向左滑动时，如果无偏移或者向左偏移，则不处理
+  if (wheelDelta > 0 && translateX.value >= 0) {
+    return
+  }
+
+  // 向右滑动，如果内容的宽度小于向左偏移的宽度+容器的宽度，则不处理
+  if (wheelDelta < 0 && tagsWrapperWidth > tagsContentWidth + translateX.value) {
+    return
+  }
+
+  if (wheelDelta > 0 && wheelDelta + translateX.value > 0) {
+    translateX.value = 0
+    return
+  }
+
+  if (wheelDelta < 0 && -wheelDelta > tagsWrapperWidth - (tagsContentWidth + translateX.value)) {
+    wheelDelta = -(tagsContentWidth + translateX.value - tagsWrapperWidth)
+  }
+
+  translateX.value += wheelDelta
+}
 </script>
 
 <style lang="scss">
 .tags-wrapper {
   display: flex;
-  align-items: center;
   background-color: #fff;
-  padding: 0 10px;
   position: sticky;
   top: 0;
   z-index: 9;
+  overflow: hidden;
+  .tags-content {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: transform 0.3s;
+  }
   .n-tag {
     padding: 0 15px;
+    margin: 0 5px;
     cursor: pointer;
     .n-tag__close {
       margin-left: 5px;
