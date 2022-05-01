@@ -47,6 +47,8 @@ const contextMenuOption = reactive({
   currentPath: '',
 })
 let translateX = ref(0)
+const tagsContent = ref()
+const tagsWrapper = ref()
 
 watch(
   () => route.path,
@@ -82,33 +84,33 @@ async function handleContextMenu(e, tagItem) {
   showContextMenu()
 }
 
-const tagsContent = ref()
-const tagsWrapper = ref()
-
 function handleMouseWheel(e) {
   let { wheelDelta } = e
   const tagsWrapperWidth = tagsWrapper.value.offsetWidth
   const tagsContentWidth = tagsContent.value.offsetWidth
   /**
-   * @wheelDelta >0： 向左滑动  <0: 向右滑动
+   * @wheelDelta 平行滚动的值 >0： 右移  <0: 左移
+   * @translateX 内容translateX的值
+   * @tagsWrapperWidth 容器的宽度
+   * @tagsContentWidth 内容的宽度
    */
-  // 向左滑动时，如果无偏移或者向左偏移，则不处理
+
+  // 向右移动时时，如果无偏移或者向左偏移，则不处理
   if (wheelDelta > 0 && translateX.value >= 0) {
     return
   }
 
-  // 向右滑动，如果内容的宽度小于向左偏移的宽度+容器的宽度，则不处理
+  // 向左移动时，如果内容的宽度小于向左偏移的宽度+容器的宽度，则不处理
   if (wheelDelta < 0 && tagsWrapperWidth > tagsContentWidth + translateX.value) {
     return
   }
 
   if (wheelDelta > 0 && wheelDelta + translateX.value > 0) {
-    translateX.value = 0
-    return
+    wheelDelta = -translateX.value
   }
 
   if (wheelDelta < 0 && -wheelDelta > tagsWrapperWidth - (tagsContentWidth + translateX.value)) {
-    wheelDelta = -(tagsContentWidth + translateX.value - tagsWrapperWidth)
+    wheelDelta = tagsWrapperWidth - (tagsContentWidth + translateX.value)
   }
 
   translateX.value += wheelDelta
