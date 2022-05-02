@@ -18,14 +18,9 @@ const { replace } = useRouter()
 
 <style lang="scss" scoped>
 .page-404 {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  position: absolute;
-  top: 50px;
-  bottom: 50px;
-  left: 0;
-  right: 0;
 }
 </style>

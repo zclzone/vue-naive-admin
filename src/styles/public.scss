@@ -26,3 +26,17 @@ body {
   opacity: 0;
   transform: translateX(30px);
 }
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+
+  &:hover {
+    background-color: #a8a8a8;
+  }
+}
