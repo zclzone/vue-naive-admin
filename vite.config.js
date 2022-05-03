@@ -1,9 +1,8 @@
 import { defineConfig, loadEnv } from 'vite'
 import path from 'path'
 
-import { wrapperEnv } from './build/utils'
-import { createVitePlugins } from './build/vite/plugin'
-import { createProxy } from './build/vite/proxy'
+import { wrapperEnv, createProxy } from './build/utils'
+import { createVitePlugins } from './build/plugin'
 import { OUTPUT_DIR } from './build/constant'
 
 export default defineConfig(({ command, mode }) => {

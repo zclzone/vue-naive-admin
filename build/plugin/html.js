@@ -1,6 +1,6 @@
 import html from 'vite-plugin-html'
-import { version } from '../../../package.json'
-import { GLOB_CONFIG_FILE_NAME } from '../../constant'
+import { version } from '../../package.json'
+import { GLOB_CONFIG_FILE_NAME } from '../constant'
 
 export function configHtmlPlugin(viteEnv, isBuild) {
   const { VITE_APP_TITLE, VITE_PUBLIC_PATH } = viteEnv
