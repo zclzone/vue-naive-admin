@@ -19,75 +19,26 @@
 <script setup>
 import { ref, onBeforeMount } from 'vue'
 import { useRouter } from 'vue-router'
-
-import { getTableData, createColumns } from './post-table'
+import { usePostTable } from './usePostTable'
 
 const router = useRouter()
 
-// 静态变量
-const columns = createColumns({
-  handleDelete,
-  handleRecommend,
-  handlePublish,
-})
+const pagination = ref({ pageSize: 10 })
+const { loading, columns, tableData, initColumns, initTableData } = usePostTable()
 
-// refs
-let tableData = ref([])
-let pagination = ref({ pageSize: 10 })
-let loading = ref(false)
-
-// 钩子函数
 onBeforeMount(() => {
+  initColumns()
   initTableData()
 })
 
 // fns
-async function initTableData() {
-  loading.value = true
-  tableData.value = await getTableData()
-  loading.value = false
-}
-
 function handleCreate() {
   router.push('/example/table/post-create')
 }
 
-function handleDelete(row) {
-  if (row && row.id) {
-    $dialog.confirm({
-      content: '确定删除？',
-      confirm() {
-        $message.success('删除成功')
-        initTableData()
-      },
-      cancel() {
-        $message.success('已取消')
-      },
-    })
-  }
+function handleCheck(rowKeys) {
+  $message.info(`选中${rowKeys.join(' ')}`)
 }
-
-async function handleRecommend(row) {
-  if (row && row.id) {
-    row.recommending = true
-    setTimeout(() => {
-      $message.success(row.isRecommend ? '已取消推荐' : '已推荐')
-      row.recommending = false
-    }, 800)
-  }
-}
-
-async function handlePublish(row) {
-  if (row && row.id) {
-    row.publishing = true
-    setTimeout(() => {
-      $message.success(row.isPublish ? '已取消推荐' : '已推荐')
-      row.publishing = false
-    }, 800)
-  }
-}
-
-function handleCheck(rowKeys) {}
 </script>
 
 <style lang="scss" scoped>
