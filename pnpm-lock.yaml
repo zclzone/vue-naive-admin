@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@iconify-json/mdi': ^1.1.9
@@ -58,7 +58,7 @@ devDependencies:
   dotenv: 10.0.0
   eslint: 8.12.0
   eslint-config-prettier: 8.5.0_eslint@8.12.0
-  eslint-plugin-prettier: 4.0.0_b253a92c95b42c3296c682f11cccb3bd
+  eslint-plugin-prettier: 4.0.0_wjj2slevwqwdffwgqlyrztftxu
   eslint-plugin-vue: 8.5.0_eslint@8.12.0
   esno: 0.13.0
   fs-extra: 10.0.1
@@ -67,7 +67,7 @@ devDependencies:
   rollup-plugin-visualizer: 5.6.0
   sass: 1.49.10
   unocss: 0.16.4
-  unplugin-icons: 0.14.1_8d0fc691400edae0d0bd7a997b66fb5e
+  unplugin-icons: 0.14.1_ruh4nekab3nobuf5pkmxwzx3ly
   unplugin-vue-components: 0.17.21_vite@2.9.1+vue@3.2.31
   vite: 2.9.1_sass@1.49.10
   vite-plugin-html: 2.1.2_vite@2.9.1
@@ -1057,7 +1057,7 @@ packages:
       eslint: 8.12.0
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_b253a92c95b42c3296c682f11cccb3bd:
+  /eslint-plugin-prettier/4.0.0_wjj2slevwqwdffwgqlyrztftxu:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -2229,7 +2229,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /unplugin-icons/0.14.1_8d0fc691400edae0d0bd7a997b66fb5e:
+  /unplugin-icons/0.14.1_ruh4nekab3nobuf5pkmxwzx3ly:
     resolution: {integrity: sha512-drZFbMctvT3ZJPfdCgBv5+LKO8hGbZApRCoBRAUhQFRJQVNGUhGThrOKs+CvWq3XDBPptGNBmst8WyObbr4xiQ==}
     peerDependencies:
       '@svgr/core': '>=5.5.0'
