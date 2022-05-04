@@ -2,7 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "johnsoncodehk.volar",
+    "vue.volar",
     "hollowtree.vue-snippets",
     "esbenp.prettier-vscode",
     "mikestead.dotenv",
