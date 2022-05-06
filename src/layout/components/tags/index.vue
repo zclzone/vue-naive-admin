@@ -3,7 +3,10 @@
     <div
       ref="tagsContent"
       class="tags-content"
-      :style="{ height: useTheme.tags.height + 'px', transform: `translateX(${translateX}px)` }"
+      :style="{
+        height: useTheme.tags.height + 'px',
+        transform: `translateX(${translateX}px)`,
+      }"
       :wrap="false"
     >
       <n-tag

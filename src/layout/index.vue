@@ -11,7 +11,10 @@
       <n-layout style="background-color: #f5f6fb" :style="`height: calc(100% - ${useTheme.header.height}px)`">
         <AppTags v-if="useTheme.tags.visible" />
         <AppMain
-          :style="{ height: `calc(100% - ${useTheme.tags.visible ? useTheme.tags.height : 0}px)`, overflow: 'auto' }"
+          :style="{
+            height: `calc(100% - ${useTheme.tags.visible ? useTheme.tags.height : 0}px)`,
+            overflow: 'auto',
+          }"
         />
       </n-layout>
     </n-layout>
