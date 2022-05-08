@@ -14,5 +14,7 @@ export { default as IconExpand } from '~icons/mdi/arrow-expand-horizontal'
 export { default as IconExpandLeft } from '~icons/mdi/arrow-expand-left'
 export { default as IconExpandRight } from '~icons/mdi/arrow-expand-right'
 export { default as IconMenuTable } from '~icons/mdi/table'
+export { default as IconMenuCollapse } from '~icons/mdi/format-indent-decrease'
+export { default as IconMenuExpand } from '~icons/mdi/format-indent-increase'
 
 export { default as IconLogo } from './IconLogo.vue'
