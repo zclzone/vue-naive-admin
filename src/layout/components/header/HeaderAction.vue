@@ -1,21 +1,30 @@
 <template>
-  <n-dropdown :options="options" @select="handleSelect">
-    <div class="avatar">
-      <img :src="userStore.avatar" />
-      <span>{{ userStore.name }}</span>
-    </div>
-  </n-dropdown>
+  <div class="actions-wrapper">
+    <n-icon mr20 size="18" style="cursor: pointer" @click="toggle">
+      <IconFullscreenExit v-if="isFullscreen" />
+      <IconFullscreen v-else />
+    </n-icon>
+    <n-dropdown :options="options" @select="handleSelect">
+      <div class="avatar">
+        <img :src="userStore.avatar" />
+        <span>{{ userStore.name }}</span>
+      </div>
+    </n-dropdown>
+  </div>
 </template>
 
 <script setup>
+import { IconFullscreen, IconFullscreenExit } from '@/components/AppIcons'
 import { useUserStore } from '@/store/modules/user'
 import { useRouter } from 'vue-router'
 import { resetRouter } from '@/router'
 import { usePermissionStore } from '@/store/modules/permission'
 import { NOT_FOUND_ROUTE } from '@/router/routes'
+import { useFullscreen } from '@vueuse/core'
 
 const userStore = useUserStore()
 const router = useRouter()
+const { isFullscreen, toggle } = useFullscreen()
 
 const options = [
   {
@@ -81,6 +90,10 @@ function switchRole() {
 </script>
 
 <style lang="scss" scoped>
+.actions-wrapper {
+  display: flex;
+  align-items: center;
+}
 .avatar {
   display: flex;
   align-items: center;

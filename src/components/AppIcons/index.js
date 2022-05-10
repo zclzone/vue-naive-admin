@@ -17,4 +17,7 @@ export { default as IconMenuTable } from '~icons/mdi/table'
 export { default as IconMenuCollapse } from '~icons/mdi/format-indent-decrease'
 export { default as IconMenuExpand } from '~icons/mdi/format-indent-increase'
 
+export { default as IconFullscreen } from '~icons/ant-design/fullscreen-outlined'
+export { default as IconFullscreenExit } from '~icons/ant-design/fullscreen-exit-outlined'
+
 export { default as IconLogo } from './IconLogo.vue'
