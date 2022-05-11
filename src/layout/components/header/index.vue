@@ -1,24 +1,21 @@
 <template>
   <header class="header">
     <div class="h-left">
-      <n-icon size="20" style="cursor: pointer" @click="appStore.switchCollapsed">
-        <IconMenuExpand v-if="appStore.collapsed" />
-        <IconMenuCollapse v-else />
-      </n-icon>
+      <MenuCollapse />
       <BreadCrumb ml-15 />
     </div>
-
-    <HeaderAction />
+    <div class="h-right">
+      <FullScreen />
+      <UserAvatar />
+    </div>
   </header>
 </template>
 
 <script setup>
-import { useAppStore } from '@/store/modules/app'
-import BreadCrumb from './BreadCrumb.vue'
-import HeaderAction from './HeaderAction.vue'
-import { IconMenuCollapse, IconMenuExpand } from '@/components/AppIcons'
-
-const appStore = useAppStore()
+import BreadCrumb from './components/BreadCrumb.vue'
+import MenuCollapse from './components/MenuCollapse.vue'
+import FullScreen from './components/FullScreen.vue'
+import UserAvatar from './components/UserAvatar.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -29,6 +26,10 @@ const appStore = useAppStore()
   align-items: center;
   justify-content: space-between;
   .h-left {
+    display: flex;
+    align-items: center;
+  }
+  .h-right {
     display: flex;
     align-items: center;
   }

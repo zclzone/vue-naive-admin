@@ -7,8 +7,7 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { router } from '@/router'
 const { currentRoute } = router
 
 function handleBreadClick(path) {
