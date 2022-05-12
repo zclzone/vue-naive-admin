@@ -99,7 +99,7 @@ export const basicRoutes = [
       {
         name: 'Unocss',
         path: 'unocss',
-        component: () => import('@/views/test-page/TestUnocss.vue'),
+        component: () => import('@/views/test-page/unocss/index.vue'),
         meta: {
           title: '测试unocss',
         },
@@ -107,7 +107,7 @@ export const basicRoutes = [
       {
         name: 'Message',
         path: 'message',
-        component: () => import('@/views/test-page/TestMessage.vue'),
+        component: () => import('@/views/test-page/message/index.vue'),
         meta: {
           title: '测试Message',
         },
@@ -115,7 +115,7 @@ export const basicRoutes = [
       {
         name: 'Dialog',
         path: 'dialog',
-        component: () => import('@/views/test-page/TestDialog.vue'),
+        component: () => import('@/views/test-page/dialog/index.vue'),
         meta: {
           title: '测试Dialog',
         },
@@ -123,7 +123,7 @@ export const basicRoutes = [
       {
         name: 'TestKeepAlive',
         path: 'keep-alive',
-        component: () => import('@/views/test-page/TestKeepAlive.vue'),
+        component: () => import('@/views/test-page/keep-alive/index.vue'),
         meta: {
           title: '测试Keep-Alive',
           keepAlive: true,
