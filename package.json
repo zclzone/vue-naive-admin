@@ -45,8 +45,8 @@
     "unocss": "^0.16.4",
     "unplugin-icons": "^0.14.1",
     "unplugin-vue-components": "^0.17.21",
-    "vite": "^2.9.8",
-    "vite-plugin-html": "^2.1.2",
+    "vite": "^2.9.9",
+    "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-vue-setup-extend": "^0.3.0"
   }

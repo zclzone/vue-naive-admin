@@ -1,4 +1,4 @@
-import html from 'vite-plugin-html'
+import { createHtmlPlugin } from 'vite-plugin-html'
 import { version } from '../../package.json'
 import { GLOB_CONFIG_FILE_NAME } from '../constant'
 
@@ -10,7 +10,7 @@ export function configHtmlPlugin(viteEnv, isBuild) {
     return `${path}${GLOB_CONFIG_FILE_NAME}?v=${version}-${new Date().getTime()}`
   }
 
-  const htmlPlugin = html({
+  const htmlPlugin = createHtmlPlugin({
     minify: isBuild,
     inject: {
       data: {
