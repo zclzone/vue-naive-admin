@@ -23,7 +23,7 @@ specifiers:
   lodash-es: ^4.17.21
   md-editor-v3: ^1.11.4
   mockjs: ^1.1.0
-  naive-ui: ^2.27.0
+  naive-ui: ^2.28.4
   pinia: ^2.0.13
   prettier: ^2.6.1
   rollup-plugin-visualizer: ^5.6.0
@@ -66,7 +66,7 @@ devDependencies:
   eslint-plugin-vue: 8.5.0_eslint@8.12.0
   esno: 0.13.0
   fs-extra: 10.0.1
-  naive-ui: 2.27.0_vue@3.2.31
+  naive-ui: 2.28.4_vue@3.2.31
   prettier: 2.6.1
   rollup-plugin-visualizer: 5.6.0
   sass: 1.49.10
@@ -193,6 +193,10 @@ packages:
       local-pkg: 0.4.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@juggle/resize-observer/3.3.1:
+    resolution: {integrity: sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw==}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -1845,8 +1849,8 @@ packages:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: true
 
-  /naive-ui/2.27.0_vue@3.2.31:
-    resolution: {integrity: sha512-g9A2uulbQKMuJpUjAyiAqBHQ4xrcbwRPdv+OS2FeNC5u/SrRWFiO64X10YDyMwQNudrwc3VVqKUrw3ZArxtFCg==}
+  /naive-ui/2.28.4_vue@3.2.31:
+    resolution: {integrity: sha512-zPQycH302C1jx/1Qq16XCWXZ17Suuwn3IVO4dEYaSkRcFfSZmzlZjwoLYFDQo50el0xIeHeWzHuyG5TrLzklcw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
@@ -1863,12 +1867,11 @@ packages:
       lodash: 4.17.21
       lodash-es: 4.17.21
       seemly: 0.3.3
-      treemate: 0.3.10
-      vdirs: 0.1.7_vue@3.2.31
-      vfonts: 0.0.3
+      treemate: 0.3.11
+      vdirs: 0.1.8_vue@3.2.31
       vooks: 0.2.12_vue@3.2.31
       vue: 3.2.31
-      vueuc: 0.4.28_vue@3.2.31
+      vueuc: 0.4.32_vue@3.2.31
     dev: true
 
   /nanoid/3.3.2:
@@ -2130,10 +2133,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /resize-observer-polyfill/1.5.1:
-    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
-    dev: true
-
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
     engines: {node: '>=4'}
@@ -2342,8 +2341,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /treemate/0.3.10:
-    resolution: {integrity: sha512-uxN98H84/zXAkn02rEeip9SNnOR889QIBXfpZnwjaanp8JRElxjdmDaKmVULclrn54J8RcJVCqfeQZsdeMjwow==}
+  /treemate/0.3.11:
+    resolution: {integrity: sha512-M8RGFoKtZ8dF+iwJfAJTOH/SM4KluKOKRJpjCMhI8bG3qB74zrFoArKZ62ll0Fr3mqkMJiQOmWYkdYgDeITYQg==}
     dev: true
 
   /tslib/2.4.0:
@@ -2519,17 +2518,13 @@ packages:
     resolution: {integrity: sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==}
     dev: true
 
-  /vdirs/0.1.7_vue@3.2.31:
-    resolution: {integrity: sha512-MEUaLhV1jJyUqA2Ar4DfvlQx8jWs+PpCZ2dbM0ILelpMWGOybzt8ddL456VxeIbY/tkuDGT/Wzb8GG4LCuLuHw==}
+  /vdirs/0.1.8_vue@3.2.31:
+    resolution: {integrity: sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==}
     peerDependencies:
       vue: ^3.0.11
     dependencies:
       evtd: 0.2.3
       vue: 3.2.31
-    dev: true
-
-  /vfonts/0.0.3:
-    resolution: {integrity: sha512-nguyw8L6Un8eelg1vQ31vIU2ESxqid7EYmy8V+MDeMaHBqaRSkg3dTBToC1PR00D89UzS/SLkfYPnx0Wf23IQQ==}
     dev: true
 
   /vite-plugin-html/3.2.0_vite@2.9.9:
@@ -2671,17 +2666,17 @@ packages:
       '@vue/shared': 3.2.31
     dev: false
 
-  /vueuc/0.4.28_vue@3.2.31:
-    resolution: {integrity: sha512-Udr1ROwJocHIThA5G+H5qN1QEFI4pskDvl+w/2Ul2XIjaAeIuQ6ygEOKHOXRJqKX5PxcTi1QQUpb7yQWsDw7ww==}
+  /vueuc/0.4.32_vue@3.2.31:
+    resolution: {integrity: sha512-Bmiuhn7g5O+dzW3eX2EghsG7CiocpLwRtgbX7aiILja9K0wjxVYrJqMOiYwCxB6pvO91JDywwINpFshMZru9/g==}
     peerDependencies:
       vue: ^3.0.11
     dependencies:
       '@css-render/vue3-ssr': 0.15.9_vue@3.2.31
+      '@juggle/resize-observer': 3.3.1
       css-render: 0.15.9
       evtd: 0.2.3
-      resize-observer-polyfill: 1.5.1
       seemly: 0.3.3
-      vdirs: 0.1.7_vue@3.2.31
+      vdirs: 0.1.8_vue@3.2.31
       vooks: 0.2.12_vue@3.2.31
       vue: 3.2.31
     dev: true
