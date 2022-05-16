@@ -16,6 +16,10 @@ export function isNull(val) {
   return val === null
 }
 
+export function isWhitespace(val) {
+  return val === ''
+}
+
 export function isObject(val) {
   return !isNull(val) && is(val, 'Object')
 }
@@ -64,6 +68,10 @@ export function isNullOrUndef(val) {
   return isNull(val) || isUndef(val)
 }
 
+export function isNullOrWhitespace(val) {
+  return isNullOrUndef(val) || isWhitespace(val)
+}
+
 export function isEmpty(val) {
   if (isArray(val) || isString(val)) {
     return val.length === 0
@@ -81,14 +89,14 @@ export function isEmpty(val) {
 }
 
 /**
- * * 类似sql的isnull函数
- * * 第一个参数为null/undefined/''则返回第二个参数作为默认值，否则返回第一个参数
+ * * 类似mysql的IFNULL函数
+ * * 第一个参数为null/undefined/'' 则返回第二个参数作为备用值，否则返回第一个参数
  * @param {Number|Boolean|String} val
- * @param {Number|Boolean|String} replaceVal
+ * @param {Number|Boolean|String} def
  * @returns
  */
-export function isNullReplace(val, replaceVal = '') {
-  return isNullOrUndef(val) || val === '' ? replaceVal : val
+export function ifNull(val, def = '') {
+  return isNullOrWhitespace(val) ? def : val
 }
 
 export function isUrl(path) {
