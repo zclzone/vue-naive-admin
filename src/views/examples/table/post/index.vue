@@ -31,13 +31,12 @@ onBeforeMount(() => {
   initTableData()
 })
 
-// fns
 function handleCreate() {
   router.push('/example/table/post-create')
 }
 
 function handleCheck(rowKeys) {
-  $message.info(`选中${rowKeys.join(' ')}`)
+  if (rowKeys.length) $message.info(`选中${rowKeys.join(' ')}`)
 }
 </script>
 
