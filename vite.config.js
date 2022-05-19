@@ -38,8 +38,8 @@ export default defineConfig(({ command, mode }) => {
     build: {
       target: 'es2015',
       outDir: OUTPUT_DIR,
-      brotliSize: false,
-      chunkSizeWarningLimit: 2000,
+      reportCompressedSize: false, // 启用/禁用 gzip 压缩大小报告
+      chunkSizeWarningLimit: 1024, // chunk 大小警告的限制（单位kb）
     },
   }
 })
