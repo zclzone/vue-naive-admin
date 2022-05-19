@@ -16,7 +16,7 @@ export function wrapperEnv(envOptions) {
     if (['VITE_PORT'].includes(key)) {
       val = +val
     }
-    if (key === 'VITE_PROXY' && val) {
+    if (key === 'VITE_PROXY' && val && typeof val === 'string') {
       try {
         val = JSON.parse(val.replace(/'/g, '"'))
       } catch (error) {
@@ -24,9 +24,9 @@ export function wrapperEnv(envOptions) {
       }
     }
     ret[key] = val
-    if (typeof key === 'string') {
+    if (typeof val === 'string') {
       process.env[key] = val
-    } else if (typeof key === 'object') {
+    } else if (typeof val === 'object') {
       process.env[key] = JSON.stringify(val)
     }
   }
