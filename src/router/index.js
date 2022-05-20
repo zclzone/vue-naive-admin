@@ -5,7 +5,7 @@ import { basicRoutes } from './routes'
 const isHash = !!import.meta.env.VITE_APP_USE_HASH
 export const router = createRouter({
   history: isHash ? createWebHashHistory('/') : createWebHistory('/'),
-  routes: basicRoutes,
+  routes: [],
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
@@ -20,6 +20,9 @@ export function resetRouter() {
 }
 
 export function setupRouter(app) {
+  basicRoutes.forEach((route) => {
+    !router.hasRoute(route.name) && router.addRoute(route)
+  })
   app.use(router)
   setupRouterGuard(router)
 }
