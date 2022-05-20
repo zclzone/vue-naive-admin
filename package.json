@@ -19,7 +19,7 @@
     "mockjs": "^1.1.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@iconify-json/ant-design": "^1.1.1",

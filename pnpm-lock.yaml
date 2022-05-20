@@ -36,7 +36,7 @@ specifiers:
   vite-plugin-mock: ^2.9.6
   vite-plugin-vue-setup-extend: ^0.3.0
   vue: ^3.2.31
-  vue-router: ^4.0.14
+  vue-router: ^4.0.15
 
 dependencies:
   '@vueuse/core': 8.4.2_vue@3.2.31
@@ -47,7 +47,7 @@ dependencies:
   mockjs: 1.1.0
   pinia: 2.0.13_vue@3.2.31
   vue: 3.2.31
-  vue-router: 4.0.14_vue@3.2.31
+  vue-router: 4.0.15_vue@3.2.31
 
 devDependencies:
   '@iconify-json/ant-design': 1.1.1
@@ -2647,8 +2647,8 @@ packages:
       - supports-color
     dev: true
 
-  /vue-router/4.0.14_vue@3.2.31:
-    resolution: {integrity: sha512-wAO6zF9zxA3u+7AkMPqw9LjoUCjSxfFvINQj3E/DceTt6uEz1XZLraDhdg2EYmvVwTBSGlLYsUw8bDmx0754Mw==}
+  /vue-router/4.0.15_vue@3.2.31:
+    resolution: {integrity: sha512-xa+pIN9ZqORdIW1MkN2+d9Ui2pCM1b/UMgwYUCZOiFYHAvz/slKKBDha8DLrh5aCG/RibtrpyhKjKOZ85tYyWg==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
