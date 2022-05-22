@@ -5,6 +5,7 @@
       <BreadCrumb ml-15 />
     </div>
     <div class="h-right">
+      <GithubSite />
       <FullScreen />
       <UserAvatar />
     </div>
@@ -16,6 +17,7 @@ import BreadCrumb from './components/BreadCrumb.vue'
 import MenuCollapse from './components/MenuCollapse.vue'
 import FullScreen from './components/FullScreen.vue'
 import UserAvatar from './components/UserAvatar.vue'
+import GithubSite from './components/GithubSite.vue'
 </script>
 
 <style lang="scss" scoped>
