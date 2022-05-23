@@ -126,4 +126,3 @@ function handleSelect(key) {
   handleHideDropdown()
 }
 </script>
-<style lang="scss" scoped></style>

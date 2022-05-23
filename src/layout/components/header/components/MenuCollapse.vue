@@ -11,5 +11,3 @@ import { useAppStore } from '@/store/modules/app'
 
 const appStore = useAppStore()
 </script>
-
-<style lang="scss" scoped></style>
