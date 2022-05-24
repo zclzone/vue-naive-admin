@@ -6,7 +6,10 @@
         <DialogContent />
         <n-message-provider>
           <MessageContent />
-          <slot></slot>
+          <n-notification-provider>
+            <NotificationContent />
+            <slot></slot>
+          </n-notification-provider>
         </n-message-provider>
       </n-dialog-provider>
     </n-loading-bar-provider>
@@ -18,6 +21,7 @@ import MessageContent from './MessageContent.vue'
 import DialogContent from './DialogContent.vue'
 import LoadingBar from './LoadingBar.vue'
 import { useThemeStore } from '@/store/modules/theme'
+import NotificationContent from './NotificationContent.vue'
 
 const useTheme = useThemeStore()
 </script>
