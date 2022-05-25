@@ -20,8 +20,8 @@
 import MessageContent from './MessageContent.vue'
 import DialogContent from './DialogContent.vue'
 import LoadingBar from './LoadingBar.vue'
-import { useThemeStore } from '@/store/modules/theme'
 import NotificationContent from './NotificationContent.vue'
+import { useThemeStore } from '@/store/modules/theme'
 
 const useTheme = useThemeStore()
 </script>
