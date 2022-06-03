@@ -24,7 +24,6 @@ const options = [
 ]
 
 function handleSelect(key) {
-  console.log(router)
   if (key === 'logout') {
     $dialog.confirm({
       content: '确认退出？',
