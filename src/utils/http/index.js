@@ -1,13 +1,17 @@
 import axios from 'axios'
-import { setupInterceptor } from './interceptors'
+import { repReject, repResolve, reqReject, reqResolve } from './interceptors'
 
-function createAxios(option = {}) {
-  const defBaseURL = window.__APP__GLOB__CONF__?.VITE_APP_GLOB_BASE_API || import.meta.env.VITE_APP_GLOB_BASE_API
+export function createAxios(options = {}) {
+  const defaultOptions = {
+    baseURL: window.__APP__GLOB__CONF__?.VITE_APP_GLOB_BASE_API || import.meta.env.VITE_APP_GLOB_BASE_API,
+    timeout: 12000,
+  }
   const service = axios.create({
-    timeout: option.timeout || 120000,
-    baseURL: option.baseURL || defBaseURL,
+    ...defaultOptions,
+    ...options,
   })
-  setupInterceptor(service)
+  service.interceptors.request.use(reqResolve, reqReject)
+  service.interceptors.response.use(repResolve, repReject)
   return service
 }
 
