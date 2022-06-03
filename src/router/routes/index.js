@@ -72,6 +72,7 @@ export const basicRoutes = [
     meta: {
       title: '错误页',
       icon: IconAlert,
+      index: 4,
     },
     children: [
       {

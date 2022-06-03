@@ -27,7 +27,7 @@ const appStore = useAppStore()
 const { currentRoute } = router
 
 const menuOptions = computed(() => {
-  return permissionStore.menus.map((item) => getMenuItem(item))
+  return permissionStore.menus.map((item) => getMenuItem(item)).sort((a, b) => a.index - b.index)
 })
 
 function resolvePath(basePath, path) {
@@ -47,6 +47,7 @@ function getMenuItem(route, basePath = '') {
     key: route.name,
     path: resolvePath(basePath, route.path),
     icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon(IconCircle, { size: 8 }),
+    index: route.meta?.index || 0,
   }
 
   const visibleChildren = route.children ? route.children.filter((item) => item.name && !item.isHidden) : []
@@ -63,16 +64,19 @@ function getMenuItem(route, basePath = '') {
       icon: singleRoute.meta?.icon
         ? renderIcon(singleRoute.meta?.icon, { size: 16 })
         : renderIcon(IconCircle, { size: 8 }),
+      index: menuItem.index,
     }
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []
 
     if (visibleItems.length === 1) {
       menuItem = getMenuItem(visibleItems[0], menuItem.path)
     } else if (visibleItems.length > 1) {
-      menuItem.children = visibleItems.map((item) => getMenuItem(item, menuItem.path))
+      menuItem.children = visibleItems.map((item) => getMenuItem(item, menuItem.path)).sort((a, b) => a.index - b.index)
     }
   } else {
-    menuItem.children = visibleChildren.map((item) => getMenuItem(item, menuItem.path))
+    menuItem.children = visibleChildren
+      .map((item) => getMenuItem(item, menuItem.path))
+      .sort((a, b) => a.index - b.index)
   }
 
   return menuItem
