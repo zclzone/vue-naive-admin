@@ -116,7 +116,7 @@ npm run preview
 
 
 <p align="center">
-  <img alt="Vue Naive Admin Logo" width="600" src="https://assets.qszone.com/image/Snipaste_2022-05-21_17-20-55.png">
+  <img src="https://assets.qszone.com/image/Snipaste_2022-06-05_18-13-49.png" />
 </p>
 
 
