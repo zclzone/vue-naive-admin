@@ -26,6 +26,8 @@ const options = [
 function handleSelect(key) {
   if (key === 'logout') {
     $dialog.confirm({
+      title: '提示',
+      type: 'info',
       content: '确认退出？',
       confirm() {
         userStore.logout()
