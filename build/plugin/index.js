@@ -20,10 +20,15 @@ import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
  */
 import Icons from 'unplugin-icons/vite'
 
+/**
+ * * unocss插件，原子css
+ * https://github.com/antfu/unocss
+ */
+import Unocss from 'unocss/vite'
+
 // rollup打包分析插件
 import visualizer from 'rollup-plugin-visualizer'
 
-import { unocss } from './unocss'
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
 
@@ -35,8 +40,8 @@ export function createVitePlugins(viteEnv, isBuild) {
       resolvers: [NaiveUiResolver()],
     }),
     Icons({ compiler: 'vue3', autoInstall: true }),
-    unocss(),
     configHtmlPlugin(viteEnv, isBuild),
+    Unocss(),
   ]
 
   viteEnv?.VITE_APP_USE_MOCK && plugins.push(configMockPlugin(isBuild))
