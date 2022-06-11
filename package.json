@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@iconify-json/ant-design": "^1.1.1",
+    "@iconify-json/ic": "^1.1.2",
     "@iconify-json/mdi": "^1.1.9",
     "@iconify-json/simple-icons": "^1.1.7",
     "@vitejs/plugin-vue": "^1.10.2",

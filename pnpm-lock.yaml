@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@iconify-json/ant-design': ^1.1.1
+  '@iconify-json/ic': ^1.1.2
   '@iconify-json/mdi': ^1.1.9
   '@iconify-json/simple-icons': ^1.1.7
   '@vitejs/plugin-vue': ^1.10.2
@@ -48,6 +49,7 @@ dependencies:
 
 devDependencies:
   '@iconify-json/ant-design': 1.1.1
+  '@iconify-json/ic': 1.1.2
   '@iconify-json/mdi': 1.1.9
   '@iconify-json/simple-icons': 1.1.7
   '@vitejs/plugin-vue': 1.10.2_vite@2.9.9
@@ -154,6 +156,12 @@ packages:
 
   /@iconify-json/ant-design/1.1.1:
     resolution: {integrity: sha512-aziSNNmMGe/BpDVn+LCi7BP1hBJq39kn0j9yk4ZHqKGytiF9JRF/0ziKjxvo0BvYFuPAjwMVJpFzhG0KMZ/DGw==}
+    dependencies:
+      '@iconify/types': 1.1.0
+    dev: true
+
+  /@iconify-json/ic/1.1.2:
+    resolution: {integrity: sha512-OXLXNMECrwg1N7HqG9z+p8eF9NleoV5tZvIH/W3ip3HdZsg1VbEWl0RpI9K5VJjT95xVn2n+gcAgLPD5HNAsXg==}
     dependencies:
       '@iconify/types': 1.1.0
     dev: true

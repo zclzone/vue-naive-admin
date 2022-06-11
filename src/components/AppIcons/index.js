@@ -20,5 +20,7 @@ export { default as IconExit } from '~icons/mdi/exit-to-app'
 
 export { default as IconFullscreen } from '~icons/ant-design/fullscreen-outlined'
 export { default as IconFullscreenExit } from '~icons/ant-design/fullscreen-exit-outlined'
+export { default as IconArrowLeft } from '~icons/ic/baseline-keyboard-arrow-left'
+export { default as IconArrowRight } from '~icons/ic/baseline-keyboard-arrow-right'
 
 export { default as IconLogo } from './IconLogo.vue'
