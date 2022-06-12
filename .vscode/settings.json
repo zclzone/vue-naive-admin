@@ -1,5 +1,6 @@
 {
   "files.eol": "\n",
+  "unocss.root": "packages/client",
   "path-intellisense.mappings": {
     "@/": "${workspaceRoot}/src"
   },
