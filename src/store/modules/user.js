@@ -38,10 +38,10 @@ export const useUserStore = defineStore('user', {
         return Promise.reject(error)
       }
     },
-    logout() {
-      toLogin()
+    async logout() {
       removeToken()
       this.userInfo = {}
+      toLogin()
     },
     setUserInfo(userInfo = {}) {
       this.userInfo = { ...this.userInfo, ...userInfo }
