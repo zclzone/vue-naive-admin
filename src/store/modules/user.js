@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { getUser } from '@/api/user'
 import { removeToken } from '@/utils/token'
+import { toLogin } from '@/utils/auth'
 
 export const useUserStore = defineStore('user', {
   state() {
@@ -31,14 +32,14 @@ export const useUserStore = defineStore('user', {
           this.userInfo = { id, name, avatar, role }
           return Promise.resolve(res.data)
         } else {
-          return Promise.reject(res.message)
+          return Promise.reject(res)
         }
       } catch (error) {
-        console.error(error)
-        return Promise.reject(error.message)
+        return Promise.reject(error)
       }
     },
     logout() {
+      toLogin()
       removeToken()
       this.userInfo = {}
     },

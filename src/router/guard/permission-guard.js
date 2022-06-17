@@ -2,6 +2,7 @@ import { useUserStore } from '@/store/modules/user'
 import { usePermissionStore } from '@/store/modules/permission'
 import { NOT_FOUND_ROUTE } from '@/router/routes'
 import { getToken, refreshAccessToken, removeToken } from '@/utils/token'
+import { toLogin } from '@/utils/auth'
 
 const WHITE_LIST = ['/login', '/redirect']
 export function createPermissionGuard(router) {
@@ -18,19 +19,18 @@ export function createPermissionGuard(router) {
           refreshAccessToken()
           next()
         } else {
-          try {
-            await userStore.getUserInfo()
-            const accessRoutes = permissionStore.generateRoutes(userStore.role)
-            accessRoutes.forEach((route) => {
-              !router.hasRoute(route.name) && router.addRoute(route)
-            })
-            router.addRoute(NOT_FOUND_ROUTE)
-            next({ ...to, replace: true })
-          } catch (error) {
+          await userStore.getUserInfo().catch((error) => {
             removeToken()
-            $message.error(error)
-            next({ path: '/login', query: { ...to.query, redirect: to.path } })
-          }
+            toLogin()
+            $message.error(`【${error.code}】 ${error.message}`)
+            return
+          })
+          const accessRoutes = permissionStore.generateRoutes(userStore.role)
+          accessRoutes.forEach((route) => {
+            !router.hasRoute(route.name) && router.addRoute(route)
+          })
+          router.addRoute(NOT_FOUND_ROUTE)
+          next({ ...to, replace: true })
         }
       }
     } else {

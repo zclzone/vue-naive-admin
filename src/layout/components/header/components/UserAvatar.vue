@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-import { router } from '@/router'
 import { useUserStore } from '@/store/modules/user'
 import { IconExit } from '@/components/AppIcons'
 import { renderIcon } from '@/utils/icon'
@@ -32,7 +31,6 @@ function handleSelect(key) {
       confirm() {
         userStore.logout()
         $message.success('已退出登录')
-        router.push({ path: '/login' })
       },
     })
   }

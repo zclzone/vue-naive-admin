@@ -24,14 +24,12 @@ export async function refreshAccessToken() {
     return
   }
   const { time } = tokenItem
-  if (new Date().getTime() - time > 1000 * 60 * 30) {
-    try {
-      const res = await refreshToken()
-      if (res.code === 0) {
-        setToken(res.data.token)
-      }
-    } catch (error) {
-      console.error(error)
+  // token生成或者刷新后30分钟内不执行刷新
+  if (new Date().getTime() - time <= 1000 * 60 * 30) return
+  try {
+    const res = await refreshToken()
+    if (res.code === 0) {
+      setToken(res.data.token)
     }
-  }
+  } catch (error) {}
 }
