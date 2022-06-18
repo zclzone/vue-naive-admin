@@ -54,7 +54,7 @@ function handleSavePost(e) {
     margin-right: 20px;
     font-size: 20px;
     font-weight: bold;
-    color: $primaryColor;
+    color: var(--primaryColor);
   }
 }
 </style>

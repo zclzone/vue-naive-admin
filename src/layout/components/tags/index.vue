@@ -99,11 +99,11 @@ async function handleContextMenu(e, tagItem) {
     transition: all 0.7s;
     &:hover {
       color: #fff;
-      background-color: $primaryColor;
+      background-color: var(--primaryColor);
     }
   }
   &:hover {
-    color: $primaryColor;
+    color: var(--primaryColor);
   }
 }
 </style>

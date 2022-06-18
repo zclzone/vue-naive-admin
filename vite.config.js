@@ -22,14 +22,6 @@ export default defineConfig(({ command, mode }) => {
       },
     },
     plugins: createVitePlugins(viteEnv, isBuild),
-    css: {
-      preprocessorOptions: {
-        //define global scss variable
-        scss: {
-          additionalData: `@import '@/styles/variables.scss';`,
-        },
-      },
-    },
     server: {
       host: '0.0.0.0',
       port: VITE_PORT,

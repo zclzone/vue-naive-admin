@@ -2,8 +2,9 @@
   <n-menu
     class="side-menu"
     accordion
-    :indent="12"
-    :root-indent="12"
+    :indent="18"
+    :collapsed-icon-size="22"
+    :collapsed-width="64"
     :options="menuOptions"
     :value="(currentRoute.meta && currentRoute.meta.activeMenu) || currentRoute.name"
     @update:value="handleMenuSelect"
@@ -96,39 +97,17 @@ function handleMenuSelect(key, item) {
 </script>
 
 <style lang="scss">
-.n-menu {
-  margin-top: 10px;
-  padding-left: 10px;
+.side-menu:not(.n-menu--collapsed) {
   .n-menu-item-content {
     &::before {
-      left: 0;
-      right: 0;
-      border-radius: 0;
-      background-color: unset !important;
+      left: 5px;
+      right: 5px;
     }
-    &:hover,
-    &.n-menu-item-content--selected {
-      border-radius: 0 !important;
-
+    &.n-menu-item-content--selected,
+    &:hover {
       &::before {
-        border-right: 3px solid $primaryColor;
-        background-color: #16243a;
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba($primaryColor, 0.3) 100%);
+        border-left: 4px solid var(--primaryColor);
       }
-    }
-  }
-
-  .n-menu-item-content-header {
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .n-submenu-children {
-    .n-menu-item-content-header {
-      font-size: 14px;
-      font-weight: normal;
-      position: relative;
-      overflow: visible !important;
     }
   }
 }

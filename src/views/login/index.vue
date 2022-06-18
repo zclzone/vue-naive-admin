@@ -1,7 +1,7 @@
 <template>
   <div class="login-bg" f-c-c h-full>
     <div class="login-wrapper" flex w-full max-w-1020>
-      <div p-40 style="border-right: 1px solid #cccccc5e">
+      <div p-40 border-r border-gray-200>
         <img src="@/assets/images/login_banner.png" height="380" alt="login_banner" />
       </div>
 
@@ -10,27 +10,29 @@
           <img mr-15 src="@/assets/images/logo.svg" width="45" alt="logo" />
           {{ title }}
         </h5>
-        <div mt-35 w-full max-w-360 h-50>
-          <input
-            v-model="loginInfo.name"
+        <div mt-35 w-full max-w-360>
+          <n-input
+            v-model:value="loginInfo.name"
             autofocus
-            type="text"
-            class="login-ipt"
-            placeholder="username"
-            @keydown.enter="handleLogin"
-          />
+            class="text-16 items-center h-50 pl-10"
+            placeholder="请输入用户名"
+            :maxlength="20"
+          >
+          </n-input>
         </div>
-        <div mt-35 w-full max-w-360 h-50>
-          <input
-            v-model="loginInfo.password"
+        <div mt-35 w-full max-w-360>
+          <n-input
+            v-model:value="loginInfo.password"
+            class="text-16 items-center h-50 pl-10"
             type="password"
-            class="login-ipt"
-            placeholder="password"
+            show-password-on="mousedown"
+            placeholder="密码"
+            :maxlength="20"
             @keydown.enter="handleLogin"
           />
         </div>
-        <div mt-35 w-full max-w-360 h-50>
-          <button class="login-btn" @click="handleLogin">登录</button>
+        <div mt-35 w-full max-w-360>
+          <n-button w-full h-50 rounded-5 text-16 type="primary" @click="handleLogin">登录</n-button>
         </div>
       </div>
     </div>
@@ -100,38 +102,6 @@ async function handleLogin() {
 
 .login-wrapper {
   box-shadow: 1.5px 3.99px 27px 0px rgb(0 0 0 / 10%);
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.login-ipt {
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-  border: 1px solid #6a6a6a;
-  border-radius: 5px;
-  color: $primaryColor;
-  font-size: 16px;
-  transition: 0.5s;
-  &:focus {
-    border-color: $primaryColor;
-    box-shadow: 0 0 5px $primaryColor;
-  }
-}
-.login-btn {
-  width: 100%;
-  height: 100%;
-
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  background-color: $primaryColor;
-
-  cursor: pointer;
-  transition: all 0.3s;
-  &:hover {
-    opacity: 0.8;
-  }
+  background-color: rgba(255, 255, 255, 0.6);
 }
 </style>

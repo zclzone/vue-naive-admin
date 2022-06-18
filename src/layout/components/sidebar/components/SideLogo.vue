@@ -1,9 +1,11 @@
 <template>
-  <router-link to="/" class="logo">
+  <router-link h-60 f-c-c to="/">
     <n-icon size="36" color="#316c72">
       <IconLogo />
     </n-icon>
-    <n-gradient-text v-show="!appStore.collapsed" type="primary">{{ title }}</n-gradient-text>
+    <h2 v-show="!appStore.collapsed" ml-10 color-primary text-16 font-bold max-w-140 flex-shrink-0>
+      {{ title }}
+    </h2>
   </router-link>
 </template>
 
@@ -14,20 +16,3 @@ const title = import.meta.env.VITE_APP_TITLE
 
 const appStore = useAppStore()
 </script>
-
-<style lang="scss" scoped>
-.logo {
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .n-gradient-text {
-    margin-left: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    max-width: 140px;
-    flex-shrink: 0;
-    white-space: normal;
-  }
-}
-</style>

@@ -46,6 +46,5 @@ const appStore = useAppStore()
   height: 60px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
-  border-left: 1px solid #eee;
 }
 </style>
