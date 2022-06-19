@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import AppProvider from '@/components/AppProvider/index.vue'
+import AppProvider from '@/components/common/AppProvider.vue'
 </script>
 
 <style lang="scss">

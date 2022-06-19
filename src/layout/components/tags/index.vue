@@ -25,7 +25,7 @@
 import ContextMenu from './ContextMenu.vue'
 import { useTagsStore } from '@/store/modules/tags'
 import { useThemeStore } from '@/store/modules/theme'
-import ScrollX from '@/components/Common/ScrollX.vue'
+import ScrollX from '@/components/common/ScrollX.vue'
 
 const route = useRoute()
 const router = useRouter()

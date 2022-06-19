@@ -51,7 +51,7 @@ const query = unref(router.currentRoute).query
 
 const loginInfo = ref({
   name: 'admin',
-  password: 123456,
+  password: '123456',
 })
 
 const ls = createLocalStorage({ prefixKey: 'login_' })
