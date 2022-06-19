@@ -40,9 +40,6 @@
 </template>
 
 <script setup>
-import { ref, unref } from 'vue'
-import { useRouter } from 'vue-router'
-
 import { login } from '@/api/auth'
 import { createLocalStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'

@@ -17,8 +17,6 @@
 </template>
 
 <script setup>
-import { ref, onBeforeMount } from 'vue'
-import { useRouter } from 'vue-router'
 import { usePostTable } from './usePostTable'
 
 const router = useRouter()

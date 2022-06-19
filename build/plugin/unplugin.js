@@ -1,3 +1,4 @@
+import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
@@ -14,6 +15,9 @@ import { getRootPath } from '../utils'
 
 const customIconPath = getRootPath('src', 'assets/icons')
 export default [
+  AutoImport({
+    imports: ['vue', 'vue-router'],
+  }),
   Icons({
     compiler: 'vue3',
     customCollections: {

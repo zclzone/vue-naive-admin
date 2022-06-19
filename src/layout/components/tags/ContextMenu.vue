@@ -11,7 +11,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useTagsStore } from '@/store/modules/tags'
 import { renderIcon } from '@/utils/icon'
 import { useAppStore } from '@/store/modules/app'

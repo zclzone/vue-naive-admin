@@ -23,8 +23,6 @@
 
 <script setup name="Tags">
 import ContextMenu from './ContextMenu.vue'
-import { nextTick, reactive, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import { useTagsStore } from '@/store/modules/tags'
 import { useThemeStore } from '@/store/modules/theme'
 import ScrollX from '@/components/Common/ScrollX.vue'

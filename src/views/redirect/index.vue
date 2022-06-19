@@ -1,8 +1,6 @@
 <template></template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-
 const { currentRoute, replace } = useRouter()
 
 const { query } = currentRoute.value

@@ -17,7 +17,6 @@
 </template>
 
 <script setup>
-import { watch } from 'vue'
 import { useCssVar } from '@vueuse/core'
 import MessageContent from './MessageContent.vue'
 import DialogContent from './DialogContent.vue'

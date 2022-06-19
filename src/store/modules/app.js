@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { nextTick } from 'vue'
 
 export const useAppStore = defineStore('app', {
   state() {
