@@ -1,5 +1,5 @@
 <template>
-  <ScrollX ref="scrollX" :height="useTheme.tags.height">
+  <ScrollX ref="scrollX" :height="useTheme.tags.height" border-b bc-eee>
     <n-tag
       v-for="tag in tagsStore.tags"
       :key="tag.path"
