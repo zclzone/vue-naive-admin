@@ -30,12 +30,12 @@ body {
 /* 自定义滚动条样式 */
 .cur-scroll {
   &::-webkit-scrollbar{
-    width:8px;
-    height:6px;
+    width: 6px;
+    height: 6px;
   }
   &::-webkit-scrollbar-thumb{
     background-color: transparent;
-    border-radius:4px;
+    border-radius: 3px;
   }
   
   &::-webkit-scrollbar-corner{
