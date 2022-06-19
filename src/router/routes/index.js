@@ -1,17 +1,6 @@
 import Layout from '@/layout/index.vue'
 import Home from '@/views/dashboard/index.vue'
 
-import {
-  IconAlert,
-  IconChart,
-  IconGitee,
-  IconGithub,
-  IconHome,
-  IconLink,
-  IconMenu,
-  IconVue,
-} from '@/components/AppIcons'
-
 export const basicRoutes = [
   {
     name: '404',
@@ -49,7 +38,7 @@ export const basicRoutes = [
     redirect: '/home',
     meta: {
       title: 'Dashboard',
-      icon: IconChart,
+      icon: 'mdi:chart-bar',
     },
     children: [
       {
@@ -58,7 +47,7 @@ export const basicRoutes = [
         component: Home,
         meta: {
           title: '首页',
-          icon: IconHome,
+          icon: 'mdi:home',
         },
       },
     ],
@@ -71,7 +60,7 @@ export const basicRoutes = [
     redirect: '/error-page/404',
     meta: {
       title: '错误页',
-      icon: IconAlert,
+      icon: 'mdi:alert-circle-outline',
       index: 4,
     },
     children: [
@@ -81,7 +70,7 @@ export const basicRoutes = [
         component: () => import('@/views/error-page/404.vue'),
         meta: {
           title: '404',
-          icon: IconAlert,
+          icon: 'mdi:alert-circle-outline',
         },
       },
     ],
@@ -94,7 +83,7 @@ export const basicRoutes = [
     redirect: '/test/unocss',
     meta: {
       title: '基础功能测试',
-      icon: IconMenu,
+      icon: 'mdi:menu',
     },
     children: [
       {
@@ -139,7 +128,7 @@ export const basicRoutes = [
     component: Layout,
     meta: {
       title: '外部链接',
-      icon: IconLink,
+      icon: 'mdi:link-variant',
     },
     children: [
       {
@@ -147,7 +136,7 @@ export const basicRoutes = [
         path: 'https://github.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - github',
-          icon: IconGithub,
+          icon: 'mdi:github',
         },
       },
       {
@@ -155,7 +144,7 @@ export const basicRoutes = [
         path: 'https://gitee.com/zclzone/vue-naive-admin',
         meta: {
           title: '源码 - gitee',
-          icon: IconGitee,
+          icon: 'simple-icons:gitee',
         },
       },
       {
@@ -163,7 +152,7 @@ export const basicRoutes = [
         path: 'https://zclzone.github.io/vue-naive-admin-docs',
         meta: {
           title: '文档 - vuepress',
-          icon: IconVue,
+          icon: 'mdi:vuejs',
         },
       },
     ],

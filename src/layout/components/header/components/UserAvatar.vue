@@ -9,7 +9,6 @@
 
 <script setup>
 import { useUserStore } from '@/store/modules/user'
-import { IconExit } from '@/components/AppIcons'
 import { renderIcon } from '@/utils/icon'
 
 const userStore = useUserStore()
@@ -18,7 +17,7 @@ const options = [
   {
     label: '退出登录',
     key: 'logout',
-    icon: renderIcon(IconExit, { size: '14px' }),
+    icon: renderIcon('mdi:exit-to-app', { size: '14px' }),
   },
 ]
 

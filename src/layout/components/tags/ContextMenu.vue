@@ -13,7 +13,6 @@
 <script setup>
 import { computed } from 'vue'
 import { useTagsStore } from '@/store/modules/tags'
-import { IconRefresh, IconClose, IconExpand, IconExpandLeft, IconExpandRight } from '@/components/AppIcons'
 import { renderIcon } from '@/utils/icon'
 import { useAppStore } from '@/store/modules/app'
 
@@ -46,31 +45,31 @@ const options = computed(() => [
     label: '重新加载',
     key: 'reload',
     disabled: props.currentPath !== tagsStore.activeTag,
-    icon: renderIcon(IconRefresh, { size: '14px' }),
+    icon: renderIcon('mdi:refresh', { size: '14px' }),
   },
   {
     label: '关闭',
     key: 'close',
     disabled: tagsStore.tags.length <= 1,
-    icon: renderIcon(IconClose, { size: '14px' }),
+    icon: renderIcon('mdi:close', { size: '14px' }),
   },
   {
     label: '关闭其他',
     key: 'close-other',
     disabled: tagsStore.tags.length <= 1,
-    icon: renderIcon(IconExpand, { size: '14px' }),
+    icon: renderIcon('mdi:arrow-expand-horizontal', { size: '14px' }),
   },
   {
     label: '关闭左侧',
     key: 'close-left',
     disabled: tagsStore.tags.length <= 1 || props.currentPath === tagsStore.tags[0].path,
-    icon: renderIcon(IconExpandLeft, { size: '14px' }),
+    icon: renderIcon('mdi:arrow-expand-left', { size: '14px' }),
   },
   {
     label: '关闭右侧',
     key: 'close-right',
     disabled: tagsStore.tags.length <= 1 || props.currentPath === tagsStore.tags[tagsStore.tags.length - 1].path,
-    icon: renderIcon(IconExpandRight, { size: '14px' }),
+    icon: renderIcon('mdi:arrow-expand-right', { size: '14px' }),
   },
 ])
 

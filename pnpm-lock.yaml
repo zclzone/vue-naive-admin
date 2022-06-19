@@ -1,10 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@iconify-json/ant-design': ^1.1.1
-  '@iconify-json/ic': ^1.1.2
-  '@iconify-json/mdi': ^1.1.9
-  '@iconify-json/simple-icons': ^1.1.7
+  '@iconify/json': ^2.1.63
+  '@iconify/vue': ^3.2.1
   '@vitejs/plugin-vue': ^1.10.2
   '@vue/compiler-sfc': ^3.2.31
   '@vueuse/core': ^8.4.2
@@ -46,10 +44,8 @@ dependencies:
   vue-router: 4.0.15_vue@3.2.31
 
 devDependencies:
-  '@iconify-json/ant-design': 1.1.1
-  '@iconify-json/ic': 1.1.2
-  '@iconify-json/mdi': 1.1.9
-  '@iconify-json/simple-icons': 1.1.7
+  '@iconify/json': 2.1.63
+  '@iconify/vue': 3.2.1_vue@3.2.31
   '@vitejs/plugin-vue': 1.10.2_vite@2.9.9
   '@vue/compiler-sfc': 3.2.31
   chalk: 5.0.1
@@ -152,28 +148,11 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/ant-design/1.1.1:
-    resolution: {integrity: sha512-aziSNNmMGe/BpDVn+LCi7BP1hBJq39kn0j9yk4ZHqKGytiF9JRF/0ziKjxvo0BvYFuPAjwMVJpFzhG0KMZ/DGw==}
+  /@iconify/json/2.1.63:
+    resolution: {integrity: sha512-WQwTV6KUl0C+VkH3/j9kwlHLOHyPn0pM7f0kFmJgghQ9Ha672UHr/KTuwVqbqn3c+RxnJyY+jIap4ewawMeaZA==}
     dependencies:
       '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-json/ic/1.1.2:
-    resolution: {integrity: sha512-OXLXNMECrwg1N7HqG9z+p8eF9NleoV5tZvIH/W3ip3HdZsg1VbEWl0RpI9K5VJjT95xVn2n+gcAgLPD5HNAsXg==}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-json/mdi/1.1.9:
-    resolution: {integrity: sha512-iZY3d7nLmEhSxLU5YBHIxVVPySqNjj6zYcf448TXGBPp2PyToITCOuLEaub0rQ9jBAPOlupQsuPX9ylBfgIJ1w==}
-    dependencies:
-      '@iconify/types': 1.1.0
-    dev: true
-
-  /@iconify-json/simple-icons/1.1.7:
-    resolution: {integrity: sha512-VsDh1AlVTJ2GYBBRD8oUmhFrMj00pzmz8oGRrTAdu5sWYOyrJ9f0sFnr+89ABjAnzXqS8z2lmA0SxFG3HGQzvQ==}
-    dependencies:
-      '@iconify/types': 1.1.0
+      pathe: 0.2.0
     dev: true
 
   /@iconify/types/1.1.0:
@@ -191,6 +170,14 @@ packages:
       local-pkg: 0.4.1
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@iconify/vue/3.2.1_vue@3.2.31:
+    resolution: {integrity: sha512-c4R6ZgFo1JrJ8aPMMgOPgfU7lBswihMGR+yWe/P4ZukC3kTkeT4+lkt9Pc/itVFMkwva/S/7u9YofmYv57fnNQ==}
+    peerDependencies:
+      vue: 3.x
+    dependencies:
+      vue: 3.2.31
     dev: true
 
   /@juggle/resize-observer/3.3.1:

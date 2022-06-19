@@ -2,10 +2,10 @@
   <div ref="wrapper" class="tags-wrapper" @mousewheel.prevent="handleMouseWheel">
     <template v-if="showArrow && isOverflow">
       <div class="left" @click="handleMouseWheel({ wheelDelta: 50 })">
-        <IconArrowLeft />
+        <icon-ic:baseline-keyboard-arrow-left />
       </div>
       <div class="right" @click="handleMouseWheel({ wheelDelta: -50 })">
-        <IconArrowRight />
+        <icon-ic:baseline-keyboard-arrow-right />
       </div>
     </template>
 
@@ -25,7 +25,6 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import { IconArrowLeft, IconArrowRight } from '@/components/AppIcons'
 import { debounce } from '@/utils'
 import { isNullOrUndef } from '@/utils/is'
 

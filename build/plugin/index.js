@@ -7,20 +7,6 @@ import vue from '@vitejs/plugin-vue'
 import VueSetupExtend from 'vite-plugin-vue-setup-extend'
 
 /**
- * * 组件库按需引入插件
- * usage: 直接使用组件,无需在任何地方导入组件
- */
-import Components from 'unplugin-vue-components/vite'
-import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-
-/**
- * * unplugin-icons插件，自动引入iconify图标
- * usage: https://github.com/antfu/unplugin-icons
- * 图标库: https://icones.js.org/
- */
-import Icons from 'unplugin-icons/vite'
-
-/**
  * * unocss插件，原子css
  * https://github.com/antfu/unocss
  */
@@ -31,20 +17,14 @@ import visualizer from 'rollup-plugin-visualizer'
 
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
+import unplugin from './unplugin'
 
 export function createVitePlugins(viteEnv, isBuild) {
-  const plugins = [
-    vue(),
-    VueSetupExtend(),
-    Components({
-      resolvers: [NaiveUiResolver()],
-    }),
-    Icons({ compiler: 'vue3', autoInstall: true }),
-    configHtmlPlugin(viteEnv, isBuild),
-    Unocss(),
-  ]
+  const plugins = [vue(), VueSetupExtend(), ...unplugin, configHtmlPlugin(viteEnv, isBuild), Unocss()]
 
-  viteEnv?.VITE_APP_USE_MOCK && plugins.push(configMockPlugin(isBuild))
+  if (viteEnv?.VITE_APP_USE_MOCK) {
+    plugins.push(configMockPlugin(isBuild))
+  }
 
   if (isBuild) {
     plugins.push(

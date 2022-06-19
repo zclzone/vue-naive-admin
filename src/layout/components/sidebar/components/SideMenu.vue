@@ -16,8 +16,6 @@ import { useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { usePermissionStore } from '@/store/modules/permission'
 
-import { IconCircle } from '@/components/AppIcons'
-
 import { isExternal } from '@/utils/is'
 import { useAppStore } from '@/store/modules/app'
 import { renderIcon } from '@/utils/icon'
@@ -47,7 +45,7 @@ function getMenuItem(route, basePath = '') {
     label: (route.meta && route.meta.title) || route.name,
     key: route.name,
     path: resolvePath(basePath, route.path),
-    icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon(IconCircle, { size: 8 }),
+    icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon('mdi:circle-outline', { size: 8 }),
     index: route.meta?.index || 0,
   }
 
@@ -64,7 +62,7 @@ function getMenuItem(route, basePath = '') {
       path: resolvePath(menuItem.path, singleRoute.path),
       icon: singleRoute.meta?.icon
         ? renderIcon(singleRoute.meta?.icon, { size: 16 })
-        : renderIcon(IconCircle, { size: 8 }),
+        : renderIcon('mdi:circle-outline', { size: 8 }),
       index: menuItem.index,
     }
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []

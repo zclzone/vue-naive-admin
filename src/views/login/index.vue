@@ -7,7 +7,7 @@
 
       <div w-full f-c-c flex-col>
         <h5 f-c-c w-full p-15 text-24 font-normal color="#6a6a6a">
-          <img mr-15 src="@/assets/images/logo.svg" width="45" alt="logo" />
+          <icon-custom-logo mr30 text-50 />
           {{ title }}
         </h5>
         <div mt-35 w-full max-w-360>
