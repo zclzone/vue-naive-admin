@@ -30,6 +30,9 @@ watch(
   (vars) => {
     for (const key in vars) {
       useCssVar(`--${key}`, document.documentElement).value = vars[key]
+      if (key === 'primaryColor') {
+        window.localStorage.setItem('__THEME_COLOR__', vars[key])
+      }
     }
   },
   { immediate: true }
