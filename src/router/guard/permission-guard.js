@@ -22,7 +22,7 @@ export function createPermissionGuard(router) {
           await userStore.getUserInfo().catch((error) => {
             removeToken()
             toLogin()
-            $message.error(`【${error.code}】 ${error.message}`)
+            $message.error(error.message || '获取用户信息失败！')
             return
           })
           const accessRoutes = permissionStore.generateRoutes(userStore.role)
