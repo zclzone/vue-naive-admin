@@ -116,7 +116,7 @@ npm run preview
 
 
 <p align="center">
-  <img src="https://assets.qszone.com/image/Snipaste_2022-06-15_12-49-05.png" />
+  <img src="https://assets.qszone.com/image/Snipaste_2022-06-23_19-26-26.png" />
 </p>
 
 
