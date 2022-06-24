@@ -1,9 +1,9 @@
 {
   "files.eol": "\n",
-  "unocss.root": "packages/client",
   "path-intellisense.mappings": {
     "@/": "${workspaceRoot}/src"
   },
+  "editor.formatOnSave": false,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
