@@ -1,12 +1,12 @@
 {
   "name": "vue-naive-admin",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "scripts": {
     "dev": "vite",
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "eslint --fix --ext .js,.vue .",
-    "build": "vite build && esno ./build/script",
-    "build:test": "vite build --mode test && esno ./build/script",
+    "build": "vite build",
+    "build:test": "vite build --mode test",
     "build:github": "vite build --mode github && esno ./build/script",
     "preview": "vite preview"
   },

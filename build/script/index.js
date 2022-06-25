@@ -1,10 +1,8 @@
 import chalk from 'chalk'
-import { runBuildConfig } from './build-config'
 import { runBuildCNAME } from './build-cname'
 
 export const runBuild = async () => {
   try {
-    runBuildConfig()
     runBuildCNAME()
     console.log(`✨ ${chalk.cyan('build successfully!')}`)
   } catch (error) {

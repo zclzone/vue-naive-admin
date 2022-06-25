@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
-const httpsRE = /^https:\/\//
+const httpsReg = /^https:\/\//
 
 export function wrapperEnv(envOptions) {
   if (!envOptions) return {}
@@ -36,7 +36,7 @@ export function wrapperEnv(envOptions) {
 export function createProxy(list = []) {
   const ret = {}
   for (const [prefix, target] of list) {
-    const isHttps = httpsRE.test(target)
+    const isHttps = httpsReg.test(target)
 
     // https://github.com/http-party/node-http-proxy#options
     ret[prefix] = {
