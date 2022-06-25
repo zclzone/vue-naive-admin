@@ -31,7 +31,7 @@
 - 🍍 集成 Pinia，Vuex 的替代方案，轻量、简单、易用（尤大已表示不会有Vuex5，或者说pinia就是Vuex5）
 - 📦 集成 Vite 自动导入插件unplugin-vue-components，解放双手，开发效率直接起飞
 - 🤹 集成 unplugin-icons插件，优雅使用iconify图标
-- 🍏 二次封装 Axios，支持多 axios 实例，支持线上环境免重新打包修改 baseURL
+- 🍏 二次封装 Axios，支持多 axios 实例
 - 🍌 二次封装全局 Dialog、Message、LoadingBar 组件
 - 🍋 二次封装 localStorage 和 sessionStorage，支持设置过期时间
 
