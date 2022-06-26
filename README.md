@@ -113,10 +113,10 @@ npm run preview
 - `mod` 不确定分类的修改
 - `release` 发布
 
-
+### 入群交流
 
 <p align="center">
-  <img src="https://assets.qszone.com/image/Snipaste_2022-06-23_19-26-26.png" />
+  <img src="https://assets.qszone.com/image/saosao.png" />
 </p>
 
 
