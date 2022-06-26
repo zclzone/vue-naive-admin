@@ -1,4 +1,4 @@
-import { resolveToken } from '../_utils'
+import { resolveToken } from '../utils'
 
 const users = {
   admin: {
