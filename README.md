@@ -115,8 +115,8 @@ npm run preview
 
 ### 入群交流
 
-<p align="center">
-  <img src="https://assets.qszone.com/image/saosao.png" />
+<p>
+  <img src="https://assets.qszone.com/image/入群.png" />
 </p>
 
 
