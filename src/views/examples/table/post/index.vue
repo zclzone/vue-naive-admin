@@ -1,6 +1,6 @@
 <template>
-  <div p24>
-    <div class="action-btns">
+  <div p-24>
+    <div flex>
       <n-button size="small" type="primary" @click="handleCreate">新建文章</n-button>
     </div>
     <n-data-table
@@ -37,9 +37,3 @@ function handleCheck(rowKeys) {
   if (rowKeys.length) $message.info(`选中${rowKeys.join(' ')}`)
 }
 </script>
-
-<style lang="scss" scoped>
-.action-btns {
-  display: flex;
-}
-</style>

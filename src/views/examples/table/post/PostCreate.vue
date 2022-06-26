@@ -1,10 +1,15 @@
 <template>
-  <div p-20>
-    <div class="header">
-      <input v-model="post.title" type="text" placeholder="输入文章标题..." class="title" />
+  <div p-24>
+    <div h-60 pl-20 pr-20 flex items-center bg-white>
+      <input
+        v-model="post.title"
+        class="flex-1 pt-15 pb-15 mr-20 text-20 font-bold color-primary"
+        type="text"
+        placeholder="输入文章标题..."
+      />
       <n-button type="primary" style="width: 80px" :loading="btnLoading" @click="handleSavePost">保存</n-button>
     </div>
-    <MdEditor v-model="post.content" style="height: calc(100vh - 210px)" />
+    <MdEditor v-model="post.content" style="height: calc(100vh - 220px)" />
   </div>
 </template>
 
@@ -34,24 +39,6 @@ function handleSavePost(e) {
   ul,
   ol {
     list-style: revert;
-  }
-}
-</style>
-
-<style lang="scss" scoped>
-.header {
-  background-color: #fff;
-  height: 60px;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  .title {
-    flex: 1;
-    padding: 15px 0;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--primaryColor);
   }
 }
 </style>
