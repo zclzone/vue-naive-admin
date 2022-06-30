@@ -9,6 +9,7 @@ export default [
     meta: {
       title: '组件示例',
       role: ['admin'],
+      icon: 'mdi:menu',
     },
     children: [
       {
