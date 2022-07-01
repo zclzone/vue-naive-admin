@@ -44,6 +44,6 @@
     "vite": "^2.9.9",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^2.9.6",
-    "vite-plugin-vue-setup-extend": "^0.3.0"
+    "vite-plugin-vue-setup-extend-plus": "^0.1.0"
   }
 }
