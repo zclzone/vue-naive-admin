@@ -1,7 +1,6 @@
-import { createSessionStorage } from '@/utils/cache'
+import { sStorage } from '@/utils/cache'
 
-export const tagsSS = createSessionStorage({ prefixKey: 'tag_' })
-export const activeTag = tagsSS.get('activeTag')
-export const tags = tagsSS.get('tags')
+export const activeTag = sStorage.get('activeTag')
+export const tags = sStorage.get('tags')
 
 export const WITHOUT_TAG_PATHS = ['/404', '/login', '/redirect']

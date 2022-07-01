@@ -30,7 +30,7 @@ specifiers:
   vite: ^2.9.9
   vite-plugin-html: ^3.2.0
   vite-plugin-mock: ^2.9.6
-  vite-plugin-vue-setup-extend: ^0.3.0
+  vite-plugin-vue-setup-extend-plus: ^0.1.0
   vue: ^3.2.31
   vue-router: ^4.0.15
 
@@ -68,7 +68,7 @@ devDependencies:
   vite: 2.9.9_sass@1.49.10
   vite-plugin-html: 3.2.0_vite@2.9.9
   vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@2.9.9
-  vite-plugin-vue-setup-extend: 0.3.0_vite@2.9.9
+  vite-plugin-vue-setup-extend-plus: 0.1.0
 
 packages:
 
@@ -2788,14 +2788,8 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-setup-extend/0.3.0_vite@2.9.9:
-    resolution: {integrity: sha512-9Nd7Bj4TftB2CoOAD2ZI4cHLW5zjKMF3LNihWbrnAPx3nuGBn33tM9SVUGBVjBB6uv1mGAPavwKCTU0xAD8qhw==}
-    peerDependencies:
-      vite: '>=2.0.0'
-    dependencies:
-      '@vue/compiler-sfc': 3.2.31
-      magic-string: 0.25.9
-      vite: 2.9.9_sass@1.49.10
+  /vite-plugin-vue-setup-extend-plus/0.1.0:
+    resolution: {integrity: sha512-pa27KIsHIBvBMv4xz9uB3UCfAuP2tr7PLlFhCS9vw+aXd326LEHsvhqd3hCQDOR5MjlQVyQH6vwuGr3u+KRiiw==}
     dev: true
 
   /vite/2.9.9_sass@1.49.10:

@@ -41,7 +41,7 @@
 
 <script setup>
 import { login } from '@/api/auth'
-import { createLocalStorage } from '@/utils/cache'
+import { lStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'
 
 const title = import.meta.env.VITE_APP_TITLE
@@ -54,11 +54,10 @@ const loginInfo = ref({
   password: '123456',
 })
 
-const ls = createLocalStorage({ prefixKey: 'login_' })
-const lsLoginInfo = ls.get('loginInfo')
-if (lsLoginInfo) {
-  loginInfo.value.name = lsLoginInfo.name || ''
-  loginInfo.value.password = lsLoginInfo.password || ''
+const localLoginInfo = lStorage.get('loginInfo')
+if (localLoginInfo) {
+  loginInfo.value.name = localLoginInfo.name || ''
+  loginInfo.value.password = localLoginInfo.password || ''
 }
 
 async function handleLogin() {
@@ -72,7 +71,7 @@ async function handleLogin() {
     const res = await login({ name, password: password.toString() })
     if (res.code === 0) {
       $message.success('登录成功')
-      ls.set('loginInfo', { name, password })
+      lStorage.set('loginInfo', { name, password })
       setToken(res.data.token)
 
       if (query.redirect) {

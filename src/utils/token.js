@@ -1,25 +1,23 @@
-import { createLocalStorage } from './cache'
+import { lStorage } from './cache'
 import { refreshToken } from '@/api/auth'
 
 const TOKEN_CODE = 'access_token'
 const DURATION = 6 * 60 * 60
 
-export const lsToken = createLocalStorage()
-
 export function getToken() {
-  return lsToken.get(TOKEN_CODE)
+  return lStorage.get(TOKEN_CODE)
 }
 
 export function setToken(token) {
-  lsToken.set(TOKEN_CODE, token, DURATION)
+  lStorage.set(TOKEN_CODE, token, DURATION)
 }
 
 export function removeToken() {
-  lsToken.remove(TOKEN_CODE)
+  lStorage.remove(TOKEN_CODE)
 }
 
 export async function refreshAccessToken() {
-  const tokenItem = lsToken.getItem(TOKEN_CODE)
+  const tokenItem = lStorage.getItem(TOKEN_CODE)
   if (!tokenItem) {
     return
   }

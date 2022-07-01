@@ -1,6 +1,6 @@
 import { isNullOrUndef } from '@/utils/is'
 
-class WebStorage {
+class Storage {
   constructor(option) {
     this.storage = option.storage
     this.prefixKey = option.prefixKey
@@ -50,6 +50,6 @@ class WebStorage {
   }
 }
 
-export function createWebStorage({ prefixKey = '', storage = sessionStorage }) {
-  return new WebStorage({ prefixKey, storage })
+export function createStorage({ prefixKey = '', storage = sessionStorage }) {
+  return new Storage({ prefixKey, storage })
 }
