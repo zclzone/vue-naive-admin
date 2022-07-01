@@ -10,28 +10,33 @@
           <icon-custom-logo mr30 text-50 />
           {{ title }}
         </h5>
-        <div mt-35 w-full max-w-360>
+        <div mt-30 w-full max-w-360>
           <n-input
             v-model:value="loginInfo.name"
             autofocus
             class="text-16 items-center h-50 pl-10"
-            placeholder="请输入用户名"
+            placeholder="admin"
             :maxlength="20"
           >
           </n-input>
         </div>
-        <div mt-35 w-full max-w-360>
+        <div mt-30 w-full max-w-360>
           <n-input
             v-model:value="loginInfo.password"
             class="text-16 items-center h-50 pl-10"
             type="password"
             show-password-on="mousedown"
-            placeholder="密码"
+            placeholder="123456"
             :maxlength="20"
             @keydown.enter="handleLogin"
           />
         </div>
-        <div mt-35 w-full max-w-360>
+
+        <div mt-20 w-full max-w-360>
+          <n-checkbox :checked="isRemember" label="记住我" :on-update:checked="(val) => (isRemember = val)" />
+        </div>
+
+        <div mt-20 w-full max-w-360>
           <n-button w-full h-50 rounded-5 text-16 type="primary" @click="handleLogin">登录</n-button>
         </div>
       </div>
@@ -43,6 +48,7 @@
 import { login } from '@/api/auth'
 import { lStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'
+import { useStorage } from '@vueuse/core'
 
 const title = import.meta.env.VITE_APP_TITLE
 
@@ -50,16 +56,21 @@ const router = useRouter()
 const query = unref(router.currentRoute).query
 
 const loginInfo = ref({
-  name: 'admin',
-  password: '123456',
+  name: '',
+  password: '',
 })
 
-const localLoginInfo = lStorage.get('loginInfo')
-if (localLoginInfo) {
-  loginInfo.value.name = localLoginInfo.name || ''
-  loginInfo.value.password = localLoginInfo.password || ''
+initLoginInfo()
+
+function initLoginInfo() {
+  const localLoginInfo = lStorage.get('loginInfo')
+  if (localLoginInfo) {
+    loginInfo.value.name = localLoginInfo.name || ''
+    loginInfo.value.password = localLoginInfo.password || ''
+  }
 }
 
+const isRemember = useStorage('isRemember', false)
 async function handleLogin() {
   const { name, password } = loginInfo.value
   if (!name || !password) {
@@ -71,9 +82,12 @@ async function handleLogin() {
     const res = await login({ name, password: password.toString() })
     if (res.code === 0) {
       $message.success('登录成功')
-      lStorage.set('loginInfo', { name, password })
       setToken(res.data.token)
-
+      if (isRemember.value) {
+        lStorage.set('loginInfo', { name, password })
+      } else {
+        lStorage.remove('loginInfo')
+      }
       if (query.redirect) {
         const path = query.redirect
         Reflect.deleteProperty(query, 'redirect')
