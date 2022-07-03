@@ -7,8 +7,7 @@
       :closable="tagsStore.tags.length > 1"
       @click="handleTagClick(tag.path)"
       @close.stop="tagsStore.removeTag(tag.path)"
-      @contextmenu.prevent="handleContextMenu($event, tag)"
-    >
+      @contextmenu.prevent="handleContextMenu($event, tag)">
       {{ tag.title }}
     </n-tag>
   </ScrollX>
@@ -17,8 +16,7 @@
     v-model:show="contextMenuOption.show"
     :current-path="contextMenuOption.currentPath"
     :x="contextMenuOption.x"
-    :y="contextMenuOption.y"
-  />
+    :y="contextMenuOption.y" />
 </template>
 
 <script setup name="Tags">

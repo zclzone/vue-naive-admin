@@ -11,8 +11,7 @@
       :columns="columns"
       :pagination="pagination"
       :row-key="(row) => row.id"
-      @update:checked-row-keys="handleCheck"
-    />
+      @update:checked-row-keys="handleCheck" />
   </div>
 </template>
 

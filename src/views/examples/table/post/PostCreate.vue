@@ -5,8 +5,7 @@
         v-model="post.title"
         class="flex-1 pt-15 pb-15 mr-20 text-20 font-bold color-primary"
         type="text"
-        placeholder="输入文章标题..."
-      />
+        placeholder="输入文章标题..." />
       <n-button type="primary" style="width: 80px" :loading="btnLoading" @click="handleSavePost">保存</n-button>
     </div>
     <MdEditor v-model="post.content" style="height: calc(100vh - 220px)" />

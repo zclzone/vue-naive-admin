@@ -6,8 +6,7 @@
     :y="y"
     placement="bottom-start"
     @clickoutside="handleHideDropdown"
-    @select="handleSelect"
-  />
+    @select="handleSelect" />
 </template>
 
 <script setup>
