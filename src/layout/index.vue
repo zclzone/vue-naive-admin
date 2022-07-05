@@ -6,8 +6,7 @@
       :collapsed-width="64"
       :width="220"
       :native-scrollbar="false"
-      :collapsed="appStore.collapsed"
-    >
+      :collapsed="appStore.collapsed">
       <SideBar />
     </n-layout-sider>
     <n-layout>
@@ -22,8 +21,7 @@
           :style="{
             height: `calc(100% - ${useTheme.tags.visible ? useTheme.tags.height : 0}px)`,
             overflow: 'auto',
-          }"
-        />
+          }" />
       </n-layout>
     </n-layout>
   </n-layout>

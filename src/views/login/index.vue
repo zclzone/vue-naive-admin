@@ -16,8 +16,7 @@
             autofocus
             class="text-16 items-center h-50 pl-10"
             placeholder="admin"
-            :maxlength="20"
-          >
+            :maxlength="20">
           </n-input>
         </div>
         <div mt-30 w-full max-w-360>
@@ -28,8 +27,7 @@
             show-password-on="mousedown"
             placeholder="123456"
             :maxlength="20"
-            @keydown.enter="handleLogin"
-          />
+            @keydown.enter="handleLogin" />
         </div>
 
         <div mt-20 w-full max-w-360>

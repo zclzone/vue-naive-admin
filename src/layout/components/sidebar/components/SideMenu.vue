@@ -7,8 +7,7 @@
     :collapsed-width="64"
     :options="menuOptions"
     :value="(currentRoute.meta && currentRoute.meta.activeMenu) || currentRoute.name"
-    @update:value="handleMenuSelect"
-  />
+    @update:value="handleMenuSelect" />
 </template>
 
 <script setup>

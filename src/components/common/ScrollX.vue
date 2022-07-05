@@ -16,8 +16,7 @@
       :style="{
         height: height + 'px',
         transform: `translateX(${translateX}px)`,
-      }"
-    >
+      }">
       <slot />
     </div>
   </div>

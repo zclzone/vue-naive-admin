@@ -36,8 +36,7 @@
           class="w-300 flex-shrink-0 mt-10 mb-10 cursor-pointer"
           hover:card-shadow
           title="Vue Naive Admin"
-          size="small"
-        >
+          size="small">
           <p op-60>一个基于 Vue3.0、Vite、Naive UI 的轻量级后台管理模板</p>
         </n-card>
         <div w-300 h-0></div>
