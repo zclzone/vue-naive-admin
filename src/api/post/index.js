@@ -1,10 +1,10 @@
 import { defAxios as request } from '@/utils/http'
 
-export function getPosts(data = {}) {
+export function getPosts(params = {}) {
   return request({
     url: '/posts',
     method: 'get',
-    data,
+    params,
   })
 }
 

@@ -52,6 +52,9 @@ export function repReject(error) {
      * TODO 此处可以根据后端返回的错误码自定义框架层面的错误处理
      */
     switch (code) {
+      case 400:
+        message = message || '请求参数错误'
+        break
       case 401:
         message = message || '登录已过期'
         break
