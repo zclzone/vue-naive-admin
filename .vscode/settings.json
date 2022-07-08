@@ -1,8 +1,5 @@
 {
   "files.eol": "\n",
-  "path-intellisense.mappings": {
-    "@/": "${workspaceRoot}/src"
-  },
   "editor.formatOnSave": false,
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "editor.codeActionsOnSave": {
