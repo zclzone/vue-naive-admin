@@ -37,7 +37,10 @@ const wrapper = ref(null)
 const isOverflow = ref(false)
 
 const refreshIsOverflow = debounce(() => {
-  isOverflow.value = content.value.offsetWidth > wrapper.value.offsetWidth
+  const wrapperWidth = wrapper.value.offsetWidth
+  const contentWidth = content.value.offsetWidth
+  isOverflow.value = contentWidth > wrapperWidth
+  resetTranslateX(wrapperWidth, contentWidth)
 }, 200)
 
 function handleMouseWheel(e) {
