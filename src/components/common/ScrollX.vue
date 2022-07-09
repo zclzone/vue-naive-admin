@@ -1,20 +1,19 @@
 <template>
-  <div ref="wrapper" class="tags-wrapper" @mousewheel.prevent="handleMouseWheel">
+  <div ref="wrapper" class="wrapper" @mousewheel.prevent="handleMouseWheel">
     <template v-if="showArrow && isOverflow">
-      <div class="left" @click="handleMouseWheel({ wheelDelta: 50 })">
+      <div class="left" @click="handleMouseWheel({ wheelDelta: 120 })">
         <icon-ic:baseline-keyboard-arrow-left />
       </div>
-      <div class="right" @click="handleMouseWheel({ wheelDelta: -50 })">
+      <div class="right" @click="handleMouseWheel({ wheelDelta: -120 })">
         <icon-ic:baseline-keyboard-arrow-right />
       </div>
     </template>
 
     <div
       ref="content"
-      class="tags-content"
+      class="content"
       :class="{ overflow: isOverflow && showArrow }"
       :style="{
-        height: height + 'px',
         transform: `translateX(${translateX}px)`,
       }">
       <slot />
@@ -24,21 +23,12 @@
 
 <script setup>
 import { debounce } from '@/utils'
-import { isNullOrUndef } from '@/utils/is'
 
 defineProps({
-  height: {
-    type: Number,
-    default: 50,
-  },
   showArrow: {
     type: Boolean,
     default: true,
   },
-})
-
-onMounted(() => {
-  refreshIsOverflow()
 })
 
 const translateX = ref(0)
@@ -46,15 +36,10 @@ const content = ref(null)
 const wrapper = ref(null)
 const isOverflow = ref(false)
 
-function refreshIsOverflow(isIncrease) {
+const refreshIsOverflow = debounce(() => {
   isOverflow.value = content.value.offsetWidth > wrapper.value.offsetWidth
-  if (isNullOrUndef(isIncrease)) return
-  if (isOverflow.value) {
-    handleMouseWheel({ wheelDelta: isIncrease ? -100 : 100 })
-  } else if (!isIncrease && translateX.value < 0) {
-    handleMouseWheel({ wheelDelta: 100 })
-  }
-}
+}, 200)
+
 function handleMouseWheel(e) {
   const { wheelDelta } = e
   const wrapperWidth = wrapper.value.offsetWidth
@@ -65,15 +50,15 @@ function handleMouseWheel(e) {
    * @wrapperWidth 容器的宽度
    * @contentWidth 内容的宽度
    */
-  if (wheelDelta < 0 && -translateX.value > contentWidth - wrapperWidth + 10) {
-    return
+  if (wheelDelta < 0) {
+    if (wrapperWidth > contentWidth && translateX.value < -10) return
+    if (wrapperWidth <= contentWidth && contentWidth + translateX.value - wrapperWidth < -10) return
   }
   if (wheelDelta > 0 && translateX.value > 10) {
     return
   }
 
   translateX.value += wheelDelta
-
   resetTranslateX(wrapperWidth, contentWidth)
 }
 
@@ -87,20 +72,29 @@ const resetTranslateX = debounce(function (wrapperWidth, contentWidth) {
   }
 }, 200)
 
-defineExpose({
-  refreshIsOverflow,
+const observer = new MutationObserver(refreshIsOverflow)
+onMounted(() => {
+  refreshIsOverflow()
+
+  window.addEventListener('resize', refreshIsOverflow)
+  // 监听内容宽度刷新是否超出
+  observer.observe(content.value, { childList: true })
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', refreshIsOverflow)
+  observer.disconnect()
 })
 </script>
 
 <style lang="scss" scoped>
-.tags-wrapper {
+.wrapper {
   display: flex;
   background-color: #fff;
-  position: sticky;
-  top: 0;
+
   z-index: 9;
   overflow: hidden;
-  .tags-content {
+  position: relative;
+  .content {
     padding: 0 10px;
     display: flex;
     align-items: center;

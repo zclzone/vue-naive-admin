@@ -1,5 +1,5 @@
 <template>
-  <ScrollX ref="scrollX" :height="useTheme.tags.height">
+  <ScrollX :class="`h-${useTheme.tags.height}`">
     <n-tag
       v-for="tag in tagsStore.tags"
       :key="tag.path"
@@ -45,15 +45,6 @@ watch(
     tagsStore.addTag({ name, path, title })
   },
   { immediate: true }
-)
-
-const scrollX = ref(null)
-watch(
-  () => tagsStore.tags,
-  async (newVal, oldVal) => {
-    await nextTick()
-    scrollX.value?.refreshIsOverflow(newVal.length > oldVal.length)
-  }
 )
 
 const handleTagClick = (path) => {
