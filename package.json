@@ -8,7 +8,9 @@
     "build": "vite build",
     "build:test": "vite build --mode test",
     "build:github": "vite build --mode github && esno ./build/script",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "cz": "cz"
   },
   "dependencies": {
     "@vueuse/core": "^8.4.2",
@@ -21,11 +23,16 @@
     "vue-router": "^4.0.15"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@iconify/json": "^2.1.63",
     "@iconify/vue": "^3.2.1",
     "@vitejs/plugin-vue": "^1.10.2",
     "@vue/compiler-sfc": "^3.2.31",
     "chalk": "^5.0.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.9.0",
     "dotenv": "^10.0.0",
     "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
@@ -33,6 +40,7 @@
     "eslint-plugin-vue": "^8.5.0",
     "esno": "^0.13.0",
     "fs-extra": "^10.0.1",
+    "husky": "^8.0.1",
     "naive-ui": "^2.30.3",
     "prettier": "^2.6.1",
     "rollup-plugin-visualizer": "^5.6.0",
@@ -45,5 +53,10 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-vue-setup-extend-plus": "^0.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
