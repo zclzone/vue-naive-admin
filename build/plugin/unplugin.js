@@ -17,6 +17,7 @@ const customIconPath = getRootPath('src', 'assets/icons')
 export default [
   AutoImport({
     imports: ['vue', 'vue-router'],
+    dts: false,
   }),
   Icons({
     compiler: 'vue3',
@@ -28,5 +29,6 @@ export default [
   }),
   Components({
     resolvers: [NaiveUiResolver(), IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' })],
+    dts: false,
   }),
 ]
