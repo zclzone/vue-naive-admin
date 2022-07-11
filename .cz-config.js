@@ -13,7 +13,7 @@ module.exports = {
     { value: 'revert',    name:'revert:    回滚 commit' },
   ],
   scopes: [
-    ['custom', '自定义3'],
+    ['custom', '自定义'],
 		['projects', '项目搭建'],
     ['components', '组件相关'],
     ['utils', 'utils 相关'],
