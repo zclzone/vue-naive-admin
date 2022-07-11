@@ -13,7 +13,7 @@
 
 ### 简介
 
-[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin)是一个 **完全开源免费且允许商用** 的后台管理模板，基于 **Vue3、Vite2、Pinia、Unocss 和 Naive UI**等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
+[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **完全开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite2、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
 
 ### 功能
 
@@ -27,14 +27,14 @@
 - 📦 集成 `unplugin` 插件，自动导入，解放双手，开发效率直接起飞
 - 🤹 集成 `iconify` 图标，支持自定义 svg 图标, 优雅使用icon
 - 🍇 集成 `unocss`，antfu 开源的原子 css 解决方案，非常轻量
-- 🍏 二次封装 Axios，支持`多 axios 实例`
+- 🍏 二次封装 Axios，支持多 axios 实例
 - 🍋 二次封装 localStorage 和 sessionStorage，支持设置过期时间
 
 ### 预览
 
-[template.qszone.com](https://template.qszone.com)
+[https://template.qszone.com](https://template.qszone.com)
 
-[zclzone.github.io/vue-naive-admin（github pages）](https://zclzone.github.io/vue-naive-admin)
+[https://zclzone.github.io/vue-naive-admin](https://zclzone.github.io/vue-naive-admin)
 
 ### 文档
 
