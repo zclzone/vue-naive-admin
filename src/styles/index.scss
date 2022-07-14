@@ -11,6 +11,11 @@ body {
   font-family: 'Encode Sans Condensed', sans-serif;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 /* router view transition fade-slide */
 .fade-slide-leave-active,
 .fade-slide-enter-active {

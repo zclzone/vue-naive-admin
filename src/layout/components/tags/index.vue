@@ -3,11 +3,13 @@
     <n-tag
       v-for="tag in tagsStore.tags"
       :key="tag.path"
+      class="px-15 mx-5 cursor-pointer hover:color-primary"
       :type="tagsStore.activeTag === tag.path ? 'primary' : 'default'"
       :closable="tagsStore.tags.length > 1"
       @click="handleTagClick(tag.path)"
       @close.stop="tagsStore.removeTag(tag.path)"
-      @contextmenu.prevent="handleContextMenu($event, tag)">
+      @contextmenu.prevent="handleContextMenu($event, tag)"
+    >
       {{ tag.title }}
     </n-tag>
   </ScrollX>
@@ -16,7 +18,8 @@
     v-model:show="contextMenuOption.show"
     :current-path="contextMenuOption.currentPath"
     :x="contextMenuOption.x"
-    :y="contextMenuOption.y" />
+    :y="contextMenuOption.y"
+  />
 </template>
 
 <script setup name="Tags">
@@ -73,24 +76,16 @@ async function handleContextMenu(e, tagItem) {
 </script>
 
 <style lang="scss">
-.n-tag {
-  padding: 0 15px;
-  margin: 0 5px;
-  cursor: pointer;
-  .n-tag__close {
-    margin-left: 5px;
-    box-sizing: content-box;
-    font-size: 12px;
-    padding: 2px;
-    border-radius: 50%;
-    transition: all 0.7s;
-    &:hover {
-      color: #fff;
-      background-color: var(--primaryColor);
-    }
-  }
+.n-tag__close {
+  margin-left: 5px;
+  box-sizing: content-box;
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all 0.7s;
   &:hover {
-    color: var(--primaryColor);
+    color: #fff;
+    background-color: var(--primaryColor);
   }
 }
 </style>

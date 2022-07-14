@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider :theme-overrides="themStore.naiveThemeOverrides">
+  <n-config-provider wh-full :theme-overrides="themStore.naiveThemeOverrides">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>

@@ -15,7 +15,8 @@
       :class="{ overflow: isOverflow && showArrow }"
       :style="{
         transform: `translateX(${translateX}px)`,
-      }">
+      }"
+    >
       <slot />
     </div>
   </div>
