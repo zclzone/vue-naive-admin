@@ -37,7 +37,7 @@
         </div>
 
         <div mt-20 w-full max-w-360>
-          <n-button w-full h-50 rounded-5 text-16 type="primary" @click="handleLogin">登录</n-button>
+          <n-button w-full h-50 rounded-5 text-16 type="primary" :loading="loging" @click="handleLogin">登录</n-button>
         </div>
       </div>
     </div>
@@ -71,6 +71,7 @@ function initLoginInfo() {
 }
 
 const isRemember = useStorage('isRemember', false)
+const loging = ref(false)
 async function handleLogin() {
   const { name, password } = loginInfo.value
   if (!name || !password) {
@@ -79,6 +80,7 @@ async function handleLogin() {
   }
   try {
     $message.loading('正在验证...')
+    loging.value = true
     const res = await login({ name, password: password.toString() })
     if (res.code === 0) {
       $message.success('登录成功')
@@ -101,6 +103,7 @@ async function handleLogin() {
   } catch (error) {
     $message.error(error.message)
   }
+  loging.value = false
 }
 </script>
 
