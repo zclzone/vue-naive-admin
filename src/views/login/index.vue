@@ -53,7 +53,7 @@ import { useStorage } from '@vueuse/core'
 const title = import.meta.env.VITE_APP_TITLE
 
 const router = useRouter()
-const query = unref(router.currentRoute).query
+const { query } = useRoute()
 
 const loginInfo = ref({
   name: '',
