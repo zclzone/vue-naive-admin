@@ -1,16 +1,13 @@
 <template>
-  <div class="login-bg" f-c-c h-full>
-    <div class="login-wrapper" flex w-full max-w-1020>
-      <div p-40 border-r border-gray-200>
-        <img src="@/assets/images/login_banner.png" height="380" alt="login_banner" />
+  <div class="login-bg cur-scroll" h-full flex-col overflow-auto>
+    <div class="login-wrapper" m-auto p-15 f-c-c min-w-345 rounded-10>
+      <div w-380 hidden md:block px-20 py-35>
+        <img src="@/assets/images/login_banner.png" w-full alt="login_banner" />
       </div>
 
-      <div w-full f-c-c flex-col>
-        <h5 f-c-c w-full p-15 text-24 font-normal color="#6a6a6a">
-          <icon-custom-logo mr30 text-50 />
-          {{ title }}
-        </h5>
-        <div mt-30 w-full max-w-360>
+      <div w-320 flex-col px-20 py-35>
+        <h5 f-c-c text-24 font-normal color="#6a6a6a"><icon-custom-logo mr-30 text-50 />{{ title }}</h5>
+        <div mt-30>
           <n-input
             v-model:value="loginInfo.name"
             autofocus
@@ -20,7 +17,7 @@
           >
           </n-input>
         </div>
-        <div mt-30 w-full max-w-360>
+        <div mt-30>
           <n-input
             v-model:value="loginInfo.password"
             class="text-16 items-center h-50 pl-10"
@@ -32,15 +29,16 @@
           />
         </div>
 
-        <div mt-20 w-full max-w-360>
+        <div mt-20>
           <n-checkbox :checked="isRemember" label="记住我" :on-update:checked="(val) => (isRemember = val)" />
         </div>
 
-        <div mt-20 w-full max-w-360>
+        <div mt-20>
           <n-button w-full h-50 rounded-5 text-16 type="primary" :loading="loging" @click="handleLogin">登录</n-button>
         </div>
       </div>
     </div>
+    <AppFooter />
   </div>
 </template>
 
