@@ -1,8 +1,31 @@
 {
   "files.eol": "\n",
-  "editor.formatOnSave": false,
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.endOfLine": "lf",
+
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
+  },
+  "[vue]": {
+    "editor.formatOnSave": false
+  },
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "files.associations": {
+    "*.env.*": "dotenv",
+    "*.css": "postcss"
+  }
 }
