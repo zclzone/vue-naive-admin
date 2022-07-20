@@ -34,26 +34,24 @@ body {
 
 /* 自定义滚动条样式 */
 .cur-scroll {
-  &::-webkit-scrollbar{
+  &::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
-  &::-webkit-scrollbar-thumb{
+  &::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 3px;
   }
-  
-  &::-webkit-scrollbar-corner{
+
+  &::-webkit-scrollbar-corner {
     background: #f6f6f6;
   }
   &:hover {
     &::-webkit-scrollbar-thumb {
       background: #bfbfbf;
     }
-    &::-webkit-scrollbar-thumb:hover{
+    &::-webkit-scrollbar-thumb:hover {
       background: #999999;
     }
   }
 }
-
-
