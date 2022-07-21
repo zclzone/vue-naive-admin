@@ -18,7 +18,7 @@
       <n-layout bg="#f5f6fb" :style="`height: calc(100% - ${useTheme.header.height ?? 60}px)`">
         <AppTags v-if="useTheme.tags.visible" />
         <AppMain
-          class="cur-scroll border-t bc-eee"
+          class="cus-scroll border-t bc-eee"
           :style="{
             height: `calc(100% - ${useTheme.tags.visible ? useTheme.tags.height ?? 50 : 0}px)`,
             overflow: 'auto',

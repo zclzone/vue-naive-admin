@@ -1,5 +1,5 @@
 <template>
-  <div class="login-bg cur-scroll" h-full flex-col overflow-auto>
+  <div class="login-bg cus-scroll" h-full flex-col overflow-auto>
     <div class="login-wrapper" m-auto p-15 f-c-c min-w-345 rounded-10>
       <div w-380 hidden md:block px-20 py-35>
         <img src="@/assets/images/login_banner.png" w-full alt="login_banner" />
