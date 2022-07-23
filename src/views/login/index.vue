@@ -1,6 +1,6 @@
 <template>
-  <div class="login-bg cus-scroll" h-full flex-col overflow-auto>
-    <div class="login-wrapper" m-auto p-15 f-c-c min-w-345 rounded-10>
+  <div class="cus-scroll h-full py-15 flex-col overflow-auto bg-cover" :style="{ backgroundImage: `url(${bgImg})` }">
+    <div m-auto p-15 f-c-c min-w-345 rounded-10 card-shadow bg-white bg-opacity-60>
       <div w-380 hidden md:block px-20 py-35>
         <img src="@/assets/images/login_banner.png" w-full alt="login_banner" />
       </div>
@@ -47,6 +47,7 @@ import { login } from '@/api/auth'
 import { lStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'
 import { useStorage } from '@vueuse/core'
+import bgImg from '@/assets/images/login_bg.jpg'
 
 const title = import.meta.env.VITE_APP_TITLE
 
@@ -104,15 +105,3 @@ async function handleLogin() {
   loging.value = false
 }
 </script>
-
-<style lang="scss" scoped>
-.login-bg {
-  background-image: url(@/assets/images/login_bg.jpg);
-  background-size: cover;
-}
-
-.login-wrapper {
-  box-shadow: 1.5px 3.99px 27px 0px rgb(0 0 0 / 10%);
-  background-color: rgba(255, 255, 255, 0.6);
-}
-</style>
