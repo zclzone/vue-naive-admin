@@ -17,6 +17,8 @@ export function createAxios(options = {}) {
 
 export const defAxios = createAxios()
 
+export default createAxios()
+
 export const testAxios = createAxios({
   baseURL: import.meta.env.VITE_APP_BASE_API_TEST,
 })

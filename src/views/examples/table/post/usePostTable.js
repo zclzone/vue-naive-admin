@@ -1,7 +1,7 @@
 import { h } from 'vue'
 import { NButton, NSwitch } from 'naive-ui'
-import { getPosts } from '@/api/post'
 import { formatDateTime } from '@/utils'
+import api from './api'
 
 export const usePostTable = () => {
   // refs
@@ -133,7 +133,7 @@ export const usePostTable = () => {
 
   async function getTableData() {
     try {
-      const res = await getPosts()
+      const res = await api.getPosts()
       if (res.code === 0) {
         return res.data
       }

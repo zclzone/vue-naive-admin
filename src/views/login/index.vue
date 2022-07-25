@@ -43,11 +43,11 @@
 </template>
 
 <script setup>
-import { login } from '@/api/auth'
 import { lStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'
 import { useStorage } from '@vueuse/core'
 import bgImg from '@/assets/images/login_bg.jpg'
+import api from './api'
 
 const title = import.meta.env.VITE_APP_TITLE
 
@@ -80,7 +80,7 @@ async function handleLogin() {
   try {
     $message.loading('正在验证...')
     loging.value = true
-    const res = await login({ name, password: password.toString() })
+    const res = await api.login({ name, password: password.toString() })
     if (res.code === 0) {
       $message.success('登录成功')
       setToken(res.data.token)
