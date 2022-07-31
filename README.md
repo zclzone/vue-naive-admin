@@ -16,6 +16,12 @@
 </p>
 
 
+### [TS version](https://github.com/zclzone/qs-admin)
+
+preview:
+- [https://admin.qszone.com](https://admin.qszone.com)
+- [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
+
 ### Introduction
 
 [Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) is a **completely open source free and commercially allowed ** admin template，Based on the latest technology stack of front-end such as `Vue3、Vite2、Pinia、Unocss and Naive UI`. Compared with other more popular backend management templates, this project is more concise, lightweight, fresh style, very low learning costs, ideal for small and medium-sized projects or personal projects.
