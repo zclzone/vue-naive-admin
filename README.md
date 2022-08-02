@@ -98,7 +98,7 @@ pnpm cz
 - gitub: [https://github.com/zclzone/qs-admin](https://github.com/zclzone/qs-admin)
 - gitee: [https://gitee.com/zclzone/qs-admin-ts](https://gitee.com/zclzone/qs-admin-ts)
 
-#### preview:
+#### preview
 
 - [https://admin.qszone.com](https://admin.qszone.com)
 - [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
