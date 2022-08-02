@@ -15,12 +15,6 @@
   <a href="https://github.com/zclzone/vue-naive-admin/blob/main/README.md">English</a>
 </p>
 
-### [TS 版本](https://github.com/zclzone/qs-admin)
-
-预览:
-- [https://admin.qszone.com](https://admin.qszone.com)
-- [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
-
 ### 简介
 
 [Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **完全开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite2、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
@@ -99,6 +93,18 @@ pnpm preview
 # 提交代码（husky+commitlint）
 pnpm cz
 ```
+
+### TS 版本: Qs Admin
+
+#### 源码
+
+- gitub: [https://github.com/zclzone/qs-admin](https://github.com/zclzone/qs-admin)
+- gitee: [https://gitee.com/zclzone/qs-admin-ts](https://gitee.com/zclzone/qs-admin-ts)
+
+#### 预览
+
+- [https://admin.qszone.com](https://admin.qszone.com)
+- [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
 
 ### 入群交流
 
