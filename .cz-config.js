@@ -11,6 +11,8 @@ module.exports = {
     { value: 'ci',        name:'ci:        修改 CI 配置、脚本' },
     { value: 'chore',     name:'chore:     对构建过程或辅助工具和库的更改（不影响源文件、测试用例）' },
     { value: 'revert',    name:'revert:    回滚 commit' },
+    { value: 'wip',       name:'wip:       开发中' },
+    { value: 'mod',       name:'mod:       不确定分类的修改' },
   ],
   scopes: [
     ['custom', '自定义'],
