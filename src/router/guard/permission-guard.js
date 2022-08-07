@@ -5,7 +5,7 @@ import { getToken, refreshAccessToken, removeToken } from '@/utils/token'
 import { toLogin } from '@/utils/auth'
 import { isNullOrWhitespace } from '@/utils/is'
 
-const WHITE_LIST = ['/login', '/redirect']
+const WHITE_LIST = ['/login']
 export function createPermissionGuard(router) {
   const userStore = useUserStore()
   const permissionStore = usePermissionStore()
