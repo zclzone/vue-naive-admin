@@ -13,7 +13,7 @@ export default {
       meta: {
         title: '工作台',
         icon: 'mdi:home',
-        index: 0,
+        order: 0,
       },
     },
   ],

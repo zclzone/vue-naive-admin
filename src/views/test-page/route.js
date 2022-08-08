@@ -8,7 +8,7 @@ export default {
   meta: {
     title: '基础功能测试',
     icon: 'mdi:menu',
-    index: 1,
+    order: 1,
   },
   children: [
     {

@@ -10,7 +10,7 @@ export default {
     icon: 'mdi:menu',
     role: ['admin'],
     requireAuth: true,
-    index: 3,
+    order: 3,
   },
   children: [
     {

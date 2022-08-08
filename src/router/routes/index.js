@@ -25,7 +25,7 @@ export const basicRoutes = [
     meta: {
       title: '外部链接',
       icon: 'mdi:link-variant',
-      index: 2,
+      order: 2,
     },
     children: [
       {

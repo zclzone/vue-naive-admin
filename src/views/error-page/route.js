@@ -8,7 +8,7 @@ export default {
   meta: {
     title: '错误页',
     icon: 'mdi:alert-circle-outline',
-    index: 99,
+    order: 99,
   },
   children: [
     {
