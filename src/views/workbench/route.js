@@ -4,19 +4,16 @@ export default {
   name: 'Dashboard',
   path: '/',
   component: Layout,
-  redirect: '/home',
-  meta: {
-    title: 'Dashboard',
-    icon: 'mdi:chart-bar',
-  },
+  redirect: '/workbench',
   children: [
     {
-      name: 'Home',
-      path: 'home',
+      name: 'Workbench',
+      path: 'workbench',
       component: () => import('./index.vue'),
       meta: {
-        title: '首页',
+        title: '工作台',
         icon: 'mdi:home',
+        index: 0,
       },
     },
   ],

@@ -8,12 +8,13 @@ export default {
   meta: {
     title: '基础功能测试',
     icon: 'mdi:menu',
+    index: 1,
   },
   children: [
     {
       name: 'Unocss',
       path: 'unocss',
-      component: () => import('@/views/test-page/unocss/index.vue'),
+      component: () => import('./unocss/index.vue'),
       meta: {
         title: '测试unocss',
       },
@@ -21,7 +22,7 @@ export default {
     {
       name: 'Message',
       path: 'message',
-      component: () => import('@/views/test-page/message/index.vue'),
+      component: () => import('./message/index.vue'),
       meta: {
         title: '测试Message',
       },
@@ -29,7 +30,7 @@ export default {
     {
       name: 'Dialog',
       path: 'dialog',
-      component: () => import('@/views/test-page/dialog/index.vue'),
+      component: () => import('./dialog/index.vue'),
       meta: {
         title: '测试Dialog',
       },
@@ -37,7 +38,7 @@ export default {
     {
       name: 'TestKeepAlive',
       path: 'keep-alive',
-      component: () => import('@/views/test-page/keep-alive/index.vue'),
+      component: () => import('./keep-alive/index.vue'),
       meta: {
         title: '测试Keep-Alive',
         keepAlive: true,

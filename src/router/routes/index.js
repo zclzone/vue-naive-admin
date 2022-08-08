@@ -9,7 +9,7 @@ export const basicRoutes = [
   },
 
   {
-    name: 'LOGIN',
+    name: 'Login',
     path: '/login',
     component: () => import('@/views/login/index.vue'),
     isHidden: true,
@@ -25,7 +25,7 @@ export const basicRoutes = [
     meta: {
       title: '外部链接',
       icon: 'mdi:link-variant',
-      index: 1,
+      index: 2,
     },
     children: [
       {
