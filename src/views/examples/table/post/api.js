@@ -1,7 +1,7 @@
 import request from '@/utils/http'
 
 export default {
-  getPosts: (params = {}) => request.get('posts', params),
+  getPosts: (params = {}) => request.get('posts', { params }),
   getPostById: (id) => request.get(`/post/${id}`),
   savePost: (id, data = {}) => {
     if (id) {
