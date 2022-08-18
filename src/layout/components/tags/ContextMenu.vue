@@ -1,6 +1,6 @@
 <template>
   <n-dropdown
-    :show="dropdownShow"
+    :show="show"
     :options="options"
     :x="x"
     :y="y"
@@ -72,15 +72,6 @@ const options = computed(() => [
   },
 ])
 
-const dropdownShow = computed({
-  get() {
-    return props.show
-  },
-  set(show) {
-    emit('update:show', show)
-  },
-})
-
 const actionMap = new Map([
   [
     'reload',
@@ -115,7 +106,7 @@ const actionMap = new Map([
 ])
 
 function handleHideDropdown() {
-  dropdownShow.value = false
+  emit('update:show', false)
 }
 
 function handleSelect(key) {

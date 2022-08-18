@@ -15,6 +15,7 @@
   </ScrollX>
 
   <ContextMenu
+    v-if="contextMenuOption.show"
     v-model:show="contextMenuOption.show"
     :current-path="contextMenuOption.currentPath"
     :x="contextMenuOption.x"
