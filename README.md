@@ -103,6 +103,12 @@ pnpm cz
 - [https://admin.qszone.com](https://admin.qszone.com)
 - [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
 
+### Communication group & About the author
+
+<a href="https://blog.qszone.com/about/">
+  <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
+</a>
+
 
 
 
