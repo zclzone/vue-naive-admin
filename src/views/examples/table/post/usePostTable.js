@@ -2,6 +2,7 @@ import { h } from 'vue'
 import { NButton, NSwitch } from 'naive-ui'
 import { formatDateTime } from '@/utils'
 import api from './api'
+import { renderIcon } from '@/utils/icon'
 
 export const usePostTable = () => {
   // refs
@@ -34,8 +35,9 @@ export const usePostTable = () => {
     if (row && row.id) {
       row.recommending = true
       setTimeout(() => {
-        $message.success(row.isRecommend ? '已取消推荐' : '已推荐')
+        row.isRecommend = !row.isRecommend
         row.recommending = false
+        $message.success(row.isRecommend ? '已推荐' : '已取消推荐')
       }, 800)
     }
   }
@@ -44,8 +46,9 @@ export const usePostTable = () => {
     if (row && row.id) {
       row.publishing = true
       setTimeout(() => {
-        $message.success(row.isPublish ? '已取消推荐' : '已推荐')
+        row.isPublish = !row.isPublish
         row.publishing = false
+        $message.success(row.isPublish ? '已发布' : '已取消发布')
       }, 800)
     }
   }
@@ -86,7 +89,8 @@ export const usePostTable = () => {
         render(row) {
           return h(NSwitch, {
             size: 'small',
-            defaultValue: row['isRecommend'],
+            value: row['isRecommend'],
+            rubberBand: false,
             loading: !!row.recommending,
             onUpdateValue: () => handleRecommend(row),
           })
@@ -101,7 +105,8 @@ export const usePostTable = () => {
         render(row) {
           return h(NSwitch, {
             size: 'small',
-            defaultValue: row['isPublish'],
+            rubberBand: false,
+            value: row['isPublish'],
             loading: !!row.publishing,
             onUpdateValue: () => handlePublish(row),
           })
@@ -123,7 +128,7 @@ export const usePostTable = () => {
                 style: 'margin-left: 15px;',
                 onClick: () => handleDelete(row),
               },
-              { default: () => '删除' }
+              { default: () => '删除', icon: renderIcon('material-symbols:delete-outline', { size: 14 }) }
             ),
           ]
         },
