@@ -1,6 +1,6 @@
 {
   "name": "vue-naive-admin",
-  "version": "0.4.0",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "lint": "eslint --ext .js,.vue .",
