@@ -1,12 +1,12 @@
 <template>
   <div class="cus-scroll h-full py-15 flex-col overflow-auto bg-cover" :style="{ backgroundImage: `url(${bgImg})` }">
-    <div m-auto p-15 f-c-c min-w-345 rounded-10 card-shadow bg-white bg-opacity-60>
+    <div m-auto p-15 f-c-c min-w-345 rounded-10 card-shadow bg-white dark:bg-dark bg-opacity-60>
       <div w-380 hidden md:block px-20 py-35>
-        <img src="@/assets/images/login_banner.png" w-full alt="login_banner" />
+        <img src="@/assets/images/login_banner.webp" w-full alt="login_banner" />
       </div>
 
       <div w-320 flex-col px-20 py-35>
-        <h5 f-c-c text-24 font-normal color="#6a6a6a"><icon-custom-logo mr-30 text-50 />{{ title }}</h5>
+        <h5 f-c-c text-24 font-normal color="#6a6a6a"><icon-custom-logo mr-30 text-50 color-primary />{{ title }}</h5>
         <div mt-30>
           <n-input
             v-model:value="loginInfo.name"
@@ -14,8 +14,7 @@
             class="text-16 items-center h-50 pl-10"
             placeholder="admin"
             :maxlength="20"
-          >
-          </n-input>
+          />
         </div>
         <div mt-30>
           <n-input
@@ -34,7 +33,9 @@
         </div>
 
         <div mt-20>
-          <n-button w-full h-50 rounded-5 text-16 type="primary" :loading="loging" @click="handleLogin">登录</n-button>
+          <n-button w-full h-50 rounded-5 text-16 type="primary" :loading="loging" @click="handleLogin">
+            登录
+          </n-button>
         </div>
       </div>
     </div>
@@ -46,7 +47,7 @@
 import { lStorage } from '@/utils/cache'
 import { setToken } from '@/utils/token'
 import { useStorage } from '@vueuse/core'
-import bgImg from '@/assets/images/login_bg.jpg'
+import bgImg from '@/assets/images/login_bg.webp'
 import api from './api'
 
 const title = import.meta.env.VITE_APP_TITLE
