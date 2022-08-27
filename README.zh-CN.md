@@ -17,7 +17,7 @@
 
 ### 简介
 
-[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **完全开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite2、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
+[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **完全开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite3、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
 
 ### 功能
 
