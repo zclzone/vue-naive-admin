@@ -13,6 +13,7 @@ module.exports = {
     { value: 'revert',    name:'revert:    回滚 commit' },
     { value: 'wip',       name:'wip:       开发中' },
     { value: 'mod',       name:'mod:       不确定分类的修改' },
+    { value: 'release',   name:'release:   发布' },
   ],
   scopes: [
     ['custom', '自定义'],
