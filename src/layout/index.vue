@@ -18,11 +18,8 @@
       <n-layout bg="#f5f6fb" :style="`height: calc(100% - ${header.height ?? 60}px)`">
         <AppTags v-if="tags.visible" :style="`height: ${tags.height ?? 50}px`" />
         <AppMain
-          class="cus-scroll border-t bc-eee"
-          :style="{
-            height: `calc(100% - ${tags.visible ? tags.height ?? 50 : 0}px)`,
-            overflow: 'auto',
-          }"
+          class="cus-scroll border-t bc-eee overflow-auto"
+          :style="{ height: `calc(100% - ${tags.visible ? tags.height ?? 50 : 0}px)` }"
         />
       </n-layout>
     </n-layout>
