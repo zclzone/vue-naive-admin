@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
@@ -12,9 +13,10 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-import { getRootPath } from '../utils'
+import { getSrcPath } from '../utils'
 
-const customIconPath = getRootPath('src', 'assets/svg')
+const customIconPath = resolve(getSrcPath(), 'assets/svg')
+
 export default [
   AutoImport({
     imports: ['vue', 'vue-router'],

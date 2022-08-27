@@ -9,7 +9,7 @@
 
 <script setup>
 import { useAppStore } from '@/store/modules/app'
-const title = import.meta.env.VITE_APP_TITLE
+const title = import.meta.env.VITE_TITLE
 
 const appStore = useAppStore()
 </script>

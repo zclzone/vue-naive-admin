@@ -2,53 +2,38 @@ import fs from 'fs'
 import path from 'path'
 import dotenv from 'dotenv'
 
-const httpsReg = /^https:\/\//
-
-export function wrapperEnv(envOptions) {
-  if (!envOptions) return {}
-  const ret = {}
-
-  for (const key in envOptions) {
-    let val = envOptions[key]
-    if (['true', 'false'].includes(val)) {
-      val = val === 'true'
-    }
-    if (['VITE_PORT'].includes(key)) {
-      val = +val
-    }
-    if (key === 'VITE_PROXY' && val && typeof val === 'string') {
-      try {
-        val = JSON.parse(val.replace(/'/g, '"'))
-      } catch (error) {
-        val = ''
-      }
-    }
-    ret[key] = val
-    if (typeof val === 'string') {
-      process.env[key] = val
-    } else if (typeof val === 'object') {
-      process.env[key] = JSON.stringify(val)
-    }
-  }
-  return ret
+/**
+ * * 项目根路径
+ * @descrition 结尾不带/
+ */
+export function getRootPath() {
+  return path.resolve(process.cwd())
 }
 
-export function createProxy(list = []) {
-  const ret = {}
-  for (const [prefix, target] of list) {
-    const isHttps = httpsReg.test(target)
+/**
+ * * 项目src路径
+ * @param srcName src目录名称(默认: "src")
+ * @descrition 结尾不带斜杠
+ */
+export function getSrcPath(srcName = 'src') {
+  return path.resolve(getRootPath(), srcName)
+}
 
-    // https://github.com/http-party/node-http-proxy#options
-    ret[prefix] = {
-      target: target,
-      changeOrigin: true,
-      ws: true,
-      rewrite: (path) => path.replace(new RegExp(`^${prefix}`), ''),
-      // https is require secure=false
-      ...(isHttps ? { secure: false } : {}),
-    }
+const httpsReg = /^https:\/\//
+
+export function convertEnv(envOptions) {
+  const result = {}
+  if (!envOptions) return result
+
+  for (const envKey in envOptions) {
+    let envVal = envOptions[envKey]
+    if (['true', 'false'].includes(envVal)) envVal = envVal === 'true'
+
+    if (['VITE_PORT'].includes(envKey)) envVal = +envVal
+
+    result[envKey] = envVal
   }
-  return ret
+  return result
 }
 
 /**
@@ -65,7 +50,7 @@ function getConfFiles() {
   return ['.env', '.env.local', '.env.production']
 }
 
-export function getEnvConfig(match = 'VITE_APP_GLOB_', confFiles = getConfFiles()) {
+export function getEnvConfig(match = 'VITE_', confFiles = getConfFiles()) {
   let envConfig = {}
   confFiles.forEach((item) => {
     try {
@@ -84,8 +69,4 @@ export function getEnvConfig(match = 'VITE_APP_GLOB_', confFiles = getConfFiles(
     }
   })
   return envConfig
-}
-
-export function getRootPath(...dir) {
-  return path.resolve(process.cwd(), ...dir)
 }

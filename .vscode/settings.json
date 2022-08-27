@@ -1,12 +1,15 @@
 {
-  "files.eol": "\n",
-
+  "path-intellisense.mappings": {
+    "@/": "${workspaceRoot}/src",
+    "~/": "${workspaceRoot}"
+  },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.printWidth": 120,
   "prettier.singleQuote": true,
   "prettier.semi": false,
   "prettier.endOfLine": "lf",
+  "files.eol": "\n",
 
   "[javascript]": {
     "editor.formatOnSave": false

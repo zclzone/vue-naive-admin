@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider wh-full :theme-overrides="themStore.naiveThemeOverrides">
+  <n-config-provider wh-full :theme-overrides="naiveThemeOverrides">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -16,24 +16,18 @@
 <script setup>
 import { defineComponent, h } from 'vue'
 import { useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
-
 import { useCssVar } from '@vueuse/core'
-import { useThemeStore } from '@/store/modules/theme'
+import { kebabCase } from 'lodash-es'
 import { setupMessage, setupDialog } from '@/utils/common/naiveTools'
+import { naiveThemeOverrides } from '~/settings'
 
-const themStore = useThemeStore()
-watch(
-  () => themStore.naiveThemeOverrides.common,
-  (vars) => {
-    for (const key in vars) {
-      useCssVar(`--${key}`, document.documentElement).value = vars[key]
-      if (key === 'primaryColor') {
-        window.localStorage.setItem('__THEME_COLOR__', vars[key])
-      }
-    }
-  },
-  { immediate: true }
-)
+function setupCssVar() {
+  const common = naiveThemeOverrides.common
+  for (const key in common) {
+    useCssVar(`--${kebabCase(key)}`, document.documentElement).value = common[key] || ''
+    if (key === 'primaryColor') window.localStorage.setItem('__THEME_COLOR__', common[key] || '')
+  }
+}
 
 // 挂载naive组件的方法至window, 以便在全局使用
 function setupNaiveTools() {
@@ -46,6 +40,7 @@ function setupNaiveTools() {
 
 const NaiveProviderContent = defineComponent({
   setup() {
+    setupCssVar()
     setupNaiveTools()
   },
   render() {

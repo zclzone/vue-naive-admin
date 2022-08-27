@@ -1,9 +1,9 @@
 <template>
-  <ScrollX :class="`h-${useTheme.tags.height}`">
+  <ScrollX>
     <n-tag
       v-for="tag in tagsStore.tags"
       :key="tag.path"
-      class="px-15 mx-5 cursor-pointer hover:color-primary"
+      class="px-15 mx-5 rounded-4 cursor-pointer hover:color-primary"
       :type="tagsStore.activeTag === tag.path ? 'primary' : 'default'"
       :closable="tagsStore.tags.length > 1"
       @click="handleTagClick(tag.path)"
@@ -12,27 +12,24 @@
     >
       {{ tag.title }}
     </n-tag>
+    <ContextMenu
+      v-if="contextMenuOption.show"
+      v-model:show="contextMenuOption.show"
+      :current-path="contextMenuOption.currentPath"
+      :x="contextMenuOption.x"
+      :y="contextMenuOption.y"
+    />
   </ScrollX>
-
-  <ContextMenu
-    v-if="contextMenuOption.show"
-    v-model:show="contextMenuOption.show"
-    :current-path="contextMenuOption.currentPath"
-    :x="contextMenuOption.x"
-    :y="contextMenuOption.y"
-  />
 </template>
 
 <script setup name="Tags">
 import ContextMenu from './ContextMenu.vue'
 import { useTagsStore } from '@/store/modules/tags'
-import { useThemeStore } from '@/store/modules/theme'
 import ScrollX from '@/components/common/ScrollX.vue'
 
 const route = useRoute()
 const router = useRouter()
 const tagsStore = useTagsStore()
-const useTheme = useThemeStore()
 
 const contextMenuOption = reactive({
   show: false,
@@ -76,17 +73,14 @@ async function handleContextMenu(e, tagItem) {
 }
 </script>
 
-<style lang="scss">
+<style>
 .n-tag__close {
-  margin-left: 5px;
   box-sizing: content-box;
+  border-radius: 50%;
   font-size: 12px;
   padding: 2px;
-  border-radius: 50%;
-  transition: all 0.7s;
-  &:hover {
-    color: #fff;
-    background-color: var(--primaryColor);
-  }
+  transform: scale(0.9);
+  transform: translateX(5px);
+  transition: all 0.3s;
 }
 </style>

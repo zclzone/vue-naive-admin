@@ -13,7 +13,7 @@
 .loading-svg {
 	width: 128px;
 	height: 128px;
-	color: var(--primaryColor);
+	color: var(--primary-color);
 }
 
 .loading-spin__container {
@@ -45,7 +45,7 @@
 	position: absolute;
   height: 16px;
   width: 16px;
-	background-color: var(--primaryColor);
+	background-color: var(--primary-color);
   border-radius: 8px;
   -webkit-animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;

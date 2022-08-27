@@ -1,10 +1,10 @@
 {
+  "header": {
+    "height": 60
+  },
   "tags": {
     "visible": true,
     "height": 50
-  },
-  "header": {
-    "height": 60
   },
   "naiveThemeOverrides": {
     "common": {

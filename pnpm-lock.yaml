@@ -23,6 +23,7 @@ specifiers:
   fs-extra: ^10.0.1
   husky: ^8.0.1
   lint-staged: ^13.0.3
+  lodash-es: ^4.17.21
   md-editor-v3: ^1.11.4
   mockjs: ^1.1.0
   naive-ui: ^2.32.1
@@ -47,6 +48,7 @@ dependencies:
   '@vueuse/core': 8.4.2_vue@3.2.31
   axios: 0.21.4
   dayjs: 1.11.0
+  lodash-es: 4.17.21
   md-editor-v3: 1.11.4
   mockjs: 1.1.0
   pinia: 2.0.13_vue@3.2.31
@@ -3284,7 +3286,6 @@ packages:
 
   /lodash-es/4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
-    dev: true
 
   /lodash.map/4.6.0:
     resolution: {integrity: sha512-worNHGKLDetmcEYDvh2stPCrrQRkP20E4l0iIS7F8EvzMqBBi7ltvFN5m1HvTf1P7Jk1txKhvFcmYsCr8O2F1Q==}

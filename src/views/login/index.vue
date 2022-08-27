@@ -50,7 +50,7 @@ import { useStorage } from '@vueuse/core'
 import bgImg from '@/assets/images/login_bg.webp'
 import api from './api'
 
-const title = import.meta.env.VITE_APP_TITLE
+const title = import.meta.env.VITE_TITLE
 
 const router = useRouter()
 const { query } = useRoute()

@@ -24,7 +24,7 @@ import unplugin from './unplugin'
 export function createVitePlugins(viteEnv, isBuild) {
   const plugins = [vue(), vueSetupExtend(), ...unplugin, configHtmlPlugin(viteEnv, isBuild), Unocss()]
 
-  if (viteEnv?.VITE_APP_USE_MOCK) {
+  if (viteEnv?.VITE_USE_MOCK) {
     plugins.push(configMockPlugin(isBuild))
   }
 
