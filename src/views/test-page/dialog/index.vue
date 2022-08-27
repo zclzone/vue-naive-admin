@@ -1,6 +1,6 @@
 <template>
   <div p24>
-    <n-button type="error" @click="handleDelete">删除</n-button>
+    <n-button type="error" @click="handleDelete"> <icon-mi:delete mr-5 />删除</n-button>
   </div>
 </template>
 

@@ -1,6 +1,9 @@
 <template>
   <div p24>
-    <n-button type="primary" @click="handleLogin">点击登陆</n-button>
+    <n-button type="primary" @click="handleLogin">
+      <icon-mdi:login mr-5 />
+      登陆
+    </n-button>
   </div>
 </template>
 

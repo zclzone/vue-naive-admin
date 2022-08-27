@@ -26,7 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@iconify/json": "^2.1.63",
+    "@iconify/json": "^2.1.99",
     "@iconify/vue": "^3.2.1",
     "@vitejs/plugin-vue": "^1.10.2",
     "@vue/compiler-sfc": "^3.2.31",
