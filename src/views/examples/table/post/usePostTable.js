@@ -56,12 +56,13 @@ export const usePostTable = () => {
   function initColumns() {
     columns.value = [
       { type: 'selection' },
-      { title: '标题', key: 'title', width: 150 },
-      { title: '分类', key: 'category', width: 80 },
+      { title: '标题', key: 'title', width: 150, ellipsis: { tooltip: true } },
+      { title: '分类', key: 'category', width: 80, ellipsis: { tooltip: true } },
       {
         title: '描述',
         key: 'description',
         width: 200,
+        ellipsis: { tooltip: true },
       },
       { title: '创建人', key: 'author', width: 80 },
       {
