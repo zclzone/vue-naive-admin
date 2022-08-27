@@ -16,7 +16,7 @@ import { usePermissionStore } from '@/store/modules/permission'
 
 import { isExternal } from '@/utils/is'
 import { useAppStore } from '@/store/modules/app'
-import { renderIcon } from '@/utils/icon'
+import { renderCustomIcon, renderIcon } from '@/utils/icon'
 
 const router = useRouter()
 const permissionStore = usePermissionStore()
@@ -43,7 +43,7 @@ function getMenuItem(route, basePath = '') {
     label: (route.meta && route.meta.title) || route.name,
     key: route.name,
     path: resolvePath(basePath, route.path),
-    icon: route.meta?.icon ? renderIcon(route.meta?.icon, { size: 16 }) : renderIcon('mdi:circle-outline', { size: 8 }),
+    icon: getIcon(route.meta),
     order: route.meta?.order || 0,
   }
 
@@ -58,9 +58,7 @@ function getMenuItem(route, basePath = '') {
       label: singleRoute.meta?.title || singleRoute.name,
       key: singleRoute.name,
       path: resolvePath(menuItem.path, singleRoute.path),
-      icon: singleRoute.meta?.icon
-        ? renderIcon(singleRoute.meta?.icon, { size: 16 })
-        : renderIcon('mdi:circle-outline', { size: 8 }),
+      icon: getIcon(singleRoute.meta),
       order: menuItem.order,
     }
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []
@@ -77,6 +75,12 @@ function getMenuItem(route, basePath = '') {
   }
 
   return menuItem
+}
+
+function getIcon(meta) {
+  if (meta?.customIcon) return renderCustomIcon(meta.customIcon, { size: 18 })
+  if (meta?.icon) return renderIcon(meta.icon, { size: 18 })
+  return null
 }
 
 function handleMenuSelect(key, item) {

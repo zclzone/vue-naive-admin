@@ -31,6 +31,7 @@ export default {
           component: () => import('./post/index.vue'),
           meta: {
             title: '文章列表',
+            icon: 'material-symbols:auto-awesome-outline-rounded',
             role: ['admin'],
             requireAuth: true,
           },
@@ -41,6 +42,7 @@ export default {
           component: () => import('./post/PostCreate.vue'),
           meta: {
             title: '创建文章',
+            icon: 'material-symbols:auto-awesome-outline-rounded',
             role: ['admin'],
             requireAuth: true,
           },

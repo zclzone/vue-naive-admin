@@ -17,7 +17,7 @@ export default {
       component: () => import('./404.vue'),
       meta: {
         title: '404',
-        icon: 'mdi:alert-circle-outline',
+        icon: 'tabler:error-404',
       },
     },
   ],

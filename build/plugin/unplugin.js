@@ -10,10 +10,11 @@ import IconsResolver from 'unplugin-icons/resolver'
  * 图标库: https://icones.js.org/
  */
 import Icons from 'unplugin-icons/vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 import { getRootPath } from '../utils'
 
-const customIconPath = getRootPath('src', 'assets/icons')
+const customIconPath = getRootPath('src', 'assets/svg')
 export default [
   AutoImport({
     imports: ['vue', 'vue-router'],
@@ -30,5 +31,11 @@ export default [
   Components({
     resolvers: [NaiveUiResolver(), IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' })],
     dts: false,
+  }),
+  createSvgIconsPlugin({
+    iconDirs: [customIconPath],
+    symbolId: 'icon-custom-[dir]-[name]',
+    inject: 'body-last',
+    customDomId: '__CUSTOM_SVG_ICON__',
   }),
 ]

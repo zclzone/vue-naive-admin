@@ -2,6 +2,7 @@ import '@/styles/reset.css'
 import '@/styles/variables.css'
 import '@/styles/index.scss'
 import 'uno.css'
+import 'virtual:svg-icons-register'
 
 import { createApp } from 'vue'
 import { setupRouter } from '@/router'

@@ -7,7 +7,7 @@ export default {
   redirect: '/test/unocss',
   meta: {
     title: '基础功能测试',
-    icon: 'mdi:menu',
+    customIcon: 'logo',
     order: 1,
   },
   children: [
@@ -17,6 +17,7 @@ export default {
       component: () => import('./unocss/index.vue'),
       meta: {
         title: '测试unocss',
+        icon: 'material-symbols:auto-awesome-outline-rounded',
       },
     },
     {
@@ -25,6 +26,7 @@ export default {
       component: () => import('./message/index.vue'),
       meta: {
         title: '测试Message',
+        icon: 'material-symbols:auto-awesome-outline-rounded',
       },
     },
     {
@@ -33,6 +35,7 @@ export default {
       component: () => import('./dialog/index.vue'),
       meta: {
         title: '测试Dialog',
+        icon: 'material-symbols:auto-awesome-outline-rounded',
       },
     },
     {
@@ -42,6 +45,7 @@ export default {
       meta: {
         title: '测试Keep-Alive',
         keepAlive: true,
+        icon: 'material-symbols:auto-awesome-outline-rounded',
       },
     },
   ],
