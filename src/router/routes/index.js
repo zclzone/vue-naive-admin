@@ -63,7 +63,7 @@ export const NOT_FOUND_ROUTE = {
   isHidden: true,
 }
 
-const modules = import.meta.globEager('@/views/**/route.js')
+const modules = import.meta.glob('@/views/**/route.js', { eager: true })
 const asyncRoutes = []
 Object.keys(modules).forEach((key) => {
   asyncRoutes.push(modules[key].default)
