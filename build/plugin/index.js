@@ -14,6 +14,8 @@ import Unocss from 'unocss/vite'
 
 // rollup打包分析插件
 import visualizer from 'rollup-plugin-visualizer'
+// 压缩
+import viteCompression from 'vite-plugin-compression'
 
 import { configHtmlPlugin } from './html'
 import { configMockPlugin } from './mock'
@@ -24,6 +26,10 @@ export function createVitePlugins(viteEnv, isBuild) {
 
   if (viteEnv?.VITE_APP_USE_MOCK) {
     plugins.push(configMockPlugin(isBuild))
+  }
+
+  if (viteEnv.VITE_USE_COMPRESS) {
+    plugins.push(viteCompression({ algorithm: viteEnv.VITE_COMPRESS_TYPE || 'gzip' }))
   }
 
   if (isBuild) {

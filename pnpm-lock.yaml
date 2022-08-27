@@ -35,6 +35,7 @@ specifiers:
   unplugin-icons: ^0.14.1
   unplugin-vue-components: ^0.17.21
   vite: ^2.9.9
+  vite-plugin-compression: ^0.5.1
   vite-plugin-html: ^3.2.0
   vite-plugin-mock: ^2.9.6
   vite-plugin-vue-setup-extend-plus: ^0.1.0
@@ -80,6 +81,7 @@ devDependencies:
   unplugin-icons: 0.14.1_jyihscimozjyoh3ugo77i7phoi
   unplugin-vue-components: 0.17.21_vite@2.9.9+vue@3.2.31
   vite: 2.9.9_sass@1.49.10
+  vite-plugin-compression: 0.5.1_vite@2.9.9
   vite-plugin-html: 3.2.0_vite@2.9.9
   vite-plugin-mock: 2.9.6_mockjs@1.1.0+vite@2.9.9
   vite-plugin-vue-setup-extend-plus: 0.1.0
@@ -4281,6 +4283,19 @@ packages:
     dependencies:
       evtd: 0.2.4
       vue: 3.2.31
+    dev: true
+
+  /vite-plugin-compression/0.5.1_vite@2.9.9:
+    resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      chalk: 4.1.2
+      debug: 4.3.4
+      fs-extra: 10.0.1
+      vite: 2.9.9_sass@1.49.10
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /vite-plugin-html/3.2.0_vite@2.9.9:
