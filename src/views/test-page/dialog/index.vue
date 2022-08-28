@@ -1,7 +1,7 @@
 <template>
-  <div p24>
+  <CommonPage :show-header="false">
     <n-button type="error" @click="handleDelete"> <icon-mi:delete mr-5 />删除</n-button>
-  </div>
+  </CommonPage>
 </template>
 
 <script setup name="TestDialog">

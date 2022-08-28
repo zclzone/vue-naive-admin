@@ -1,5 +1,5 @@
 <template>
-  <div p-24>
+  <CommonPage :show-header="false" title="32323">
     <div h-60 pl-20 pr-20 flex items-center bg-white>
       <input
         v-model="post.title"
@@ -7,10 +7,12 @@
         type="text"
         placeholder="输入文章标题..."
       />
-      <n-button type="primary" style="width: 80px" :loading="btnLoading" @click="handleSavePost">保存</n-button>
+      <n-button type="primary" style="width: 80px" :loading="btnLoading" @click="handleSavePost">
+        <TheIcon v-if="!btnLoading" icon="line-md:confirm-circle" class="mr-5" :size="18" /> 保存
+      </n-button>
     </div>
-    <MdEditor v-model="post.content" style="height: calc(100vh - 220px)" />
-  </div>
+    <MdEditor v-model="post.content" style="height: calc(100vh - 250px)" />
+  </CommonPage>
 </template>
 
 <script setup>

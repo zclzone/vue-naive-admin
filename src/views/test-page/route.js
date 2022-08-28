@@ -38,15 +38,5 @@ export default {
         icon: 'material-symbols:auto-awesome-outline-rounded',
       },
     },
-    {
-      name: 'TestKeepAlive',
-      path: 'keep-alive',
-      component: () => import('./keep-alive/index.vue'),
-      meta: {
-        title: '测试Keep-Alive',
-        keepAlive: true,
-        icon: 'material-symbols:auto-awesome-outline-rounded',
-      },
-    },
   ],
 }

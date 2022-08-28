@@ -106,7 +106,7 @@ function handleMenuSelect(key, item) {
     &.n-menu-item-content--selected,
     &:hover {
       &::before {
-        border-left: 4px solid var(--primaryColor);
+        border-left: 4px solid var(--primary-color);
       }
     }
   }

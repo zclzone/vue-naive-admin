@@ -1,5 +1,5 @@
 <template>
-  <n-layout has-sider h-full>
+  <n-layout has-sider wh-full>
     <n-layout-sider
       bordered
       collapse-mode="width"
@@ -10,19 +10,18 @@
     >
       <SideBar />
     </n-layout-sider>
-    <n-layout>
-      <n-layout-header bg-white border-b bc-eee :style="`height: ${header.height ?? 60}px`">
-        <AppHeader />
-      </n-layout-header>
 
-      <n-layout bg="#f5f6fb" :style="`height: calc(100% - ${header.height ?? 60}px)`">
-        <AppTags v-if="tags.visible" :style="`height: ${tags.height ?? 50}px`" />
-        <AppMain
-          class="cus-scroll border-t bc-eee overflow-auto"
-          :style="{ height: `calc(100% - ${tags.visible ? tags.height ?? 50 : 0}px)` }"
-        />
-      </n-layout>
-    </n-layout>
+    <article flex-1 flex-col overflow-hidden>
+      <header bg-white px-15 border-b bc-eee flex items-center :style="`height: ${header.height}px`">
+        <AppHeader />
+      </header>
+      <section v-if="tags.visible" border-b bc-eee>
+        <AppTags :style="{ height: `${tags.height}px` }" />
+      </section>
+      <section flex-1 overflow-hidden>
+        <AppMain />
+      </section>
+    </article>
   </n-layout>
 </template>
 

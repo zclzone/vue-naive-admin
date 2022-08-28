@@ -1,10 +1,10 @@
 <template>
-  <div p24>
+  <CommonPage title="我是自定义Title">
     <n-button type="primary" @click="handleLogin">
       <icon-mdi:login mr-5 />
       登陆
     </n-button>
-  </div>
+  </CommonPage>
 </template>
 
 <script setup>

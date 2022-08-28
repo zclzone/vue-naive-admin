@@ -1,8 +1,7 @@
 <script setup>
-import { renderCustomIcon } from '@/utils/icon'
-
+/** 自定义图标 */
 const props = defineProps({
-  /** 图标名称(图片的文件名) */
+  /** 图标名称(assets/svg下的文件名) */
   icon: {
     type: String,
     required: true,
@@ -16,10 +15,8 @@ const props = defineProps({
     default: undefined,
   },
 })
-
-const iconCom = computed(() => renderCustomIcon(props.icon, props))
 </script>
 
 <template>
-  <component :is="iconCom" />
+  <TheIcon type="custom" v-bind="props" />
 </template>

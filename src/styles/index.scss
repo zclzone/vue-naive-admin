@@ -33,24 +33,41 @@ body {
 }
 
 /* 自定义滚动条样式 */
+/* 自定义滚动条样式 */
 .cus-scroll {
+  overflow: auto;
   &::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
+}
+.cus-scroll-x {
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 8px;
+  }
+}
+.cus-scroll-y {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 0;
+  }
+}
+.cus-scroll,
+.cus-scroll-x,
+.cus-scroll-y {
   &::-webkit-scrollbar-thumb {
     background-color: transparent;
-    border-radius: 3px;
-  }
-  &::-webkit-scrollbar-corner {
-    background: #f6f6f6;
+    border-radius: 4px;
   }
   &:hover {
     &::-webkit-scrollbar-thumb {
       background: #bfbfbf;
     }
     &::-webkit-scrollbar-thumb:hover {
-      background: #999999;
+      background: var(--primary-color);
     }
   }
 }

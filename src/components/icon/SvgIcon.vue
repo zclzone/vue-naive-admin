@@ -1,4 +1,4 @@
-<script setup name="SvgIcon">
+<script setup>
 const props = defineProps({
   icon: {
     type: String,

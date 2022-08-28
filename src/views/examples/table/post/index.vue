@@ -1,8 +1,5 @@
 <template>
-  <div p-24>
-    <div flex>
-      <n-button size="small" type="primary" @click="handleCreate">新建文章</n-button>
-    </div>
+  <CommonPage show-footer title="文章">
     <n-data-table
       mt-20
       :loading="loading"
@@ -13,7 +10,7 @@
       :row-key="(row) => row.id"
       @update:checked-row-keys="handleCheck"
     />
-  </div>
+  </CommonPage>
 </template>
 
 <script setup>
