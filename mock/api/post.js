@@ -122,16 +122,12 @@ export default [
     url: '/api/post/:id',
     method: 'delete',
     response: ({ query }) => {
-      if (!query.id) {
-        return { code: -1, message: '删除失败,id不能为空' }
-      } else {
-        return {
-          code: 0,
-          message: 'ok',
-          data: {
-            id: query.id,
-          },
-        }
+      return {
+        code: 0,
+        message: 'ok',
+        data: {
+          id: query.id,
+        },
       }
     },
   },
