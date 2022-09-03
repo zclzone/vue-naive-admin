@@ -3,11 +3,7 @@ import request from '@/utils/http'
 export default {
   getPosts: (params = {}) => request.get('posts', { params }),
   getPostById: (id) => request.get(`/post/${id}`),
-  savePost: (id, data = {}) => {
-    if (id) {
-      return request.put(`/post/${id}`, data)
-    }
-    return request.post('/post', data)
-  },
+  addPost: (data) => request.post('/post', data),
+  updatePost: (data) => request.put(`/post/${data.id}`, data),
   deletePost: (id) => request.delete(`/post/${id}`),
 }

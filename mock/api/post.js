@@ -12,7 +12,7 @@ const posts = [
   },
   {
     title: 'Vue2&Vue3项目风格指南',
-    author: '大脸怪',
+    author: 'Ronnie',
     category: 'Vue',
     description: '总结的Vue2和Vue3的项目风格',
     content: '### 1. 命名风格\n\n> 文件夹如果是由多个单词组成，应该始终是横线连接 ',
@@ -90,6 +90,48 @@ export default [
           pageNo,
           pageSize,
         },
+      }
+    },
+  },
+  {
+    url: '/api/post',
+    method: 'post',
+    response: ({ body }) => {
+      return {
+        code: 0,
+        message: 'ok',
+        data: body,
+      }
+    },
+  },
+  {
+    url: '/api/post/:id',
+    method: 'put',
+    response: ({ query, body }) => {
+      return {
+        code: 0,
+        message: 'ok',
+        data: {
+          id: query.id,
+          body,
+        },
+      }
+    },
+  },
+  {
+    url: '/api/post/:id',
+    method: 'delete',
+    response: ({ query }) => {
+      if (!query.id) {
+        return { code: -1, message: '删除失败,id不能为空' }
+      } else {
+        return {
+          code: 0,
+          message: 'ok',
+          data: {
+            id: query.id,
+          },
+        }
       }
     },
   },

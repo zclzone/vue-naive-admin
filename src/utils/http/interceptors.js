@@ -35,7 +35,11 @@ export function reqReject(error) {
 }
 
 export function repResolve(response) {
-  return response?.data
+  if (response?.data?.code !== 0) {
+    $message.error(response?.data?.message || '操作异常')
+    return Promise.reject(response?.data)
+  }
+  return Promise.resolve(response?.data)
 }
 
 export function repReject(error) {
@@ -67,5 +71,6 @@ export function repReject(error) {
     }
   }
   console.error(`【${code}】 ${error}`)
-  return Promise.resolve({ code, message, error })
+  $message.error(message || '操作异常')
+  return Promise.reject({ code, message, error })
 }

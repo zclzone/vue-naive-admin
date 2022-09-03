@@ -5,7 +5,7 @@
       <footer flex justify-end>
         <slot name="footer">
           <n-button @click="show = false">取消</n-button>
-          <n-button ml-20 type="primary" @click="emit('onSave')">保存</n-button>
+          <n-button :loading="loading" ml-20 type="primary" @click="emit('onSave')">保存</n-button>
         </slot>
       </footer>
     </template>
@@ -29,6 +29,10 @@ const props = defineProps({
   visible: {
     type: Boolean,
     required: true,
+  },
+  loading: {
+    type: Boolean,
+    default: false,
   },
 })
 
