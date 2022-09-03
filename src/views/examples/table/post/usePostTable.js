@@ -1,8 +1,8 @@
 import { h } from 'vue'
 import { NButton, NSwitch } from 'naive-ui'
 import { formatDateTime } from '@/utils'
-import api from './api'
 import { renderIcon } from '@/utils/icon'
+import api from './api'
 
 export const usePostTable = () => {
   // refs
@@ -17,6 +17,21 @@ export const usePostTable = () => {
   }
 
   function handleDelete(row) {
+    if (row && row.id) {
+      $dialog.confirm({
+        content: '确定删除？',
+        confirm() {
+          $message.success('删除成功')
+          initTableData()
+        },
+        cancel() {
+          $message.success('已取消')
+        },
+      })
+    }
+  }
+
+  function handleEdit(row) {
     if (row && row.id) {
       $dialog.confirm({
         content: '确定删除？',
@@ -84,7 +99,7 @@ export const usePostTable = () => {
       {
         title: '推荐',
         key: 'isRecommend',
-        width: 100,
+        width: 120,
         align: 'center',
         fixed: 'right',
         render(row) {
@@ -100,7 +115,7 @@ export const usePostTable = () => {
       {
         title: '发布',
         key: 'isPublish',
-        width: 100,
+        width: 120,
         align: 'center',
         fixed: 'right',
         render(row) {
@@ -116,11 +131,20 @@ export const usePostTable = () => {
       {
         title: '操作',
         key: 'actions',
-        width: 120,
+        width: 200,
         align: 'center',
         fixed: 'right',
         render(row) {
           return [
+            h(
+              NButton,
+              {
+                size: 'small',
+                type: 'primary',
+                onClick: () => handleEdit(row),
+              },
+              { default: () => '编辑', icon: renderIcon('material-symbols:edit-outline', { size: 14 }) }
+            ),
             h(
               NButton,
               {
