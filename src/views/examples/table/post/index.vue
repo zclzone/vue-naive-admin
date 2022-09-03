@@ -8,15 +8,16 @@
 
     <CrudTable
       ref="$table"
-      v-model:query-form="queryForm"
+      v-model:query-items="queryItems"
+      :extra-params="extraParams"
       :scroll-x="1600"
       :columns="columns"
-      :get-data="getTableData"
+      :get-data="api.getPosts"
       @on-checked="onChecked"
     >
       <template #queryBar>
         <QueryBarItem label="标题" :label-width="50">
-          <n-input v-model:value="queryForm.title" type="text" placeholder="请输入标题" />
+          <n-input v-model:value="queryItems.title" type="text" placeholder="请输入标题" />
         </QueryBarItem>
       </template>
     </CrudTable>
@@ -32,22 +33,11 @@ import { renderIcon } from '@/utils/icon'
 import api from './api'
 
 const $table = ref(null)
-const queryForm = ref({
-  title: '',
-})
+/** queryBar参数 */
+const queryItems = ref({})
+/** 可选，用于补充参数  */
+const extraParams = ref({})
 
-async function getTableData(query = {}, pagination = {}) {
-  const { pageSize = 10, pageNo = 1 } = pagination
-  try {
-    // * 参数可自定义，如不需要后端分页则可以不传 pagination 相关参数
-    const res = await api.getPosts({ ...query, pageSize, pageNo })
-    if (res.code === 0) {
-      return Promise.resolve(res.data)
-    }
-  } catch (error) {
-    return Promise.reject(error)
-  }
-}
 // 选中事件
 function onChecked(rowKeys) {
   if (rowKeys.length) $message.info(`选中${rowKeys.join(' ')}`)

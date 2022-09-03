@@ -65,10 +65,14 @@ export default [
       const { title, pageNo, pageSize } = data.query
       let pageData = []
       let total = 60
-      const filterData = posts.filter((item) => item.title.includes(title))
+      const filterData = posts.filter((item) => item.title.includes(title) || (!title && title !== 0))
       if (filterData.length) {
-        while (pageData.length < pageSize) {
-          pageData.push(filterData[Math.round(Math.random() * (filterData.length - 1))])
+        if (pageSize) {
+          while (pageData.length < pageSize) {
+            pageData.push(filterData[Math.round(Math.random() * (filterData.length - 1))])
+          }
+        } else {
+          pageData = filterData
         }
         pageData = pageData.map((item, index) => ({
           id: pageSize * (pageNo - 1) + index + 1,

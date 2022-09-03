@@ -44,31 +44,52 @@ const props = defineProps({
     type: Array,
     required: true,
   },
-  queryForm: {
+  /** queryBar中的参数 */
+  queryItems: {
     type: Object,
-    required: true,
+    default() {
+      return {}
+    },
   },
+  /** 补充参数（可选） */
+  extraParams: {
+    type: Object,
+    default() {
+      return {}
+    },
+  },
+  /**
+   * ! 约定接口入参出参
+   * * 分页模式需约定分页接口入参
+   *    @pageSize 分页参数：一页展示多少条，默认10
+   *    @pageNo   分页参数：页码，默认1
+   * * 需约定接口出参
+   *    @pageData 分页模式必须,非分页模式如果没有pageData则取上一层data
+   *    @total    分页模式必须，非分页模式如果没有total则取上一层data.length
+   */
   getData: {
     type: Function,
     required: true,
   },
 })
 
-const emit = defineEmits(['update:queryForm', 'onChecked'])
+const emit = defineEmits(['update:queryItems', 'onChecked'])
 const loading = ref(false)
-const initQuery = { ...props.queryForm }
+const initQuery = { ...props.queryItems }
 const tableData = ref([])
-const pagination = reactive({ page: 1, pageSize: 10, itemCount: 100 })
+const pagination = reactive({ page: 1, pageSize: 10 })
 
-async function handleQuery(extraParams = {}) {
+async function handleQuery() {
   try {
     loading.value = true
-    const res = await props.getData(
-      { ...props.queryForm, ...extraParams },
-      { pageNo: pagination.page, pageSize: pagination.pageSize }
-    )
-    tableData.value = res?.pageData || res
-    pagination.itemCount = res.total ?? res.length
+    let paginationParams = {}
+    // 如果非分页模式或者使用前端分页,则无需传分页参数
+    if (props.isPagination && props.remote) {
+      paginationParams = { pageNo: pagination.page, pageSize: pagination.pageSize }
+    }
+    const { data } = await props.getData({ ...props.queryItems, ...props.extraParams, ...paginationParams })
+    tableData.value = data?.pageData || data
+    pagination.itemCount = data.total ?? data.length
   } catch (error) {
     tableData.value = []
     pagination.itemCount = 0
@@ -82,20 +103,20 @@ function handleSearch() {
   handleQuery()
 }
 async function handleReset() {
-  emit('update:queryForm', { ...initQuery })
+  emit('update:queryItems', { ...initQuery })
   await nextTick()
   pagination.page = 1
   handleQuery()
-}
-function onChecked(rowKeys) {
-  if (props.columns.some((item) => item.type === 'selection')) {
-    emit('onChecked', rowKeys)
-  }
 }
 function onPageChange(currentPage) {
   pagination.page = currentPage
   if (props.remote) {
     handleQuery()
+  }
+}
+function onChecked(rowKeys) {
+  if (props.columns.some((item) => item.type === 'selection')) {
+    emit('onChecked', rowKeys)
   }
 }
 
