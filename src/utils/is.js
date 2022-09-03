@@ -72,6 +72,7 @@ export function isNullOrWhitespace(val) {
   return isNullOrUndef(val) || isWhitespace(val)
 }
 
+/** 空数组 | 空字符串 | 空对象 | 空Map | 空Set */
 export function isEmpty(val) {
   if (isArray(val) || isString(val)) {
     return val.length === 0
