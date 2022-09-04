@@ -19,8 +19,6 @@
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
 
-const router = useRouter()
-
 // refs
 let post = ref({})
 let btnLoading = ref(false)
@@ -31,7 +29,6 @@ function handleSavePost(e) {
   setTimeout(() => {
     $message.success('保存成功')
     btnLoading.value = false
-    router.push('/example/table/post')
   }, 2000)
 }
 </script>

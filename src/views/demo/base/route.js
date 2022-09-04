@@ -2,11 +2,11 @@ const Layout = () => import('@/layout/index.vue')
 
 export default {
   name: 'Test',
-  path: '/test',
+  path: '/base',
   component: Layout,
-  redirect: '/test/unocss',
+  redirect: '/base/unocss',
   meta: {
-    title: '基础功能测试',
+    title: '基础功能',
     customIcon: 'logo',
     order: 1,
   },
