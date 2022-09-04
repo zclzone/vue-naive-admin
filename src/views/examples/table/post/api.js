@@ -5,5 +5,5 @@ export default {
   getPostById: (id) => request.get(`/post/${id}`),
   addPost: (data) => request.post('/post', data),
   updatePost: (data) => request.put(`/post/${data.id}`, data),
-  deletePost: (id) => request.delete(`/post/${id}`),
+  deletePost: (id) => request.delete(`/post/${id}`, null),
 }

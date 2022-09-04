@@ -26,8 +26,6 @@ export async function refreshAccessToken() {
   if (new Date().getTime() - time <= 1000 * 60 * 30) return
   try {
     const res = await api.refreshToken()
-    if (res.code === 0) {
-      setToken(res.data.token)
-    }
+    setToken(res.data.token)
   } catch (error) {}
 }

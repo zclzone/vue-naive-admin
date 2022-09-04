@@ -1,11 +1,10 @@
 import { useUserStore } from '@/store/modules/user'
 import { usePermissionStore } from '@/store/modules/permission'
 import { NOT_FOUND_ROUTE } from '@/router/routes'
-import { getToken, refreshAccessToken, removeToken } from '@/utils/token'
-import { toLogin } from '@/utils/auth'
+import { getToken, refreshAccessToken } from '@/utils/token'
 import { isNullOrWhitespace } from '@/utils/is'
 
-const WHITE_LIST = ['/login']
+const WHITE_LIST = ['/login', '/404']
 export function createPermissionGuard(router) {
   const userStore = useUserStore()
   const permissionStore = usePermissionStore()
@@ -19,24 +18,25 @@ export function createPermissionGuard(router) {
     }
 
     /** 有token的情况 */
-
     if (to.path === '/login') return { path: '/', replace: true }
+    if (to.path === '/404') return true
 
     // 已经拿到用户信息
     if (userStore.userId) {
       refreshAccessToken()
       return true
     }
-    await userStore.getUserInfo().catch((error) => {
-      removeToken()
-      toLogin()
-      $message.error(error.message || '获取用户信息失败！')
-    })
-    const accessRoutes = permissionStore.generateRoutes(userStore.role)
-    accessRoutes.forEach((route) => {
-      !router.hasRoute(route.name) && router.addRoute(route)
-    })
-    router.addRoute(NOT_FOUND_ROUTE)
-    return { ...to, replace: true }
+    try {
+      await userStore.getUserInfo()
+      const accessRoutes = permissionStore.generateRoutes(userStore.role)
+      accessRoutes.forEach((route) => {
+        !router.hasRoute(route.name) && router.addRoute(route)
+      })
+      router.addRoute(NOT_FOUND_ROUTE)
+      return { ...to, replace: true }
+    } catch (error) {
+      console.error(error)
+      return
+    }
   })
 }

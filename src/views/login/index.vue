@@ -81,29 +81,26 @@ async function handleLogin() {
     return
   }
   try {
-    $message.loading('正在验证...')
     loging.value = true
+    $message.loading('正在验证...')
     const res = await api.login({ name, password: password.toString() })
-    if (res.code === 0) {
-      $message.success('登录成功')
-      setToken(res.data.token)
-      if (isRemember.value) {
-        lStorage.set('loginInfo', { name, password })
-      } else {
-        lStorage.remove('loginInfo')
-      }
-      if (query.redirect) {
-        const path = query.redirect
-        Reflect.deleteProperty(query, 'redirect')
-        router.push({ path, query })
-      } else {
-        router.push('/')
-      }
+    $message.success('登录成功')
+    setToken(res.data.token)
+    if (isRemember.value) {
+      lStorage.set('loginInfo', { name, password })
     } else {
-      $message.warning(res.message)
+      lStorage.remove('loginInfo')
+    }
+    if (query.redirect) {
+      const path = query.redirect
+      Reflect.deleteProperty(query, 'redirect')
+      router.push({ path, query })
+    } else {
+      router.push('/')
     }
   } catch (error) {
-    $message.error(error.message)
+    console.error(error)
+    $message.removeMessage()
   }
   loging.value = false
 }

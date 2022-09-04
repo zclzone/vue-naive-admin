@@ -1,4 +1,4 @@
-import { isNullOrWhitespace } from '../utils/is'
+import { isNullOrWhitespace } from '@/utils/is'
 
 const ACTIONS = {
   view: '查看',
@@ -62,7 +62,6 @@ export default function ({ name, initForm = {}, doCreate, doDelete, doUpdate, re
         modalLoading.value = modalVisible.value = false
         data && refresh(data)
       } catch (error) {
-        $message.error('操作失败')
         modalLoading.value = false
       }
     })

@@ -163,12 +163,8 @@ export const usePostTable = () => {
 
   async function getTableData() {
     try {
-      const res = await api.getPosts()
-      if (res.code === 0) {
-        return res.data
-      }
-      console.warn(res.message)
-      return []
+      const { data } = await api.getPosts()
+      return data
     } catch (error) {
       console.error(error)
       return []

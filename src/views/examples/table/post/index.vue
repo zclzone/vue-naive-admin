@@ -90,9 +90,7 @@ import { isNullOrUndef } from '@/utils/is'
 
 const $table = ref(null)
 /** QueryBar筛选参数（可选） */
-const queryItems = ref({
-  title: '',
-})
+const queryItems = ref({})
 /** 补充参数（可选） */
 const extraParams = ref({})
 

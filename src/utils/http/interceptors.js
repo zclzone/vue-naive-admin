@@ -1,14 +1,8 @@
 import { getToken } from '@/utils/token'
 import { toLogin } from '@/utils/auth'
-import { isNullOrUndef } from '@/utils/is'
-import { isWithoutToken } from './helpers'
+import { isWithoutToken, resolveResError } from './helpers'
 
 export function reqResolve(config) {
-  // 防止缓存，给get请求加上时间戳
-  if (config.method === 'get') {
-    config.params = { ...config.params, t: new Date().getTime() }
-  }
-
   // 处理不需要token的请求
   if (isWithoutToken(config)) {
     return config
@@ -35,42 +29,18 @@ export function reqReject(error) {
 }
 
 export function repResolve(response) {
-  if (response?.data?.code !== 0) {
-    $message.error(response?.data?.message || '操作异常')
-    return Promise.reject(response?.data)
+  const { noNeedTip } = response.config
+  if (response.data?.code !== 0) {
+    const { code, message } = resolveResError(response?.data)
+    !noNeedTip && $message.error(message)
+    return Promise.reject({ code, message, error: response?.data })
   }
   return Promise.resolve(response?.data)
 }
 
 export function repReject(error) {
-  let { code, message } = error.response?.data || {}
-  if (isNullOrUndef(code)) {
-    // 未知错误
-    code = -1
-    message = '接口异常！'
-  } else {
-    /**
-     * TODO 此处可以根据后端返回的错误码自定义框架层面的错误处理
-     */
-    switch (code) {
-      case 400:
-        message = message || '请求参数错误'
-        break
-      case 401:
-        message = message || '登录已过期'
-        break
-      case 403:
-        message = message || '没有权限'
-        break
-      case 404:
-        message = message || '资源或接口不存在'
-        break
-      default:
-        message = message || '未知异常'
-        break
-    }
-  }
-  console.error(`【${code}】 ${error}`)
-  $message.error(message || '操作异常')
+  const { noNeedTip } = error.response?.config || error.config
+  const { code, message } = resolveResError(error.response?.data)
+  !noNeedTip && $message.error(message)
   return Promise.reject({ code, message, error })
 }

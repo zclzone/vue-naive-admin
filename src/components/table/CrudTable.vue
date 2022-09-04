@@ -93,7 +93,6 @@ async function handleQuery() {
   } catch (error) {
     tableData.value = []
     pagination.itemCount = 0
-    $message.error(error.message)
   } finally {
     loading.value = false
   }
@@ -103,7 +102,11 @@ function handleSearch() {
   handleQuery()
 }
 async function handleReset() {
-  emit('update:queryItems', { ...initQuery })
+  const queryItems = { ...props.queryItems }
+  for (const key in queryItems) {
+    queryItems[key] = ''
+  }
+  emit('update:queryItems', { ...queryItems, ...initQuery })
   await nextTick()
   pagination.page = 1
   handleQuery()

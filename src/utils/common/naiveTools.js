@@ -9,7 +9,7 @@ export function setupMessage(NMessage) {
      * * loading message不会自动清除，除非被替换成非loading message，非loading message默认2秒后自动清除
      */
 
-    removeMessage(message, duration = 2000) {
+    removeMessage(message = loadingMessage, duration = 2000) {
       setTimeout(() => {
         if (message) {
           message.destroy()

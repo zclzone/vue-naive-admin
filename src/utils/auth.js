@@ -6,3 +6,9 @@ export function toLogin() {
     query: { ...router.currentRoute.value.query, redirect: router.currentRoute.value.path },
   })
 }
+
+export function toFourZeroFour() {
+  router.replace({
+    path: '/404',
+  })
+}
