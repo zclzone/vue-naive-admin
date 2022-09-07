@@ -18,8 +18,8 @@ export default {
       path: 'crud-table',
       component: () => import('./table/index.vue'),
       meta: {
-        title: '文章列表',
-        icon: 'mdi:table',
+        title: 'CRUD表格',
+        icon: 'ic:baseline-table-view',
         role: ['admin'],
         requireAuth: true,
       },
@@ -30,7 +30,7 @@ export default {
       component: () => import('./editor/md-editor.vue'),
       meta: {
         title: 'MD编辑器',
-        icon: 'icon-park:editor',
+        icon: 'ri:markdown-line',
         role: ['admin'],
         requireAuth: true,
       },
