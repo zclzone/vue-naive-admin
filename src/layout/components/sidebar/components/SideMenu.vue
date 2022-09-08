@@ -87,7 +87,7 @@ function handleMenuSelect(key, item) {
   if (isExternal(item.path)) {
     window.open(item.path)
   } else {
-    if (item.path === currentRoute.value.path && !currentRoute.value.meta?.keepAlive) {
+    if (item.path === currentRoute.value.path) {
       appStore.reloadPage()
     } else {
       router.push(item.path)
