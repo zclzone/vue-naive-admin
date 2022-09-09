@@ -22,6 +22,7 @@ export default {
         icon: 'ic:baseline-table-view',
         role: ['admin'],
         requireAuth: true,
+        keepAlive: true,
       },
     },
     {
@@ -33,6 +34,7 @@ export default {
         icon: 'ri:markdown-line',
         role: ['admin'],
         requireAuth: true,
+        keepAlive: true,
       },
     },
   ],

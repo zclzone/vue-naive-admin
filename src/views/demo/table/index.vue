@@ -88,6 +88,8 @@ import { useCRUD } from '@/composables'
 import api from './api'
 import { isNullOrUndef } from '@/utils/is'
 
+defineOptions({ name: 'CrudTable' })
+
 const $table = ref(null)
 /** QueryBar筛选参数（可选） */
 const queryItems = ref({})

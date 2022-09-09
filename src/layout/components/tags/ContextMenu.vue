@@ -72,10 +72,15 @@ const options = computed(() => [
   },
 ])
 
+const route = useRoute()
 const actionMap = new Map([
   [
     'reload',
     () => {
+      if (route.meta?.keepAlive) {
+        // 重置keepAlive
+        route.meta.key = +new Date()
+      }
       appStore.reloadPage()
     },
   ],

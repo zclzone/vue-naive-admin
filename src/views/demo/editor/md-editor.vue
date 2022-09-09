@@ -19,6 +19,8 @@
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
 
+defineOptions({ name: 'MDEditor' })
+
 // refs
 let post = ref({})
 let btnLoading = ref(false)
