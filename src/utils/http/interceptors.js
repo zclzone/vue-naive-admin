@@ -1,10 +1,10 @@
 import { getToken } from '@/utils/token'
 import { toLogin } from '@/utils/auth'
-import { isWithoutToken, resolveResError } from './helpers'
+import { resolveResError } from './helpers'
 
 export function reqResolve(config) {
   // 处理不需要token的请求
-  if (isWithoutToken(config)) {
+  if (config.noNeedToken) {
     return config
   }
 
