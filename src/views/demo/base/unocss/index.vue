@@ -61,6 +61,6 @@
         </div>
       </div>
     </div>
-    <h2 font-normal text-18 text-center w-350 mt-10 color-gray-400>Flex 骰子</h2>
+    <h2 font-normal text-14 text-center w-350 mt-10 color-gray>Flex 骰子</h2>
   </CommonPage>
 </template>
