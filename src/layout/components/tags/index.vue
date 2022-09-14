@@ -22,7 +22,7 @@
   </ScrollX>
 </template>
 
-<script setup name="Tags">
+<script setup>
 import ContextMenu from './ContextMenu.vue'
 import { useTagsStore } from '@/store/modules/tags'
 import ScrollX from '@/components/common/ScrollX.vue'
