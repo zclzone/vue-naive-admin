@@ -22,7 +22,7 @@
     "mockjs": "^1.1.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.39",
-    "vue-router": "^4.0.15"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
