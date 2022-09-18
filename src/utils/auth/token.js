@@ -1,4 +1,4 @@
-import { lStorage } from './cache'
+import { lStorage } from '@/utils'
 import api from '@/api'
 
 const TOKEN_CODE = 'access_token'

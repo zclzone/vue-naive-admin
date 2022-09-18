@@ -1,7 +1,5 @@
-import { useUserStore } from '@/store/modules/user'
-import { isNullOrUndef } from '@/utils/is'
-import { removeToken } from '@/utils/token'
-import { toLogin } from '@/utils/auth'
+import { useUserStore } from '@/store'
+import { isNullOrUndef, removeToken, toLogin } from '@/utils'
 
 export function addBaseParams(params) {
   if (!params.userId) {

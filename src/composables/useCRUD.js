@@ -1,4 +1,4 @@
-import { isNullOrWhitespace } from '@/utils/is'
+import { isNullOrWhitespace } from '@/utils'
 
 const ACTIONS = {
   view: '查看',

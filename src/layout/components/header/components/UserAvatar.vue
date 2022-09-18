@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-import { useUserStore } from '@/store/modules/user'
-import { renderIcon } from '@/utils/icon'
+import { useUserStore } from '@/store'
+import { renderIcon } from '@/utils'
 
 const userStore = useUserStore()
 

@@ -1,6 +1,7 @@
+/** 重置样式 */
 import '@/styles/reset.css'
-import '@/styles/index.scss'
 import 'uno.css'
+import '@/styles/global.scss'
 import 'virtual:svg-icons-register'
 
 import { createApp } from 'vue'

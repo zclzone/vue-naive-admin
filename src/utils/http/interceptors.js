@@ -1,5 +1,4 @@
-import { getToken } from '@/utils/token'
-import { toLogin } from '@/utils/auth'
+import { getToken, toLogin } from '@/utils'
 import { resolveResError } from './helpers'
 
 export function reqResolve(config) {

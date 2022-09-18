@@ -30,7 +30,7 @@ import AppHeader from './components/header/index.vue'
 import SideBar from './components/sidebar/index.vue'
 import AppMain from './components/AppMain.vue'
 import AppTags from './components/tags/index.vue'
-import { useAppStore } from '@/store/modules/app'
+import { useAppStore } from '@/store'
 import { header, tags } from '~/settings'
 
 const appStore = useAppStore()

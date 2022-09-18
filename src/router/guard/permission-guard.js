@@ -1,5 +1,4 @@
-import { getToken, refreshAccessToken } from '@/utils/token'
-import { isNullOrWhitespace } from '@/utils/is'
+import { getToken, refreshAccessToken, isNullOrWhitespace } from '@/utils'
 
 const WHITE_LIST = ['/login', '/404']
 export function createPermissionGuard(router) {

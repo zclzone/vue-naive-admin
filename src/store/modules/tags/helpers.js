@@ -1,4 +1,4 @@
-import { sStorage } from '@/utils/cache'
+import { sStorage } from '@/utils'
 
 export const activeTag = sStorage.get('activeTag')
 export const tags = sStorage.get('tags')

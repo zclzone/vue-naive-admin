@@ -12,11 +12,8 @@
 </template>
 
 <script setup>
-import { usePermissionStore } from '@/store/modules/permission'
-
-import { isExternal } from '@/utils/is'
-import { useAppStore } from '@/store/modules/app'
-import { renderCustomIcon, renderIcon } from '@/utils/icon'
+import { usePermissionStore, useAppStore } from '@/store'
+import { renderCustomIcon, renderIcon, isExternal } from '@/utils'
 
 const router = useRouter()
 const curRoute = useRoute()

@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { isNullOrWhitespace } from '@/utils/is'
+import { isNullOrWhitespace } from '@/utils'
 
 defineProps({
   label: {

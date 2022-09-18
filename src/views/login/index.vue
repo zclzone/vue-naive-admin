@@ -46,8 +46,7 @@
 </template>
 
 <script setup>
-import { lStorage } from '@/utils/cache'
-import { setToken } from '@/utils/token'
+import { lStorage, setToken } from '@/utils'
 import { useStorage } from '@vueuse/core'
 import bgImg from '@/assets/images/login_bg.webp'
 import api from './api'

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { activeTag, tags, WITHOUT_TAG_PATHS } from './helpers'
 import { router } from '@/router'
-import { sStorage } from '@/utils/cache'
+import { sStorage } from '@/utils'
 
 export const useTagsStore = defineStore('tag', {
   state() {

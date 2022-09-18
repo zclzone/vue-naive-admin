@@ -1,4 +1,4 @@
-import { isNullOrUndef } from '@/utils/is'
+import { isNullOrUndef } from '@/utils'
 
 export function setupMessage(NMessage) {
   let loadingMessage = null

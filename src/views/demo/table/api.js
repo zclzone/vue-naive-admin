@@ -1,4 +1,4 @@
-import request from '@/utils/http'
+import { request } from '@/utils'
 
 export default {
   getPosts: (params = {}) => request.get('posts', { params }),

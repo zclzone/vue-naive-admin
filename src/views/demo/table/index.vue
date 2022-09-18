@@ -82,11 +82,9 @@
 
 <script setup>
 import { NButton, NSwitch } from 'naive-ui'
-import { formatDateTime } from '@/utils'
-import { renderIcon } from '@/utils/icon'
+import { formatDateTime, renderIcon, isNullOrUndef } from '@/utils'
 import { useCRUD } from '@/composables'
 import api from './api'
-import { isNullOrUndef } from '@/utils/is'
 
 defineOptions({ name: 'CrudTable' })
 

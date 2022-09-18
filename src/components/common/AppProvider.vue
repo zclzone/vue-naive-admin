@@ -18,7 +18,7 @@ import { defineComponent, h } from 'vue'
 import { useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
 import { useCssVar } from '@vueuse/core'
 import { kebabCase } from 'lodash-es'
-import { setupMessage, setupDialog } from '@/utils/common/naiveTools'
+import { setupMessage, setupDialog } from '@/utils'
 import { naiveThemeOverrides } from '~/settings'
 
 function setupCssVar() {

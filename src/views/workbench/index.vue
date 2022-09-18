@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from '@/store/modules/user'
+import { useUserStore } from '@/store'
 
 const userStore = useUserStore()
 </script>
