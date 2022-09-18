@@ -51,6 +51,7 @@ import { setToken } from '@/utils/token'
 import { useStorage } from '@vueuse/core'
 import bgImg from '@/assets/images/login_bg.webp'
 import api from './api'
+import { addDynamicRoutes } from '@/router'
 
 const title = import.meta.env.VITE_TITLE
 
@@ -91,6 +92,7 @@ async function handleLogin() {
     } else {
       lStorage.remove('loginInfo')
     }
+    await addDynamicRoutes()
     if (query.redirect) {
       const path = query.redirect
       Reflect.deleteProperty(query, 'redirect')

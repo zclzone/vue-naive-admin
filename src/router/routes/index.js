@@ -63,6 +63,12 @@ export const NOT_FOUND_ROUTE = {
   isHidden: true,
 }
 
+export const EMPTY_ROUTE = {
+  name: 'Empty',
+  path: '/:pathMatch(.*)*',
+  component: null,
+}
+
 const modules = import.meta.glob('@/views/**/route.js', { eager: true })
 const asyncRoutes = []
 Object.keys(modules).forEach((key) => {

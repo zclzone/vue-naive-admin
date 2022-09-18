@@ -1,28 +1,53 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import { setupRouterGuard } from './guard'
-import { basicRoutes } from './routes'
+import { basicRoutes as routes, EMPTY_ROUTE, NOT_FOUND_ROUTE } from './routes'
+import { getToken } from '@/utils/token'
+import { isNullOrWhitespace } from '@/utils/is'
+import { useUserStore } from '@/store/modules/user'
+import { usePermissionStore } from '@/store/modules/permission'
 
 const isHash = import.meta.env.VITE_USE_HASH === 'true'
 export const router = createRouter({
   history: isHash ? createWebHashHistory('/') : createWebHistory('/'),
-  routes: [],
+  routes,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
-export function resetRouter() {
+export async function resetRouter() {
   router.getRoutes().forEach((route) => {
     const { name } = route
     router.hasRoute(name) && router.removeRoute(name)
   })
-  basicRoutes.forEach((route) => {
-    !router.hasRoute(route.name) && router.addRoute(route)
-  })
+  await addDynamicRoutes()
 }
 
-export function setupRouter(app) {
-  basicRoutes.forEach((route) => {
-    !router.hasRoute(route.name) && router.addRoute(route)
-  })
-  app.use(router)
+export async function addDynamicRoutes() {
+  const token = getToken()
+
+  // 没有token情况
+  if (isNullOrWhitespace(token)) {
+    router.addRoute(EMPTY_ROUTE)
+    return
+  }
+
+  // 有token的情况
+  try {
+    const userStore = useUserStore()
+    const permissionStore = usePermissionStore()
+    !userStore.userId && (await userStore.getUserInfo())
+    const accessRoutes = permissionStore.generateRoutes(userStore.role)
+    accessRoutes.forEach((route) => {
+      !router.hasRoute(route.name) && router.addRoute(route)
+    })
+    router.hasRoute(EMPTY_ROUTE.name) && router.removeRoute(EMPTY_ROUTE.name)
+    router.addRoute(NOT_FOUND_ROUTE)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export async function setupRouter(app) {
+  await addDynamicRoutes()
   setupRouterGuard(router)
+  app.use(router)
 }
