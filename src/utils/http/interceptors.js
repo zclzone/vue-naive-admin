@@ -1,4 +1,4 @@
-import { getToken, toLogin } from '@/utils'
+import { getToken } from '@/utils'
 import { resolveResError } from './helpers'
 
 export function reqResolve(config) {
@@ -9,9 +9,7 @@ export function reqResolve(config) {
 
   const token = getToken()
   if (!token) {
-    // * 未登录或者token过期的情况下,跳转登录页重新登录
-    toLogin()
-    return Promise.reject({ code: '-1', message: '未登录' })
+    return Promise.reject({ code: 401, message: '登录已过期，请重新登录！' })
   }
 
   /**
@@ -28,18 +26,33 @@ export function reqReject(error) {
 }
 
 export function repResolve(response) {
-  const { noNeedTip } = response.config
+  // TODO: 处理不同的 response.headers
+  const { data, status, config, statusText } = response
   if (response.data?.code !== 0) {
-    const { code, message } = resolveResError(response?.data)
-    !noNeedTip && $message.error(message)
+    const code = data?.code ?? status
+
+    /** 根据code处理对应的操作，并返回处理后的message */
+    const message = resolveResError(code, data?.message ?? statusText)
+
+    /** 需要错误提醒 */
+    !config.noNeedTip && $message.error(message)
     return Promise.reject({ code, message, error: response?.data })
   }
-  return Promise.resolve(response?.data)
+  return Promise.resolve(data)
 }
 
 export function repReject(error) {
-  const { noNeedTip } = error.response?.config || error.config
-  const { code, message } = resolveResError(error.response?.data)
-  !noNeedTip && $message.error(message)
-  return Promise.reject({ code, message, error })
+  if (!error || !error.response) {
+    const code = error?.code
+    /** 根据code处理对应的操作，并返回处理后的message */
+    const message = resolveResError(code, error.message)
+    $message?.error(message)
+    return Promise.reject({ code, message, error })
+  }
+  const { data, status, config } = error.response
+  const code = data?.code ?? status
+  const message = resolveResError(code, data?.message ?? error.message)
+  /** 需要错误提醒 */
+  !config?.noNeedTip && $message.error(message)
+  return Promise.reject({ code, message, error: error.response?.data })
 }

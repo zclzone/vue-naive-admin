@@ -57,5 +57,9 @@ export const useTagsStore = defineStore('tag', {
         router.push(filterTags[filterTags.length - 1].path)
       }
     },
+    resetTags() {
+      this.setTags([])
+      this.setActiveTag('')
+    },
   },
 })
