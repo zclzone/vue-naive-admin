@@ -38,16 +38,16 @@ const wrapper = ref(null)
 const isOverflow = ref(false)
 
 const refreshIsOverflow = debounce(() => {
-  const wrapperWidth = wrapper.value.offsetWidth
-  const contentWidth = content.value.offsetWidth
+  const wrapperWidth = wrapper.value?.offsetWidth
+  const contentWidth = content.value?.offsetWidth
   isOverflow.value = contentWidth > wrapperWidth
   resetTranslateX(wrapperWidth, contentWidth)
 }, 200)
 
 function handleMouseWheel(e) {
   const { wheelDelta } = e
-  const wrapperWidth = wrapper.value.offsetWidth
-  const contentWidth = content.value.offsetWidth
+  const wrapperWidth = wrapper.value?.offsetWidth
+  const contentWidth = content.value?.offsetWidth
   /**
    * @wheelDelta 平行滚动的值 >0： 右移  <0: 左移
    * @translateX 内容translateX的值
