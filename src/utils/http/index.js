@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { repReject, repResolve, reqReject, reqResolve } from './interceptors'
+import { resReject, resResolve, reqReject, reqResolve } from './interceptors'
 
 export function createAxios(options = {}) {
   const defaultOptions = {
@@ -10,7 +10,7 @@ export function createAxios(options = {}) {
     ...options,
   })
   service.interceptors.request.use(reqResolve, reqReject)
-  service.interceptors.response.use(repResolve, repReject)
+  service.interceptors.response.use(resResolve, resReject)
   return service
 }
 

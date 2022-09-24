@@ -25,10 +25,10 @@ export function reqReject(error) {
   return Promise.reject(error)
 }
 
-export function repResolve(response) {
+export function resResolve(response) {
   // TODO: 处理不同的 response.headers
   const { data, status, config, statusText } = response
-  if (response.data?.code !== 0) {
+  if (data?.code !== 0) {
     const code = data?.code ?? status
 
     /** 根据code处理对应的操作，并返回处理后的message */
@@ -36,12 +36,12 @@ export function repResolve(response) {
 
     /** 需要错误提醒 */
     !config.noNeedTip && $message.error(message)
-    return Promise.reject({ code, message, error: response?.data })
+    return Promise.reject({ code, message, error: data || response })
   }
   return Promise.resolve(data)
 }
 
-export function repReject(error) {
+export function resReject(error) {
   if (!error || !error.response) {
     const code = error?.code
     /** 根据code处理对应的操作，并返回处理后的message */
@@ -54,5 +54,5 @@ export function repReject(error) {
   const message = resolveResError(code, data?.message ?? error.message)
   /** 需要错误提醒 */
   !config?.noNeedTip && $message.error(message)
-  return Promise.reject({ code, message, error: error.response?.data })
+  return Promise.reject({ code, message, error: error.response?.data || error.response })
 }
