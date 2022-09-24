@@ -13,6 +13,7 @@
 <script setup>
 import { useTagsStore, useAppStore } from '@/store'
 import { renderIcon } from '@/utils'
+import { useLocalStorage } from '@vueuse/core'
 
 const props = defineProps({
   show: {
@@ -78,7 +79,7 @@ const actionMap = new Map([
     () => {
       if (route.meta?.keepAlive) {
         // 重置keepAlive
-        route.meta.key = +new Date()
+        appStore.setAliveKeys(route.name, +new Date())
       }
       appStore.reloadPage()
     },
