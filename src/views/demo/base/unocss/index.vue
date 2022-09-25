@@ -10,8 +10,8 @@
       </a>
     </p>
 
-    <div f-c-c mt-20 w-350 rounded-10 b-1 bc-ccc>
-      <div flex w-360 flex-wrap justify-around p-10>
+    <div f-c-c flex-col mt-20 w-350>
+      <div flex flex-wrap justify-around p-10 rounded-10 b-1 bc-ccc>
         <div w-50 h-50 b-1 rounded-5 f-c-c p-10 m-20>
           <span w-6 h-6 rounded-3 bg-black></span>
         </div>
@@ -34,12 +34,12 @@
             <span w-6 h-6 rounded-3 bg-black></span>
           </div>
         </div>
-        <div w-50 h-50 b-1 rounded-5 f-c-c flex-col p-10 m-20>
+        <div w-50 h-50 b-1 rounded-5 flex-col justify-between items-center p-10 m-20>
           <div flex w-full justify-between>
             <span w-6 h-6 rounded-3 bg-black></span>
             <span w-6 h-6 rounded-3 bg-black></span>
           </div>
-          <span w-6 h-6 rounded-3 bg-black></span>
+          <div w-6 h-6 rounded-3 bg-black></div>
           <div flex w-full justify-between>
             <span w-6 h-6 rounded-3 bg-black></span>
             <span w-6 h-6 rounded-3 bg-black></span>
@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
+      <h2 font-normal text-14 mt-10 color-gray>Flex 骰子</h2>
     </div>
-    <h2 font-normal text-14 text-center w-350 mt-10 color-gray>Flex 骰子</h2>
   </CommonPage>
 </template>
