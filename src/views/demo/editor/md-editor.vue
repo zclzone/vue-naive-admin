@@ -1,5 +1,5 @@
 <template>
-  <CommonPage :show-header="false" title="32323">
+  <CommonPage>
     <div h-60 pl-20 pr-20 flex items-center bg-white>
       <input
         v-model="post.title"
@@ -11,7 +11,7 @@
         <TheIcon v-if="!btnLoading" icon="line-md:confirm-circle" class="mr-5" :size="18" /> 保存
       </n-button>
     </div>
-    <MdEditor v-model="post.content" style="height: calc(100vh - 250px)" />
+    <MdEditor v-model="post.content" style="height: calc(100vh - 305px)" />
   </CommonPage>
 </template>
 
