@@ -37,5 +37,17 @@ export default {
         keepAlive: true,
       },
     },
+    {
+      name: 'RichTextEditor',
+      path: 'rich-text',
+      component: () => import('./editor/rich-text.vue'),
+      meta: {
+        title: '富文本编辑器',
+        icon: 'ic:sharp-text-rotation-none',
+        role: ['admin'],
+        requireAuth: true,
+        keepAlive: true,
+      },
+    },
   ],
 }
