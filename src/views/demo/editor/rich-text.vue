@@ -16,6 +16,8 @@
 <script setup>
 import '@wangeditor/editor/dist/css/style.css'
 import { Editor as WangEditor, Toolbar as WangToolbar } from '@wangeditor/editor-for-vue'
+
+defineOptions({ name: 'RichTextEditor' })
 const editorRef = shallowRef()
 const toolbarConfig = { excludeKeys: 'fullScreen' }
 const editorConfig = { placeholder: '请输入内容...', MENU_CONF: {} }
