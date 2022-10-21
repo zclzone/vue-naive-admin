@@ -50,7 +50,7 @@
     "prettier": "^2.6.1",
     "rollup-plugin-visualizer": "^5.8.2",
     "sass": "^1.49.10",
-    "unocss": "^0.45.29",
+    "unocss": "^0.45.30",
     "unplugin-auto-import": "^0.9.2",
     "unplugin-icons": "^0.14.9",
     "unplugin-vue-components": "^0.17.21",
