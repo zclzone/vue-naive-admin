@@ -19,8 +19,6 @@ export function getSrcPath(srcName = 'src') {
   return path.resolve(getRootPath(), srcName)
 }
 
-const httpsReg = /^https:\/\//
-
 export function convertEnv(envOptions) {
   const result = {}
   if (!envOptions) return result
