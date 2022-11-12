@@ -13,7 +13,7 @@ export default {
   children: [
     {
       name: 'BaseComponents',
-      path: 'idnex',
+      path: 'index',
       component: () => import('./index.vue'),
       meta: {
         title: '基础组件',
