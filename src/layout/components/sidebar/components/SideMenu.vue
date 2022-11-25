@@ -1,12 +1,13 @@
 <template>
   <n-menu
+    ref="menu"
     class="side-menu"
     accordion
     :indent="18"
     :collapsed-icon-size="22"
     :collapsed-width="64"
     :options="menuOptions"
-    :value="curRoute.meta?.activeMenu || curRoute.name"
+    :value="activeKey"
     @update:value="handleMenuSelect"
   />
 </template>
@@ -20,8 +21,16 @@ const curRoute = useRoute()
 const permissionStore = usePermissionStore()
 const appStore = useAppStore()
 
+const activeKey = computed(() => curRoute.meta?.activeMenu || curRoute.name)
+
 const menuOptions = computed(() => {
   return permissionStore.menus.map((item) => getMenuItem(item)).sort((a, b) => a.order - b.order)
+})
+
+const menu = ref(null)
+watch(curRoute, async () => {
+  await nextTick()
+  menu.value?.showOption()
 })
 
 function resolvePath(basePath, path) {
@@ -52,11 +61,11 @@ function getMenuItem(route, basePath = '') {
     // 单个子路由处理
     const singleRoute = visibleChildren[0]
     menuItem = {
+      ...menuItem,
       label: singleRoute.meta?.title || singleRoute.name,
       key: singleRoute.name,
       path: resolvePath(menuItem.path, singleRoute.path),
       icon: getIcon(singleRoute.meta),
-      order: menuItem.order,
     }
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []
 
@@ -70,7 +79,6 @@ function getMenuItem(route, basePath = '') {
       .map((item) => getMenuItem(item, menuItem.path))
       .sort((a, b) => a.order - b.order)
   }
-
   return menuItem
 }
 
