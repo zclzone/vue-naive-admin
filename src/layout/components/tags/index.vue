@@ -1,7 +1,8 @@
 <template>
-  <ScrollX>
+  <ScrollX ref="scrollXRef">
     <n-tag
       v-for="tag in tagsStore.tags"
+      ref="tabRefs"
       :key="tag.path"
       class="px-15 mx-5 rounded-4 cursor-pointer hover:color-primary"
       :type="tagsStore.activeTag === tag.path ? 'primary' : 'default'"
@@ -30,6 +31,8 @@ import ScrollX from '@/components/common/ScrollX.vue'
 const route = useRoute()
 const router = useRouter()
 const tagsStore = useTagsStore()
+const tabRefs = ref([])
+const scrollXRef = ref(null)
 
 const contextMenuOption = reactive({
   show: false,
@@ -44,6 +47,18 @@ watch(
     const { name, fullPath: path } = route
     const title = route.meta?.title
     tagsStore.addTag({ name, path, title })
+  },
+  { immediate: true }
+)
+
+watch(
+  () => tagsStore.activeIndex,
+  async (activeIndex) => {
+    await nextTick()
+    const activeTabElement = tabRefs.value[activeIndex]?.$el
+    if (!activeTabElement) return
+    const { offsetLeft: x, offsetWidth: width } = activeTabElement
+    scrollXRef.value?.handleScroll(x + width, width)
   },
   { immediate: true }
 )

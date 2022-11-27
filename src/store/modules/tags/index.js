@@ -10,6 +10,11 @@ export const useTagsStore = defineStore('tag', {
       activeTag: activeTag || '',
     }
   },
+  getters: {
+    activeIndex() {
+      return this.tags.findIndex((item) => item.path === this.activeTag)
+    },
+  },
   actions: {
     setActiveTag(path) {
       this.activeTag = path
@@ -26,11 +31,10 @@ export const useTagsStore = defineStore('tag', {
     },
     removeTag(path) {
       if (path === this.activeTag) {
-        const activeIndex = this.tags.findIndex((item) => item.path === path)
-        if (activeIndex > 0) {
-          router.push(this.tags[activeIndex - 1].path)
+        if (this.activeIndex > 0) {
+          router.push(this.tags[this.activeIndex - 1].path)
         } else {
-          router.push(this.tags[activeIndex + 1].path)
+          router.push(this.tags[this.activeIndex + 1].path)
         }
       }
       this.setTags(this.tags.filter((tag) => tag.path !== path))

@@ -88,6 +88,28 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', refreshIsOverflow)
   observer.disconnect()
 })
+
+function handleScroll(x, width) {
+  const wrapperWidth = wrapper.value?.offsetWidth
+  const contentWidth = content.value?.offsetWidth
+  if (contentWidth <= wrapperWidth) return
+
+  // 当 x 小于可视范围的最小值时
+  if (x < -translateX.value + 150) {
+    translateX.value = -(x - 150)
+    resetTranslateX(wrapperWidth, contentWidth)
+  }
+
+  // 当 x 大于可视范围的最大值时
+  if (x + width > -translateX.value + wrapperWidth) {
+    translateX.value = wrapperWidth - (x + width)
+    resetTranslateX(wrapperWidth, contentWidth)
+  }
+}
+
+defineExpose({
+  handleScroll,
+})
 </script>
 
 <style lang="scss" scoped>
