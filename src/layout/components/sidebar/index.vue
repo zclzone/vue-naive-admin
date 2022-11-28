@@ -5,5 +5,5 @@ import SideMenu from './components/SideMenu.vue'
 
 <template>
   <SideLogo />
-  <SideMenu />
+  <SideMenu v-bind="$attrs" />
 </template>

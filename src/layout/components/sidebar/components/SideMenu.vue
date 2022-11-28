@@ -16,6 +16,8 @@
 import { usePermissionStore, useAppStore } from '@/store'
 import { renderCustomIcon, renderIcon, isExternal } from '@/utils'
 
+const emits = defineEmits(['menu-select'])
+
 const router = useRouter()
 const curRoute = useRoute()
 const permissionStore = usePermissionStore()
@@ -98,6 +100,7 @@ function handleMenuSelect(key, item) {
       router.push(item.path)
     }
   }
+  emits('menu-select')
 }
 </script>
 
