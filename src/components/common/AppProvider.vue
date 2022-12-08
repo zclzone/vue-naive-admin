@@ -1,5 +1,5 @@
 <template>
-  <n-config-provider wh-full :theme-overrides="naiveThemeOverrides">
+  <n-config-provider wh-full :locale="zhCN" :date-locale="dateZhCN" :theme-overrides="naiveThemeOverrides">
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -15,7 +15,7 @@
 
 <script setup>
 import { defineComponent, h } from 'vue'
-import { useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
+import { zhCN, dateZhCN, useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
 import { useCssVar } from '@vueuse/core'
 import { kebabCase } from 'lodash-es'
 import { setupMessage, setupDialog } from '@/utils'
