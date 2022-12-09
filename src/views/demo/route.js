@@ -14,8 +14,8 @@ export default {
   },
   children: [
     {
-      name: 'CrudTable',
-      path: 'crud-table',
+      name: 'Crud',
+      path: 'crud',
       component: () => import('./table/index.vue'),
       meta: {
         title: 'CRUD表格',

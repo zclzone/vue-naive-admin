@@ -86,7 +86,7 @@ import { formatDateTime, renderIcon, isNullOrUndef } from '@/utils'
 import { useCRUD } from '@/composables'
 import api from './api'
 
-defineOptions({ name: 'CrudTable' })
+defineOptions({ name: 'Crud' })
 
 const $table = ref(null)
 /** QueryBar筛选参数（可选） */
@@ -94,7 +94,7 @@ const queryItems = ref({})
 /** 补充参数（可选） */
 const extraParams = ref({})
 
-onMounted(() => {
+onActivated(() => {
   $table.value?.handleSearch()
 })
 
