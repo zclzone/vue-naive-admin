@@ -7,6 +7,7 @@ export const useAppStore = defineStore('app', {
       collapsed: false,
       /** keepAlive路由的key，重新赋值可重置keepAlive */
       aliveKeys: {},
+      darkMode: false,
     }
   },
   actions: {
@@ -29,6 +30,14 @@ export const useAppStore = defineStore('app', {
     },
     setAliveKeys(key, val) {
       this.aliveKeys[key] = val
+    },
+    /** 设置暗黑模式 */
+    setDarkMode(darkMode) {
+      this.darkMode = darkMode
+    },
+    /** 切换/关闭 暗黑模式 */
+    toggleDarkMode() {
+      this.darkMode = !this.darkMode
     },
   },
 })
