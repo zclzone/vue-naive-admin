@@ -1,5 +1,5 @@
 <template>
-  <ScrollX ref="scrollXRef">
+  <ScrollX ref="scrollXRef" class="bg-white dark:bg-dark!">
     <n-tag
       v-for="tag in tagsStore.tags"
       ref="tabRefs"

@@ -1,7 +1,7 @@
 <template>
   <div flex items-center>
     <MenuCollapse />
-    <BreadCrumb ml-15 />
+    <BreadCrumb ml-15 hidden sm:block />
   </div>
   <div ml-auto flex items-center>
     <ThemeMode />

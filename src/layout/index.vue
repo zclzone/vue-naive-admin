@@ -12,13 +12,17 @@
     </n-layout-sider>
 
     <article flex-1 flex-col overflow-hidden>
-      <header bg-white px-15 border-b bc-eee flex items-center :style="`height: ${header.height}px`">
+      <header
+        class="bg-white px-15 border-b bc-eee flex items-center"
+        dark="bg-dark border-0"
+        :style="`height: ${header.height}px`"
+      >
         <AppHeader />
       </header>
-      <section v-if="tags.visible" border-b bc-eee>
+      <section v-if="tags.visible" border-b bc-eee dark:border-0 hidden sm:block>
         <AppTags :style="{ height: `${tags.height}px` }" />
       </section>
-      <section flex-1 overflow-hidden>
+      <section flex-1 overflow-hidden bg-hex-f5f6fb dark:bg-hex-101014>
         <AppMain />
       </section>
     </article>

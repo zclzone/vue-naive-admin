@@ -1,5 +1,11 @@
 <template>
-  <n-config-provider wh-full :locale="zhCN" :date-locale="dateZhCN" :theme-overrides="naiveThemeOverrides">
+  <n-config-provider
+    wh-full
+    :locale="zhCN"
+    :date-locale="dateZhCN"
+    :theme="appStore.isDark ? darkTheme : undefined"
+    :theme-overrides="naiveThemeOverrides"
+  >
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-notification-provider>
@@ -15,7 +21,7 @@
 
 <script setup>
 import { defineComponent, h } from 'vue'
-import { zhCN, dateZhCN, useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
+import { zhCN, dateZhCN, darkTheme, useLoadingBar, useDialog, useMessage, useNotification } from 'naive-ui'
 import { useCssVar } from '@vueuse/core'
 import { kebabCase } from 'lodash-es'
 import { setupMessage, setupDialog } from '@/utils'
@@ -50,12 +56,4 @@ const NaiveProviderContent = defineComponent({
     return h('div')
   },
 })
-
-watch(
-  () => appStore.darkMode,
-  (v) => {
-    if (v) document.documentElement.classList.add('dark')
-    else document.documentElement.classList.remove('dark')
-  }
-)
 </script>

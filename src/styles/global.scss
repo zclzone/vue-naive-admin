@@ -7,14 +7,6 @@ body {
 
 html {
   font-size: 4px; // * 1rem = 4px  方便unocss计算：在unocss中 1字体单位 = 0.25rem，相当于 1等份 = 1px
-
-  &.dark {
-    filter: invert(1);
-    img,
-    video {
-      filter: invert(1);
-    }
-  }
 }
 
 body {
