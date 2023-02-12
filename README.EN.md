@@ -11,8 +11,8 @@
 </p>
 
 <p align='center'>
-  <b>English</b> | 
-  <a href="https://github.com/zclzone/vue-naive-admin/blob/main/README.zh-CN.md">简体中文</a>
+  <b>英文</b> | 
+  <a href="https://github.com/zclzone/vue-naive-admin/blob/main/README.md">中文</a>
 </p>
 
 ### Introduction
