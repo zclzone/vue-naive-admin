@@ -1,6 +1,6 @@
 <template>
   <AppPage>
-    <div h-full flex-col border-1 bc-ccc>
+    <div h-full flex-col border-1 bc-ccc dark:bg-dark>
       <WangToolbar border-b bc-ccc :editor="editorRef" :default-config="toolbarConfig" mode="default" />
       <WangEditor
         v-model="valueHtml"
@@ -27,3 +27,15 @@ const handleCreated = (editor) => {
   editorRef.value = editor
 }
 </script>
+
+<style>
+html.dark {
+  --w-e-textarea-bg-color: #333;
+  --w-e-textarea-color: #fff;
+  --w-e-toolbar-bg-color: #333;
+  --w-e-toolbar-color: #fff;
+  --w-e-toolbar-active-bg-color: #666;
+  --w-e-toolbar-active-color: #fff;
+  /* ...其他... */
+}
+</style>

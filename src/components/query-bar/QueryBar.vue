@@ -1,5 +1,5 @@
 <template>
-  <div min-h-60 p-15 flex items-start justify-between b-1 bc-ccc rounded-8 bg="#fafafc">
+  <div min-h-60 p-15 flex items-start justify-between b-1 bc-ccc rounded-8 bg="#fafafc" dark:bg-black>
     <n-space wrap :size="[35, 15]">
       <slot />
     </n-space>
