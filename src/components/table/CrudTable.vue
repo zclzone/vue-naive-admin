@@ -17,6 +17,8 @@
 </template>
 
 <script setup>
+import { utils, writeFile } from 'xlsx'
+
 const props = defineProps({
   /**
    * @remote true: 后端分页  false： 前端分页
@@ -73,7 +75,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update:queryItems', 'onChecked'])
+const emit = defineEmits(['update:queryItems', 'onChecked', 'onDataChange'])
 const loading = ref(false)
 const initQuery = { ...props.queryItems }
 const tableData = ref([])
@@ -94,6 +96,7 @@ async function handleQuery() {
     tableData.value = []
     pagination.itemCount = 0
   } finally {
+    emit('onDataChange', tableData.value)
     loading.value = false
   }
 }
@@ -122,9 +125,21 @@ function onChecked(rowKeys) {
     emit('onChecked', rowKeys)
   }
 }
+function handleExport(columns = props.columns, data = tableData.value) {
+  if (!data?.length) return $message.warning('没有数据')
+  const columnsData = columns.filter((item) => !!item.title && !item.hideInExcel)
+  const thKeys = columnsData.map((item) => item.key)
+  const thData = columnsData.map((item) => item.title)
+  const trData = data.map((item) => thKeys.map((key) => item[key]))
+  const sheet = utils.aoa_to_sheet([thData, ...trData])
+  const workBook = utils.book_new()
+  utils.book_append_sheet(workBook, sheet, '数据报表')
+  writeFile(workBook, '数据报表.xlsx')
+}
 
 defineExpose({
   handleSearch,
   handleReset,
+  handleExport,
 })
 </script>

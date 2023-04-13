@@ -1,9 +1,14 @@
 <template>
   <CommonPage show-footer title="文章">
     <template #action>
-      <n-button type="primary" @click="handleAdd">
-        <TheIcon icon="material-symbols:add" :size="18" class="mr-5" /> 新建文章
-      </n-button>
+      <div>
+        <n-button type="primary" secondary @click="$table?.handleExport()">
+          <TheIcon icon="mdi:download" :size="18" class="mr-5" /> 导出
+        </n-button>
+        <n-button type="primary" class="ml-16" @click="handleAdd">
+          <TheIcon icon="material-symbols:add" :size="18" class="mr-5" /> 新建文章
+        </n-button>
+      </div>
     </template>
 
     <CrudTable
@@ -14,6 +19,7 @@
       :columns="columns"
       :get-data="api.getPosts"
       @on-checked="onChecked"
+      @on-data-change="(data) => (tableData = data)"
     >
       <template #queryBar>
         <QueryBarItem label="标题" :label-width="50">
@@ -89,6 +95,8 @@ import api from './api'
 defineOptions({ name: 'Crud' })
 
 const $table = ref(null)
+/** 表格数据，触发搜索的时候会更新这个值 */
+const tableData = ref([])
 /** QueryBar筛选参数（可选） */
 const queryItems = ref({})
 /** 补充参数（可选） */
@@ -141,6 +149,7 @@ const columns = [
     width: 240,
     align: 'center',
     fixed: 'right',
+    hideInExcel: true,
     render(row) {
       return [
         h(
