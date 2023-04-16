@@ -10,6 +10,7 @@ specifiers:
   '@vueuse/core': ^9.13.0
   '@wangeditor/editor': ^5.1.23
   '@wangeditor/editor-for-vue': ^5.1.12
+  '@zclzone/utils': ^0.0.8
   axios: ^1.3.4
   chalk: ^5.2.0
   commitizen: ^4.3.0
@@ -51,6 +52,7 @@ dependencies:
   '@vueuse/core': 9.13.0_vue@3.2.47
   '@wangeditor/editor': 5.1.23
   '@wangeditor/editor-for-vue': 5.1.12_77ywgcaevzgjoxs6yixvgo4fve
+  '@zclzone/utils': 0.0.8
   axios: 1.3.4
   dayjs: 1.11.7
   lodash-es: 4.17.21
@@ -1369,6 +1371,12 @@ packages:
       snabbdom: 3.5.1
     dev: false
 
+  /@zclzone/utils/0.0.8:
+    resolution: {integrity: sha512-juDnfLV7YIpuNsfRhBcK3BufVX1rl0kLHZwOEE61I7nSmL1aze2x498QU8a4AjjnAd3389qBzGsNxkrp8j+6Ag==}
+    dependencies:
+      crypto-js: 4.1.1
+    dev: false
+
   /JSONStream/1.3.5:
     resolution: {integrity: sha512-E+iruNOY8VV9s4JEbe1aNEm6MiszPRr/UfcHMz0TQh1BXSxHK+ASV1R6W4HpjBhSeS+54PIsAMCBmwD06LLsqQ==}
     hasBin: true
@@ -2116,6 +2124,10 @@ packages:
       shebang-command: 2.0.0
       which: 2.0.2
     dev: true
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
+    dev: false
 
   /css-render/0.15.11:
     resolution: {integrity: sha512-hnLrHPUndVUTF5nmNPRey6hpixK02IPUGdEsm2xRjvJuewToyrVFx9Nmai8rgfVzhTFo5SJVh2PHAtzaIV8JKw==}
