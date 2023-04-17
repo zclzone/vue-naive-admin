@@ -4,7 +4,7 @@ export default {
   name: 'Demo',
   path: '/demo',
   component: Layout,
-  redirect: '/demo/crud-table',
+  redirect: '/demo/crud',
   meta: {
     title: '示例页面',
     customIcon: 'logo',
