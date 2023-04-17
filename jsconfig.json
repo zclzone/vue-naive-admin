@@ -6,7 +6,8 @@
       "~/*": ["./*"],
       "@/*": ["src/*"]
     },
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "allowJs": true
   },
   "exclude": ["node_modules", "dist"]
 }
