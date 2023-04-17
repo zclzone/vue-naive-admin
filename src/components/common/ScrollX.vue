@@ -11,6 +11,7 @@
 
     <div
       ref="content"
+      v-resize="refreshIsOverflow"
       class="content"
       :class="{ overflow: isOverflow && showArrow }"
       :style="{
@@ -24,6 +25,7 @@
 
 <script setup>
 import { debounce } from '@/utils'
+import { useResize } from '@zclzone/utils'
 
 defineProps({
   showArrow: {
@@ -76,17 +78,14 @@ const resetTranslateX = debounce(function (wrapperWidth, contentWidth) {
   }
 }, 200)
 
-const observer = new MutationObserver(refreshIsOverflow)
+const observer = ref(null)
 onMounted(() => {
   refreshIsOverflow()
 
-  window.addEventListener('resize', refreshIsOverflow)
-  // 监听内容宽度刷新是否超出
-  observer.observe(content.value, { childList: true })
+  observer.value = useResize(document.body, refreshIsOverflow)
 })
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', refreshIsOverflow)
-  observer.disconnect()
+  observer.value?.disconnect()
 })
 
 function handleScroll(x, width) {
