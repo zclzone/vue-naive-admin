@@ -9,6 +9,7 @@
     "build": "vite build",
     "build:test": "vite build --mode test",
     "build:github": "vite build --mode github && esno ./build/script",
+    "build:vercel": "vite build --mode vercel",
     "preview": "vite preview",
     "prepare": "husky install",
     "cz": "cz"
