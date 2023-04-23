@@ -36,7 +36,7 @@
 
 [https://template.qszone.com](https://template.qszone.com)
 
-[https://zclzone.github.io/vue-naive-admin](https://zclzone.github.io/vue-naive-admin)
+[https://vercel.template.qszone.com](https://vercel.template.qszone.com)
 
 ### 文档
 
