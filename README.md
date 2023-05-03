@@ -42,7 +42,7 @@
 
 [Vue Naive Admin Docs](https://zclzone.github.io/vue-naive-admin-docs)
 
-[羽雀文档：Vue Naive Admin](https://www.yuque.com/qszone/vue-naive-admin)
+[语雀文档：Vue Naive Admin](https://www.yuque.com/qszone/vue-naive-admin)
 
 ### 快速开始
 
