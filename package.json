@@ -36,21 +36,17 @@
     "@iconify/vue": "^4.1.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/compiler-sfc": "^3.2.47",
+    "@zclzone/eslint-config": "^0.0.3",
     "chalk": "^5.2.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "cz-customizable": "^7.0.0",
     "dotenv": "^16.0.3",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.5.0",
     "esno": "^0.16.3",
     "fs-extra": "^11.1.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.2",
     "naive-ui": "^2.34.3",
-    "prettier": "^2.8.4",
     "rollup-plugin-visualizer": "^5.9.0",
     "sass": "^1.58.3",
     "unocss": "0.46.5",
@@ -72,5 +68,8 @@
     "*.{js,vue}": [
       "eslint --ext .js,.vue ."
     ]
+  },
+  "eslintConfig": {
+    "extends":["@zclzone"]
   }
 }
