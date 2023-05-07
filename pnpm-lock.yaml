@@ -64,8 +64,8 @@ devDependencies:
     specifier: ^3.2.47
     version: 3.2.47
   '@zclzone/eslint-config':
-    specifier: ^0.0.3
-    version: 0.0.3
+    specifier: ^0.0.4
+    version: 0.0.4
   chalk:
     specifier: ^5.2.0
     version: 5.2.0
@@ -1430,8 +1430,8 @@ packages:
       snabbdom: 3.5.1
     dev: false
 
-  /@zclzone/eslint-config@0.0.3:
-    resolution: {integrity: sha512-yqaE38sNn/iHWtYjDTcM39eHq7RJIm/xgoAIib3kuFZUDFDu/aJ9Syj65N2m1W44Eyws09/Na1BaJk6Kh1onkQ==}
+  /@zclzone/eslint-config@0.0.4:
+    resolution: {integrity: sha512-dDDHsLc0qEt/tczC1nRU5d+2LCOPwwKohw5Wlq4A1mTFgTQaFoSDmP/j9XnAbjCYfxbGUeEat0221WwwVbPhuw==}
     dependencies:
       eslint: 8.40.0
       eslint-config-prettier: 8.8.0(eslint@8.40.0)
