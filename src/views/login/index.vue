@@ -10,7 +10,9 @@
       </div>
 
       <div w-320 flex-col px-20 py-35>
-        <h5 f-c-c text-24 font-normal color="#6a6a6a"><icon-custom-logo mr-10 text-50 color-primary />{{ title }}</h5>
+        <h5 f-c-c text-24 font-normal color="#6a6a6a">
+          <icon-custom-logo mr-10 text-50 color-primary />{{ title }}
+        </h5>
         <div mt-30>
           <n-input
             v-model:value="loginInfo.name"
@@ -33,11 +35,23 @@
         </div>
 
         <div mt-20>
-          <n-checkbox :checked="isRemember" label="记住我" :on-update:checked="(val) => (isRemember = val)" />
+          <n-checkbox
+            :checked="isRemember"
+            label="记住我"
+            :on-update:checked="(val) => (isRemember = val)"
+          />
         </div>
 
         <div mt-20>
-          <n-button w-full h-50 rounded-5 text-16 type="primary" :loading="loading" @click="handleLogin">
+          <n-button
+            w-full
+            h-50
+            rounded-5
+            text-16
+            type="primary"
+            :loading="loading"
+            @click="handleLogin"
+          >
             登录
           </n-button>
         </div>

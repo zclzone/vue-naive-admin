@@ -33,7 +33,10 @@ export default [
     defaultClass: 'inline-block',
   }),
   Components({
-    resolvers: [NaiveUiResolver(), IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' })],
+    resolvers: [
+      NaiveUiResolver(),
+      IconsResolver({ customCollections: ['custom'], componentPrefix: 'icon' }),
+    ],
     dts: false,
   }),
   createSvgIconsPlugin({

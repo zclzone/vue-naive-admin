@@ -1,5 +1,12 @@
 <template>
-  <n-modal v-model:show="show" :style="{ width }" preset="card" :title="title" size="huge" :bordered="false">
+  <n-modal
+    v-model:show="show"
+    :style="{ width }"
+    preset="card"
+    :title="title"
+    size="huge"
+    :bordered="false"
+  >
     <slot />
     <template v-if="showFooter" #footer>
       <footer flex justify-end>

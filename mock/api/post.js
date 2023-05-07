@@ -38,7 +38,8 @@ const posts = [
     author: '大脸怪',
     category: 'Http',
     description: '谈谈前端缓存的理解',
-    content: '> 背景\n\n公司有个vue-cli3移动端web项目发版更新后发现部分用户手机在钉钉内置浏览器打开出现了缓存',
+    content:
+      '> 背景\n\n公司有个vue-cli3移动端web项目发版更新后发现部分用户手机在钉钉内置浏览器打开出现了缓存',
     isRecommend: true,
     isPublish: true,
     createDate: '2021-06-10T18:51:19.000Z',
@@ -49,7 +50,8 @@ const posts = [
     author: '大脸怪',
     category: 'JavaScript',
     description: '简单介绍下在 Promise 类中，有5 种静态方法及它们的使用场景',
-    content: '## 1. Promise.all\n\n并行执行多个 promise，并等待所有 promise 都准备就绪。再对它们进行处理。',
+    content:
+      '## 1. Promise.all\n\n并行执行多个 promise，并等待所有 promise 都准备就绪。再对它们进行处理。',
     isRecommend: true,
     isPublish: true,
     createDate: '2021-02-22T22:37:06.000Z',
@@ -65,7 +67,9 @@ export default [
       const { title, pageNo, pageSize } = data.query
       let pageData = []
       let total = 60
-      const filterData = posts.filter((item) => item.title.includes(title) || (!title && title !== 0))
+      const filterData = posts.filter(
+        (item) => item.title.includes(title) || (!title && title !== 0)
+      )
       if (filterData.length) {
         if (pageSize) {
           while (pageData.length < pageSize) {

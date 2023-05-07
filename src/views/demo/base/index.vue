@@ -15,14 +15,18 @@
 
       <n-card title="带 Icon 的按钮">
         <n-space>
-          <n-button type="info"> <TheIcon icon="material-symbols:add" :size="18" class="mr-5" /> 新增 </n-button>
+          <n-button type="info">
+            <TheIcon icon="material-symbols:add" :size="18" class="mr-5" /> 新增
+          </n-button>
           <n-button type="error">
             <TheIcon icon="material-symbols:delete-outline" :size="18" class="mr-5" /> 删除
           </n-button>
           <n-button type="warning">
             <TheIcon icon="material-symbols:edit-outline" :size="18" class="mr-5" /> 编辑
           </n-button>
-          <n-button type="primary"> <TheIcon icon="majesticons:eye-line" :size="18" class="mr-5" /> 查看 </n-button>
+          <n-button type="primary">
+            <TheIcon icon="majesticons:eye-line" :size="18" class="mr-5" /> 查看
+          </n-button>
         </n-space>
       </n-card>
     </n-space>

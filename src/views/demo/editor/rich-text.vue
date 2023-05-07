@@ -1,7 +1,13 @@
 <template>
   <AppPage>
     <div h-full flex-col border-1 bc-ccc dark:bg-dark>
-      <WangToolbar border-b bc-ccc :editor="editorRef" :default-config="toolbarConfig" mode="default" />
+      <WangToolbar
+        border-b
+        bc-ccc
+        :editor="editorRef"
+        :default-config="toolbarConfig"
+        mode="default"
+      />
       <WangEditor
         v-model="valueHtml"
         style="flex: 1; overflow-y: hidden"

@@ -67,7 +67,9 @@ const options = computed(() => [
   {
     label: '关闭右侧',
     key: 'close-right',
-    disabled: tagsStore.tags.length <= 1 || props.currentPath === tagsStore.tags[tagsStore.tags.length - 1].path,
+    disabled:
+      tagsStore.tags.length <= 1 ||
+      props.currentPath === tagsStore.tags[tagsStore.tags.length - 1].path,
     icon: renderIcon('mdi:arrow-expand-right', { size: '14px' }),
   },
 ])

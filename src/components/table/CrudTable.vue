@@ -89,7 +89,11 @@ async function handleQuery() {
     if (props.isPagination && props.remote) {
       paginationParams = { pageNo: pagination.page, pageSize: pagination.pageSize }
     }
-    const { data } = await props.getData({ ...props.queryItems, ...props.extraParams, ...paginationParams })
+    const { data } = await props.getData({
+      ...props.queryItems,
+      ...props.extraParams,
+      ...paginationParams,
+    })
     tableData.value = data?.pageData || data
     pagination.itemCount = data.total ?? data.length
   } catch (error) {

@@ -1,7 +1,11 @@
 <template>
   <router-view v-slot="{ Component, route }">
     <KeepAlive :include="keepAliveRouteNames">
-      <component :is="Component" v-if="appStore.reloadFlag" :key="appStore.aliveKeys[route.name] || route.fullPath" />
+      <component
+        :is="Component"
+        v-if="appStore.reloadFlag"
+        :key="appStore.aliveKeys[route.name] || route.fullPath"
+      />
     </KeepAlive>
   </router-view>
 </template>

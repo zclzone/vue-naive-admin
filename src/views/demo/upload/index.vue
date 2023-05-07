@@ -24,8 +24,15 @@
             </div>
             <n-space class="mt-16" justify="space-evenly">
               <n-button dashed type="primary" @click="copy(item.url)"> url </n-button>
-              <n-button dashed type="primary" @click="copy(`![${item.fileName}](${item.url})`)">MD</n-button>
-              <n-button dashed type="primary" @click="copy(`&lt;img src=&quot;${item.url}&quot; /&gt;`)">img</n-button>
+              <n-button dashed type="primary" @click="copy(`![${item.fileName}](${item.url})`)"
+                >MD</n-button
+              >
+              <n-button
+                dashed
+                type="primary"
+                @click="copy(`&lt;img src=&quot;${item.url}&quot; /&gt;`)"
+                >img</n-button
+              >
             </n-space>
           </n-card>
           <div v-for="i in 4" :key="i" class="w-280" />

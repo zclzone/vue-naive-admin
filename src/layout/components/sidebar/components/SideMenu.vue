@@ -53,7 +53,9 @@ function getMenuItem(route, basePath = '') {
     order: route.meta?.order || 0,
   }
 
-  const visibleChildren = route.children ? route.children.filter((item) => item.name && !item.isHidden) : []
+  const visibleChildren = route.children
+    ? route.children.filter((item) => item.name && !item.isHidden)
+    : []
 
   if (!visibleChildren.length) return menuItem
 
@@ -67,12 +69,16 @@ function getMenuItem(route, basePath = '') {
       path: resolvePath(menuItem.path, singleRoute.path),
       icon: getIcon(singleRoute.meta),
     }
-    const visibleItems = singleRoute.children ? singleRoute.children.filter((item) => item.name && !item.isHidden) : []
+    const visibleItems = singleRoute.children
+      ? singleRoute.children.filter((item) => item.name && !item.isHidden)
+      : []
 
     if (visibleItems.length === 1) {
       menuItem = getMenuItem(visibleItems[0], menuItem.path)
     } else if (visibleItems.length > 1) {
-      menuItem.children = visibleItems.map((item) => getMenuItem(item, menuItem.path)).sort((a, b) => a.order - b.order)
+      menuItem.children = visibleItems
+        .map((item) => getMenuItem(item, menuItem.path))
+        .sort((a, b) => a.order - b.order)
     }
   } else {
     menuItem.children = visibleChildren

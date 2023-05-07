@@ -181,7 +181,10 @@ const columns = [
             style: 'margin-left: 15px;',
             onClick: () => handleDelete(row.id),
           },
-          { default: () => '删除', icon: renderIcon('material-symbols:delete-outline', { size: 14 }) }
+          {
+            default: () => '删除',
+            icon: renderIcon('material-symbols:delete-outline', { size: 14 }),
+          }
         ),
       ]
     },

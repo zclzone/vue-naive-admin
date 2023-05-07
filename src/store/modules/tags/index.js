@@ -26,7 +26,8 @@ export const useTagsStore = defineStore('tag', {
     },
     addTag(tag = {}) {
       this.setActiveTag(tag.path)
-      if (WITHOUT_TAG_PATHS.includes(tag.path) || this.tags.some((item) => item.path === tag.path)) return
+      if (WITHOUT_TAG_PATHS.includes(tag.path) || this.tags.some((item) => item.path === tag.path))
+        return
       this.setTags([...this.tags, tag])
     },
     removeTag(path) {
