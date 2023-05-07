@@ -67,7 +67,7 @@ function onBeforeUpload({ file }) {
   return true
 }
 
-async function handleUpload({ file, onFinish, onError }) {
+async function handleUpload({ file, onFinish }) {
   if (!file || !file.type) {
     $message.error('请选择文件')
   }

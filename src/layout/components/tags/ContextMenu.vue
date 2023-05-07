@@ -13,7 +13,6 @@
 <script setup>
 import { useTagsStore, useAppStore } from '@/store'
 import { renderIcon } from '@/utils'
-import { useLocalStorage } from '@vueuse/core'
 
 const props = defineProps({
   show: {

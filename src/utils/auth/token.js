@@ -27,5 +27,7 @@ export async function refreshAccessToken() {
   try {
     const res = await api.refreshToken()
     setToken(res.data.token)
-  } catch (error) {}
+  } catch (error) {
+    console.error(error)
+  }
 }

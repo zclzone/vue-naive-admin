@@ -26,7 +26,7 @@ defineOptions({ name: 'MDEditor' })
 let post = ref({})
 let btnLoading = ref(false)
 
-function handleSavePost(e) {
+function handleSavePost() {
   btnLoading.value = true
   $message.loading('正在保存...')
   setTimeout(() => {
