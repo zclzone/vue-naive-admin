@@ -11,15 +11,15 @@
       <SideBar />
     </n-layout-sider>
 
-    <article flex-1 flex-col overflow-hidden>
+    <article flex-col flex-1 overflow-hidden>
       <header
-        class="bg-white px-15 border-b bc-eee flex items-center"
+        class="flex items-center border-b bg-white px-15 bc-eee"
         dark="bg-dark border-0"
         :style="`height: ${header.height}px`"
       >
         <AppHeader />
       </header>
-      <section v-if="tags.visible" border-b bc-eee dark:border-0 hidden sm:block>
+      <section v-if="tags.visible" hidden border-b bc-eee sm:block dark:border-0>
         <AppTags :style="{ height: `${tags.height}px` }" />
       </section>
       <section flex-1 overflow-hidden bg-hex-f5f6fb dark:bg-hex-101014>

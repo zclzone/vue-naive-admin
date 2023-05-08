@@ -2,10 +2,10 @@
   <AppPage :show-footer="true" bg-cover :style="{ backgroundImage: `url(${bgImg})` }">
     <div
       style="transform: translateY(25px)"
-      class="m-auto p-15 f-c-c min-w-345 max-w-700 rounded-10 card-shadow bg-white bg-opacity-60"
+      class="m-auto max-w-700 min-w-345 f-c-c rounded-10 bg-white bg-opacity-60 p-15 card-shadow"
       dark:bg-dark
     >
-      <div w-380 hidden md:block px-20 py-35>
+      <div hidden w-380 px-20 py-35 md:block>
         <img src="@/assets/images/login_banner.webp" w-full alt="login_banner" />
       </div>
 
@@ -17,7 +17,7 @@
           <n-input
             v-model:value="loginInfo.name"
             autofocus
-            class="text-16 items-center h-50 pl-10"
+            class="h-50 items-center pl-10 text-16"
             placeholder="admin"
             :maxlength="20"
           />
@@ -25,7 +25,7 @@
         <div mt-30>
           <n-input
             v-model:value="loginInfo.password"
-            class="text-16 items-center h-50 pl-10"
+            class="h-50 items-center pl-10 text-16"
             type="password"
             show-password-on="mousedown"
             placeholder="123456"
@@ -44,8 +44,8 @@
 
         <div mt-20>
           <n-button
-            w-full
             h-50
+            w-full
             rounded-5
             text-16
             type="primary"

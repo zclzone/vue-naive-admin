@@ -1,5 +1,5 @@
 <template>
-  <footer text-14 f-c-c flex-col color="#6a6a6a">
+  <footer f-c-c flex-col text-14 color="#6a6a6a">
     <p>
       Copyright©2022
       <a

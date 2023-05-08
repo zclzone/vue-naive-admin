@@ -1,9 +1,9 @@
 <template>
   <CommonPage>
-    <div h-60 pl-20 pr-20 flex items-center bg-white dark:bg-dark>
+    <div h-60 flex items-center bg-white pl-20 pr-20 dark:bg-dark>
       <input
         v-model="post.title"
-        class="flex-1 pt-15 pb-15 mr-20 text-20 font-bold color-primary"
+        class="mr-20 flex-1 pb-15 pt-15 text-20 font-bold color-primary"
         dark:bg-dark
         type="text"
         placeholder="输入文章标题..."

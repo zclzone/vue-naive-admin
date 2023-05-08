@@ -1,14 +1,14 @@
 <template>
   <div
+    bg="#fafafc"
     min-h-60
-    p-15
     flex
     items-start
     justify-between
     b-1
-    bc-ccc
     rounded-8
-    bg="#fafafc"
+    p-15
+    bc-ccc
     dark:bg-black
   >
     <n-space wrap :size="[35, 15]">

@@ -12,12 +12,12 @@
             <n-statistic label="待办" :value="4">
               <template #suffix> / 10 </template>
             </n-statistic>
-            <n-statistic label="Stars" w-100 ml-80>
+            <n-statistic label="Stars" ml-80 w-100>
               <a href="https://github.com/zclzone/vue-naive-admin">
                 <img allt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin" />
               </a>
             </n-statistic>
-            <n-statistic label="Forks" w-100 ml-80>
+            <n-statistic label="Forks" ml-80 w-100>
               <a href="https://github.com/zclzone/vue-naive-admin">
                 <img allt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin" />
               </a>
@@ -34,17 +34,17 @@
           <n-card
             v-for="i in 10"
             :key="i"
-            class="w-300 flex-shrink-0 mt-10 mb-10 cursor-pointer"
+            class="mb-10 mt-10 w-300 flex-shrink-0 cursor-pointer"
             hover:card-shadow
             title="Vue Naive Admin"
             size="small"
           >
             <p op-60>一个基于 Vue3.0、Vite、Naive UI 的轻量级后台管理模板</p>
           </n-card>
-          <div w-300 h-0></div>
-          <div w-300 h-0></div>
-          <div w-300 h-0></div>
-          <div w-300 h-0></div>
+          <div h-0 w-300></div>
+          <div h-0 w-300></div>
+          <div h-0 w-300></div>
+          <div h-0 w-300></div>
         </div>
       </n-card>
     </div>
