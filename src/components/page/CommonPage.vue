@@ -1,6 +1,6 @@
 <template>
   <AppPage :show-footer="showFooter">
-    <header v-if="showHeader" px-15 mb-15 min-h-45 flex justify-between items-center>
+    <header v-if="showHeader" mb-15 min-h-45 flex items-center justify-between px-15>
       <slot v-if="$slots.header" name="header" />
       <template v-else>
         <h2 text-22 font-normal text-hex-333 dark:text-hex-ccc>{{ title || route.meta?.title }}</h2>
@@ -8,7 +8,7 @@
       </template>
     </header>
 
-    <n-card rounded-10 flex-1>
+    <n-card flex-1 rounded-10>
       <slot />
     </n-card>
   </AppPage>
