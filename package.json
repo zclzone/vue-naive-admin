@@ -25,8 +25,8 @@
     "md-editor-v3": "^2.9.0",
     "mockjs": "^1.1.0",
     "pinia": "^2.0.33",
-    "vite": "^4.2.1",
-    "vue": "^3.2.47",
+    "vite": "^4.3.5",
+    "vue": "3.3.0-beta.5",
     "vue-router": "^4.1.6",
     "xlsx": "^0.18.5"
   },
@@ -54,7 +54,6 @@
     "unplugin-auto-import": "^0.15.1",
     "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.24.1",
-    "unplugin-vue-define-options": "^0.11.2",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^2.9.6",
