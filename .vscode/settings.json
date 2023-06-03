@@ -1,7 +1,7 @@
 {
   "path-intellisense.mappings": {
-    "@/": "${workspaceRoot}/src",
-    "~/": "${workspaceRoot}"
+    "@/": "${workspaceFolder}/src",
+    "~/": "${workspaceFolder}"
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
