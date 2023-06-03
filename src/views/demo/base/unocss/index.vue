@@ -1,9 +1,10 @@
 <template>
   <CommonPage show-footer>
     <p>
-      文档：<a c-blue hover-decoration-underline href="https://uno.antfu.me/" target="_blank"
-        >https://uno.antfu.me/</a
-      >
+      文档：
+      <a c-blue hover-decoration-underline href="https://uno.antfu.me/" target="_blank">
+        https://uno.antfu.me/
+      </a>
     </p>
     <p>
       playground：

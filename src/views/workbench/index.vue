@@ -10,7 +10,7 @@
           </div>
           <div ml-auto flex items-center>
             <n-statistic label="待办" :value="4">
-              <template #suffix> / 10 </template>
+              <template #suffix>/ 10</template>
             </n-statistic>
             <n-statistic label="Stars" ml-80 w-100>
               <a href="https://github.com/zclzone/vue-naive-admin">

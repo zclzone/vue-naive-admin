@@ -7,8 +7,8 @@
         target="__blank"
         hover="decoration-underline color-primary"
       >
-        大脸怪</a
-      >
+        大脸怪
+      </a>
     </p>
     <p>
       <a

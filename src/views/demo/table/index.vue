@@ -3,10 +3,12 @@
     <template #action>
       <div>
         <n-button type="primary" secondary @click="$table?.handleExport()">
-          <TheIcon icon="mdi:download" :size="18" class="mr-5" /> 导出
+          <TheIcon icon="mdi:download" :size="18" class="mr-5" />
+          导出
         </n-button>
         <n-button type="primary" class="ml-16" @click="handleAdd">
-          <TheIcon icon="material-symbols:add" :size="18" class="mr-5" /> 新建文章
+          <TheIcon icon="material-symbols:add" :size="18" class="mr-5" />
+          新建文章
         </n-button>
       </div>
     </template>
