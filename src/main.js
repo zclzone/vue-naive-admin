@@ -9,11 +9,13 @@ import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
 import App from './App.vue'
 import { useResize } from '@zclzone/utils'
+import { setupNaiveDiscreteApi } from './utils'
 
 async function setupApp() {
   const app = createApp(App)
 
   setupStore(app)
+  setupNaiveDiscreteApi()
 
   await setupRouter(app)
 
