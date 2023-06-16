@@ -23,7 +23,9 @@ export function createVitePlugins(viteEnv, isBuild) {
   }
 
   if (viteEnv.VITE_USE_COMPRESS) {
-    plugins.push(viteCompression({ algorithm: viteEnv.VITE_COMPRESS_TYPE || 'gzip' }))
+    plugins.push(
+      viteCompression({ algorithm: viteEnv.VITE_COMPRESS_TYPE || 'gzip', deleteOriginFile: viteEnv.VITE_COMPRESS_DELETE_ORIGINAL_FILE })
+    )
   }
 
   if (isBuild) {
