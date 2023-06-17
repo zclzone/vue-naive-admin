@@ -11,6 +11,9 @@
       @close.stop="tagsStore.removeTag(tag.path)"
       @contextmenu.prevent="handleContextMenu($event, tag)"
     >
+      <template v-if="tag.icon" #icon>
+        <TheIcon :icon="tag.icon" class="mr-4" />
+      </template>
       {{ tag.title }}
     </n-tag>
     <ContextMenu
@@ -46,7 +49,8 @@ watch(
   () => {
     const { name, fullPath: path } = route
     const title = route.meta?.title
-    tagsStore.addTag({ name, path, title })
+    const icon = route.meta?.icon
+    tagsStore.addTag({ name, path, title, icon })
   },
   { immediate: true }
 )
