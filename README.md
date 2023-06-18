@@ -4,9 +4,9 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/zclzone/vue-naive-admin"><img allt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin"/></a>
-  <a href="https://github.com/zclzone/vue-naive-admin"><img allt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin"/></a>
-  <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/zclzone/vue-naive-admin"/></a>
+  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin"/></a>
+  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin"/></a>
+  <a href="./LICENSE"><img alt="MIT License" src="https://badgen.net/github/license/zclzone/vue-naive-admin"/></a>
 </p>
 
 <p align='center'>
@@ -189,13 +189,18 @@ Vue Naive Admin
 
 #### 源码
 
-- gitub: [https://github.com/zclzone/qs-admin](https://github.com/zclzone/qs-admin)
+- github: [https://github.com/zclzone/qs-admin](https://github.com/zclzone/qs-admin)
 - gitee: [https://gitee.com/zclzone/qs-admin-ts](https://gitee.com/zclzone/qs-admin-ts)
 
 #### 预览
 
 - [https://admin.qszone.com](https://admin.qszone.com)
 - [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
+
+### 使用该项目的开源项目
+
+gin-vue-blog: Golang 全栈博客项目, 博客后台的前端基于 vue-naive-admin，对接真实后端服务，实现了后端控制路由等特性。
+- github: [https://github.com/szluyu99/gin-vue-blog](https://github.com/szluyu99/gin-vue-blog)
 
 ### 入群交流 & 关于作者
 

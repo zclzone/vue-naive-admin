@@ -14,12 +14,12 @@
             </n-statistic>
             <n-statistic label="Stars" ml-80 w-100>
               <a href="https://github.com/zclzone/vue-naive-admin">
-                <img allt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin" />
+                <img alt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin" />
               </a>
             </n-statistic>
             <n-statistic label="Forks" ml-80 w-100>
               <a href="https://github.com/zclzone/vue-naive-admin">
-                <img allt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin" />
+                <img alt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin" />
               </a>
             </n-statistic>
           </div>
