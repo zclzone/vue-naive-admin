@@ -199,8 +199,8 @@ Vue Naive Admin
 
 ### 使用该项目的开源项目
 
-gin-vue-blog: Golang 全栈博客项目, 博客后台的前端基于 vue-naive-admin，对接真实后端服务，实现了后端控制路由等特性。
-- github: [https://github.com/szluyu99/gin-vue-blog](https://github.com/szluyu99/gin-vue-blog)
+- [gin-vue-blog](https://github.com/szluyu99/gin-vue-blog): Golang 全栈博客项目, 博客后台的前端基于 vue-naive-admin，对接真实后端服务，实现了后端控制路由等特性。
+
 
 ### 入群交流 & 关于作者
 

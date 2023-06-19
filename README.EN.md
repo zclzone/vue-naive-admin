@@ -195,8 +195,7 @@ Vue Naive Admin
 
 ### Open source projects that use this project:
 
-gin-vue-blog: A full-stack blog project in Golang, the frontend of the blog backend is based on vue-naive-admin and integrates with a real backend service, implementing features such as backend-controlled routing.
-- github: [https://github.com/szluyu99/gin-vue-blog](https://github.com/szluyu99/gin-vue-blog)
+- [gin-vue-blog](https://github.com/szluyu99/gin-vue-blog): A full-stack blog project in Golang, the frontend of the blog backend is based on vue-naive-admin and integrates with a real backend service, implementing features such as backend-controlled routing.
 
 ### Communication group & About the author
 
