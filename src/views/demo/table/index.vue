@@ -29,7 +29,7 @@
             v-model:value="queryItems.title"
             type="text"
             placeholder="请输入标题"
-            @keydown.enter="$table?.handleSearch"
+            @keypress.enter="$table?.handleSearch"
           />
         </QueryBarItem>
       </template>

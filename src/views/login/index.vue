@@ -31,7 +31,7 @@
             show-password-on="mousedown"
             placeholder="123456"
             :maxlength="20"
-            @keydown.enter="handleLogin"
+            @keypress.enter="handleLogin"
           />
         </div>
 
