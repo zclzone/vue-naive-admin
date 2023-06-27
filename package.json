@@ -2,16 +2,33 @@
   "name": "vue-naive-admin",
   "version": "1.0.0",
   "scripts": {
+    "build": "vite build",
+    "build:github": "vite build --mode github && esno ./build/script",
+    "build:test": "vite build --mode test",
+    "cz": "cz",
     "dev": "vite",
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "eslint --fix --ext .js,.vue .",
     "lint:staged": "lint-staged",
-    "build": "vite build",
-    "build:test": "vite build --mode test",
-    "build:github": "vite build --mode github && esno ./build/script",
-    "preview": "vite preview",
     "prepare": "husky install",
-    "cz": "cz"
+    "preview": "vite preview"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --ext .js,.vue ."
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "@zclzone",
+      "@unocss",
+      ".eslint-global-variables.json"
+    ]
   },
   "dependencies": {
     "@unocss/eslint-config": "^0.51.12",
@@ -58,22 +75,5 @@
     "vite-plugin-html": "^3.2.0",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-svg-icons": "^2.0.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "eslint --ext .js,.vue ."
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "@zclzone",
-      "@unocss",
-      ".eslint-global-variables.json"
-    ]
   }
 }
