@@ -35,7 +35,7 @@
 
 [https://template.qszone.com](https://template.qszone.com)
 
-[https://vercel.template.qszone.com](https://vercel.template.qszone.com)
+[https://base.qszone.com](https://vercel.template.qszone.com)
 
 ### Docs
 
