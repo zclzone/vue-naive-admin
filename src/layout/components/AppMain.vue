@@ -1,23 +1,16 @@
 <template>
   <router-view v-slot="{ Component, route }">
-    <KeepAlive :include="keepAliveRouteNames">
-      <component
-        :is="Component"
-        v-if="appStore.reloadFlag"
-        :key="appStore.aliveKeys[route.name] || route.fullPath"
-      />
+    <KeepAlive :include="keepAliveNames">
+      <component :is="Component" v-if="!tagStore.reloading" :key="route.fullPath" />
     </KeepAlive>
   </router-view>
 </template>
 
 <script setup>
-import { useAppStore } from '@/store'
-import { useRouter } from 'vue-router'
-const appStore = useAppStore()
-const router = useRouter()
+import { useTagsStore } from '@/store'
+const tagStore = useTagsStore()
 
-const allRoutes = router.getRoutes()
-const keepAliveRouteNames = computed(() => {
-  return allRoutes.filter((route) => route.meta?.keepAlive).map((route) => route.name)
+const keepAliveNames = computed(() => {
+  return tagStore.tags.filter((item) => item.keepAlive).map((item) => item.name)
 })
 </script>

@@ -8,6 +8,7 @@ export const useTagsStore = defineStore('tag', {
     return {
       tags: tags || [],
       activeTag: activeTag || '',
+      reloading: false,
     }
   },
   getters: {
@@ -25,20 +26,32 @@ export const useTagsStore = defineStore('tag', {
       sStorage.set('tags', tags)
     },
     addTag(tag = {}) {
+      if (WITHOUT_TAG_PATHS.includes(tag.path)) return
+      let findItem = this.tags.find((item) => item.path === tag.path)
+      if (findItem) findItem = tag
+      else this.setTags([...this.tags, tag])
       this.setActiveTag(tag.path)
-      if (WITHOUT_TAG_PATHS.includes(tag.path) || this.tags.some((item) => item.path === tag.path))
-        return
-      this.setTags([...this.tags, tag])
+    },
+    async reloadTag(path, keepAlive) {
+      const findItem = this.tags.find((item) => item.path === path)
+      // 更新key可让keepAlive失效
+      if (findItem && keepAlive) findItem.keepAlive = false
+
+      $loadingBar.start()
+      this.reloading = true
+      await nextTick()
+      this.reloading = false
+      findItem.keepAlive = keepAlive
+      setTimeout(() => {
+        document.documentElement.scrollTo({ left: 0, top: 0 })
+        $loadingBar.finish()
+      }, 100)
     },
     removeTag(path) {
-      if (path === this.activeTag) {
-        if (this.activeIndex > 0) {
-          router.push(this.tags[this.activeIndex - 1].path)
-        } else {
-          router.push(this.tags[this.activeIndex + 1].path)
-        }
-      }
       this.setTags(this.tags.filter((tag) => tag.path !== path))
+      if (path === this.activeTag) {
+        router.push(this.tags[this.tags.length - 1].path)
+      }
     },
     removeOther(curPath = this.activeTag) {
       this.setTags(this.tags.filter((tag) => tag.path === curPath))

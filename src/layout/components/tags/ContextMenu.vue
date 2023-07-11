@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { useTagsStore, useAppStore } from '@/store'
+import { useTagsStore } from '@/store'
 import { renderIcon } from '@/utils'
 
 const props = defineProps({
@@ -36,7 +36,6 @@ const props = defineProps({
 const emit = defineEmits(['update:show'])
 
 const tagsStore = useTagsStore()
-const appStore = useAppStore()
 
 const options = computed(() => [
   {
@@ -78,11 +77,7 @@ const actionMap = new Map([
   [
     'reload',
     () => {
-      if (route.meta?.keepAlive) {
-        // 重置keepAlive
-        appStore.setAliveKeys(route.name, +new Date())
-      }
-      appStore.reloadPage()
+      tagsStore.reloadTag(route.path, route.meta?.keepAlive)
     },
   ],
   [

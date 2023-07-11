@@ -50,7 +50,8 @@ watch(
     const { name, fullPath: path } = route
     const title = route.meta?.title
     const icon = route.meta?.icon
-    tagsStore.addTag({ name, path, title, icon })
+    const keepAlive = route.meta?.keepAlive
+    tagsStore.addTag({ name, path, title, icon, keepAlive })
   },
   { immediate: true }
 )
