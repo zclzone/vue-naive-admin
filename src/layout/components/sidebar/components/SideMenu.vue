@@ -13,13 +13,12 @@
 </template>
 
 <script setup>
-import { usePermissionStore, useAppStore } from '@/store'
+import { usePermissionStore } from '@/store'
 import { renderCustomIcon, renderIcon, isExternal } from '@/utils'
 
 const router = useRouter()
 const curRoute = useRoute()
 const permissionStore = usePermissionStore()
-const appStore = useAppStore()
 
 const activeKey = computed(() => curRoute.meta?.activeMenu || curRoute.name)
 
@@ -98,11 +97,7 @@ function handleMenuSelect(key, item) {
   if (isExternal(item.path)) {
     window.open(item.path)
   } else {
-    if (item.path === curRoute.path) {
-      appStore.reloadPage()
-    } else {
-      router.push(item.path)
-    }
+    router.push(item.path)
   }
 }
 </script>
