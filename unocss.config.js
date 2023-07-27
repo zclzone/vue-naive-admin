@@ -1,18 +1,11 @@
 import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
-  exclude: [
-    'node_modules',
-    '.git',
-    '.github',
-    '.husky',
-    '.vscode',
-    'build',
-    'dist',
-    'mock',
-    'public',
-    './stats.html',
-  ],
+  content: {
+    pipeline: {
+      include: [/\.(vue|svelte|[jt]sx|mdx?|html)($|\?)/],
+    },
+  },
   presets: [presetUno(), presetAttributify()],
   shortcuts: [
     ['wh-full', 'w-full h-full'],
