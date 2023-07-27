@@ -13,7 +13,8 @@
 
     <article flex-col flex-1 overflow-hidden>
       <header
-        class="flex items-center border-b bg-white px-15 bc-eee"
+        border-b="1 solid #eee"
+        class="flex items-center bg-white px-15"
         dark="bg-dark border-0"
         :style="`height: ${header.height}px`"
       >

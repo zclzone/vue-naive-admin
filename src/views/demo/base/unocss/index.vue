@@ -14,20 +14,20 @@
     </p>
 
     <div mt-20 w-350 f-c-c flex-col>
-      <div flex flex-wrap justify-around b-1 rounded-10 p-10 bc-ccc>
-        <div m-20 h-50 w-50 f-c-c b-1 rounded-5 p-10>
+      <div flex flex-wrap justify-around rounded-10 p-10 border="1 solid #ccc">
+        <div m-20 h-50 w-50 f-c-c rounded-5 p-10 border="1 solid">
           <span h-6 w-6 rounded-3 bg-black dark:bg-white />
         </div>
-        <div m-20 h-50 w-50 flex justify-between b-1 rounded-5 p-10>
+        <div m-20 h-50 w-50 flex justify-between rounded-5 p-10 border="1 solid">
           <span h-6 w-6 rounded-3 bg-black dark:bg-white />
           <span h-6 w-6 self-end rounded-3 bg-black dark:bg-white />
         </div>
-        <div m-20 h-50 w-50 flex justify-between b-1 rounded-5 p-10>
+        <div m-20 h-50 w-50 flex justify-between rounded-5 p-10 border="1 solid">
           <span h-6 w-6 rounded-3 bg-black dark:bg-white />
           <span h-6 w-6 self-center rounded-3 bg-black dark:bg-white />
           <span h-6 w-6 self-end rounded-3 bg-black dark:bg-white />
         </div>
-        <div m-20 h-50 w-50 flex justify-between b-1 rounded-5 p-10>
+        <div m-20 h-50 w-50 flex justify-between rounded-5 p-10 border="1 solid">
           <div flex-col justify-between>
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
@@ -37,7 +37,7 @@
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
           </div>
         </div>
-        <div m-20 h-50 w-50 flex-col items-center justify-between b-1 rounded-5 p-10>
+        <div m-20 h-50 w-50 flex-col items-center justify-between rounded-5 p-10 border="1 solid">
           <div w-full flex justify-between>
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
@@ -48,7 +48,7 @@
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
           </div>
         </div>
-        <div m-20 h-50 w-50 flex-col justify-between b-1 rounded-5 p-10>
+        <div m-20 h-50 w-50 flex-col justify-between rounded-5 p-10 border="1 solid">
           <div w-full flex justify-between>
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />
             <span h-6 w-6 rounded-3 bg-black dark:bg-white />

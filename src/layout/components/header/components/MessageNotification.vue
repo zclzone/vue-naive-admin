@@ -18,7 +18,8 @@
           <li
             v-for="(item, index) in tab.messages"
             :key="index"
-            class="flex-col border-t border-gray-200 py-12"
+            class="flex-col py-12"
+            border-t="1 solid gray-200"
             :style="index > 0 ? '' : 'border: none;'"
           >
             <span mb-4 text-ellipsis>{{ item.content }}</span>

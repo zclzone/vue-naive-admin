@@ -1,9 +1,8 @@
 <template>
   <AppPage>
-    <div h-full flex-col border-1 bc-ccc dark:bg-dark>
+    <div class="h-full flex-col" border="1 solid #ccc" dark:bg-dark>
       <WangToolbar
-        border-b
-        bc-ccc
+        border-b="1px solid #ccc"
         :editor="editorRef"
         :default-config="toolbarConfig"
         mode="default"
