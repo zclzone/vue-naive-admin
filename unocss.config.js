@@ -1,4 +1,5 @@
 import { defineConfig, presetAttributify, presetUno } from 'unocss'
+import presetRemToPx from '@unocss/preset-rem-to-px'
 
 export default defineConfig({
   content: {
@@ -6,7 +7,7 @@ export default defineConfig({
       include: [/\.(vue|svelte|[jt]sx|mdx?|html)($|\?)/],
     },
   },
-  presets: [presetUno(), presetAttributify()],
+  presets: [presetUno(), presetAttributify(), presetRemToPx({ baseFontSize: 4 })],
   shortcuts: [
     ['wh-full', 'w-full h-full'],
     ['f-c-c', 'flex justify-center items-center'],

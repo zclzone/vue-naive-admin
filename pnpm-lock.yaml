@@ -61,6 +61,9 @@ devDependencies:
   '@iconify/vue':
     specifier: ^4.1.1
     version: 4.1.1(vue@3.3.4)
+  '@unocss/preset-rem-to-px':
+    specifier: ^0.54.1
+    version: 0.54.1
   '@vitejs/plugin-vue':
     specifier: ^4.2.3
     version: 4.2.3(vite@4.4.7)(vue@3.3.4)
@@ -1597,6 +1600,10 @@ packages:
   /@unocss/core@0.53.6:
     resolution: {integrity: sha512-wuaLjWCzKUisHUxo4pjIdzcimdSmVa2hMHA3V7wVFBiSFX96/s7l0bvhHGFF/gMjbOnvJ+y+lBl3VKqcj9kwbA==}
 
+  /@unocss/core@0.54.1:
+    resolution: {integrity: sha512-lbwvGD91liMNEZs3jwXxLrIHIn/J4dkJpeKdosRdm1xObqrkg0+Zx1fVn6X+GOX74yvjQlzbu/ODZEXFQC3mGw==}
+    dev: true
+
   /@unocss/eslint-config@0.53.6(eslint@8.45.0)(typescript@5.1.6):
     resolution: {integrity: sha512-shS4CV/TcyCqYsj/uk2uxohVNkm9qojuafej889KmiTySosIN+WDcyP0zhAX5vLHIeLbPJUbYCTrdu1TIXhsTA==}
     engines: {node: '>=14'}
@@ -1671,6 +1678,12 @@ packages:
     dependencies:
       '@unocss/core': 0.53.6
       '@unocss/extractor-arbitrary-variants': 0.53.6
+    dev: true
+
+  /@unocss/preset-rem-to-px@0.54.1:
+    resolution: {integrity: sha512-kdKPV0AfY/cNKTD7lcDn3GJL02/uXArYe8zD6zc4mweBTlbK8bWfn66ceRK3iNmNCuUuWMttIKv2Qxe6eZwEhg==}
+    dependencies:
+      '@unocss/core': 0.54.1
     dev: true
 
   /@unocss/preset-tagify@0.53.6:
