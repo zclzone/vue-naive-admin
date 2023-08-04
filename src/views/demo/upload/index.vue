@@ -9,7 +9,7 @@
     >
       <n-upload-dragger>
         <div class="h-150 f-c-c flex-col">
-          <TheIcon icon="mdi:upload" size="68" class="mb-12 c-primary" />
+          <TheIcon icon="mdi:upload" :size="68" class="mb-12 c-primary" />
           <n-text class="text-14 c-gray">点击或者拖动文件到该区域来上传</n-text>
         </div>
       </n-upload-dragger>
