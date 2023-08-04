@@ -74,3 +74,17 @@ export function debounce(method, wait, immediate) {
     }
   }
 }
+
+/**
+ *
+ * @param {HTMLElement} el
+ * @param {Function} cb
+ * @return {ResizeObserver}
+ */
+export function useResize(el, cb) {
+  const observer = new ResizeObserver((entries) => {
+    cb(entries[0].contentRect)
+  })
+  observer.observe(el)
+  return observer
+}

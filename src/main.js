@@ -8,7 +8,6 @@ import { createApp } from 'vue'
 import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
 import App from './App.vue'
-import { useResize } from '@zclzone/utils'
 import { setupNaiveDiscreteApi } from './utils'
 
 async function setupApp() {
@@ -19,7 +18,6 @@ async function setupApp() {
 
   await setupRouter(app)
 
-  app.use(useResize)
   app.mount('#app')
 }
 

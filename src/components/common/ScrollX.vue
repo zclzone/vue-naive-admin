@@ -11,7 +11,6 @@
 
     <div
       ref="content"
-      v-resize="refreshIsOverflow"
       class="content"
       :class="{ overflow: isOverflow && showArrow }"
       :style="{
@@ -24,8 +23,7 @@
 </template>
 
 <script setup>
-import { debounce } from '@/utils'
-import { useResize } from '@zclzone/utils'
+import { debounce, useResize } from '@/utils'
 
 defineProps({
   showArrow: {
@@ -78,14 +76,17 @@ const resetTranslateX = debounce(function (wrapperWidth, contentWidth) {
   }
 }, 200)
 
-const observer = ref(null)
+const observers = ref([])
 onMounted(() => {
   refreshIsOverflow()
 
-  observer.value = useResize(document.body, refreshIsOverflow)
+  observers.value.push(useResize(document.body, refreshIsOverflow))
+  observers.value.push(useResize(content.value, refreshIsOverflow))
 })
 onBeforeUnmount(() => {
-  observer.value?.disconnect()
+  observers.value.forEach((item) => {
+    item?.disconnect()
+  })
 })
 
 function handleScroll(x, width) {

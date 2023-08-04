@@ -35,7 +35,6 @@
     "@vueuse/core": "^10.2.1",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^5.1.12",
-    "@zclzone/utils": "^0.0.13",
     "axios": "^1.4.0",
     "dayjs": "^1.11.9",
     "lodash-es": "^4.17.21",
