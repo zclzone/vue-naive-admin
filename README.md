@@ -208,4 +208,10 @@ Vue Naive Admin
   <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
 </a>
 
+### ☕ 赞助我
 
+> 开源不易，请作者喝杯咖啡吧
+<p>
+  <img src="https://assets.qszone.com/images/zhifu_weixin.jpg" style="width: 220px" />
+  <img src="https://assets.qszone.com/images/zhifu_zhifubao.jpg" style="width: 220px" />
+</p>
