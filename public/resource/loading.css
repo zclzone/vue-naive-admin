@@ -10,12 +10,6 @@
 	height: 100%;
 }
 
-.loading-svg {
-	width: 128px;
-	height: 128px;
-	color: var(--primary-color);
-}
-
 .loading-spin__container {
 	width: 56px;
 	height: 56px;

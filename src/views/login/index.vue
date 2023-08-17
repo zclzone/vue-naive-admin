@@ -11,7 +11,7 @@
 
       <div w-320 flex-col px-20 py-35>
         <h5 f-c-c text-24 font-normal color="#6a6a6a">
-          <icon-custom-logo mr-10 text-50 color-primary />
+          <img src="@/assets/images/logo.png" height="50" class="mr-10" />
           {{ title }}
         </h5>
         <div mt-30>
