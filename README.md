@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/zclzone/vue-naive-admin">
-    <img alt="Vue Naive Admin Logo" width="200" src="https://assets.qszone.com/images/logo_qs.svg">
+    <img alt="Vue Naive Admin Logo" width="200" src="./src/assets/images/logo.png">
   </a>
 </p>
 <p align="center">
@@ -35,7 +35,7 @@
 
 [https://template.qszone.com](https://template.qszone.com)
 
-[https://base.qszone.com](https://base.qszone.com)
+[https://base.isme.top](https://base.isme.top)
 
 ### 文档
 
