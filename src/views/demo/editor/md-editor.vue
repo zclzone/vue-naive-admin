@@ -13,15 +13,22 @@
         保存
       </n-button>
     </div>
-    <MdEditor v-model="post.content" style="height: calc(100vh - 305px)" dark:bg-dark />
+    <MdEditor
+      v-model="post.content"
+      :theme="appStore.isDark ? 'dark' : 'light'"
+      style="height: calc(100vh - 305px)"
+    />
   </CommonPage>
 </template>
 
 <script setup>
 import { MdEditor } from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
+import { useAppStore } from '@/store'
 
 defineOptions({ name: 'MDEditor' })
+
+const appStore = useAppStore()
 
 // refs
 let post = ref({})
