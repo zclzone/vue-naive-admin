@@ -14,7 +14,7 @@ class Storage {
     const stringData = JSON.stringify({
       value,
       time: Date.now(),
-      expire: !isNullOrUndef(expire) ? new Date().getTime() + expire * 1000 : null,
+      expire: !isNullOrUndef(expire) ? Date.now() + expire * 1000 : null,
     })
     this.storage.setItem(this.getKey(key), stringData)
   }
@@ -30,7 +30,7 @@ class Storage {
     try {
       const data = JSON.parse(val)
       const { value, time, expire } = data
-      if (isNullOrUndef(expire) || expire > new Date().getTime()) {
+      if (isNullOrUndef(expire) || expire > Date.now()) {
         return { value, time }
       }
       this.remove(key)
