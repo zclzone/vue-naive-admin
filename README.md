@@ -35,7 +35,7 @@
 
 [https://template.qszone.com](https://template.qszone.com)
 
-[https://template.qszone.com](https://template.isme.top)
+[https://template.isme.top](https://template.isme.top)
 
 [https://base.isme.top](https://base.isme.top)
 
