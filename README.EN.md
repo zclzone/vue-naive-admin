@@ -4,8 +4,6 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin"/></a>
-  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin"/></a>
   <a href="./LICENSE"><img allt="MIT License" src="https://badgen.net/github/license/zclzone/vue-naive-admin"/></a>
 </p>
 
