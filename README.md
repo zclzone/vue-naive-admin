@@ -4,8 +4,6 @@
   </a>
 </p>
 <p align="center">
-  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="stars" src="https://badgen.net/github/stars/zclzone/vue-naive-admin"/></a>
-  <a href="https://github.com/zclzone/vue-naive-admin"><img alt="forks" src="https://badgen.net/github/forks/zclzone/vue-naive-admin"/></a>
   <a href="./LICENSE"><img alt="MIT License" src="https://badgen.net/github/license/zclzone/vue-naive-admin"/></a>
 </p>
 
@@ -16,7 +14,7 @@
 
 ### 简介
 
-[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **完全开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite4、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，学习成本非常低，非常适合中小型项目或者个人项目。
+[Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite4、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，上手成本非常低，非常适合中小型项目或者个人项目。
 
 ### 功能
 
@@ -34,6 +32,8 @@
 ### 预览
 
 [https://template.qszone.com](https://template.qszone.com)
+
+[https://template.isme.top](https://template.isme.top)
 
 [https://base.isme.top](https://base.isme.top)
 
