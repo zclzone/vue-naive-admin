@@ -7,7 +7,7 @@ export default {
   redirect: '/demo/crud',
   meta: {
     title: '示例页面',
-    customIcon: 'logo',
+    icon: 'uil:pagelines',
     role: ['admin'],
     requireAuth: true,
     order: 3,
