@@ -2,3 +2,7 @@ node_modules
 dist
 *.local
 stats.html
+.history
+.husky
+.vs
+.vscode
