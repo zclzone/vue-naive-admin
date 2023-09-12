@@ -32,9 +32,6 @@
       :scroll-x="1200"
       :columns="columns"
       :get-data="api.getPosts"
-      :summary-ref="sumRef"
-      :sumary-col="current_ms"
-      @setSum="setSum"
       @on-checked="onChecked"
       @on-data-change="(data) => (tableData = data)"
     >
@@ -120,8 +117,8 @@ const queryItems = ref({})
 const extraParams = ref({})
 
 //总结数
-const sumRef = ref(0)
-const current_ms = ref('total_expanse')
+// const sumRef = ref(0)
+// const current_ms = ref('total_expanse')
 
 onActivated(() => {
   $table.value?.handleSearch()
@@ -236,10 +233,10 @@ const tabsOptions = ref([
   },
 ])
 //设置总结需要传的函数
-function setSum(val) {
-  sumRef.value = val
-  console.log(sumRef.value)
-}
+// function setSum(val) {
+//   sumRef.value = val
+//   console.log(sumRef.value)
+// }
 
 //根据tabs选择状态搜索
 function selecetChap(val) {
