@@ -12,19 +12,7 @@
         </n-button>
       </div>
     </template>
-    <n-tabs
-      v-model:value="queryItems.state"
-      type="card"
-      animated
-      tab-style="font-weight:600;background-color:rgb(222, 231, 232); margin-bottom:10px;"
-      :on-update:value="selecetChap"
-    >
-      <n-tab v-for="(i, index) in tabsOptions" :id="i.name" :key="index" :name="i.name" style="">
-        <template #default>
-          <div style="">{{ i.text }}</div>
-        </template>
-      </n-tab>
-    </n-tabs>
+
     <CrudTable
       ref="$table"
       v-model:query-items="queryItems"
@@ -32,9 +20,6 @@
       :scroll-x="1200"
       :columns="columns"
       :get-data="api.getPosts"
-      :summary-ref="sumRef"
-      :sumary-col="current_ms"
-      @setSum="setSum"
       @on-checked="onChecked"
       @on-data-change="(data) => (tableData = data)"
     >
@@ -118,10 +103,6 @@ const tableData = ref([])
 const queryItems = ref({})
 /** 补充参数（可选） */
 const extraParams = ref({})
-
-//总结数
-const sumRef = ref(0)
-const current_ms = ref('total_expanse')
 
 onActivated(() => {
   $table.value?.handleSearch()
@@ -211,41 +192,6 @@ const columns = [
     },
   },
 ]
-
-//tabs栏
-const tabsOptions = ref([
-  {
-    name: 'tab1',
-    value: 'tab1',
-    text: 'tab1',
-  },
-  {
-    name: 'tab2',
-    value: 'tab2',
-    text: 'tab2',
-  },
-  {
-    name: 'tab3',
-    value: 'tab3',
-    text: 'tab3',
-  },
-  {
-    name: 'tab4',
-    value: 'tab4',
-    text: 'tab4',
-  },
-])
-//设置总结需要传的函数
-function setSum(val) {
-  sumRef.value = val
-  console.log(sumRef.value)
-}
-
-//根据tabs选择状态搜索
-function selecetChap(val) {
-  queryItems.value.state = val
-  $table.value?.handleSearch()
-}
 
 // 选中事件
 function onChecked(rowKeys) {

@@ -9,7 +9,6 @@
     :scroll-x="scrollX"
     :columns="columns"
     :data="tableData"
-    :summary="getSummary"
     :row-key="(row) => row[rowKey]"
     :pagination="isPagination ? pagination : false"
     @update:checked-row-keys="onChecked"
@@ -47,21 +46,6 @@ const props = defineProps({
     type: Array,
     required: true,
   },
-  //获取总结数据
-  getSummary: {
-    type: Function,
-    required: false,
-  },
-  //总结栏所需列名
-  sumaryCol: {
-    type: String,
-    default: 'total_expanse',
-  },
-  //总结数据
-  summaryRef: {
-    type: Object,
-    default: null,
-  },
   /** queryBar中的参数 */
   queryItems: {
     type: Object,
@@ -69,7 +53,6 @@ const props = defineProps({
       return {}
     },
   },
-
   /** 补充参数（可选） */
   extraParams: {
     type: Object,
@@ -92,35 +75,11 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update:queryItems', 'onChecked', 'onDataChange', 'setSum'])
+const emit = defineEmits(['update:queryItems', 'onChecked', 'onDataChange'])
 const loading = ref(false)
 const initQuery = { ...props.queryItems }
 const tableData = ref([])
-const pagination = reactive({ page: 1, pageSize: 1 })
-
-const getSummary = (pageData) => {
-  // console.log(props.summaryRef)
-  // // eslint-disable-next-line vue/no-mutating-props
-  const sum = pageData.reduce(
-    (prevValue, row) => Number(prevValue) + Number(row[props.sumaryCol]),
-    0
-  )
-  emit('setSum', sum)
-  console.log(props.sumaryCol)
-  return {
-    title: {
-      value: h(
-        'div',
-        { style: 'top:10%' },
-        'Total: ' + Number(sum).toFixed(2)
-        // eslint-disable-next-line vue/no-mutating-props
-        // props.summaryRef.value = num
-        // return num
-      ),
-      colSpan: 10,
-    },
-  }
-}
+const pagination = reactive({ page: 1, pageSize: 10 })
 
 async function handleQuery() {
   try {
