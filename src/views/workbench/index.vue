@@ -154,25 +154,35 @@ const trendOption = {
 }
 
 const skillsOption = {
+  tooltip: {
+    trigger: 'item',
+    formatter({ name, value }) {
+      return `${name} ${value}%`
+    },
+  },
   legend: {
-    top: '5%',
     left: 'center',
   },
   series: [
     {
-      top: '5%',
+      top: '7%',
       type: 'pie',
-      radius: ['40%', '70%'],
-      avoidLabelOverlap: false,
+      radius: ['40%', '85%'],
+      avoidLabelOverlap: true,
       itemStyle: {
         borderRadius: 10,
         borderColor: '#fff',
         borderWidth: 2,
       },
       label: {
-        show: true,
-        formatter(param) {
-          return param.name + ' (' + param.percent + '%)'
+        show: false,
+        position: 'center',
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: 36,
+          fontWeight: 'bold',
         },
       },
       labelLine: {
