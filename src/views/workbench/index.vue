@@ -16,7 +16,7 @@
       <n-card class="ml-12 w-70%">
         <h3 class="text-20 font-normal opacity-90">⚡️欢迎使用 Vue Naive Admin</h3>
         <p class="mt-8 opacity-60">
-          这是一款基于 Vue3 + Vite + Pinia + Unocss + Naive UI 的轻量级后台管理模板。！！
+          这是一款基于 Vue3 + Vite + Pinia + Unocss + Naive UI 的轻量级后台管理模板！！
         </p>
         <footer class="mt-24 flex items-center justify-end">
           <n-button
