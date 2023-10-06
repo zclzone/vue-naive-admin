@@ -16,10 +16,10 @@
         </h5>
         <div mt-32>
           <n-input
-            v-model:value="loginInfo.username"
+            v-model:value="loginInfo.name"
             autofocus
             class="h-48 items-center text-16"
-            placeholder="username"
+            placeholder="name"
             :maxlength="20"
           >
             <template #prefix>
