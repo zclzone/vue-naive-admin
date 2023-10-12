@@ -14,25 +14,33 @@
           <img src="@/assets/images/logo.png" height="50" class="mr-10" />
           {{ title }}
         </h5>
-        <div mt-30>
+        <div mt-32>
           <n-input
             v-model:value="loginInfo.name"
             autofocus
-            class="h-50 items-center pl-10 text-16"
-            placeholder="admin"
+            class="h-48 items-center text-16"
+            placeholder="name"
             :maxlength="20"
-          />
+          >
+            <template #prefix>
+              <icon-material-symbols:account-circle-outline class="mr-8 text-20 opacity-40" />
+            </template>
+          </n-input>
         </div>
-        <div mt-30>
+        <div mt-32>
           <n-input
             v-model:value="loginInfo.password"
-            class="h-50 items-center pl-10 text-16"
+            class="h-48 items-center text-16"
             type="password"
             show-password-on="mousedown"
-            placeholder="123456"
+            placeholder="password"
             :maxlength="20"
-            @keypress.enter="handleLogin"
-          />
+            @keydown.enter="handleLogin"
+          >
+            <template #prefix>
+              <icon-ri:lock-password-line class="mr-8 text-20 opacity-40" />
+            </template>
+          </n-input>
         </div>
 
         <div mt-20>
