@@ -16,7 +16,7 @@
         target="__blank"
         hover="decoration-underline color-primary"
       >
-        赣ICP备2020015008号-1
+        赣ICP备2020015008号-2
       </a>
     </p>
   </footer>
