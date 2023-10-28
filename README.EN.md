@@ -31,7 +31,7 @@
 
 ### Preview
 
-[https://template.qszone.com](https://template.qszone.com)
+[https://template.isme.top](https://template.isme.top)
 
 [https://base.isme.top](https://base.isme.top)
 
@@ -188,7 +188,7 @@ Vue Naive Admin
 
 #### preview
 
-- [https://admin.qszone.com](https://admin.qszone.com)
+- [https://admin.isme.top](https://admin.isme.top)
 - [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
 
 ### Open source projects that use this project:
@@ -197,8 +197,8 @@ Vue Naive Admin
 
 ### Communication group & About the author
 
-<a href="https://blog.qszone.com/about/">
-  <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
+<a href="https://blog.isme.top/about/">
+  <img src="https://static.isme.top/images/about.png" style="max-width: 400px" />
 </a>
 
 

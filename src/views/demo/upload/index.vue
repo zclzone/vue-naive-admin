@@ -50,10 +50,10 @@ defineOptions({ name: 'Upload' })
 const { copy, copied } = useClipboard()
 
 const imgList = reactive([
-  { url: 'https://cdn.qszone.com/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
-  { url: 'https://cdn.qszone.com/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
-  { url: 'https://cdn.qszone.com/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
-  { url: 'https://cdn.qszone.com/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
+  { url: 'https://cdn.isme.top/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
+  { url: 'https://cdn.isme.top/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
+  { url: 'https://cdn.isme.top/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
+  { url: 'https://cdn.isme.top/images/5c23d52f880511ebb6edd017c2d2eca2.jpg' },
 ])
 
 watch(copied, (val) => {

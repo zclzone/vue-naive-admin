@@ -31,7 +31,7 @@
 
 ### 预览
 
-[https://template.qszone.com](https://template.qszone.com)
+[https://template.isme.top](https://template.isme.top)
 
 [https://template.isme.top](https://template.isme.top)
 
@@ -200,7 +200,7 @@ Vue Naive Admin
 
 #### 预览
 
-- [https://admin.qszone.com](https://admin.qszone.com)
+- [https://admin.isme.top](https://admin.isme.top)
 - [https://zclzone.github.io/qs-admin](https://zclzone.github.io/qs-admin)
 
 ### 使用该项目的开源项目
@@ -210,14 +210,14 @@ Vue Naive Admin
 
 ### 入群交流 & 关于作者
 
-<a href="https://blog.qszone.com/about/">
-  <img src="https://assets.qszone.com/images/about.png" style="max-width: 400px" />
+<a href="https://blog.isme.top/about/">
+  <img src="https://static.isme.top/images/about.png" style="max-width: 400px" />
 </a>
 
 ### ☕ 赞助我
 
 > 开源不易，请作者喝杯咖啡吧
 <p>
-  <img src="https://assets.qszone.com/images/zhifu_weixin.jpg" style="width: 220px" />
-  <img src="https://assets.qszone.com/images/zhifu_zhifubao.jpg" style="width: 220px" />
+  <img src="https://static.isme.top/images/zhifu_weixin.jpg" style="width: 220px" />
+  <img src="https://static.isme.top/images/zhifu_zhifubao.jpg" style="width: 220px" />
 </p>
