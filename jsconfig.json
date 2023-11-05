@@ -4,8 +4,8 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "~/*": ["./*"]
     },
     "jsx": "preserve",
     "allowJs": true
