@@ -28,6 +28,7 @@ export async function resetRouter() {
 }
 
 export async function addDynamicRoutes() {
+  // return Promise.reject('123')
   const token = getToken()
 
   // 没有token情况
@@ -37,8 +38,8 @@ export async function addDynamicRoutes() {
   }
 
   // 有token的情况
+  const userStore = useUserStore()
   try {
-    const userStore = useUserStore()
     const permissionStore = usePermissionStore()
     !userStore.userId && (await userStore.getUserInfo())
     const accessRoutes = permissionStore.generateRoutes(userStore.role)
@@ -49,6 +50,8 @@ export async function addDynamicRoutes() {
     router.addRoute(NOT_FOUND_ROUTE)
   } catch (error) {
     console.error(error)
+    $message.error('初始化用户信息失败: ' + error)
+    userStore.logout()
   }
 }
 
