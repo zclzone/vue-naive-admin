@@ -209,7 +209,7 @@ Vue Naive Admin
 ### 入群交流 & 关于作者
 
 <a href="https://blog.isme.top/about/">
-  <img src="https://static.isme.top/images/about.png" style="max-width: 400px" />
+  <img src="https://static.isme.top/images/about.png?t=123" style="max-width: 400px" />
 </a>
 
 ### ☕ 赞助我
