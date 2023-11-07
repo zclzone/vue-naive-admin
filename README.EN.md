@@ -198,7 +198,7 @@ Vue Naive Admin
 ### Communication group & About the author
 
 <a href="https://blog.isme.top/about/">
-  <img src="https://static.isme.top/images/about.png" style="max-width: 400px" />
+  <img src="https://static.isme.top/images/about.png?t=123" style="max-width: 400px" />
 </a>
 
 
