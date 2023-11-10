@@ -48,6 +48,27 @@ export async function addDynamicRoutes() {
     })
     router.hasRoute(EMPTY_ROUTE.name) && router.removeRoute(EMPTY_ROUTE.name)
     router.addRoute(NOT_FOUND_ROUTE)
+
+    window.$notification?.success({
+      title: '🎉🎉🎉 2.0 全栈版本开放体验了！',
+      content: () =>
+        h(
+          'span',
+          {},
+          '2.0为全栈版本，提供前端+后端，全新重构，全面简化，',
+          h(
+            'a',
+            { href: 'https://admin.isme.top', __blank: 'target' },
+            '👉https://admin.isme.top。'
+          ),
+          h('p', {}, '体验账号: admin / 123456'),
+          h(
+            'p',
+            {},
+            '目前火速完善文档中，即将开源，点亮 `star` 和 `watch` 或者加群可获取最新开源通知！'
+          )
+        ),
+    })
   } catch (error) {
     console.error(error)
     $message.error('初始化用户信息失败: ' + error)
