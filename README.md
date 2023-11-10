@@ -12,6 +12,8 @@
   <a href="https://github.com/zclzone/vue-naive-admin/blob/main/README.EN.md">English</a>
 </p>
 
+> 🎉🎉🎉 2.0 全栈版本即将开源，全新重构，全面简化，后端使用 nestjs + mysql + typeOrm，[👉点击体验 | admin.isme.top](https://admin.isme.top)，目前火速完善文档中，点亮 star 支持一下吧！
+
 ### 简介
 
 [Vue Naive Admin](https://github.com/zclzone/vue-naive-admin) 是一个 **开源免费且允许商用** 的后台管理模板，基于 `Vue3、Vite4、Pinia、Unocss 和 Naive UI` 等前端最新技术栈。相较于其他比较流行的后台管理模板，此项目更加简洁、轻量，风格清新，上手成本非常低，非常适合中小型项目或者个人项目。
