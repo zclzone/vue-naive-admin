@@ -58,7 +58,7 @@ export async function addDynamicRoutes() {
           '2.0为全栈版本，提供前端+后端，全新重构，全面简化，',
           h(
             'a',
-            { href: 'https://admin.isme.top', __blank: 'target' },
+            { href: 'https://admin.isme.top', target: '__blank' },
             '👉https://admin.isme.top。'
           ),
           h('p', {}, '体验账号: admin / 123456'),
