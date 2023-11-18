@@ -31,7 +31,7 @@
 - 🤹 集成 `iconify` 图标，支持自定义 svg 图标, 优雅使用icon
 - 🍇 集成 `unocss`，antfu 开源的原子 css 解决方案，非常轻量
 
-> ✨✨ 双十一香港特惠服务器推荐，**2C4G 100M** `71/年` `142/两年`，[👉点击前往](https://blog.isme.top/vps-recommend/)
+> ✨✨ 双十一香港特惠服务器推荐，~~**2C4G 100M** `71/年` `142/两年`~~，[👉点击前往](https://blog.isme.top/vps-recommend/)
 
 ### 预览
 
