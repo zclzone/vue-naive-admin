@@ -32,8 +32,8 @@ Vue Naive Admin 2022年2月开始开源，从 1.0 到现在的 2.0，一直秉�
 
 ## 极致的性能
 
-![](http://docs.isme.top/server/index.php?s=/api/attachment/visitFile&sign=0b81142878f6cf5019f6c5d4cfed7881)
-![](http://docs.isme.top/server/index.php?s=/api/attachment/visitFile&sign=e935b43f97008a7c2a8e7ec95a68b7cd)
+![](https://docs.isme.top/Public/Uploads/2023-11-18/6558568b2b476.png)
+![](https://docs.isme.top/Public/Uploads/2023-11-18/655853caa9ce8.png)
 
 ## 2.0 和 1.0 区别
 
@@ -49,7 +49,11 @@ Vue Naive Admin 2022年2月开始开源，从 1.0 到现在的 2.0，一直秉�
 ## Nestjs 后端
 
 Vue Naive Admin 提供一套后端代码，技术栈使用 Nestjs + TypeOrm + MySql，内置 JWT、RABC及模板所需的一些基础接口。
+
 *后续可能会提供 Java 版和 Go 版的，但由于精力有限，欢迎感兴趣的大佬基于前端提供对接好的后端项目，当然，并不局限于 Java 和 Go，已对接的后端项目会展示到仓库的 README 和 官方文档中*
+
+- 源码-github: [isme-nest-serve | github](https://github.com/zclzone/isme-nest-serve)
+- 源码-gitee: [isme-nest-serve | gitee](https://gitee.com/isme-admin/isme-nest-serve)
 
 ## 版权说明
 
