@@ -50,7 +50,7 @@ export async function addDynamicRoutes() {
     router.addRoute(NOT_FOUND_ROUTE)
 
     window.$notification?.success({
-      title: '🎉🎉🎉 2.0 全栈版本开放体验了！',
+      title: '🎉🎉🎉 2.0 全栈版本开源了！',
       content: () =>
         h(
           'span',
@@ -59,13 +59,7 @@ export async function addDynamicRoutes() {
           h(
             'a',
             { href: 'https://admin.isme.top', target: '__blank' },
-            '👉https://admin.isme.top。'
-          ),
-          h('p', {}, '体验账号: admin / 123456'),
-          h(
-            'p',
-            {},
-            '目前火速完善文档中，即将开源，点亮 `star` 和 `watch` 或者加群可获取最新开源通知！'
+            '👉体验 https://admin.isme.top'
           )
         ),
     })
