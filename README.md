@@ -13,8 +13,10 @@
 </p>
 
 > 🎉🎉🎉 2.0 已开源，全新重构，全面简化，后端使用 nestjs + mysql + typeOrm，[👉点击前往2.0版本 | 分支 2.x-beta](https://github.com/zclzone/vue-naive-admin/tree/2.x-beta),
-> 体验地址: [admin.isme.top](https://admin.isme.top)
-> 后端服务: [isme-nest-serve](https://github.com/zclzone/isme-nest-serve)
+
+- 体验地址: [admin.isme.top](https://admin.isme.top)
+- 后端服务: [isme-nest-serve](https://github.com/zclzone/isme-nest-serve)
+- 文档: [vue-naive-admin-docs](https://docs.isme.top/web/#/624306705)
 
 ### 简介
 
