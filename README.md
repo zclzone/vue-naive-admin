@@ -12,7 +12,7 @@
   <a href="https://github.com/zclzone/vue-naive-admin/blob/main/README.EN.md">English</a>
 </p>
 
-> 🎉🎉🎉 2.0 已开源，全新重构，全面简化，后端使用 nestjs + mysql + typeOrm，[👉点击前往2.0版本 | 分支 2.x-beta]([https://admin.isme.top](https://github.com/zclzone/vue-naive-admin/tree/2.x-beta))
+> 🎉🎉🎉 2.0 已开源，全新重构，全面简化，后端使用 nestjs + mysql + typeOrm，[👉点击前往2.0版本 | 分支 2.x-beta](https://github.com/zclzone/vue-naive-admin/tree/2.x-beta)
 
 ### 简介
 
