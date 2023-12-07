@@ -1,0 +1,7 @@
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "semi": false,
+  "endOfLine": "lf",
+  "htmlWhitespaceSensitivity": "ignore"
+}

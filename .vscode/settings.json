@@ -1,0 +1,22 @@
+{
+  "files.eol": "\n",
+  "files.associations": {
+    "*.env.*": "dotenv",
+    "*.svg": "html",
+    "*.css": "scss"
+  },
+
+  "editor.formatOnSave": false,
+  "[html][css][less][scss][sass][yaml][yml][jsonc][json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact", "vue"]
+}

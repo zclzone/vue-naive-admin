@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/resource/loading.css" />
+    <title><%= title %></title>
+  </head>
+  <body class="dark:text-#e9e9e9 auto-bg">
+    <div id="app">
+      <!-- 白屏时的loading效果 -->
+      <div class="loading-container">
+        <img src="/resource/logo.png" alt="logo" height="128" />
+        <div class="loading-spin__container">
+          <div class="loading-spin">
+            <div class="left-0 top-0 loading-spin-item"></div>
+            <div class="left-0 bottom-0 loading-spin-item loading-delay-500"></div>
+            <div class="right-0 top-0 loading-spin-item loading-delay-1000"></div>
+            <div class="right-0 bottom-0 loading-spin-item loading-delay-1500"></div>
+          </div>
+        </div>
+        <div class="loading-title"><%= title %></div>
+      </div>
+      <script src="/resource/loading.js"></script>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
