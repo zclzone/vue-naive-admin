@@ -28,7 +28,7 @@
           type="text"
           placeholder="请输入角色名"
           clearable
-          @keydown.enter="$table?.handleSearch"
+          @keydown.enter="() => $table?.handleSearch()"
         />
       </MeQueryItem>
       <MeQueryItem label="状态" :label-width="50">
