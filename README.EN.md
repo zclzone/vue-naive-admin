@@ -194,6 +194,7 @@ Vue Naive Admin
 ### Open source projects that use this project:
 
 - [gin-vue-blog](https://github.com/szluyu99/gin-vue-blog): A full-stack blog project in Golang, the frontend of the blog backend is based on vue-naive-admin and integrates with a real backend service, implementing features such as backend-controlled routing.
+- [vue-fastapi-admin](https://github.com/mizhexiaoxiao/vue-fastapi-admin): A Python backend management project that integrates RBAC permission management, dynamic routing, and JWT authentication, helping small and medium-sized applications to quickly establish a foundation.
 
 ### Communication group & About the author
 
