@@ -7,7 +7,7 @@
  **********************************/
 
 const lastDataMap = new Map()
-export const useAliveForm = (initData = {}, key) => {
+export const useAliveData = (initData = {}, key) => {
   key = key ?? useRoute().name
   const lastData = lastDataMap.get(key)
   const aliveData = ref(lastData || { ...initData })
