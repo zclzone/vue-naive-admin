@@ -38,7 +38,8 @@
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.2",
     "vite": "^4.5.0",
-    "vite-plugin-html": "^3.2.0"
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-vue-devtools": "1.0.0-rc.7"
   },
   "eslintConfig": {
     "extends": [
