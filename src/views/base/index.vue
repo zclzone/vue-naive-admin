@@ -64,7 +64,7 @@
         <n-space>
           <n-button :loading="loading" type="primary" @click="handleLogin">
             <i v-show="!loading" class="i-mdi:login mr-4" />
-            登陆
+            登录
           </n-button>
           <n-button type="error" @click="handleMultiMessage">多个错误提醒</n-button>
         </n-space>
@@ -90,13 +90,13 @@ const handleDelete = function () {
 const loading = ref(false)
 async function handleLogin() {
   loading.value = true
-  $message.loading('登陆中...', { key: 'login' })
+  $message.loading('登录中...', { key: 'login' })
   await sleep(2000)
-  $message.error('登陆失败', { key: 'login' })
+  $message.error('登录失败', { key: 'login' })
   await sleep(500)
-  $message.loading('正在尝试重新登陆...', { key: 'login' })
+  $message.loading('正在尝试重新登录...', { key: 'login' })
   await sleep(2000)
-  $message.success('登陆成功', { key: 'login' })
+  $message.success('登录成功', { key: 'login' })
   loading.value = false
 }
 
