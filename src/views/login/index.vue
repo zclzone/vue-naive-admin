@@ -51,6 +51,7 @@
             class="h-40 items-center"
             palceholder="请输入验证码"
             :maxlength="4"
+            @keydown.enter="handleLogin"
           >
             <template #prefix>
               <i class="i-fe:key mr-12 opacity-20" />
