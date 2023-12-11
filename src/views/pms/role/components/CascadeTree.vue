@@ -11,7 +11,6 @@
     :key-field="keyField"
     :label-field="labelField"
     :selectable="false"
-    block-line
     default-expand-all
     checkable
     check-on-click
