@@ -111,9 +111,9 @@
             ，而不是无权限也跳404
           </li>
           <li class="py-4">
-            🔐 集成主流的双token
+            🔐 基于Redis集成
             <span class="text-highlight">无感刷新</span>
-            ，安全与体验缺一不可
+            ，用户登录态可控，安全与体验缺一不可
           </li>
           <li class="py-4">
             ✨ 基于 Naive UI 封装
