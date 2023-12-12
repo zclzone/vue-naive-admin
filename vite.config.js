@@ -13,7 +13,7 @@ import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
-import { createHtmlPlugin } from 'vite-plugin-html'
+import simpleHtmlPlugin from 'vite-plugin-simple-html'
 import VueDevTools from 'vite-plugin-vue-devtools'
 import { pluginPagePathes, pluginIcons } from './build/plugin-isme'
 
@@ -36,7 +36,7 @@ export default defineConfig(({ command, mode }) => {
         resolvers: [NaiveUiResolver()],
         dts: false,
       }),
-      createHtmlPlugin({
+      simpleHtmlPlugin({
         minify: isBuild,
         inject: {
           data: {
