@@ -1,7 +1,7 @@
 /**********************************
  * @Author: Ronnie Zhang
  * @LastEditor: Ronnie Zhang
- * @LastEditTime: 2023/12/05 21:22:35
+ * @LastEditTime: 2023/12/12 09:03:00
  * @Email: zclzone@outlook.com
  * Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  **********************************/
@@ -79,6 +79,7 @@ export const useCrud = ({ name, initForm = {}, doCreate, doDelete, doUpdate, ref
       data && refresh(data)
     } catch (error) {
       okLoading.value = false
+      return false
     }
   }
 

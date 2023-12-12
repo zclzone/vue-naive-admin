@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/04 22:51:58
+ - @LastEditTime: 2023/12/12 09:03:22
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -80,11 +80,11 @@ const props = defineProps({
   },
   style: {
     type: Object,
-    default: () => ({}),
+    default: () => {},
   },
   contentStyle: {
     type: Object,
-    default: () => ({}),
+    default: () => {},
   },
   onOk: {
     type: Function,
@@ -125,7 +125,7 @@ async function handleOk(data) {
     // 如果onOk函数的返回值不为false，则关闭模态框
     res !== false && close()
   } catch (error) {
-    // 如果出现异常，则打印错误信息
+    okLoading.value = false
     console.error(error)
   }
 }
@@ -143,7 +143,7 @@ async function handleCancel(data) {
     // 如果onCancel函数的返回值不为false，则关闭模态框
     res !== false && close()
   } catch (error) {
-    // 如果出现异常，则打印错误信息
+    okLoading.value = false
     console.error(error)
   }
 }
