@@ -155,7 +155,10 @@ const iconOptions = icons.map((item) => ({
   value: item,
 }))
 const layoutOptions = [
-  { label: '默认-default', value: 'default' },
+  { label: '跟随系统', value: '' },
+  { label: '简约-simple', value: 'simple' },
+  { label: '通用-normal', value: 'normal' },
+  { label: '全面-full', value: 'full' },
   { label: '空白-empty', value: 'empty' },
 ]
 const required = {

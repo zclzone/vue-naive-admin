@@ -64,7 +64,7 @@ export const usePermissionStore = defineStore('permission', {
         meta: {
           icon: item.icon,
           title: item.name,
-          layout: item.layout || 'default',
+          layout: item.layout,
           keepAlive: !!item.keepAlive,
           parentKey,
           btns: item.children
