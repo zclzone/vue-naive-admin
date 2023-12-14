@@ -113,7 +113,7 @@ const [pwdModalRef] = useModal()
 const [pwdFormRef, pwdForm, pwdValidation] = useForm()
 
 async function handlePwdSave() {
-  if (!(await pwdValidation())) return false
+  await pwdValidation()
   await api.changePassword(pwdForm.value)
   $message.success('密码修改成功')
   userStore.getUserInfo()
@@ -145,7 +145,7 @@ const [profileFormRef, profileForm, profileValidation] = useForm({
   email: userStore.userInfo?.email,
 })
 async function handleProfileSave() {
-  if (!(await profileValidation())) return false
+  await profileValidation()
   await api.updateProfile(profileForm.value)
   $message.success('资料修改成功')
   userStore.getUserInfo()

@@ -57,7 +57,7 @@ export const useCrud = ({ name, initForm = {}, doCreate, doDelete, doUpdate, ref
     if (!action && !['edit', 'add'].includes(modalAction.value)) {
       return false
     }
-    if (!(await validation())) return false
+    await validation()
     const actions = {
       add: {
         api: () => doCreate(modalForm.value),

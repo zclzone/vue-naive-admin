@@ -177,7 +177,7 @@ function handleOpen(options = {}) {
 }
 
 async function onSave() {
-  if (!(await validation())) return
+  await validation()
   okLoading.value = true
   try {
     if (!modalForm.value.parentId) modalForm.value.parentId = null
