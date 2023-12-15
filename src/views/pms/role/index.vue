@@ -202,41 +202,15 @@ async function handleEnable(row) {
   }
 }
 
-const {
-  modalRef,
-  modalFormRef,
-  modalAction,
-  modalForm,
-  okLoading,
-  handleAdd,
-  handleDelete,
-  handleOpen,
-} = useCrud({
-  name: '角色',
-  doCreate: api.create,
-  doDelete: api.delete,
-  doUpdate: api.update,
-  initForm: { enable: true },
-  refresh: () => $table.value?.handleSearch(),
-})
-
-function handleEdit(row) {
-  handleOpen({ action: 'edit', title: '修改角色', row, onSave })
-}
-
-async function onSave() {
-  await modalFormRef.value?.validate()
-  okLoading.value = true
-  try {
-    await api.update(modalForm.value)
-    okLoading.value = false
-    $message.success('保存成功')
-    $table.value?.handleSearch()
-  } catch (error) {
-    okLoading.value = false
-    return false
-  }
-}
+const { modalRef, modalFormRef, modalAction, modalForm, handleAdd, handleDelete, handleEdit } =
+  useCrud({
+    name: '角色',
+    doCreate: api.create,
+    doDelete: api.delete,
+    doUpdate: api.update,
+    initForm: { enable: true },
+    refresh: () => $table.value?.handleSearch(),
+  })
 
 const permissionTree = ref([])
 api.getAllPermissionTree().then(({ data = [] }) => (permissionTree.value = data))

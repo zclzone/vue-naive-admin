@@ -223,7 +223,7 @@ const columns = [
             size: 'small',
             type: 'primary',
             style: 'margin-left: 12px;',
-            onClick: () => handleOpen({ action: 'reset', title: '重置密码', row, onSave }),
+            onClick: () => handleOpen({ action: 'reset', title: '重置密码', row, onOk: onSave }),
           },
           {
             default: () => '重置密码',
@@ -267,7 +267,7 @@ function handleOpenRolesSet(row) {
     action: 'setRole',
     title: '分配角色',
     row: { id: row.id, username: row.username, roleIds },
-    onSave,
+    onOk: onSave,
   })
 }
 
