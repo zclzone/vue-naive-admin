@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/05 21:27:43
+ - @LastEditTime: 2023/12/16 18:51:56
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -32,6 +32,10 @@ function openModal1() {
     okText: '再弹个窗',
     cancelText: '关闭',
     async onOk() {
+      if (!text.value) {
+        $message.warning('请输入内容')
+        return false // 阻止弹窗关闭
+      }
       okLoading1.value = true
       $message.loading('正在提交...', { key: 'modal1' })
       await sleep(1000)
@@ -48,16 +52,10 @@ function openModal1() {
 
 const [$modal2, okLoading2] = useModal()
 function openModal2() {
-  // modal的options都是可变的
-  if ($modal1.value) {
-    $modal1.value.options.style.top = '-100px'
-    $modal1.value.options.title = '我走了'
-  }
-
   $modal2.value?.open({
     cancelText: '关闭当前',
     okText: '关闭所有弹窗',
-    style: { width: '320px', padding: '12px', top: '100px' },
+    modalStyle: { width: '320px', padding: '12px', top: '100px' },
     async onOk() {
       okLoading2.value = true
       $message.loading('正在关闭...', { key: 'modal2' })
@@ -67,12 +65,6 @@ function openModal2() {
       // 把modal1也关了
       $modal1.value?.close()
       $message.success('已关闭', { key: 'modal2' })
-    },
-    onCancel() {
-      if ($modal1.value) {
-        $modal1.value.options.style.top = '0'
-        $modal1.value.options.title = '我又回来了'
-      }
     },
   })
 }

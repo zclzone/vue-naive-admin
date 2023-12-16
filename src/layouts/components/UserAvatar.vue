@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/05 21:23:46
+ - @LastEditTime: 2023/12/16 18:50:42
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -9,8 +9,8 @@
 <template>
   <n-dropdown :options="options" @select="handleSelect">
     <div class="flex cursor-pointer items-center">
-      <n-avatar round :size="36" :src="userStore.avatar" class="mr-12" />
-      <div v-if="userStore.userInfo" class="flex-col items-center">
+      <n-avatar round :size="36" :src="userStore.avatar" />
+      <div v-if="userStore.userInfo" class="ml-12 flex-col flex-shrink-0 items-center">
         <span class="text-14">{{ userStore.nickName ?? userStore.username }}</span>
         <span class="text-12 opacity-50">[{{ userStore.currentRole?.name }}]</span>
       </div>

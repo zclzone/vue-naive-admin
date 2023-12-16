@@ -9,7 +9,6 @@
 
 import * as NaiveUI from 'naive-ui'
 import { isNullOrUndef } from '@/utils'
-import settings from '@/settings'
 import { useAppStore } from '@/store/modules/app'
 
 export function setupMessage(NMessage) {
@@ -104,10 +103,9 @@ export function setupDialog(NDialog) {
 
 export function setupNaiveDiscreteApi() {
   const appStore = useAppStore()
-  const { naiveThemeOverrides: themeOverrides } = settings
   const configProviderProps = computed(() => ({
     theme: appStore.isDark ? NaiveUI.darkTheme : undefined,
-    themeOverrides,
+    themeOverrides: useAppStore().naiveThemeOverrides,
   }))
   const { message, dialog, notification, loadingBar } = NaiveUI.createDiscreteApi(
     ['message', 'dialog', 'notification', 'loadingBar'],

@@ -49,7 +49,7 @@
               <span v-else>无</span>
             </n-descriptions-item>
             <n-descriptions-item label="layout">
-              {{ currentMenu.layout ?? 'default' }}
+              {{ currentMenu.layout || '跟随系统' }}
             </n-descriptions-item>
             <n-descriptions-item label="是否显示">
               {{ currentMenu.show ? '是' : '否' }}

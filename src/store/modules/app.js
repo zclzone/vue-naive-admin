@@ -8,13 +8,14 @@
 
 import { defineStore } from 'pinia'
 import { useDark } from '@vueuse/core'
-import settings from '@/settings'
+import { defaultLayout, naiveThemeOverrides } from '@/settings'
 
 export const useAppStore = defineStore('app', {
   state: () => ({
     collapsed: false,
     isDark: useDark(),
-    layout: settings.defaultLayout,
+    layout: defaultLayout,
+    naiveThemeOverrides,
   }),
   actions: {
     switchCollapsed() {
@@ -26,12 +27,12 @@ export const useAppStore = defineStore('app', {
     toggleDark() {
       this.isDark = !this.isDark
     },
-    setDeaultLayout(v) {
+    setLayout(v) {
       this.layout = v
     },
   },
   persist: {
-    paths: ['layout', 'collapsed'],
+    paths: ['collapsed', 'naiveThemeOverrides'],
     storage: localStorage,
   },
 })
