@@ -12,13 +12,16 @@
       {{ route.meta.title }}
     </n-breadcrumb-item>
     <n-breadcrumb-item
-      v-for="item of breadItems"
+      v-for="(item, index) of breadItems"
       v-else
       :key="item.code"
       :clickable="!!item.path"
       @click="handleItemClick(item)"
     >
-      <n-dropdown :options="getDropOptions(item.children)" @select="handleDropSelect">
+      <n-dropdown
+        :options="index < breadItems.length - 1 ? getDropOptions(item.children) : []"
+        @select="handleDropSelect"
+      >
         <div class="flex items-center">
           <i :class="item.icon" class="mr-8" />
           {{ item.name }}
@@ -65,11 +68,13 @@ function handleItemClick(item) {
 }
 
 function getDropOptions(list = []) {
-  return list.map((child) => ({
-    label: child.name,
-    key: child.code,
-    icon: () => h('i', { class: child.icon }),
-  }))
+  return list
+    .filter((item) => item.show)
+    .map((child) => ({
+      label: child.name,
+      key: child.code,
+      icon: () => h('i', { class: child.icon }),
+    }))
 }
 
 function handleDropSelect(code) {
