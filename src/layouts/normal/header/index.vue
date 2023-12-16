@@ -1,19 +1,14 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/05 21:23:23
+ - @LastEditTime: 2023/12/16 18:52:48
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
 
 <template>
   <AppCard class="flex items-center px-12" border-b="1px solid light_border dark:dark_border">
-    <div
-      class="f-c-c cursor-pointer rounded-4 p-6 text-22 transition-all-300 auto-bg-hover"
-      @click="appStore.switchCollapsed"
-    >
-      <i :class="appStore.collapsed ? 'i-line-md-menu-unfold-left' : 'i-line-md-menu-fold-left'" />
-    </div>
+    <MenuCollapse />
 
     <AppTab class="w-0 flex-1 px-12" />
 
@@ -45,9 +40,9 @@
 </template>
 
 <script setup>
-import { AppTab, UserAvatar } from './components'
-import { useAppStore } from '@/store'
+import { UserAvatar, MenuCollapse, AppTab } from '@/layouts/components'
 import { useDark, useToggle, useFullscreen } from '@vueuse/core'
+import { useAppStore } from '@/store'
 
 const appStore = useAppStore()
 const isDark = useDark()

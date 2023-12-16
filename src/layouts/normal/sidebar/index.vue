@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/05 21:24:09
+ - @LastEditTime: 2023/12/16 18:46:06
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -12,6 +12,5 @@
 </template>
 
 <script setup>
-import SideLogo from './components/SideLogo.vue'
-import SideMenu from './components/SideMenu.vue'
+import { SideLogo, SideMenu } from '@/layouts/components'
 </script>

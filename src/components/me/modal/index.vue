@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/12 09:03:22
+ - @LastEditTime: 2023/12/16 18:50:02
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -9,7 +9,7 @@
 <template>
   <n-modal
     v-model:show="show"
-    :style="{ width: modalOptions.width, ...modalOptions.style }"
+    :style="{ width: modalOptions.width, ...modalOptions.modalStyle }"
     :preset="undefined"
     size="huge"
     :bordered="false"
@@ -78,7 +78,7 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  style: {
+  modalStyle: {
     type: Object,
     default: () => {},
   },
@@ -104,6 +104,7 @@ const modalOptions = ref({})
 function open(options = {}) {
   // 将props和options合并赋值给modalOptions
   modalOptions.value = { ...props, ...options }
+
   // 将show的值设置为true
   show.value = true
 }
