@@ -72,9 +72,9 @@ function getDropOptions(list = []) {
   }))
 }
 
-function handleDropSelect(item) {
-  if (item.path && item.code !== route.name) {
-    router.push(item.path)
+function handleDropSelect(code) {
+  if (code && code !== route.name) {
+    router.push({ name: code })
   }
 }
 </script>
