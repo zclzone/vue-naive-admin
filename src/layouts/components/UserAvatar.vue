@@ -72,7 +72,11 @@ function handleSelect(key) {
         type: 'info',
         content: '确认退出？',
         async confirm() {
-          await api.logout()
+          try {
+            await api.logout()
+          } catch (error) {
+            console.error(error)
+          }
           authStore.logout()
           $message.success('已退出登录')
         },
