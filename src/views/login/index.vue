@@ -16,7 +16,7 @@
       </div>
 
       <div class="w-320 flex-col px-20 py-32">
-        <h2 class="f-c-c text-24 font-normal text-#6a6a6a">
+        <h2 class="f-c-c text-24 text-#6a6a6a font-normal">
           <img src="@/assets/images/logo.png" height="50" class="mr-12" />
           {{ title }}
         </h2>
@@ -38,7 +38,7 @@
           show-password-on="mousedown"
           placeholder="请输入密码"
           :maxlength="20"
-          @keydown.enter="handleLogin"
+          @keydown.enter="handleLogin()"
         >
           <template #prefix>
             <i class="i-fe:lock mr-12 opacity-20" />
@@ -51,7 +51,7 @@
             class="h-40 items-center"
             palceholder="请输入验证码"
             :maxlength="4"
-            @keydown.enter="handleLogin"
+            @keydown.enter="handleLogin()"
           >
             <template #prefix>
               <i class="i-fe:key mr-12 opacity-20" />
@@ -75,7 +75,12 @@
         />
 
         <div class="mt-20 flex items-center">
-          <n-button class="h-40 flex-1 rounded-5 text-16" type="primary" ghost @click="quickLogin">
+          <n-button
+            class="h-40 flex-1 rounded-5 text-16"
+            type="primary"
+            ghost
+            @click="quickLogin()"
+          >
             一键体验
           </n-button>
 
@@ -83,7 +88,7 @@
             class="ml-32 h-40 flex-1 rounded-5 text-16"
             type="primary"
             :loading="loading"
-            @click="handleLogin"
+            @click="handleLogin()"
           >
             登录
           </n-button>
