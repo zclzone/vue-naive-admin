@@ -46,7 +46,7 @@ const emit = defineEmits(['update:value'])
 const halfCheckedKeys = ref([])
 const checkedKeys = ref([])
 watch([halfCheckedKeys, checkedKeys], ([v1, v2]) => {
-  emit('update:value', new Array(...new Set([...v1, ...v2])))
+  emit('update:value', Array.from(new Set([...v1, ...v2])))
 })
 onMounted(() => {
   halfCheckedKeys.value = getHalfCheckedValues(props.value, props.treeData)
