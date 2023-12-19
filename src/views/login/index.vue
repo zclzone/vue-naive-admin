@@ -82,8 +82,8 @@ const router = useRouter()
 const { query } = useRoute()
 
 const loginInfo = ref({
-  name: '',
-  password: '',
+  name: 'admin',
+  password: '123456',
 })
 
 initLoginInfo()
@@ -107,9 +107,10 @@ async function handleLogin() {
   try {
     loading.value = true
     $message.loading('正在验证...')
-    const res = await api.login({ name, password: password.toString() })
+    const res = await api.login({ username: name, password: password.toString() })
     $message.success('登录成功')
-    setToken(res.data.token)
+    console.log('res', res.data)
+    setToken(res.data.token || res.data.accessToken)
     if (isRemember.value) {
       lStorage.set('loginInfo', { name, password })
     } else {
