@@ -1,5 +1,3 @@
-# Vue Naive Admin 2.0
-
 <p align="center">
   <a href="https://github.com/zclzone/vue-naive-admin">
     <img alt="Vue Naive Admin Logo" width="200" src="./src/assets/images/logo.png">
