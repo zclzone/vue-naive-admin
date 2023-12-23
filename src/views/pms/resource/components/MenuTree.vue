@@ -106,10 +106,14 @@ function handleDelete(item) {
   $dialog.confirm({
     content: `确认删除【${item.name}】？`,
     async confirm() {
-      $message.loading('正在删除', { key: 'deleteMenu' })
-      await api.deletePermission(item.id)
-      $message.success('删除成功', { key: 'deleteMenu' })
-      emit('refresh')
+      try {
+        $message.loading('正在删除', { key: 'deleteMenu' })
+        await api.deletePermission(item.id)
+        $message.success('删除成功', { key: 'deleteMenu' })
+        emit('refresh')
+      } catch (error) {
+        $message.destroy('deleteMenu')
+      }
     },
   })
 }
