@@ -100,9 +100,10 @@
 import { MeModal } from '@/components'
 import { useForm, useModal } from '@/composables'
 import { useUserStore } from '@/store'
+import { getUserInfo } from '@/store/helper'
 import api from './api'
-const userStore = useUserStore()
 
+const userStore = useUserStore()
 const required = {
   required: true,
   message: '此为必填项',
@@ -116,7 +117,7 @@ async function handlePwdSave() {
   await pwdValidation()
   await api.changePassword(pwdForm.value)
   $message.success('密码修改成功')
-  userStore.getUserInfo()
+  refreshUserInfo()
 }
 
 const newAvatar = ref(userStore.avatar)
@@ -128,7 +129,7 @@ async function handleAvatarSave() {
   }
   await api.updateProfile({ id: userStore.userId, avatar: newAvatar.value })
   $message.success('头像修改成功')
-  userStore.getUserInfo()
+  refreshUserInfo()
 }
 
 const genders = [
@@ -148,6 +149,11 @@ async function handleProfileSave() {
   await profileValidation()
   await api.updateProfile(profileForm.value)
   $message.success('资料修改成功')
-  userStore.getUserInfo()
+  refreshUserInfo()
+}
+
+async function refreshUserInfo() {
+  const user = await getUserInfo()
+  userStore.setUser(user)
 }
 </script>

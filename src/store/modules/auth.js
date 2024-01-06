@@ -7,8 +7,7 @@
  **********************************/
 
 import { defineStore } from 'pinia'
-import { useUserStore, usePermissionStore, useTabStore } from '@/store'
-import { resetRouter, router } from '@/router'
+import { useUserStore, usePermissionStore, useTabStore, useRouterStore } from '@/store'
 
 export const useAuthStore = defineStore('auth', {
   state: () => ({
@@ -22,24 +21,30 @@ export const useAuthStore = defineStore('auth', {
       this.$reset()
     },
     toLogin() {
-      const currentRoute = unref(router.currentRoute)
+      const { router, route } = useRouterStore()
       router.replace({
         path: '/login',
-        query: currentRoute.query,
+        query: route.query,
       })
+    },
+    async switchCurrentRole(data) {
+      this.resetLoginState()
+      await nextTick()
+      this.setToken(data)
     },
     resetLoginState() {
       const { resetUser } = useUserStore()
-      const { resetPermission } = usePermissionStore()
+      const { resetRouter } = useRouterStore()
+      const { resetPermission, accessRoutes } = usePermissionStore()
       const { resetTabs } = useTabStore()
+      // 重置路由
+      resetRouter(accessRoutes)
       // 重置用户
       resetUser()
       // 重置权限
       resetPermission()
       // 重置Tabs
       resetTabs()
-      // 重置路由
-      resetRouter()
       // 重置token
       this.resetToken()
     },

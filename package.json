@@ -38,7 +38,7 @@
     "rollup-plugin-visualizer": "^5.9.2",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.26.0",
-    "vite": "^5.0.10",
+    "vite": "^5.0.11",
     "vite-plugin-simple-html": "^0.1.2",
     "vite-plugin-vue-devtools": "7.0.2"
   },

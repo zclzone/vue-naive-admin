@@ -7,27 +7,16 @@
  **********************************/
 
 import { defineStore } from 'pinia'
-import { isExternal } from '@/utils'
-import { basePermissions } from '@/settings'
-import api from '@/api'
-
-const routeComponents = import.meta.glob('@/views/**/*.vue')
 
 export const usePermissionStore = defineStore('permission', {
   state: () => ({
-    menus: [],
     accessRoutes: [],
-    asyncPermissions: [],
+    permissions: [],
+    menus: [],
   }),
-  getters: {
-    permissions() {
-      return basePermissions.concat(this.asyncPermissions)
-    },
-  },
   actions: {
-    async initPermissions() {
-      const { data } = (await api.getRolePermissions()) || []
-      this.asyncPermissions = data
+    setPermissions(permissions) {
+      this.permissions = permissions
       this.menus = this.permissions
         .filter((item) => item.type === 'MENU')
         .map((item) => this.getMenuItem(item))
@@ -36,7 +25,7 @@ export const usePermissionStore = defineStore('permission', {
     },
     getMenuItem(item, parent) {
       const route = this.generateRoute(item, item.show ? null : parent?.key)
-      if (item.enable && route.path && !isExternal(route.path)) this.accessRoutes.push(route)
+      if (item.enable && route.path && !route.path.startsWith('http')) this.accessRoutes.push(route)
       if (!item.show) return null
       const menuItem = {
         label: route.meta.title,
@@ -60,7 +49,7 @@ export const usePermissionStore = defineStore('permission', {
         name: item.code,
         path: item.path,
         redirect: item.redirect,
-        component: routeComponents[item.component] || undefined,
+        component: item.component,
         meta: {
           icon: item.icon,
           title: item.name,

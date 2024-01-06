@@ -9,47 +9,8 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 import { setupRouterGuards } from './guards'
 import { useAuthStore, usePermissionStore, useUserStore } from '@/store'
-
-export const basicRoutes = [
-  {
-    name: 'Login',
-    path: '/login',
-    component: () => import('@/views/login/index.vue'),
-    meta: {
-      title: '登录页',
-      layout: 'empty',
-    },
-  },
-
-  {
-    name: 'Home',
-    path: '/',
-    component: () => import('@/views/home/index.vue'),
-    meta: {
-      title: '首页',
-    },
-  },
-
-  {
-    name: '404',
-    path: '/404',
-    component: () => import('@/views/error-page/404.vue'),
-    meta: {
-      title: '页面飞走了',
-      layout: 'empty',
-    },
-  },
-
-  {
-    name: '403',
-    path: '/403',
-    component: () => import('@/views/error-page/403.vue'),
-    meta: {
-      title: '没有权限',
-      layout: 'empty',
-    },
-  },
-]
+import { getPermissions, getUserInfo } from '@/store/helper'
+import { basicRoutes } from './basic-routes'
 
 export const router = createRouter({
   history:
@@ -74,32 +35,21 @@ export async function initUserAndPermissions() {
   const authStore = useAuthStore()
 
   if (!authStore.accessToken) {
-    authStore.toLogin()
+    const route = unref(router.currentRoute)
+    if (route.path !== '/login') {
+      router.replace({
+        path: '/login',
+        query: route.query,
+      })
+    }
     return
   }
-  await Promise.all([userStore.getUserInfo(), permissionStore.initPermissions()])
+  const [user, permissions] = await Promise.all([getUserInfo(), getPermissions()])
+  userStore.setUser(user)
+  permissionStore.setPermissions(permissions)
+  const routeComponents = import.meta.glob('@/views/**/*.vue')
   permissionStore.accessRoutes.forEach((route) => {
+    route.component = routeComponents[route.component] || undefined
     !router.hasRoute(route.name) && router.addRoute(route)
   })
-}
-
-export async function resetRouter() {
-  const basicRouteNames = getRouteNames(basicRoutes)
-  router.getRoutes().forEach((route) => {
-    const name = route.name
-    if (!basicRouteNames.includes(name)) {
-      router.removeRoute(name)
-    }
-  })
-}
-
-export function getRouteNames(routes) {
-  const names = []
-  for (const route of routes) {
-    names.push(route.name)
-    if (route.children?.length) {
-      names.push(...getRouteNames(route.children))
-    }
-  }
-  return names
 }

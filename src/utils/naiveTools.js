@@ -9,7 +9,7 @@
 
 import * as NaiveUI from 'naive-ui'
 import { isNullOrUndef } from '@/utils'
-import { useAppStore } from '@/store/modules/app'
+import { useAppStore } from '@/store'
 
 export function setupMessage(NMessage) {
   class Message {

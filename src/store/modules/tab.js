@@ -7,7 +7,7 @@
  **********************************/
 
 import { defineStore } from 'pinia'
-import { router } from '@/router'
+import { useRouterStore } from './router'
 
 export const useTabStore = defineStore('tab', {
   state: () => ({
@@ -55,13 +55,13 @@ export const useTabStore = defineStore('tab', {
     async removeTab(path) {
       this.setTabs(this.tabs.filter((tab) => tab.path !== path))
       if (path === this.activeTab) {
-        router.push(this.tabs[this.tabs.length - 1].path)
+        useRouterStore().router?.push(this.tabs[this.tabs.length - 1].path)
       }
     },
     removeOther(curPath = this.activeTab) {
       this.setTabs(this.tabs.filter((tab) => tab.path === curPath))
       if (curPath !== this.activeTab) {
-        router.push(this.tabs[this.tabs.length - 1].path)
+        useRouterStore().router?.push(this.tabs[this.tabs.length - 1].path)
       }
     },
     removeLeft(curPath) {
@@ -69,7 +69,7 @@ export const useTabStore = defineStore('tab', {
       const filterTabs = this.tabs.filter((item, index) => index >= curIndex)
       this.setTabs(filterTabs)
       if (!filterTabs.find((item) => item.path === this.activeTab)) {
-        router.push(filterTabs[filterTabs.length - 1].path)
+        useRouterStore().router?.push(filterTabs[filterTabs.length - 1].path)
       }
     },
     removeRight(curPath) {
@@ -77,7 +77,7 @@ export const useTabStore = defineStore('tab', {
       const filterTabs = this.tabs.filter((item, index) => index <= curIndex)
       this.setTabs(filterTabs)
       if (!filterTabs.find((item) => item.path === this.activeTab.value)) {
-        router.push(filterTabs[filterTabs.length - 1].path)
+        useRouterStore().router?.push(filterTabs[filterTabs.length - 1].path)
       }
     },
     resetTabs() {
