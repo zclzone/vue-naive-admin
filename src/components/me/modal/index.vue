@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:50:02
+ - @LastEditTime: 2024/01/13 17:41:38
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -9,17 +9,17 @@
 <template>
   <n-modal
     v-model:show="show"
+    class="modal-box"
     :style="{ width: modalOptions.width, ...modalOptions.modalStyle }"
     :preset="undefined"
     size="huge"
     :bordered="false"
+    @after-leave="onAfterLeave"
   >
-    <n-card
-      :title="modalOptions.title"
-      :style="modalOptions.contentStyle"
-      :closable="modalOptions.closable"
-      @close="close()"
-    >
+    <n-card :style="modalOptions.contentStyle" :closable="modalOptions.closable" @close="close()">
+      <template #header>
+        <header class="modal-header">{{ modalOptions.title }}</header>
+      </template>
       <slot></slot>
 
       <!-- 底部按钮 -->
@@ -45,6 +45,7 @@
 </template>
 
 <script setup>
+import { initDrag } from './utils'
 const props = defineProps({
   width: {
     type: String,
@@ -101,12 +102,17 @@ const show = ref(false)
 const modalOptions = ref({})
 
 // 打开模态框
-function open(options = {}) {
+async function open(options = {}) {
   // 将props和options合并赋值给modalOptions
   modalOptions.value = { ...props, ...options }
 
   // 将show的值设置为true
   show.value = true
+  await nextTick()
+  initDrag(
+    Array.prototype.at.call(document.querySelectorAll('.modal-header'), -1),
+    Array.prototype.at.call(document.querySelectorAll('.modal-box'), -1)
+  )
 }
 
 // 定义一个close函数，用于关闭模态框
@@ -147,6 +153,14 @@ async function handleCancel(data) {
     okLoading.value = false
     console.error(error)
   }
+}
+
+async function onAfterLeave() {
+  await nextTick()
+  initDrag(
+    Array.prototype.at.call(document.querySelectorAll('.modal-header'), -1),
+    Array.prototype.at.call(document.querySelectorAll('.modal-box'), -1)
+  )
 }
 
 const okLoading = computed({
