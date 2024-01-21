@@ -23,13 +23,7 @@
       :get-data="api.read"
     >
       <MeQueryItem label="角色名" :label-width="50">
-        <n-input
-          v-model:value="queryItems.name"
-          type="text"
-          placeholder="请输入角色名"
-          clearable
-          @keydown.enter="() => $table?.handleSearch()"
-        />
+        <n-input v-model:value="queryItems.name" type="text" placeholder="请输入角色名" clearable />
       </MeQueryItem>
       <MeQueryItem label="状态" :label-width="50">
         <n-select
