@@ -1,7 +1,7 @@
 <!--------------------------------
  - @Author: Ronnie Zhang
  - @LastEditor: Ronnie Zhang
- - @LastEditTime: 2023/12/16 18:51:56
+ - @LastEditTime: 2024/01/13 17:41:47
  - @Email: zclzone@outlook.com
  - Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  --------------------------------->
@@ -55,7 +55,7 @@ function openModal2() {
   $modal2.value?.open({
     cancelText: '关闭当前',
     okText: '关闭所有弹窗',
-    modalStyle: { width: '320px', padding: '12px', top: '100px' },
+    width: '400px',
     async onOk() {
       okLoading2.value = true
       $message.loading('正在关闭...', { key: 'modal2' })

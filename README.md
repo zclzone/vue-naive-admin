@@ -65,4 +65,5 @@ Vue Naive Admin 提供一套后端代码，技术栈使用 Nestjs + TypeOrm + My
 ## 其他已对接本项目的后端项目
 
 - [isme-java-serve](https://github.com/DHBin/isme-java-serve): 一个轻量级的Java后端服务，基于SpringBoot、MybatisPlus、SaToken、MapStruct等实现，已对接 Vue Naive Admin 2.0。
+- [naive-admin-go](https://github.com/ituserxxx/naive-admin-go): 一个 Go 后端服务，基于 gin、gorm、mysql、jwt和session，已对接 Vue Naive Admin 2.0。
 

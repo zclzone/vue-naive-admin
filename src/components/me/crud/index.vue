@@ -7,25 +7,22 @@
  --------------------------------->
 
 <template>
-  <AppCard
-    v-if="$slots.default"
-    bordered
-    bg="#fafafc dark:black"
-    class="mb-30 min-h-60 flex justify-between rounded-4 p-16"
-  >
-    <n-space wrap :size="[32, 16]">
-      <slot />
-    </n-space>
-    <div class="flex-shrink-0">
-      <n-button ghost type="primary" @click="handleReset">
-        <i class="i-fe:rotate-ccw mr-4" />
-        重置
-      </n-button>
-      <n-button class="ml-20" type="primary" @click="handleSearch">
-        <i class="i-fe:search mr-4" />
-        搜索
-      </n-button>
-    </div>
+  <AppCard v-if="$slots.default" bordered bg="#fafafc dark:black" class="mb-30 min-h-60 rounded-4">
+    <form class="flex justify-between p-16" @submit.prevent="handleSearch()">
+      <n-space wrap :size="[32, 16]">
+        <slot />
+      </n-space>
+      <div class="flex-shrink-0">
+        <n-button ghost type="primary" @click="handleReset">
+          <i class="i-fe:rotate-ccw mr-4" />
+          重置
+        </n-button>
+        <n-button attr-type="submit" class="ml-20" type="primary">
+          <i class="i-fe:search mr-4" />
+          搜索
+        </n-button>
+      </div>
+    </form>
   </AppCard>
 
   <n-data-table

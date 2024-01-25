@@ -28,7 +28,6 @@
           type="text"
           placeholder="请输入用户名"
           clearable
-          @keydown.enter="() => $table?.handleSearch"
         />
       </MeQueryItem>
 
