@@ -72,3 +72,10 @@ body {
     }
   }
 }
+
+/**
+  * naive-ui样式覆盖
+  */
+body .n-image-preview-toolbar .n-base-icon {
+  box-sizing: content-box;
+}
