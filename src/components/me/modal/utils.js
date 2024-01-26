@@ -63,7 +63,6 @@ export function initDrag(bar, box) {
     }
   }
   document.onmousemove = function (e) {
-    e.preventDefault() // 阻止默认事件
     // 如果拖拽标志为true
     if (params.flag) {
       const nowX = e.clientX // 鼠标当前位置的X坐标
