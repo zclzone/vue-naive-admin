@@ -64,6 +64,7 @@ export default defineConfig(({ command, mode }) => {
           target: VITE_PROXY_TARGET,
           changeOrigin: true,
           rewrite: (path) => path.replace(new RegExp('^/api'), ''),
+          secure: false,
           configure: (proxy, options) => {
             // 配置此项可在响应头中看到请求的真实地址
             proxy.on('proxyRes', (proxyRes, req) => {
