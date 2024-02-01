@@ -47,14 +47,6 @@
       "@zclzone",
       "@unocss",
       ".eslint-global-variables.json"
-    ],
-    "rules": {
-      "no-unused-vars": [
-        "error",
-        {
-          "varsIgnorePattern": "^_"
-        }
-      ]
-    }
+    ]
   }
 }
