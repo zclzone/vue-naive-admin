@@ -14,7 +14,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import simpleHtmlPlugin from 'vite-plugin-simple-html'
-import VueDevTools from 'vite-plugin-vue-devtools'
 import { pluginPagePathes, pluginIcons } from './build/plugin-isme'
 
 export default defineConfig(({ command, mode }) => {
@@ -25,7 +24,6 @@ export default defineConfig(({ command, mode }) => {
   return {
     base: VITE_PUBLIC_PATH || '/',
     plugins: [
-      VueDevTools(),
       Vue(),
       Unocss(),
       AutoImport({
