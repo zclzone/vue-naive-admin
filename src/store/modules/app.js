@@ -33,6 +33,6 @@ export const useAppStore = defineStore('app', {
   },
   persist: {
     paths: ['collapsed', 'naiveThemeOverrides'],
-    storage: localStorage,
+    storage: sessionStorage,
   },
 })
