@@ -46,6 +46,11 @@
       "@zclzone",
       "@unocss",
       ".eslint-global-variables.json"
-    ]
+    ],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
   }
 }
