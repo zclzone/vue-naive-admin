@@ -38,7 +38,21 @@
           </template>
           <n-input v-model:value="modalForm.code" />
         </n-form-item-gi>
-        <n-form-item-gi :span="12" path="path">
+        <n-form-item-gi
+          :span="12"
+          path="path"
+          :rule="{
+            trigger: ['blur', 'change'],
+            type: 'string',
+            message: '必须是/、http、https开头',
+            validator(rule, value) {
+              if (value) {
+                return /\/|http|https/.test(value)
+              }
+              return true
+            },
+          }"
+        >
           <template #label>
             <QuestionLabel label="路由地址" content="父级菜单可不填" />
           </template>
