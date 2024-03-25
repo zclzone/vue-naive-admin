@@ -13,28 +13,16 @@ function getCss(element, key) {
     : window.getComputedStyle(element, null)[key]
 }
 
-const params = {
-  left: 0,
-  top: 0,
-  currentX: 0,
-  currentY: 0,
-  flag: false,
-}
-
 // 初始化拖拽
 export function initDrag(bar, box) {
   if (!bar || !box) return
-  const screenWidth = document.body.clientWidth // 页面宽度
-  const screenHeight = document.documentElement.clientHeight // 页面可见区域高度
-
-  const dragDomWidth = box.offsetWidth // 盒子宽度
-  const dragDomHeight = box.offsetHeight // 盒子高度
-
-  const minDomLeft = box.offsetLeft // 盒子相对于父元素的左偏移量
-  const minDomTop = box.offsetTop // 盒子相对于父元素的上偏移量
-
-  const maxDragDomLeft = screenWidth - minDomLeft - dragDomWidth // 盒子在水平方向上可拖拽的最大距离
-  const maxDragDomTop = screenHeight - minDomTop - dragDomHeight // 盒子在垂直方向上可拖拽的最大距离
+  const params = {
+    left: 0,
+    top: 0,
+    currentX: 0,
+    currentY: 0,
+    flag: false,
+  }
 
   if (getCss(box, 'left') !== 'auto') {
     params.left = getCss(box, 'left')
@@ -45,7 +33,6 @@ export function initDrag(bar, box) {
 
   // 设置触发拖动元素的鼠标样式为移动图标
   bar.style.cursor = 'move'
-
   // 鼠标按下事件处理函数
   bar.onmousedown = function (e) {
     params.flag = true // 设置拖拽标志为true
@@ -63,6 +50,8 @@ export function initDrag(bar, box) {
     }
   }
   document.onmousemove = function (e) {
+    if (e.target !== bar && !params.flag) return
+
     e.preventDefault() // 阻止默认事件
     // 如果拖拽标志为true
     if (params.flag) {
@@ -73,19 +62,6 @@ export function initDrag(bar, box) {
 
       let left = parseInt(params.left) + disX // 盒子元素的新left值
       let top = parseInt(params.top) + disY // 盒子元素的新top值
-
-      // 拖出屏幕边缘
-      if (-left > minDomLeft) {
-        left = -minDomLeft
-      } else if (left > maxDragDomLeft) {
-        left = maxDragDomLeft
-      }
-
-      if (-top > minDomTop) {
-        top = -minDomTop
-      } else if (top > maxDragDomTop) {
-        top = maxDragDomTop
-      }
 
       box.style.left = left + 'px'
       box.style.top = top + 'px'
