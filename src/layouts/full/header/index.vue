@@ -8,8 +8,37 @@
 
 <template>
   <AppCard class="flex items-center px-12" border-b="1px solid light_border dark:dark_border">
+    <n-popover width="trigger" class="align-center w-500px flex" placement="top-start">
+      <template #trigger>
+        <n-button>
+          <i class="i-simple-icons:juejin text-#1E80FF" />
+        </n-button>
+      </template>
+      <n-flex>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+        <n-button>找点乐子吧</n-button>
+      </n-flex>
+      <div class="items-right ml-auto flex flex-shrink-0 px-12 text-18">
+        <n-input-group>
+          <n-button type="primary">
+            搜索
+          </n-button>
+          <n-input :style="{ width: '50%' }">
+            <template #count />
+          </n-input>
+          <n-button type="primary" ghost>
+            搜索
+          </n-button>
+        </n-input-group>
+      </div>
+    </n-popover>
     <MenuCollapse />
-
     <BreadCrumb />
 
     <div class="ml-auto flex flex-shrink-0 items-center px-12 text-18">
@@ -21,11 +50,7 @@
 
       <i
         class="i-fe:github mr-16 cursor-pointer"
-        @click="handleLinkClick('https://github.com/zclzone/vue-naive-admin/tree/2.x')"
-      />
-      <i
-        class="i-me:gitee mr-16 cursor-pointer"
-        @click="handleLinkClick('https://gitee.com/isme-admin/vue-naive-admin/tree/2.x')"
+        @click="handleLinkClick('https://github.com/cike-projects/vue-naive-admin')"
       />
 
       <ThemeSetting class="mr-16" />

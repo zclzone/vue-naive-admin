@@ -2,3 +2,5 @@
 node_modules
 dist
 stats.html
+.idea
+*.iml

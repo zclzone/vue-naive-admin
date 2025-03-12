@@ -7,7 +7,7 @@
  --------------------------------->
 
 <template>
-  <CommonPage>
+  <CommonPage show-footer>
     <n-upload
       class="mx-auto w-[75%] p-20 text-center"
       :custom-request="handleUpload"
