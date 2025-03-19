@@ -21,6 +21,9 @@
       <template #loading>
         <n-spin :show="loading" />
       </template>
+      <template #total>
+        <span class="font-size-14 line-height-28px">共 {{ pagerConfig.total }} 条数据</span>
+      </template>
       <template v-for="(c, k) in slots" :key="k" #[c.key]="{ row }">
         <template v-if="Array.isArray(c.render(row))">
           <component :is="r" v-for="(r, k1) in c.render(row)" :key="k1" :row="row" :col="c" />
@@ -135,7 +138,7 @@ const pagerConfig = computed(() => {
   return {
     currentPage: props.pagination.pageNo,
     pageSize: props.pagination.pageSize,
-    total: props.pagination.itemCount,
+    total: props.pagination.itemCount || 0,
     background: true,
     size: 'small',
     layouts: [
@@ -146,8 +149,11 @@ const pagerConfig = computed(() => {
       'End',
       'Sizes',
       'FullJump',
-      'Total',
+      // 'Total',
     ],
+    slots: {
+      right: 'total',
+    },
   }
 })
 /**
