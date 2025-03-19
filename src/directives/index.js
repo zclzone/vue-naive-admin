@@ -8,7 +8,7 @@
 
 import { router } from '@/router'
 
-const permission = {
+export const permission = {
   mounted(el, binding) {
     const currentRoute = unref(router.currentRoute)
     const btns = currentRoute.meta?.btns?.map(item => item.code) || []

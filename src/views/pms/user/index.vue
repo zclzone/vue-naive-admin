@@ -112,7 +112,7 @@
 <script setup>
 import { MeCrud, MeModal, MeQueryItem } from '@/components'
 import { useCrud } from '@/composables'
-import { formatDateTime } from '@/utils'
+import { formatDateTime, PH } from '@/utils'
 import { NAvatar, NButton, NSwitch, NTag } from 'naive-ui'
 import api from './api'
 
@@ -225,7 +225,7 @@ const columns = [
     hideInExcel: true,
     render(row) {
       return [
-        h(
+        PH(
           NButton,
           {
             size: 'small',
@@ -237,6 +237,7 @@ const columns = [
             default: () => '分配角色',
             icon: () => h('i', { class: 'i-carbon:user-role text-14' }),
           },
+          'setRole',
         ),
         h(
           NButton,
