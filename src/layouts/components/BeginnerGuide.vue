@@ -40,7 +40,6 @@
 </template>
 
 <script setup>
-import { lStorage } from '@/utils'
 import Vue3IntroStep from 'vue3-intro-step'
 
 const myIntroStep = shallowRef(null)
@@ -101,19 +100,11 @@ const config = {
   ],
 }
 
-onMounted(() => {
-  if (lStorage.get('beginner-guide') === true)
-    return
-  show.value = true
-})
-
 function skip() {
-  lStorage.set('beginner-guide', true)
   show.value = false
 }
 
 function done() {
-  lStorage.set('beginner-guide', true)
   show.value = false
 }
 

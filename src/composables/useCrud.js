@@ -6,6 +6,7 @@
  * Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  **********************************/
 
+import { cloneDeep } from 'lodash-es'
 import { useForm, useModal } from '.'
 
 const ACTIONS = {
@@ -21,7 +22,7 @@ export function useCrud({ name, initForm = {}, doCreate, doDelete, doUpdate, ref
 
   /** 新增 */
   function handleAdd(row = {}, title) {
-    handleOpen({ action: 'add', title, row: { ...initForm, ...row } })
+    handleOpen({ action: 'add', title, row: Object.assign({}, cloneDeep(initForm), cloneDeep(row)) })
   }
 
   /** 修改 */

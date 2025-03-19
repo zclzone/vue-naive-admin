@@ -98,7 +98,7 @@
 <script setup>
 import { sleep } from '@/utils'
 
-const handleDelete = function () {
+function handleDelete() {
   $dialog.confirm({
     content: '确认删除？',
     confirm() {

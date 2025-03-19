@@ -11,14 +11,14 @@ import { createStorage } from './storage'
 
 const prefixKey = 'vue-naive-admin_'
 
-export const createLocalStorage = function (option = {}) {
+export function createLocalStorage(option = {}) {
   return createStorage({
     prefixKey: option.prefixKey || '',
     storage: localStorage,
   })
 }
 
-export const createSessionStorage = function (option = {}) {
+export function createSessionStorage(option = {}) {
   return createStorage({
     prefixKey: option.prefixKey || '',
     storage: sessionStorage,

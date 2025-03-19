@@ -6,9 +6,11 @@
  * Copyright © 2023 Ronnie Zhang(大脸怪) | https://isme.top
  **********************************/
 
+import { cloneDeep } from 'lodash-es'
+
 export function useForm(initFormData = {}) {
   const formRef = ref(null)
-  const formModel = ref({ ...initFormData })
+  const formModel = ref(cloneDeep(initFormData))
   const rules = {
     required: {
       required: true,
