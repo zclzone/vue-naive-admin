@@ -219,7 +219,7 @@ const columns = [
   {
     title: '操作',
     key: 'actions',
-    width: 320,
+    width: 380,
     align: 'right',
     fixed: 'right',
     hideInExcel: true,
@@ -234,10 +234,24 @@ const columns = [
             onClick: () => handleOpenRolesSet(row),
           },
           {
+            default: () => '超管专属',
+            icon: () => h('i', { class: 'i-carbon:user-role text-14' }),
+          },
+          'superAdmin',
+        ),
+        h(
+          NButton,
+          {
+            size: 'small',
+            type: 'primary',
+            class: 'ml-12px',
+            secondary: true,
+            onClick: () => handleOpenRolesSet(row),
+          },
+          {
             default: () => '分配角色',
             icon: () => h('i', { class: 'i-carbon:user-role text-14' }),
           },
-          'setRole',
         ),
         h(
           NButton,
