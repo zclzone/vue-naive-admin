@@ -112,7 +112,7 @@
 <script setup>
 import { MeCrud, MeModal, MeQueryItem } from '@/components'
 import { useCrud } from '@/composables'
-import { formatDateTime, PH } from '@/utils'
+import { formatDateTime, withPermission } from '@/utils'
 import { NAvatar, NButton, NSwitch, NTag } from 'naive-ui'
 import api from './api'
 
@@ -225,18 +225,16 @@ const columns = [
     hideInExcel: true,
     render(row) {
       return [
-        PH(
-          NButton,
-          {
+        withPermission(
+          h(NButton, {
             size: 'small',
             type: 'primary',
             secondary: true,
             onClick: () => handleOpenRolesSet(row),
-          },
-          {
+          }, {
             default: () => '超管专属',
             icon: () => h('i', { class: 'i-carbon:user-role text-14' }),
-          },
+          }),
           'superAdmin',
         ),
         h(

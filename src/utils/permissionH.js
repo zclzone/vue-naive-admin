@@ -2,13 +2,8 @@ import { permission } from '@/directives'
 /**
  * @description: 按钮权限渲染
  */
-import { h, withDirectives } from 'vue'
+import { withDirectives } from 'vue'
 
-export function PH(el, props, slots, butCode) {
-  return withDirectives(
-    h(el, props, slots),
-    [
-      [permission, butCode],
-    ],
-  )
+export function withPermission(vnode, code) {
+  return withDirectives(vnode, [[permission, code]])
 }
