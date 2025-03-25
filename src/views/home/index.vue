@@ -33,7 +33,7 @@
             class="text-14 text-primary text-highlight hover:underline hover:opacity-80"
             href="https://isme.top"
             target="_blank"
-            @click.prevent="message?.info('官网正在火速开发中...')"
+            @click.prevent="handleLinkClick('https://isme.top')"
           >
             isme.top
           </a>
@@ -285,5 +285,7 @@ const skillOption = {
   ],
 }
 
-const message = $message
+function handleLinkClick(link) {
+  window.open(link)
+}
 </script>
