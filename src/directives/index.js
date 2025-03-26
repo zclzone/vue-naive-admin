@@ -19,7 +19,7 @@ const permission = {
       permissionBtns = binding.value
     }
     else {
-      permissionBtns = binding.value.split(',')
+      permissionBtns = binding.value?.split(',')
     }
     if (!btns.filter(item => permissionBtns.includes(item)).length) {
       el.remove()
