@@ -13,7 +13,15 @@ const permission = {
   mounted(el, binding) {
     const currentRoute = unref(router.currentRoute)
     const btns = currentRoute.meta?.btns?.map(item => item.code) || []
-    if (!btns.includes(binding.value)) {
+    let permissionBtns = []
+
+    if (Array.isArray(permissionBtns)) {
+      permissionBtns = binding.value
+    }
+    else {
+      permissionBtns = binding.value.split(',')
+    }
+    if (!btns.filter(item => permissionBtns.includes(item)).length) {
       el.remove()
     }
   },
