@@ -33,7 +33,6 @@
             class="text-14 text-primary text-highlight hover:underline hover:opacity-80"
             href="https://isme.top"
             target="_blank"
-            @click.prevent="message?.info('官网正在火速开发中...')"
           >
             isme.top
           </a>
@@ -284,6 +283,4 @@ const skillOption = {
     },
   ],
 }
-
-const message = $message
 </script>
