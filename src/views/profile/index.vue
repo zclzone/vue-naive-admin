@@ -73,10 +73,10 @@
         require-mark-placement="left"
       >
         <n-form-item label="原密码" path="oldPassword" :rule="required">
-          <n-input v-model:value="pwdForm.oldPassword" type="password" placeholder="请输入原密码" />
+          <n-input v-model:value="pwdForm.oldPassword" type="password" placeholder="请输入原密码" show-password-on="mousedown" />
         </n-form-item>
         <n-form-item label="新密码" path="newPassword" :rule="required">
-          <n-input v-model:value="pwdForm.newPassword" type="password" placeholder="请输入新密码" />
+          <n-input v-model:value="pwdForm.newPassword" type="password" placeholder="请输入新密码" show-password-on="mousedown" />
         </n-form-item>
       </n-form>
     </MeModal>

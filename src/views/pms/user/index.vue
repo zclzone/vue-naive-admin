@@ -77,7 +77,7 @@
             trigger: ['input', 'blur'],
           }"
         >
-          <n-input v-model:value="modalForm.password" />
+          <n-input v-model:value="modalForm.password" type="password" show-password-on="mousedown" />
         </n-form-item>
 
         <n-form-item v-if="['add', 'setRole'].includes(modalAction)" label="角色" path="roleIds">
