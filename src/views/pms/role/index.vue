@@ -177,7 +177,7 @@ const columns = [
             onClick: () => handleEdit(row),
           },
           {
-            default: () => '编辑',
+            default: () => '分配资源',
             icon: () => h('i', { class: 'i-material-symbols:edit-outline text-14' }),
           },
         ),
