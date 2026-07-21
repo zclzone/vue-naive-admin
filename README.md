@@ -16,9 +16,6 @@
 > [!Tip]
 > 我们提供Web（PC+H5+小程序）的技术支持服务及定制开发，不限前后端，详细需求可联系作者，微信: isme-admin，邮箱: admin@isme.top
 
-> [!Tip]
-> 项目内置 AI 翻译功能，模型由 [RunAPI](https://runapi.co/register?aff=Da0v) 提供支持。如需稳定、快速、实惠的中转模型 API 服务，可前往注册使用，通过此链接注册自动获赠$0.1体验额度，GPT-5.5模型可对话2-3次，欢迎体验。
-
 ## 简介
 
 Vue Naive Admin 是一款极简风格的后台管理模板，包含前后端解决方案，前端使用 Vite + Vue3 + Pinia + Unocss，后端使用 Nestjs + TypeOrm + MySql，简单易用，赏心悦目，历经十几次重构和细节打磨，诚意满满！！
@@ -85,8 +82,6 @@ npx degit zclzone/vue-naive-admin
 ## 鸣谢
 
 本项目开发测试及运行环境由 [野草云](https://my.yecaoyun.com/aff.php?aff=3162) 提供支持。
-
-本项目 AI 翻译体验模型由 [RunAPI](https://runapi.co/register?aff=Da0v) 提供支持。
 
 ## 版权说明
 
